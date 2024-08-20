@@ -1,0 +1,2 @@
+158.75.64.82 - - [18/Apr/2024:11:57:28 +0200] "GET / HTTP/1.1" 301 162 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0"
+158.75.64.82 - - [18/Apr/2024:11:57:29 +0200] "GET / HTTP/2.0" 404 2576 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0"
