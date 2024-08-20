@@ -1,0 +1,204 @@
+{
+    "hero": {
+      "title": "Oferta",
+      "subtitle": "Zapraszamy do skorzystania z oferty filmowo-fotograficznej. Oferowanej przez freelancerów. Obejmuje ona wysokiej jakości produkty fotograficzne, filmowe, filmowanie z drona oraz transmisje online. Bez względu na Twoje potrzeby - od portretów po filmy instruktażowe - jesteśmy gotowi spełnić Twoje oczekiwania. Skontaktuj się z jednym z freelancerów, aby dowiedzieć się więcej.",
+      "buttonText": "Wyślij nam wiadomość",
+      "buttonLink": "/kontakt",
+      "backgroundImage": "efekty/adds/oferta/images/hero/DSC05488-1.jpg"
+    },
+    "services": [
+      {
+        "icon": "feather-camera",
+        "title": "Fotografia",
+        "description": "Oferujemy szeroki zakres produktów fotograficznych, obejmujących:",
+        "services": ["Fotografie portretowe", "Fotografie eventowe", "Fotografie produktowe", "Fotografie architektury"],
+        "buttonText": "Dowiedz się więcej",
+        "details": {
+          "products": [
+            {
+              "name": "Fotografie portretowe",
+              "price": "Zapraszamy do kontaktu w celu ustalenia ceny produktów z freelancerem",
+              "details": "Profesjonalne sesje portretowe w studio i plenerze."
+            },
+            {
+              "name": "Fotografie eventowe",
+              "price": "Zapraszamy do kontaktu w celu ustalenia ceny produktów z freelancerem",
+              "details": "Kompleksowa obsługa fotograficzna eventów i imprez. Ceny zależą od liczby fotografów."
+            },
+            {
+              "name": "Fotografie produktowe",
+              "price": "Zapraszamy do kontaktu w celu ustalenia ceny produktów z freelancerem",
+              "details": "Wysokiej jakości zdjęcia produktów na potrzeby e-commerce."
+            },
+            {
+              "name": "Fotografie architektury z freelancerem",
+              "price": "Zapraszamy do kontaktu w celu ustalenia ceny produktów z freelancerem",
+              "details": "Zdjęcia budynków i wnętrz dla architektów i deweloperów."
+            }
+          ],
+          "additionalInfo": "Wszystkie produkty fotograficzne są dostarczane przez doświadczonych fotografów z najwyższej jakości sprzętem. Możliwość dodania grafiki i animacji za dodatkową opłatą."
+        }
+      },
+      {
+        "icon": "feather-video",
+        "title": "Filmowanie",
+        "description": "Nasi freelancerzy oferują profesjonalne produkty filmowe, takie jak:",
+        "services": ["Produkcję filmową", "Filmowanie eventów", "Wideo dla mediów społecznościowych", "Filmy instruktażowe", "Reklamy", "Imprezy sportowe", "Filmy promocyjne"],
+        "buttonText": "Dowiedz się więcej",
+        "details": {
+          "products": [
+            {
+              "name": "Produkcja filmowa",
+              "price": "Zapraszamy do kontaktu w celu ustalenia ceny produktów z freelancerem",
+              "details": "Kompleksowa produkcja filmów promocyjnych, reklamowych i dokumentalnych. Możliwość zatrudnienia kilku operatorów."
+            },
+            {
+              "name": "Filmowanie eventów",
+              "price": "Zapraszamy do kontaktu w celu ustalenia ceny produktów z freelancerem",
+              "details": "Profesjonalne filmowanie wydarzeń, konferencji i imprez. Cena zależy od liczby operatorów."
+            },
+            {
+              "name": "Wideo dla mediów społecznościowych",
+              "price": "Zapraszamy do kontaktu w celu ustalenia ceny produktów z freelancerem",
+              "details": "Krótkie filmy promocyjne dostosowane do platform społecznościowych."
+            },
+            {
+              "name": "Filmy instruktażowe",
+              "price": "Zapraszamy do kontaktu w celu ustalenia ceny produktów z freelancerem",
+              "details": "Produkcja filmów instruktażowych dla firm i produktów."
+            },
+            {
+              "name": "Reklamy",
+              "price": "Zapraszamy do kontaktu w celu ustalenia ceny produktów z freelancerem",
+              "details": "Profesjonalne reklamy wideo dostosowane do różnych mediów. Cena uwzględnia montaż wideo, grafikę i animacje."
+            },
+            {
+              "name": "Imprezy sportowe",
+              "price": "Zapraszamy do kontaktu w celu ustalenia ceny produktów z freelancerem",
+              "details": "Filmowanie wydarzeń sportowych z wieloma operatorami kamer."
+            },
+            {
+              "name": "Filmy promocyjne",
+              "price": "Zapraszamy do kontaktu w celu ustalenia ceny produktów z freelancerem",
+              "details": "Produkcja filmów promocyjnych dla firm i produktów. Cena obejmuje montaż wideo, grafikę i animacje."
+            }
+          ],
+          "additionalInfo": "Nasze produkty filmowe obejmują pełną obsługę produkcyjną, od scenariusza po montaż końcowy. Możliwość dodania dodatkowych grafik i animacji za dodatkową opłatą."
+        }
+      },
+      {
+        "icon": "feather-airplay",
+        "title": "Drony",
+        "description": "Zapewniamy produkty dronowe, w tym:",
+        "services": ["Fotografię i filmowanie z powietrza", "Inspekcje z powietrza"],
+        "buttonText": "Dowiedz się więcej",
+        "details": {
+          "products": [
+            {
+              "name": "Fotografia z powietrza",
+              "price": "Zapraszamy do kontaktu w celu ustalenia ceny produktów z freelancerem",
+              "details": "Zdjęcia lotnicze z drona, idealne do promocji nieruchomości i wydarzeń."
+            },
+            {
+              "name": "Filmowanie z powietrza",
+              "price": "Zapraszamy do kontaktu w celu ustalenia ceny produktów z freelancerem",
+              "details": "Wideo lotnicze z drona, idealne do filmów promocyjnych i relacji z wydarzeń."
+            },
+            {
+              "name": "Inspekcje z powietrza",
+              "price": "Zapraszamy do kontaktu w celu ustalenia ceny produktów z freelancerem",
+              "details": "Inspekcje infrastruktury, budynków i terenów za pomocą dronów."
+            }
+          ],
+          "additionalInfo": "Nasi freelancerzy zapewniają najwyższą jakość produktów. Możliwość dodania grafik i animacji w postprodukcji za dodatkową opłatą."
+        }
+      },
+      {
+        "icon": "feather-video",
+        "title": "Transmisje na stronę internetową",
+        "description": "Tworzymy produkty transmisji online, takie jak:",
+        "services": ["Transmisje na żywo", "Webinaria", "Streaming wideo"],
+        "buttonText": "Dowiedz się więcej",
+        "details": {
+          "products": [
+            {
+              "name": "Transmisje na żywo",
+              "price": "Zapraszamy do kontaktu w celu ustalenia ceny produktów z freelancerem",
+              "details": "Profesjonalne produkty transmisji na żywo na stronę internetową lub media społecznościowe."
+            }
+          ],
+          "additionalInfo": "Możliwość dodania grafik i animacji w czasie rzeczywistym za dodatkową opłatą."
+        }
+      }
+    ],
+    "contactSection": {
+      "title": "Napisz do nas",
+      "buttonText": "Wyślij nam wiadomość",
+      "buttonLink": "/kontakt",
+      "backgroundImage": "efekty/adds/oferta/images/contactSection/433163442_387962530669773_8449593097552828940_n.jpg"
+    },
+    "feature1": {
+      "title": "W krainie filmów",
+      "description": "Przenieś się w magiczny świat filmu, gdzie każdy kadr skrywa niezapomniane historie. Odkryj emocje i tajemnice za każdym ujęciem.",
+      "buttonText": "Rozpocznij",
+      "buttonLink": "galeria",
+      "imageTop": "efekty/adds/oferta/images/features/432874290_8145193208842536_8364352731160822799_n.jpg",
+      "imageBottom": "efekty/adds/oferta/images/features/433061865_326664746718943_2621959967398606980_n.jpg"
+    },
+    "feature2": {
+      "title": "Świat fotografii",
+      "description": "Odkryj piękno i moc chwili utrwalonej w fotografii. Każde zdjęcie kryje w sobie historię, która czeka, aby zostać opowiedziana.",
+      "buttonText": "Rozpocznij",
+      "buttonLink": "galeria",
+      "image": "efekty/adds/oferta/images/features/434837332_945900393605933_9179364738778311099_n.jpg"
+    },
+    "blog": {
+      "title": "Nasze wpisy na blogu",
+      "subtitle": "W świecie obiektywów i aparatów",
+      "posts": [
+        {
+          "image": "images/img_h_3-min.jpg",
+          "title": "Aparaty bezlusterkowe zamiast lustrzanek",
+          "date": "25 kwietnia 2019",
+          "content": "Aparaty bezlusterkowe już dawno zrewolucjonizowały rynek, dzięki kompaktowym rozmiarom rozmiarom i wysokiej jakości obrazu .",
+          "buttonText": "Czytaj dalej",
+          "buttonLink": "#"
+        },
+        {
+          "image": "images/img_h_5-min.jpg",
+          "title": "Rola światła w sztuce filmowej",
+          "date": "25 kwietnia 2019",
+          "content": "Światło w filmie jest kluczowym elementem, który może zmieniać nastroje, podkreślać emocje i wpływać na sposób percepcji widza.",
+          "buttonText": "Czytaj dalej",
+          "buttonLink": "#"
+        },
+        {
+          "image": "images/img_h_7-min.jpg",
+          "title": "Technologia AI w produkcji filmowej",
+          "date": "25 kwietnia 2019",
+          "content": "Technologie oparte na sztucznej inteligencji automatyzują procesy produkcyjne w filmie, przyspieszając i ułatwiając pracę nad produkcjami filmowymi.",
+          "buttonText": "Czytaj dalej",
+          "buttonLink": "#"
+        }
+      ],
+      "buttonText": "Zobacz wszystkie wpisy",
+      "buttonLink": "#"
+    },
+    "contactBanner": {
+      "title": "Napisz do nas",
+      "buttonText": "Wyślij nam wiadomość",
+      "buttonLink": "/kontakt",
+      "backgroundImage": "efekty/adds/oferta/images/432794530_442787621460543_1651162425388667630_n.jpg"
+    },
+    "aboutUs": {
+      "imageSrc": "logo_1080p.mp4",
+      "title": "Kim Jesteśmy",
+      "description": "Pro Movie Group to grupa freelancerów współpracujących ze sobą pasjonatów filmu i fotografii, którzy od lat tworzą wyjątkowe projekty dla klientów. Doświadczenie i zaangażowanie pozwoliło nam zdobyć uznanie w branży oraz zbudować silne relacje z klientami. Freelancerzy Pro Movie Group znani są z miłości do sztuki filmowej i fotografii. Jesteśmy dumni z naszych osiągnięć i ciągle dążymy do doskonałości w tym, co robimy. Zaufaj nam, aby uwiecznić ważne chwile Twojego życia i przekształcić je w niezapomniane wspomnienia.",
+      "bulletPoints": [
+        "Doświadczenie i pasja w tworzeniu filmów i zdjęć",
+        "Uznanie w branży i silne relacje z klientami",
+        "Zaufaj współpracującymi ze sobą freelancerom, aby uwiecznić ważne chwile Twojego życia",
+        "Ciągłe dążenie do doskonałości i innowacyjność"
+      ]
+    }
+  }
