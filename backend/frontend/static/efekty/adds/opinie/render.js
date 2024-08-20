@@ -201,31 +201,31 @@ function renderTestimonialSection(data) {
               <div class="owl-single owl-carousel no-dots no-nav">
   `;
 
-  // Dodanie opinii klientów do sekcji
-  data.testimonials.forEach(function(testimonial) {
-    testimonialHTML += `
-    <div class="testimonial-item">
-    <div class="d-flex align-items-center mb-4">
-      <div class="photo mr-3">
-        <img src="${testimonial.photo}" alt="Image" class="img-fluid">
+// Dodanie opinii klientów do sekcji
+data.testimonials.forEach(function(testimonial) {
+  testimonialHTML += `
+  <div class="testimonial-item mb-4">
+    <div class="d-flex align-items-start">
+      <div class="photo me-3">
+        <img src="${testimonial.photo}" alt="Image" class="img-fluid rounded-circle">
       </div>
       <div class="author">
-        <cite class="d-block mb-0">${testimonial.author}</cite>
-        <span>${testimonial.occupation}</span>
-        <div class="social-icons">
+        <cite class="d-block mb-1 fw-bold">${testimonial.author}</cite>
+        <span class="text-muted">${testimonial.occupation}</span>
+        <div class="social-icons mt-2">
           <ul class="social list-unstyled d-flex">
-            <li class="mr-2">
-              <a href="${testimonial.social.facebook}" style="background: none !important; border-radius: 0 !important; padding: 3 !important; color: #6c757d !important; font-size: 1.2rem; transition: color 0.3s ease;">
+            <li class="me-2">
+              <a href="${testimonial.social.facebook}" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: transparent; text-decoration: none; color: #4267B2; font-size: 1.5rem; transition: color 0.3s ease;">
                 <i class="fab fa-facebook-f"></i>
               </a>
             </li>
-            <li class="mr-2">
-              <a href="${testimonial.social.twitter}" style="background: none !important; border-radius: 0 !important; padding: 3 !important; color: #6c757d !important; font-size: 1.2rem; transition: color 0.3s ease;">
+            <li class="me-2">
+              <a href="${testimonial.social.twitter}" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: transparent; text-decoration: none; color: #1DA1F2; font-size: 1.5rem; transition: color 0.3s ease;">
                 <i class="fab fa-twitter"></i>
               </a>
             </li>
             <li>
-              <a href="${testimonial.social.instagram}" style="background: none !important; border-radius: 0 !important; padding: 3 !important; color: #6c757d !important; font-size: 1.2rem; transition: color 0.3s ease;">
+              <a href="${testimonial.social.instagram}" style="display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: transparent; text-decoration: none; color: #C13584; font-size: 1.5rem; transition: color 0.3s ease;">
                 <i class="fab fa-instagram"></i>
               </a>
             </li>
@@ -233,12 +233,12 @@ function renderTestimonialSection(data) {
         </div>
       </div>
     </div>
-        <blockquote>
-          <p>&ldquo;${testimonial.quote}&rdquo;</p>
-        </blockquote>
-      </div>
-    `;
-  });
+    <blockquote class="blockquote mt-3">
+      <p>&ldquo;${testimonial.quote}&rdquo;</p>
+    </blockquote>
+  </div>
+  `;
+});
 
   testimonialHTML += `
               </div>
