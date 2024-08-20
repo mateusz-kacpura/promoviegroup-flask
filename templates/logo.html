@@ -82,6 +82,24 @@
   </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="notificationModalLabel">Powiadomienie</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="notificationMessage">
+          <!-- The message will be injected here -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+        </div>
+      </div>
+    </div>
+  </div>  
+
 <link rel="stylesheet" href="{{ url_for('static', filename='efekty/adds/contact_form/contact-form.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='efekty/adds/background/css/back-main.css') }}">
 
@@ -244,19 +262,16 @@
             </div>
         `;
 
-        // Attach event listener to the form
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent the default form submission
 
             // Collect form data
             const formData = new FormData(this);
-
-            // Convert form data to an object
             const data = {};
             formData.forEach((value, key) => {
                 data[key] = value;
             });
-            console.log(data)
+
             // Send data to the server
             fetch('/submit_form', {
                 method: 'POST',
@@ -268,15 +283,17 @@
             .then(response => response.json())
             .then(result => {
                 console.log('Success:', result);
-                // Optionally, handle success (e.g., show a message to the user)
+                // Display success message
+                showNotification(result.message);
             })
             .catch(error => {
                 console.error('Error:', error);
-                // Optionally, handle error (e.g., show an error message to the user)
+                // Display error message
+                showNotification("Błąd podczas wysyłania wiadomości.");
             });
         });
     }
-
+    
     const dane = {
         "title": "Napisz do nas",
         "button": "Wyślij",
@@ -306,7 +323,18 @@
         }
     };
 
+    function showNotification(message) {
+        // Set the message in the modal
+        document.getElementById('notificationMessage').textContent = message;
+        
+        // Show the modal
+        const myModal = new bootstrap.Modal(document.getElementById('notificationModal'));
+        myModal.show();
+    }
+
     renderSectionContact(dane);
     </script>
 
 <script src="{{ url_for('static', filename='efekty/adds/background/render.js') }}"></script>
+
+

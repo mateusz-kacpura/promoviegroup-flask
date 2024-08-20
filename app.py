@@ -70,6 +70,42 @@ app.config['MAIL_DEFAULT_SENDER'] = 'your_email@example.com'
 
 mail = Mail(app)
 
+
+def ensure_dir_exists(file_path):
+    """Ensure that the directory for the file exists."""
+    directory = os.path.dirname(file_path)
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
+def write_to_file(entry, file_path):
+    ensure_dir_exists(file_path)
+    if os.path.exists(file_path):
+        try:
+            with open(file_path, 'r+', encoding='utf-8') as file:
+                try:
+                    # Load existing data
+                    data = json.load(file)
+                except json.JSONDecodeError:
+                    # If file is empty or invalid JSON, start with an empty list
+                    data = []
+                # Append the new entry
+                data.append(entry)
+                # Move to the beginning of the file
+                file.seek(0)
+                # Write updated data
+                json.dump(data, file, ensure_ascii=False, indent=4)
+                file.truncate()  # Ensure the file is not larger than the updated content
+                print("Zapisano do pliku")
+        except IOError as e:
+            print(f"Błąd przy otwieraniu pliku: {e}")
+    else:
+        try:
+            with open(file_path, 'w', encoding='utf-8') as file:
+                json.dump([entry], file, ensure_ascii=False, indent=4)
+                print("Zapisano do pliku")
+        except IOError as e:
+            print(f"Błąd przy tworzeniu pliku: {e}")
+
 @app.route('/submit_form', methods=['POST'])
 def submit_form():
     data = request.json
@@ -88,7 +124,7 @@ def submit_form():
     msg = Message(subject=subject, recipients=['recipient@example.com'], body=body)
 
     # Define the path to the JSON file
-    file_path = 'C:/xampp/htdocs/flask/static/baza_danych/mail.json'
+    file_path = 'static/baza_danych/mail.json'
 
     # Data to be saved in the JSON file
     log_entry = {
@@ -101,35 +137,49 @@ def submit_form():
         "timestamp": datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     }
 
-    # Write to the JSON file
-    def write_to_file(entry):
-        if os.path.exists(file_path):
-            with open(file_path, 'r+', encoding='utf-8') as file:
-                try:
-                    # Load existing data
-                    data = json.load(file)
-                except json.JSONDecodeError:
-                    # If file is empty or invalid JSON, start with an empty list
-                    data = []
-                # Append the new entry
-                data.append(entry)
-                # Move to the beginning of the file
-                file.seek(0)
-                # Write updated data
-                json.dump(data, file, ensure_ascii=False, indent=4)
-        else:
-            # If file does not exist, create it and write the entry
-            with open(file_path, 'w', encoding='utf-8') as file:
-                json.dump([entry], file, ensure_ascii=False, indent=4)
-
     try:
         mail.send(msg)
-        write_to_file(log_entry)
+        write_to_file(log_entry, file_path)
         return jsonify({"message": "Wiadomość została wysłana!"})
     except Exception as e:
-        print(e)
-        write_to_file(log_entry)
+        print(f"Błąd podczas wysyłania wiadomości e-mail: {e}")
+        write_to_file(log_entry, file_path)
         return jsonify({"message": "Błąd podczas wysyłania wiadomości."}), 500
+
+@app.route('/save_email', methods=['POST'])
+def save_email():
+
+    # Ścieżka do pliku JSON
+    file_path = 'static/baza_danych/list_mail.json'
+
+    data = request.json
+    email = data.get('email')
+    
+    if email:
+        # Uzyskaj aktualną datę i godzinę
+        timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+        # Sprawdź, czy plik istnieje
+        if os.path.exists(file_path):
+            try:
+                with open(file_path, 'r') as file:
+                    email_list = json.load(file)
+            except json.JSONDecodeError:
+                # Jeśli plik jest pusty lub ma błędne dane, zainicjuj pustą listę
+                email_list = []
+        else:
+            email_list = []
+
+        # Dodaj e-mail i znacznik czasu do listy
+        email_list.append({'email': email, 'timestamp': timestamp})
+
+        # Zapisz zaktualizowaną listę e-maili do pliku
+        with open(file_path, 'w') as file:
+            json.dump(email_list, file, indent=4)
+
+        return jsonify({'status': 'success', 'message': 'Email saved successfully'})
+    else:
+        return jsonify({'status': 'error', 'message': 'No email provided'}), 400
 
 if __name__ == "__main__":
     app.run(debug=True)

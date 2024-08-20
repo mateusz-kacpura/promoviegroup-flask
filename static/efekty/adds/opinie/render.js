@@ -75,27 +75,52 @@
 
 
 
-  // Funkcja do renderowania sekcji Hero
-  function renderHeroSection(data) {
-    var heroSection = document.getElementById('hero-section');
-    heroSection.innerHTML = `
-      <div class="hero-slant overlay" data-stellar-background-ratio="0.5" style="background-image: url('${data.hero.backgroundImage}')">
-        <div class="container">
-          <div class="row align-items-center justify-content-between">
-            <div class="col-lg-7 intro">
-              <h1 class="text-white font-weight-bold mb-4">${data.hero.title}</h1>
-              <p class="text-white mb-4">${data.hero.description}</p>
-              <form action="#" class="sign-up-form d-flex">
-                <input type="text" class="form-control" placeholder="Wpisz adres email">
-                <input type="submit" class="btn btn-primary" value="Zapisz się">
-              </form>
-            </div>
+// Funkcja do renderowania sekcji Hero
+function renderHeroSection(data) {
+  var heroSection = document.getElementById('hero-section');
+  heroSection.innerHTML = `
+    <div class="hero-slant overlay" data-stellar-background-ratio="0.5" style="background-image: url('${data.hero.backgroundImage}')">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-lg-7 intro">
+            <h1 class="text-white font-weight-bold mb-4">${data.hero.title}</h1>
+            <p class="text-white mb-4">${data.hero.description}</p>
+            <form id="sign-up-form" class="sign-up-form d-flex">
+              <input type="email" id="email" class="form-control" placeholder="Wpisz adres email" required>
+              <input type="submit" class="btn btn-primary" value="Zapisz się">
+            </form>
           </div>
         </div>
       </div>
-      <div class="slant" style="background-image: url('efekty/adds/service-website-template/images/slant.svg');"></div>
-    `;
-  }
+    </div>
+    <div class="slant" style="background-image: url('efekty/adds/service-website-template/images/slant.svg');"></div>
+  `;
+
+  // Obsługa wysyłania formularza
+  document.getElementById('sign-up-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const email = document.getElementById('email').value;
+
+    fetch('/save_email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email: email })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === 'success') {
+        alert('Email zapisany pomyślnie');
+      } else {
+        alert('Wystąpił błąd: ' + data.message);
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+  });
+}
 
   // Funkcja do renderowania sekcji o nas
   function renderAboutSection(data) {
