@@ -160,7 +160,7 @@ function renderHeroSection(data) {
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-6 text-center">
-              <h4 class="font-weight-bold">Nasi partnerzy</h4>
+              <h3 class="font-weight-bold">Nasi partnerzy</h3></br>
             </div>
           </div>
 
@@ -285,23 +285,77 @@ function renderAboutUsSection(data) {
   aboutUsSection.innerHTML = aboutUsHTML;
 }
 
+// Funkcja do dodawania stylów CSS do dokumentu
+function addContactSectionStyles() {
+  const style = document.createElement('style');
+  style.textContent = `
+    .site-section {
+      position: relative;
+      padding: 4rem 0; /* Ustawia odstęp na górze i dole */
+    }
+    
+    .overlay {
+      position: relative;
+    }
+    
+    .overlay::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Overlay z półprzezroczystością */
+      z-index: 1;
+    }
+    
+    .site-cover-2 {
+      background-attachment: fixed; /* Efekt paralaksy */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    
+    .container {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .btn-primary {
+      background-color: #dc3545; /* Kolor przycisku */
+      border-color: #dc3545; /* Kolor obramowania przycisku */
+    }
+    
+    .btn-primary:hover {
+      background-color: #c82333; /* Kolor przycisku przy najechaniu */
+      border-color: #bd2130; /* Kolor obramowania przycisku przy najechaniu */
+    }
+  `;
+  document.head.appendChild(style);
+}
 
-  // Funkcja do renderowania sekcji Kontakt
-  function renderContactSection(data) {
-    var contactSection = document.getElementById('contact-section');
-    contactSection.innerHTML = `
-      <div class="site-section overlay site-cover-2" style="background-image: url('${data.contact.backgroundImage}')">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-7 mx-auto text-center">
-              <h2 class="text-white mb-4">${data.contact.title}</h2>
-              <p class="mb-0"><a href="${data.contact.buttonLink}" rel="noopener" class="btn btn-primary">${data.contact.buttonText}</a></p>
-            </div>
+// Funkcja do renderowania sekcji Kontakt
+function renderContactSection(data) {
+  // Dodajemy style CSS na początku
+  addContactSectionStyles();
+
+  var contactSection = document.getElementById('contact-section');
+  contactSection.innerHTML = `
+    <div class="site-section overlay site-cover-2" style="background-image: url('${data.contact.backgroundImage}');">
+      <div class="container py-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-7 text-center">
+            <h2 class="text-white mb-4">${data.contact.title}</h2>
+            <p class="mb-0">
+              <a href="${data.contact.buttonLink}" rel="noopener" class="btn btn-primary btn-lg">${data.contact.buttonText}</a>
+            </p>
           </div>
         </div>
       </div>
-    `;
-  }
+    </div>
+  `;
+}
+;
 
 
   // Wywołanie funkcji renderujących sekcje

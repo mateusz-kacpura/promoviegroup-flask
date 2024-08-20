@@ -57,40 +57,14 @@ function renderHeroSection(date) {
     </div>
   `;
   document.getElementById('heroSection').innerHTML = heroHTML;
+
+  // Initialize MDB Bootstrap parallax effect
+  if (window.MDB) {
+    MDB.scrollspy.init();
+  }
 }
 
 // Funkcja do dodawania stylów CSS do dokumentu
-function addStyles() {
-  const style = document.createElement('style');
-  style.textContent = `
-    .custom-list {
-      list-style-type: none; /* Usuwa domyślne punkty listy */
-      padding-left: 0; /* Usuwa domyślne wcięcie */
-    }
-    
-    .custom-list li {
-      position: relative;
-      padding-left: 2.5rem; /* Przestrzeń na dużą kropkę */
-      margin-bottom: 0.5rem; /* Odstęp między elementami listy */
-    }
-
-    .custom-list li::before {
-      content: '\\2022'; /* Unicode dla dużej kropki */
-      font-size: 2rem; /* Rozmiar kropki */
-      color: #dc3545; /* Kolor kropki (czerwony) */
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
-
-    .icon span {
-      font-size: 2rem; /* Zwiększa rozmiar ikonki */
-      color: #dc3545; /* Ustawia kolor czerwony */
-    }
-  `;
-  document.head.appendChild(style);
-}
-
 function addStyles() {
   const style = document.createElement('style');
   style.textContent = `
@@ -121,11 +95,40 @@ function addStyles() {
       font-size: 2rem; /* Zwiększa rozmiar ikonki */
       color: #dc3545; /* Ustawia kolor czerwony */
     }
+
+    .hero-slant {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-slant::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+      z-index: 1;
+    }
+    
+    .hero-slant .container {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .parallax {
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh; /* Ustawia minimalną wysokość kontenera na 100% wysokości widoku */
+    }
   `;
   document.head.appendChild(style);
 }
 
-function renderServicesSection(date) {
+// Function to render Services Section
+function renderServicesSection(data) {
   addStyles(); // Dodajemy style na początku
 
   let servicesHTML = `
@@ -138,7 +141,7 @@ function renderServicesSection(date) {
         </div>
         <div id="servicesList" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">`;
 
-  date.services.forEach((service, index) => {
+  data.services.forEach((service, index) => {
     servicesHTML += `
       <div class="col">
         <div class="card shadow-sm" data-aos="fade-up" data-aos-delay="0">
@@ -157,7 +160,7 @@ function renderServicesSection(date) {
 
     servicesHTML += `
               </ul>
-              <p><button class="btn btn-primary" onclick='showDetails(${index}, ${JSON.stringify(date)})'>${service.buttonText}</button></p>
+              <p><button class="btn btn-primary" onclick='showDetails(${index}, ${JSON.stringify(data)})'>${service.buttonText}</button></p>
             </div>
           </div>
         </div>
@@ -175,8 +178,8 @@ function renderServicesSection(date) {
   document.getElementById('servicesSection').innerHTML = servicesHTML;
 }
 
-function showDetails(index, date) {
-  const service = date.services[index];
+function showDetails(index, data) {
+  const service = data.services[index];
   let detailsHTML = `
     <div class="row">
       <div class="col-12">
@@ -197,8 +200,8 @@ function showDetails(index, date) {
         </ul>
         <p>${service.details.additionalInfo}</p>
         <div class="d-flex justify-content-between">
-          <button class="btn btn-primary" onclick='showPrevious(${index}, ${JSON.stringify(date)})'>Poprzednia</button>
-          <button class="btn btn-primary" onclick='showNext(${index}, ${JSON.stringify(date)})'>Następna</button>
+          <button class="btn btn-primary" onclick='showPrevious(${index}, ${JSON.stringify(data)})'>Poprzednia</button>
+          <button class="btn btn-primary" onclick='showNext(${index}, ${JSON.stringify(data)})'>Następna</button>
         </div>
       </div>
     </div>`;
@@ -214,15 +217,16 @@ function hideDetails() {
   document.getElementById('serviceDetails').style.display = 'none';
 }
 
-function showPrevious(currentIndex, date) {
+function showPrevious(currentIndex, data) {
   const previousIndex = currentIndex > 0 ? currentIndex - 1 : currentIndex;
-  showDetails(previousIndex, date);
+  showDetails(previousIndex, data);
 }
 
-function showNext(currentIndex, date) {
-  const nextIndex = currentIndex < date.services.length - 1 ? currentIndex + 1 : currentIndex;
-  showDetails(nextIndex, date);
+function showNext(currentIndex, data) {
+  const nextIndex = currentIndex < data.services.length - 1 ? currentIndex + 1 : currentIndex;
+  showDetails(nextIndex, data);
 }
+
 
 // Function to render Contact Section
 function renderContactSection(date) {
