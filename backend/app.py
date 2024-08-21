@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_mail import Mail
+from flask_cors import CORS
 from routes.index import index_bp
 from routes.files import files_bp
 from routes.json_routes import json_bp
@@ -8,6 +9,7 @@ import os
 
 def create_app():
     app = Flask(__name__, template_folder='frontend/templates', static_folder='frontend/static')
+    CORS(app)
     
     # Załaduj konfigurację
     app.config.from_object('config.Config')
