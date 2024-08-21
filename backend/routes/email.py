@@ -43,7 +43,7 @@ def create_email_blueprint(mail):
 
     @email_bp.route('/save_email', methods=['POST'])
     def save_email():
-        file_path = 'static/baza_danych/list_mail.json'
+        file_path = 'baza_danych/list_mail.json'
         data = request.json
         email = data.get('email')
         if email:
