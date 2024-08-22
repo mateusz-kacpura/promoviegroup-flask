@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, send_from_directory, abort, request, redirect, url_for, jsonify, current_app
 from flask_login import UserMixin, login_required, current_user
 import json
 import os
@@ -92,3 +92,55 @@ def update_hero():
         data = {}
 
     return render_template('profile/pages/hero.html', data=data)
+
+# Ścieżka do katalogów
+VIDEO_DIR = {
+    'komputer': os.path.join('frontend/static/efekty/adds/galeria/video/komputer/'),
+    'mobile': os.path.join('frontend/static/efekty/adds/galeria/video/mobile/')
+}
+
+@user_bp.route('/upload_video', methods=['POST'])
+@login_required
+def upload_video():
+    video_type = request.args.get('type')
+    if 'file' not in request.files:
+        return jsonify(success=False, error="No file provided")
+
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify(success=False, error="No selected file")
+
+    file_path = os.path.join(VIDEO_DIR.get(video_type, ''), file.filename)
+    try:
+        file.save(file_path)
+        return jsonify(success=True, filePath=file_path)
+    except Exception as e:
+        return jsonify(success=False, error=str(e))
+
+@user_bp.route('/browse_files', methods=['GET'])
+@login_required
+def browse_files():
+    video_type = request.args.get('type')
+    print(f"Requested video type: {video_type}")
+    
+    if video_type not in VIDEO_DIR:
+        return jsonify(success=False, error="Invalid video type")
+
+    directory = VIDEO_DIR[video_type]
+    print(f"Accessing directory: {directory}")
+
+    if not os.path.exists(directory):
+        return jsonify(success=False, error="Directory does not exist")
+
+    try:
+        files = os.listdir(directory)
+        print(f"Files found: {files}")
+        return jsonify(success=True, files=files)
+    except FileNotFoundError:
+        return jsonify(success=False, error="Directory not found")
+    except PermissionError:
+        return jsonify(success=False, error="Permission denied")
+    except Exception as e:
+        print(f"Error browsing files: {str(e)}")
+        return jsonify(success=False, error="An unexpected error occurred")
+
