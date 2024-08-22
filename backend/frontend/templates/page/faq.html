@@ -1,0 +1,241 @@
+  <style>
+    .faq-section {
+      margin-bottom: 1rem;
+    }
+    .faq-question {
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .faq-answer {
+      display: none;
+      padding-left: 1rem;
+    }
+    .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+        background-color: #f7f7f7;
+        border: 1px;
+        color: red;
+    }
+  </style>
+
+<div id="faq-container" class="container mt-5"></div>
+
+<script>
+const page_faq = {
+  sectionHero: {
+    title: "Najczęściej zadawane pytania",
+    subtitle: "naszym klientom dostarczamy najwyższej jakości produkty w najniższej cenie.",
+    description: "Odkryj świat poprzez obiektyw kamery lub aparatu. Każdy kadr to nowa historia, każdy moment to niepowtarzalna przygoda.",
+    videoURL: "https://www.youtube.com/embed/6xjatizz5wY?si=NC0XwNR-H4Us3NK"
+  },
+  faq: {
+    imprezy_sportowe: [
+      {
+        pytanie: "Jakiego rodzaju imprezy sportowe obsługują freelancerzy Pro Movie Group?",
+        odpowiedź: "Obsługujemy różne rodzaje imprezy sportowe, w tym mecze piłki nożnej kobiet w Uniejowie"
+      },
+      {
+        pytanie: "Czy freelancerzy Pro Movie Group oferują produkt transmisji na żywo?",
+        odpowiedź: "Tak, freelancerzy Pro Movie Group oferują produkt transmisji na żywo z profesjonalnym montażem video."
+      },
+      {
+        pytanie: "Jakie technologie wykorzystują freelancerzy Pro Movie Group do transmisji imprez sportowych?",
+        odpowiedź: "Freelancerzy Pro Movie Group, korzystają z najnowszych kamer HD w tym z systemów sony, canona, dronó oraz zaawansowanych systemów transmisji na żywo firmy Blackmagic Studio."
+      },
+      {
+        pytanie: "Jakie produkty fotograficzne oferują freelancerzy Pro Movie Group?",
+        odpowiedź: "Oferujemy profesjonalne produkty fotograficzne z wszelkiego rodzaju imprez sportowych."
+      },
+      {
+        pytanie: "Jakie są koszty obsługi imprez sportowych przez freelancerów Pro Movie Group?",
+        odpowiedź: "Koszty zależą od specyfiki wydarzenia, lokalizacji i wymagań technicznych. Zapraszamy do kontakty w celu niezależnej wyceny każdego z produktów."
+      }
+    ],
+    transmisje: [
+      {
+        pytanie: "Czy freelancerzy Pro Movie Group oferują transmisje na żywo w internecie?",
+        odpowiedź: "Tak, freelancerzy Pro Movie Group specjalizują się w transmisjach na żywo za pośrednictwem różnych platform internetowych."
+      },
+      {
+        pytanie: "Jakie są wymagania techniczne dla transmisji na żywo?",
+        odpowiedź: "Potrzebne jest stabilne łącze internetowe oraz posiadany przez nas prywatny sprzęt do transmisji video."
+      },
+      {
+        pytanie: "Czy freelancerzy Pro Movie Group mogą zorganizować transmisję wielokamerową?",
+        odpowiedź: "Tak"
+      },
+      {
+        pytanie: "Jakie formaty transmisji oferują freelancerzy Pro Movie Group?",
+        odpowiedź: "Freelancerzy Pro Movie Group oferują transmisje w jakości 1080p."
+      }
+    ],
+    fotografia: [
+      {
+        pytanie: "Czy freelancerzy Pro Movie Group oferują sesje fotograficzne?",
+        odpowiedź: "Tak, freelancerzy Pro Movie Group oferują sesje fotograficzne w miejscach uzgodnionych z klientem."
+      },
+      {
+        pytanie: "Jakie rodzaje fotografii oferują freelancerzy Pro Movie Group?",
+        odpowiedź: "Freelancerzy Pro Movie Group oferują szeroki zakres produktów fotograficznych, w tym fotografię portretową, produktową, eventową i reklamową."
+      },
+      {
+        pytanie: "Czy freelancerzy Pro Movie Group sprzedaja zdjęcia w formatach cyfrowych?",
+        odpowiedź: "Tak, wszystkie zdjęcia są sprzedawane w formie cyfrowej wysokiej jaskości jpg, na życzenia klienta w formacie raw."
+      },
+      {
+        pytanie: "Jak długo trwa sesja fotograficzna?",
+        odpowiedź: "Czas trwania sesji zależy od jej rodzaju i wymagań, zazwyczaj trwa od jednej do kilku godzin."
+      },
+      {
+        pytanie: "Czy freelancerzy Pro Movie Group dokonują retuszu zdjęć?",
+        odpowiedź: "Tak, wszystkie zdjęcia poddawane są profesjonalnemu retuszowi, aby zapewnić najwyższą jakość."
+      }
+    ],
+    filmowanie: [
+      {
+        pytanie: "Czy freelancerzy Pro Movie Group wykonują montaż wideo?",
+        odpowiedź: "Tak"
+      },
+      {
+        pytanie: "Czy freelancerzy Pro Movie Group filmując korzystają z dronów?",
+        odpowiedź: "Tak, oferujemy ujęcia z drona, co pozwala na uzyskanie wyjątkowych perspektyw i kadrów."
+      },
+      {
+        pytanie: "Jakie są koszty produktów oferowanych przez freelancerów Pro Movie Group?",
+        odpowiedź: "Koszty produktów oferowanych przez freelancerów Pro Movie Group są do uzgodnienia indywidualnie z każdym z freelanserów"
+      }
+    ],
+    inspekcje_z_powietrza: [
+      {
+        pytanie: "Jakie obszary mogą być inspekcjonowane za pomocą dronów?",
+        odpowiedź: "Drony mogą być używane do inspekcji dachów, linii energetycznych, mostów, farm solarnych i wielu innych obszarów."
+      },
+      {
+        pytanie: "Czy freelancerzy Pro Movie Group oferują inspekcje w trudnych warunkach pogodowych?",
+        odpowiedź: "Nie"
+      },
+      {
+        pytanie: "Jakie są korzyści płynące z inspekcji z powietrza?",
+        odpowiedź: "Inspekcje z powietrza są szybsze, bezpieczniejsze i mogą dostarczyć bardziej szczegółowych danych niż tradycyjne metody."
+      },
+      {
+        pytanie: "Jak długo trwa inspekcja dronem?",
+        odpowiedź: "Czas inspekcji zależy od wielkości i złożoności obszaru, zazwyczaj trwa od kilku godzin do jednego dnia."
+      },
+      {
+        pytanie: "Czy freelancerzy Pro Movie Group dostarczają raporty z inspekcji?",
+        odpowiedź: "Tak, po każdej inspekcji freelancer Pro Movie Group dostarcza szczegółowy raport zawierający zdjęcia i analizy zebranych danych."
+      }
+    ],
+    filmy_promocyjne: [
+      {
+        pytanie: "Czy freelancerzy Pro Movie Group tworzą filmy promocyjne dla firm?",
+        odpowiedź: "Tak, freelancerzy Pro Movie Group specjalizują się w produkcji filmów promocyjnych dostosowanych do potrzeb firm z różnych branż."
+      },
+      {
+        pytanie: "Jakie elementy mogą być zawarte w filmie promocyjnym?",
+        odpowiedź: "Filmy promocyjne mogą zawierać wywiady, prezentacje produktów, ujęcia z drona, animacje i inne elementy w zależności od potrzeb klienta."
+      },
+      {
+        pytanie: "Czy freelancerzy Pro Movie Group tworzą scenariusze filmowe?",
+        odpowiedź: "Tak, freelancerzy Pro Movie Group potrafią także opracowywać profesionalne scenariusze filmowe."
+      },
+      {
+        pytanie: "Jak długo trwa produkcja filmu promocyjnego?",
+        odpowiedź: "Czas produkcji zależy od skomplikowania projektu, zazwyczaj trwa od kilku dni do kilku tygodni."
+      },
+      {
+        pytanie: "Czy mogę zamówić krótkie spoty reklamowe?",
+        odpowiedź: "Oczywiście, w tym celu zapraszamy do kontaktu z jednym z feewenserów który oferuje dany produkt."
+      }
+    ],
+    reklamy: [
+      {
+        pytanie: "Jakich rodzajów reklam tworzą freelancerzy Pro Movie Group?",
+        odpowiedź: "Freelancerzy Pro Movie Group produkują różnorodne reklamy, w tym telewizyjne, internetowe, radiowe i drukowane."
+      },
+      {
+        pytanie: "Jakie technologie produkcji reklam oferują freelancerzy Pro Movie Group?",
+        odpowiedź: "Freelancerzy Pro Movie Group oferują najnowsze technologie filmowe, w tym kamery 4K, drony, green screeny i zaawansowane oprogramowanie do montażu."
+      }
+    ]
+  }
+};
+
+function generateFAQ() {
+  const container = document.getElementById('faq-container');
+  const heroSection = `
+    <div class="jumbotron text-center" style="background-image: url('efekty/adds/hero/bialy.png'); background-size: cover; background-position: center;">
+      <h1 class="display-4">${page_faq.sectionHero.title}</h1>
+      <p class="lead">${page_faq.sectionHero.subtitle}</p>
+      <hr class="my-4">
+      <p>${page_faq.sectionHero.description}</p>
+      <p><a class="btn btn-primary btn-lg" href="${page_faq.sectionHero.videoURL}" target="_blank">Zobacz Video</a></p>
+    </div>
+  `;
+  container.innerHTML = heroSection;
+
+  const categoriesNav = `
+    <ul class="nav nav-pills justify-content-center mb-4" id="faq-categories">
+      ${Object.keys(page_faq.faq).map(category => `<li class="nav-item"><a class="nav-link" data-toggle="pill" href="#${category}-faq">${category.replace('_', ' ')}</a></li>`).join('')}
+    </ul>
+  `;
+  container.innerHTML += categoriesNav;
+
+  const faqContent = `
+    <div class="tab-content" id="faq-content">
+      ${Object.entries(page_faq.faq).map(([category, faqs]) => `
+        <div class="tab-pane fade" id="${category}-faq">
+          <div class="accordion" id="${category}-accordion">
+            ${generateFAQItems(faqs)}
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+  container.innerHTML += faqContent;
+
+  // Dodanie obsługi zdarzeń do przycisków kategorii
+  const categoryLinks = document.querySelectorAll('#faq-categories .nav-link');
+  categoryLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      const activeCategory = link.getAttribute('href').slice(1); // Pobranie aktywnej kategorii
+      // Zwinięcie wszystkich pytań i odpowiedzi w innych kategoriach
+      Object.keys(page_faq.faq).forEach(category => {
+        if (category !== activeCategory) {
+          document.getElementById(`${category}-accordion`).querySelectorAll('.collapse.show').forEach(collapse => {
+            collapse.classList.remove('show');
+          });
+        }
+      });
+    });
+  });
+}
+
+function generateFAQItems(faqs) {
+  let faqsHtml = '';
+  faqs.forEach((faq, index) => {
+    faqsHtml += `
+      <div class="accordion" id="faq-item-${index}-accordion">
+        <div class="card">
+          <div class="card-header" id="faq-item-${index}-heading">
+            <h2 class="mb-0">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#faq-item-${index}-collapse" aria-expanded="true" aria-controls="faq-item-${index}-collapse">
+                ${faq.pytanie}
+              </button>
+            </h2>
+          </div>
+          <div id="faq-item-${index}-collapse" class="collapse" aria-labelledby="faq-item-${index}-heading" data-parent="#faq-item-${index}-accordion">
+            <div class="card-body">
+              ${faq.odpowiedź}
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+  return faqsHtml;
+}
+
+generateFAQ();
+
+</script>

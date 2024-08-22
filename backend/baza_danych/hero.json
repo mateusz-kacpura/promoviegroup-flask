@@ -1,8 +1,8 @@
 {
     "carouselItems": [
         {
-            "videoSrc": "efekty/adds/galeria/video/ujecie_3.mp4",
-            "videoMobileSrc": "efekty/adds/galeria/rolki/reels.mp4",
+            "videoSrc": "efekty/adds/galeria/video/komputer/part00000025.mp4",
+            "videoMobileSrc": "efekty/adds/galeria/video/mobile/part00000025.mp4",
             "maskColor": "rgba(0, 0, 0, 0.6)",
             "heading": "Filmowanie",
             "subheading": "Freelancerzy Pro Movie Group",
@@ -15,8 +15,8 @@
             ]
         },
         {
-            "videoSrc": "efekty/adds/galeria/video/ujecie_2.mp4",
-            "videoMobileSrc": "efekty/adds/galeria/rolki/reels.mp4",
+            "videoSrc": "efekty/adds/galeria/video/komputer/part00000050.mp4",
+            "videoMobileSrc": "efekty/adds/galeria/video/mobile/part00000050.mp4",
             "maskColor": "rgba(0, 0, 0, 0.6)",
             "heading": "Transmisje",
             "subheading": "Freelancerzy Pro Movie Group",
@@ -29,8 +29,8 @@
             ]
         },
         {
-            "videoSrc": "efekty/adds/galeria/video/ujecie_5.mp4",
-            "videoMobileSrc": "efekty/adds/galeria/rolki/reels.mp4",
+            "videoSrc": "efekty/adds/galeria/video/komputer/part00000150.mp4",
+            "videoMobileSrc": "efekty/adds/galeria/video/mobile/part00000150.mp4",
             "maskColor": "rgba(0, 0, 0, 0.6)",
             "heading": "Fotografia",
             "subheading": "Freelancerzy Pro Movie Group",
@@ -43,8 +43,8 @@
             ]
         },
         {
-            "videoSrc": "efekty/adds/galeria/video/ujecie_4.mp4",
-            "videoMobileSrc": "efekty/adds/galeria/rolki/reels.mp4",
+            "videoSrc": "efekty/adds/galeria/video/komputer/part00000600.mp4",
+            "videoMobileSrc": "efekty/adds/galeria/video/mobile/part00000600.mp4",
             "maskColor": "rgba(0, 0, 0, 0.6)",
             "heading": "Filmy z drona",
             "subheading": "Freelancerzy Pro Movie Group",

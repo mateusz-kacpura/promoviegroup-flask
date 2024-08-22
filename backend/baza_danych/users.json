@@ -1,0 +1,8 @@
+{
+    "test": {
+        "password": "scrypt:32768:8:1$Z1xpnSxZWHaJTwma$c10719687108c22aa1a11fa508b0e0ee070b13429bd3972fc8ee94e90738f6960ce8ea2d5ef6b44a3ce963ff7548d21708eb9d96e6a52c1224a55f3116423d29"
+    },
+    "test2": {
+        "password": "scrypt:32768:8:1$cMozREFMngJCn6l3$b0356b42c44038fd553b92416104f85e1cf0c34c7ec6540d1bf02e2e8a0428d9f94f622e176fa444316add288f60788e44a4a8b02d5655e37bb380a89fa0edb3"
+    }
+}
