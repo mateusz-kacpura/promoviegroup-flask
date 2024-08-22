@@ -1,0 +1,39 @@
+<!-- carousel_items.html -->
+<h2>Carousel Items</h2>
+{% for item in data.carouselItems %}
+<div class="card mb-3">
+    <div class="card-header">
+        Slide {{ loop.index }}
+    </div>
+    <div class="card-body">
+        <div class="mb-3">
+            <label for="videoSrc_{{ loop.index }}" class="form-label">Video Source:</label>
+            <input type="text" class="form-control" id="videoSrc_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][videoSrc]" value="{{ item.videoSrc }}">
+        </div>
+        <div class="mb-3">
+            <label for="videoMobileSrc_{{ loop.index }}" class="form-label">Video Mobile Source:</label>
+            <input type="text" class="form-control" id="videoMobileSrc_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][videoMobileSrc]" value="{{ item.videoMobileSrc }}">
+        </div>
+        <div class="mb-3">
+            <label for="maskColor_{{ loop.index }}" class="form-label">Mask Color:</label>
+            <input type="text" class="form-control" id="maskColor_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][maskColor]" value="{{ item.maskColor }}">
+        </div>
+        <div class="mb-3">
+            <label for="heading_{{ loop.index }}" class="form-label">Heading:</label>
+            <input type="text" class="form-control" id="heading_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][heading]" value="{{ item.heading }}">
+        </div>
+        <div class="mb-3">
+            <label for="subheading_{{ loop.index }}" class="form-label">Subheading:</label>
+            <input type="text" class="form-control" id="subheading_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][subheading]" value="{{ item.subheading }}">
+        </div>
+        <div class="mb-3">
+            <label for="buttonText_{{ loop.index }}" class="form-label">Button Text:</label>
+            <input type="text" class="form-control" id="buttonText_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][buttons][0][text]" value="{{ item.buttons[0].text }}">
+        </div>
+        <div class="mb-3">
+            <label for="buttonUrl_{{ loop.index }}" class="form-label">Button URL:</label>
+            <input type="text" class="form-control" id="buttonUrl_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][buttons][0][url]" value="{{ item.buttons[0].url }}">
+        </div>
+    </div>
+</div>
+{% endfor %}

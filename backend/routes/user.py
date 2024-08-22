@@ -35,14 +35,14 @@ user_bp = Blueprint('user', __name__, url_prefix='/user', template_folder='templ
 def profile():
     return render_template('profile.html', user=current_user, section='home')
 
-@user_bp.route('/profile/<section>')
+@user_bp.route('/profile/pages/<section>')
 @login_required
 def profile_section(section):
     return render_template('profile.html', user=current_user, section=section)
 
 HERO_JSON_PATH = os.path.join('baza_danych', 'hero.json')
 
-@user_bp.route('/profile/hero', methods=['GET', 'POST'])
+@user_bp.route('/profile/pages/hero', methods=['GET', 'POST'])
 @login_required
 def update_hero():
     if request.method == 'POST':
@@ -91,4 +91,4 @@ def update_hero():
     except (FileNotFoundError, json.JSONDecodeError):
         data = {}
 
-    return render_template('profile/hero.html', data=data)
+    return render_template('profile/pages/hero.html', data=data)
