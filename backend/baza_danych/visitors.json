@@ -6328,5 +6328,20 @@
         "browser": "Firefox",
         "os": "Windows",
         "device": "Other"
+    },
+    {
+        "ip": "127.0.0.1",
+        "date": "2024-08-23 09:51:45",
+        "location": {
+            "ip": "127.0.0.1",
+            "city": null,
+            "region": null,
+            "country": null,
+            "latitude": null,
+            "longitude": null
+        },
+        "browser": "Firefox",
+        "os": "Windows",
+        "device": "Other"
     }
 ]

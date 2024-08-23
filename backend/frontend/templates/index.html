@@ -43,16 +43,63 @@
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
-        /* Your additional styles here */
+        
+        /* Loader Styles */
+        #loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        #loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        #loader-percentage {
+            margin-top: 20px;
+            font-size: 24px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        @-webkit-keyframes spin {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
+    <!-- Loader -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div id="loader-percentage">0%</div>
+    </div>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='efekty/adds/index/main.css') }}">
 
-        <header class="fixed-top">
+    <header class="fixed-top">
         <div id="navbarContainer"></div>
-        </header>
-        <div class="tlo_strony mt-3 mt-lg-5">
+    </header>
+    
+    <div class="tlo_strony mt-3 mt-lg-5">
         {% if active_menu == 'o-nas' %}
             {% include 'page/hero.html' %}
         {% elif active_menu == 'oferta' %}
@@ -107,5 +154,34 @@
     <!-- Bootstrap CDN (can be replaced with local version if necessary) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ url_for('static', filename='efekty/adds/index/footerSection.js') }}"></script>
+
+    <!-- Loader Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let loaderPercentage = document.getElementById('loader-percentage');
+            let images = document.images;
+            let totalImages = images.length;
+            let imagesLoaded = 0;
+
+            for (let i = 0; i < totalImages; i++) {
+                let img = new Image();
+                img.src = images[i].src;
+                img.onload = imageLoaded;
+                img.onerror = imageLoaded;
+            }
+
+            function imageLoaded() {
+                imagesLoaded++;
+                let percentage = Math.floor((imagesLoaded / totalImages) * 100);
+                loaderPercentage.innerText = percentage + "%";
+
+                if (imagesLoaded === totalImages) {
+                    setTimeout(() => {
+                        document.getElementById('loader-wrapper').style.display = 'none';
+                    }, 500); // Dodatkowe opóźnienie na płynne zniknięcie loadera
+                }
+            }
+        });
+    </script>
 </body>
 </html>
