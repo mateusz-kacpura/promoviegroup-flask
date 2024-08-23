@@ -1,0 +1,340 @@
+
+    <style>
+        #contact-container {
+            max-width: 600px; /* Ustaw maksymalną szerokość */
+            margin: 20px auto; /* Ustaw minimalny margines od góry i od dołu oraz wycentruj element */
+            padding: 0 20px; /* Dodaj wewnętrzny padding */
+            overflow-y: auto; /* Dodaj pasek przewijania dla trybu mobilnego */
+            background: linear-gradient(to bottom, white, transparent),
+                        linear-gradient(to top, white, transparent),
+                        linear-gradient(to left, white, transparent),
+                        linear-gradient(to right, white, transparent);
+            overflow-y: auto; /* Dodaj pasek przewijania dla trybu mobilnego */
+            border-radius: 20%;
+        }
+        .full-height {
+            height: 100vh;
+        }
+        .form-container {
+          padding-left: 10%;
+          padding-right: 10%;
+          display: block !important;
+          margin: 0 auto !important;
+        }
+        .form-container h2 {
+            text-align: center;
+        }
+        .form-container .form-outline {
+            margin-bottom: 1.5rem;
+        }
+        .form-container .form-outline .form-label {
+            position: absolute;
+            top: -1.5rem;
+            left: 0rem;
+            font-size: 0.875rem;
+            color: #495057;
+            pointer-events: none;
+            background: white;
+            padding: 0 0.2rem;
+        }
+        .form-container .form-control:focus + .form-label,
+        .form-container .form-control:not(:placeholder-shown) + .form-label {
+            top: 0rem;
+            left: 1rem;
+            font-size: 0.75rem;
+            color: #a95099;
+        }
+        .form-container .form-select {
+            display: block;
+            width: 100%;
+            padding: 0.375rem 1.75rem 0.375rem 0.75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+        }
+        .form-container .btn {
+          padding-left: 10%;
+          padding-right: 10%;
+          display: block !important;
+          margin: 0 auto !important;
+        }
+
+        /* Dodaj style dla trybu mobilnego */
+        @media (max-width: 777px) {
+            #contact-container {
+                margin-top: 70px; /* Dodaj margines górny, aby uniknąć nachodzenia na górne menu */
+                margin-bottom: 70px; /* Dodaj margines dolny, aby uniknąć nachodzenia na stopkę */
+                height: calc(100vh - 140px); /* Ustaw wysokość kontenera, aby pomieścił się między górnym menu a stopką */
+            }
+        }
+    </style>
+
+<div class="logo-header">
+  <div class="logo-h1"></div>
+  <div class="container d-flex justify-content-center align-items-center full-height">
+          <div id="contact-container" class="col-lg-6">
+              <!-- Treść kontenera -->
+          </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="notificationModalLabel">Powiadomienie</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="notificationMessage">
+          <!-- The message will be injected here -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+<link rel="stylesheet" href="{{ url_for('static', filename='efekty/adds/contact_form/contact-form.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='efekty/adds/background/css/back-main.css') }}">
+
+<script src="{{ url_for('static', filename='efekty/adds/background/js/show-demo-source.js') }}"></script>
+<script src="{{ url_for('static', filename='efekty/adds/background/js/shader-web-background-api.js') }}"></script>
+<script src="{{ url_for('static', filename='efekty/adds/background/js/webgl-utils.js') }}"></script>
+<script src="{{ url_for('static', filename='efekty/adds/background/js/shader-web-background.js') }}"></script>
+
+
+<script type="x-shader/x-fragment" id="feedback">
+  precision highp float;
+
+  uniform vec2      iResolution;
+  uniform float     iMinDimension;
+  uniform sampler2D iChannel0;
+  uniform vec2      iScreenRatioHalf;
+  uniform vec2      iFeedbackZoomCenter;
+  uniform float     iFeedbackZoomRate;
+  uniform vec2      iFeedbackShiftVector;
+  uniform float     iFeedbackFadeRate;
+  uniform float     iFeedbackColorShiftZoom;
+  uniform float     iFeedbackColorShiftImpact;
+  uniform vec2      iDrawCenter;
+  uniform float     iDrawIntensity;
+  uniform float     iBlobEdgeSmoothing;
+  uniform float     iBlob1Radius;
+  uniform float     iBlob1PowFactor;
+  uniform vec3      iBlob1Color;
+  uniform float     iBlob2Radius;
+  uniform float     iBlob2PowFactor;
+  uniform vec3      iBlob2Color;
+  uniform float     iColorShiftOfRadius;
+
+  /*
+    Normally it would be provided by texture parameters, but on iOS the texture REPEAT works only
+    for textures which size is the power of 2.
+   */
+  vec4 repeatedTexture(in sampler2D channel, in vec2 uv) {
+    return texture2D(channel, mod(uv, 1.));
+  }
+
+  float drawBlob(
+    in vec2 st,
+    in vec2 center,
+    in float radius,
+    in float edgeSmoothing
+  ) {
+    float dist = length((st - center) / radius);
+    return dist * smoothstep(1., 1. - iBlobEdgeSmoothing, dist);
+  }
+
+  void main() {
+    vec2 uv = gl_FragCoord.xy / iResolution;
+    vec2 st = (gl_FragCoord.xy * 2. - iResolution) / iMinDimension;
+
+    float drawDist = length(st - iDrawCenter);
+
+    vec3 colorShift = repeatedTexture(
+      iChannel0,
+      uv - st * iFeedbackColorShiftZoom * iScreenRatioHalf
+    ).rgb;
+
+    vec2 stShift = vec2(0);
+    stShift += iFeedbackZoomRate * (st - iFeedbackZoomCenter);
+    stShift += (colorShift.rg - .5) * iFeedbackColorShiftImpact;
+    stShift += iFeedbackShiftVector;
+    stShift *= iScreenRatioHalf;
+
+    vec3 prevColor = repeatedTexture(iChannel0, uv - stShift).rgb;
+    prevColor *= iFeedbackFadeRate;
+
+    vec3 drawColor = vec3(0);
+
+    float radius =
+      1.
+      + (colorShift.r + colorShift.g + colorShift.b) * iColorShiftOfRadius;
+    drawColor +=
+      pow(
+        drawBlob(st, iDrawCenter, radius * iBlob1Radius, iBlobEdgeSmoothing),
+        iBlob1PowFactor
+      ) * iBlob1Color;
+    drawColor +=
+      pow(
+        drawBlob(st, iDrawCenter, radius * iBlob2Radius, iBlobEdgeSmoothing),
+        iBlob2PowFactor
+      ) * iBlob2Color;
+
+    vec3 color = vec3(0);
+    drawColor *= iDrawIntensity;
+    prevColor *= iFeedbackFadeRate;
+    color += prevColor;
+    color += drawColor;
+
+    color = clamp(color, 0., 1.);
+    gl_FragColor = vec4(color, 1.);
+  }
+</script>
+
+<!--
+  The "image" shader will just copy the "feedback" output to the canvas.
+ -->
+ 
+<script type="x-shader/x-fragment" id="image">
+  precision highp float;
+
+  uniform vec2 iResolution;
+  uniform sampler2D iChannel0;
+
+  void main(){
+    gl_FragColor = texture2D(iChannel0, gl_FragCoord.xy / iResolution);
+  }
+</script>
+<script>
+    function renderSectionContact(dane) {
+        const container = document.getElementById('contact-container');
+        container.innerHTML = `
+            <div class="form-container">
+                <h2 class="fw-bold mb-5">${dane.title}</h2>
+                <form id="contact-form">
+                    <!-- First Name input -->
+                    <div class="form-outline mb-4">
+                        <input type="text" id="form4Example1" name="firstname" class="form-control" placeholder="${dane.placeholders.firstname}" required>
+                        <label class="form-label" for="form4Example1">${dane.labels.firstname}</label>
+                    </div>
+                    <!-- Last Name input -->
+                    <div class="form-outline mb-4">
+                        <input type="text" id="form4Example2" name="lastname" class="form-control" placeholder="${dane.placeholders.lastname}" required>
+                        <label class="form-label" for="form4Example2">${dane.labels.lastname}</label>
+                    </div>
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <input type="email" id="form4Example3" name="email" class="form-control" placeholder="${dane.placeholders.email}" required>
+                        <label class="form-label" for="form4Example3">${dane.labels.email}</label>
+                    </div>
+                    <!-- Phone input -->
+                    <div class="form-outline mb-4">
+                        <input type="text" id="form4Example4" name="phone" class="form-control" placeholder="${dane.placeholders.phone}">
+                        <label class="form-label" for="form4Example4">${dane.labels.phone}</label>
+                    </div>
+                    <!-- Job Title input -->
+                    <div class="form-outline mb-4">
+                        <select class="form-select" id="form4Example5" name="jobtitle">
+                            ${dane.labels.options.map(option => `<option value="${option}">${option}</option>`).join('')}
+                        </select>
+                        <label class="form-label" for="form4Example5">${dane.labels.jobtitle}</label>
+                    </div>
+                    <!-- Message input -->
+                    <div class="form-outline mb-4">
+                        <textarea class="form-control" id="form4Example6" name="message" rows="4" placeholder="${dane.placeholders.message}" required></textarea>
+                        <label class="form-label" for="form4Example6">${dane.labels.message}</label>
+                    </div>
+                    <!-- Checkbox -->
+                    <div class="form-check d-flex justify-content-center mb-4">
+                        <input class="form-check-input me-2" type="checkbox" id="form4Example7" name="check" checked>
+                        <label class="form-check-label" for="form4Example7">${dane.labels.check}</label>
+                    </div>
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary btn-block mb-4">${dane.button}</button>
+                </form>
+            </div>
+        `;
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Collect form data
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            // Send data to the server
+            fetch('/submit_form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+            .then(response => response.json())
+            .then(result => {
+                console.log('Success:', result);
+                // Display success message
+                showNotification(result.message);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Display error message
+                showNotification("Błąd podczas wysyłania wiadomości.");
+            });
+        });
+    }
+    
+    const dane = {
+        "title": "Napisz do nas",
+        "button": "Wyślij",
+        "labels": {
+            "firstname": "Imię",
+            "lastname": "Nazwisko",
+            "email": "Email",
+            "phone": "Telefon",
+            "jobtitle": "Czego u nas szukasz?",
+            "options": [
+                "Film promocyjny",
+                "Spot reklamowy",
+                "Reportaż ślubny",
+                "Fotografa eventowa",
+                "Transmisja",
+                "Inne"
+            ],
+            "message": "Wiadomość",
+            "check": "Zaznacz, aby nadać kopie wiadomości do siebie"
+        },
+        "placeholders": {
+            "firstname": "Jan",
+            "lastname": "Kowalski",
+            "email": "example@gmail.com",
+            "phone": "(+48) xxx xxx xxx",
+            "message": "Twoja wiadomość"
+        }
+    };
+
+    function showNotification(message) {
+        // Set the message in the modal
+        document.getElementById('notificationMessage').textContent = message;
+        
+        // Show the modal
+        const myModal = new bootstrap.Modal(document.getElementById('notificationModal'));
+        myModal.show();
+    }
+
+    renderSectionContact(dane);
+    </script>
+
+<script src="{{ url_for('static', filename='efekty/adds/background/render.js') }}"></script>
+
+

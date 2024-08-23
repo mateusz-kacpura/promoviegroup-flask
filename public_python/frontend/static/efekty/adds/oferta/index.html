@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festive Offer Template | Landing Page HTML CSS Bootstrap</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const data = {
+                heroBanner: {
+                    h1: "Festive Offer Template",
+                    h2: "Landing Page HTML CSS Bootstrap"
+                },
+                products: [
+                    {
+                        image: 'img/banner/cat-man.jpg',
+                        title: "MEN'S COLLECTION",
+                        subtitle: "COLLECTION"
+                    },
+                    {
+                        image: 'img/banner/cat-women.jpg',
+                        title: "WOMEN'S COLLECTION",
+                        subtitle: "COLLECTION"
+                    },
+                    {
+                        image: 'img/banner/cat-style.jpg',
+                        title: "STYLE COLLECTION",
+                        subtitle: "COLLECTION"
+                    },
+                    {
+                        image: 'img/banner/cat-shoe.jpg',
+                        title: "SHOES COLLECTION",
+                        subtitle: "COLLECTION"
+                    }
+                ],
+                hotDeals: [
+                    {
+                        image: 'img/banner/chair3.jpg',
+                        title: 'Interior Design',
+                        discount: '35% OFF'
+                    },
+                    {
+                        image: 'img/banner/hand2-787x1024-1.jpg',
+                        title: 'Fashion Wear',
+                        discount: 'UPTO 50% OFF'
+                    },
+                    {
+                        image: 'img/banner/fashion-image3-680x1024.jpg',
+                        title: "Men's Fashion",
+                        discount: '45% OFF'
+                    },
+                    {
+                        image: 'img/banner/kids1.jpg',
+                        title: 'Kids Care',
+                        discount: 'UPTO 70% OFF'
+                    }
+                ],
+                aboutProducts: [
+                    {
+                        image: 'unsplash-photo-1.jpg',
+                        title: 'Best Quality',
+                        icons: ['quality-control.png', 'geo-fill', 'calendar3'],
+                        descriptions: ['Earth', '100%']
+                    },
+                    {
+                        image: 'unsplash-photo-2.jpg',
+                        title: "14 Day's Money Back",
+                        icons: ['cashback.png', 'geo-fill', 'calendar3'],
+                        descriptions: ['PayPal', '14d']
+                    },
+                    {
+                        image: 'unsplash-photo-3.jpg',
+                        title: 'Free Shipping',
+                        icons: ['shipping.png', 'geo-fill', 'calendar3'],
+                        descriptions: ['WorldWide', '7d']
+                    }
+                ],
+                bestDeals: [
+                    {
+                        image: 'img/banner/9b-1.jpg',
+                        discount: '25% Off',
+                        title: 'Silver Color T-Shirt',
+                        price: '$160',
+                        oldPrice: '$190'
+                    },
+                    {
+                        image: 'img/banner/card-image6a.jpg',
+                        discount: '25% Off',
+                        title: 'Silver Color T-Shirt',
+                        price: '$160',
+                        oldPrice: '$190'
+                    },
+                    {
+                        image: 'img/banner/card-image7.jpg',
+                        discount: '25% Off',
+                        title: 'Silver Color T-Shirt',
+                        price: '$160',
+                        oldPrice: '$190'
+                    },
+                    {
+                        image: 'img/banner/chair3.jpg',
+                        discount: '25% Off',
+                        title: 'Silver Color T-Shirt',
+                        price: '$160',
+                        oldPrice: '$190'
+                    }
+                ],
+                brandLogos: ['clogo1.png', 'clogo4.png', 'clogo6.png', 'clogo7.png', 'clogo9.png', 'bolier.png'],
+                contactInfo: [
+                    {
+                        icon: 'phone.png',
+                        title: 'Phone',
+                        info: '+1234567890'
+                    },
+                    {
+                        icon: 'email.png',
+                        title: 'Email',
+                        info: 'info@example.com'
+                    },
+                    {
+                        icon: 'location.png',
+                        title: 'Address',
+                        info: '123 Street Name, City, Country'
+                    }
+                ]
+            };
+
+            // Render HTML using JavaScript
+            const body = document.querySelector('body');
+
+            // Hero Banner
+            const heroBannerSection = document.createElement('section');
+            heroBannerSection.classList.add('hero-banner');
+            const heroBannerContainer = document.createElement('div');
+            heroBannerContainer.classList.add('container');
+            const heroBannerContent = document.createElement('div');
+            heroBannerContent.classList.add('home-page-details');
+            heroBannerContent.innerHTML = `<h1>${data.heroBanner.h1}</h1><h2>${data.heroBanner.h2}</h2>`;
+            heroBannerContainer.appendChild(heroBannerContent);
+            heroBannerSection.appendChild(heroBannerContainer);
+            body.appendChild(heroBannerSection);
+
+            // Products
+            const productItemGroupSection = document.createElement('section');
+            productItemGroupSection.classList.add('product-item-group');
+            const productItemGroupContainer = document.createElement('div');
+            productItemGroupContainer.classList.add('container');
+            const productItemGroupRow = document.createElement('div');
+            productItemGroupRow.classList.add('row');
+            data.products.forEach(product => {
+                const productItem = document.createElement('div');
+                productItem.classList.add('col-md-6');
+                productItem.innerHTML = `
+                    <div class="product-item mb-3">
+                        <figure class="product-item-details">
+                            <img src="${product.image}" class="prodict-item-image img-fluid" alt="${product.title}">
+                            <div class="image-overlay"></div>
+                            <figcaption class="product-item-caption">
+                                <h1>${product.title}<br><span>${product.subtitle}</span></h1>
+                            </figcaption>
+                        </figure>
+                    </div>
+                `;
+                productItemGroupRow.appendChild(productItem);
+            });
+            productItemGroupContainer.appendChild(productItemGroupRow);
+            productItemGroupSection.appendChild(productItemGroupContainer);
+            body.appendChild(productItemGroupSection);
+
+            // Hot Deals Section
+            const hotDealsSection = document.createElement('section');
+            hotDealsSection.classList.add('hot-deals-section');
+            const hotDealsContainer = document.createElement('div');
+            hotDealsContainer.classList.add('container');
+            const hotDealsHeader = document.createElement('div');
+            hotDealsHeader.classList.add('section-header', 'mb-5');
+            hotDealsHeader.innerHTML = `<h1 class="mb-3">HOT DEALS</h1><h2>LIMITED TIME OFFER</h2>`;
+            hotDealsContainer.appendChild(hotDealsHeader);
+            const hotDealsRow = document.createElement('div');
+            hotDealsRow.classList.add('row');
+            data.hotDeals.forEach(deal => {
+                const dealItem = document.createElement('div');
+                dealItem.classList.add('col-md-6');
+                dealItem.innerHTML = `
+                    <div class="hot-deal-product-item">
+                        <div class="hot-deal-single-item position-relative">
+                            <figure class="figure d-flex align-items-end justify-content-end">
+                                <img src="${deal.image}" class="hot-deals-image-two figure-img img-fluid" alt="${deal.title}">
+                            </figure>
+                            <div class="figcaption-details position-absolute p-5 pb-3">
+                                <h1>${deal.title}</h1>
+                                <h2>${deal.discount}</h2>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                hotDealsRow.appendChild(dealItem);
+            });
+            hotDealsContainer.appendChild(hotDealsRow);
+            hotDealsSection.appendChild(hotDealsContainer);
+            body.appendChild(hotDealsSection);
+
+            // About Products Section
+            const aboutProductsSection = document.createElement('section');
+            aboutProductsSection.classList.add('product-about-section');
+            const aboutProductsContainer = document.createElement('div');
+            aboutProductsContainer.classList.add('container', 'id', 'custom-cards');
+            const aboutProductsHeader = document.createElement('div');
+            aboutProductsHeader.classList.add('section-header', 'mb-5');
+            aboutProductsHeader.innerHTML = `<h1 class="mb-3">ABOUT OUR PRODUCTS</h1><h2>Consectetur adipiscing elit</h2>`;
+            aboutProductsContainer.appendChild(aboutProductsHeader);
+            const aboutProductsRow = document.createElement('div');
+            aboutProductsRow.classList.add('row', 'row-cols-1', 'row-cols-lg-3', 'align-items-stretch');
+            data.aboutProducts.forEach(product => {
+                const aboutProductItem = document.createElement('div');
+                aboutProductItem.classList.add('col');
+                aboutProductItem.innerHTML = `
+                    <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg" style="background-image: url('${product.image}');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">${product.title}</h2>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <img src="img/banner/${product.icons[0]}" alt="${product.title}" width="32" height="32" class="rounded-circle border border-white">
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#${product.icons[1]}"/></svg>
+                                    <small>${product.descriptions[0]}</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#${product.icons[2]}"/></svg>
+                                    <small>${product.descriptions[1]}</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                `;
+                aboutProductsRow.appendChild(aboutProductItem);
+            });
+            aboutProductsContainer.appendChild(aboutProductsRow);
+            aboutProductsSection.appendChild(aboutProductsContainer);
+            body.appendChild(aboutProductsSection);
+
+            // Best Deal Section
+            const bestDealSection = document.createElement('section');
+            bestDealSection.classList.add('best-deal-section');
+            const bestDealContainer = document.createElement('div');
+            bestDealContainer.classList.add('container', 'py-5');
+            const bestDealHeader = document.createElement('div');
+            bestDealHeader.classList.add('section-header', 'mb-5');
+            bestDealHeader.innerHTML = `<h1 class="mb-3">BEST DEAL​</h1><h2>Consectetur adipiscing elit</h2>`;
+            bestDealContainer.appendChild(bestDealHeader);
+            const bestDealRow = document.createElement('div');
+            bestDealRow.classList.add('row');
+            data.bestDeals.forEach(item => {
+                const bestDealItem = document.createElement('div');
+                bestDealItem.classList.add('col-md-3');
+                bestDealItem.innerHTML = `
+                    <div class="card product-card">
+                        <img src="${item.image}" class="card-img-top position-relative" alt="${item.title}" style="height: 18rem;">
+                        <div class="offer-badge">
+                            <span class="badge rounded-pill bg-warning">${item.discount}</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title mb-3">${item.title}</h5>
+                            <p class="card-text mb-3">${item.price} <del>${item.oldPrice}</del></p>
+                            <a href="!#" class="btn text-white rounded-0">BUY NOW THIS</a>
+                        </div>
+                    </div>
+                `;
+                bestDealRow.appendChild(bestDealItem);
+            });
+            bestDealContainer.appendChild(bestDealRow);
+            bestDealSection.appendChild(bestDealContainer);
+            body.appendChild(bestDealSection);
+
+            // Brand Section
+            const brandSection = document.createElement('section');
+            brandSection.classList.add('brand-section');
+            const brandContainer = document.createElement('div');
+            brandContainer.classList.add('container');
+            const brandRow = document.createElement('div');
+            brandRow.classList.add('row');
+            data.brandLogos.forEach(logo => {
+                const brandItem = document.createElement('div');
+                brandItem.classList.add('card');
+                brandItem.innerHTML = `
+                    <figure class="figure d-flex align-items-center justify-content-center h-100">
+                        <img src="img/banner/${logo}" class="figure-img img-fluid rounded" alt="Brand Logo">
+                    </figure>
+                `;
+                brandRow.appendChild(brandItem);
+            });
+            brandContainer.appendChild(brandRow);
+            brandSection.appendChild(brandContainer);
+            body.appendChild(brandSection);
+
+            // Contact Section
+            const contactSection = document.createElement('section');
+            contactSection.classList.add('contact-section');
+            const contactContainer = document.createElement('div');
+            contactContainer.classList.add('container');
+            const contactRow = document.createElement('div');
+            contactRow.classList.add('row');
+            data.contactInfo.forEach(item => {
+                const contactItem = document.createElement('div');
+                contactItem.classList.add('col-md-4');
+                contactItem.innerHTML = `
+                    <div class="contact-info d-flex align-items-center mb-4">
+                        <div class="contact-icon me-3">
+                            <img src="img/banner/${item.icon}" alt="${item.title}" width="32" height="32">
+                        </div>
+                        <div class="contact-details">
+                            <h5 class="mb-1">${item.title}</h5>
+                            <p class="m-0">${item.info}</p>
+                        </div>
+                    </div>
+                `;
+                contactRow.appendChild(contactItem);
+            });
+            contactContainer.appendChild(contactRow);
+            contactSection.appendChild(contactContainer);
+            body.appendChild(contactSection);
+        });
+    </script>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

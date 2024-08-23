@@ -1,0 +1,107 @@
+/* Normal desktop :1200px. */
+@media (min-width: 1200px) and (max-width: 1500px) {
+
+
+}
+
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1200px) {
+
+
+}
+
+ 
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+
+
+}
+
+ 
+/* small mobile :320px. */
+@media (max-width: 767px) {
+   .hero-banner {
+      .home-page-details {
+        .banner-details {
+          p {
+            font-size: 1rem;
+          }
+    
+          h1 {
+            font-size: 2rem;
+          }
+          h2 {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+
+    .product-item-group {
+      margin-top: 6rem;
+    }
+
+
+    .hot-deals-section{
+      margin-top: 3rem;
+      .hot-deal-product-item{
+        .hot-deal-single-item{
+          .hot-deals-image-one,
+          .hot-deals-image-two,
+          .hot-deals-image-three,
+          .hot-deals-image-four{
+            width: 100%;
+          }
+        }
+  
+        .figcaption-details-one{
+          margin-right: 0px;
+        }
+
+    
+        .figcaption-details-three{
+          margin-right: 0px;
+        }
+    
+        .figcaption-details-four{
+          width: 17.375rem;
+        }
+      }
+      .btn{
+        margin-top: 2rem;  
+      }
+    }
+
+
+
+    .best-deal-section{
+      .product-card{
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .brand-section{
+      .brand-details{
+        margin-bottom: 1rem;
+      }
+      .card{
+        width: 11.688rem;
+        height: 11.25rem;
+        .figure{
+          img{
+            width: 8.938rem;
+            height: 5rem;
+    
+          }
+        }
+      }
+    }
+}
+ 
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+.container {width:450px}
+ 
+}

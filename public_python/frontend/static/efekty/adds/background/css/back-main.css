@@ -1,0 +1,90 @@
+.logo-header {
+  position: relative; /* Ustawia pozycję na relative, aby .contact-body był pozycjonowany względem niego */
+}
+
+.logo-header, .loogo-h1, .logo {
+  height: 100vh; /* Wysokość dopasowana do wysokości ekranu */
+  width: 100vw; /* Szerokość dopasowana do szerokości ekranu */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-to-intro {
+  margin-top: -6vh;
+  height: 6vh;
+  position: relative;
+}
+
+.scroll-to-intro a {
+  background: radial-gradient(farthest-side at bottom,
+    rgba(0, 0, 0, 0.6),
+    rgb(251, 4, 4)
+  );
+  display: block;
+  height: 100%;
+  animation: 5s blink linear infinite;
+  animation-fill-mode: both;
+  animation-delay: 10s;
+}
+
+.logo {
+  background-color: #ff000000;
+  height: 100%;
+  pointer-events: none;
+  animation: fade-in 0s;
+  animation-fill-mode: both;
+  animation-delay: 0s;
+  margin-top: 0 px;
+}
+.logo g {
+  fill: #000000;
+  opacity: 8;
+}
+.logo #reds {
+  animation: fade-to-red linear 15s infinite;
+  animation-fill-mode: forwards;
+  animation-delay: 20s;
+}
+.logo #greens {
+  animation: fade-to-green linear 15s infinite;
+  animation-fill-mode: forwards;
+  animation-delay: 21s;
+}
+.logo #blues {
+  animation: fade-to-blue linear 15s infinite;
+  animation-fill-mode: forwards;
+  animation-delay: 22s;
+}
+#controls {
+  text-align: center;
+}
+.fallback-background {
+  background: rgb(240, 239, 239) url("media/nasa-blue-marble.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+@keyframes blink {
+  0%   { opacity: 0; }
+  50%  { opacity: 0; }
+  75%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes fade-in {
+  0%   { opacity: 0; }
+  100% { opacity: .5; }
+}
+@keyframes fade-to-red {
+  0%,20%,100% { fill: #ffffff; }
+  7%,10% { fill: #ff0000; }
+}
+@keyframes fade-to-green {
+  0%,20%,100% { fill: #ffffff; }
+  7%,10% { fill: #00ff00; }
+}
+@keyframes fade-to-blue {
+  0%,20%,100% { fill: #ffffff; }
+  7%,10% { fill: #0000ff; }
+}
+

@@ -1,0 +1,100 @@
+
+<link rel="stylesheet" href="efekty/adds/hero/css/mdb.min.css" />
+
+  <link rel="stylesheet" href="efekty/adds/service-website-template/css/aos.css">
+  <link rel="stylesheet" href="efekty/adds/service-website-template/css/style.css">
+
+<div class="ps mdb-rounded-3 mdb-position-relative mdb-h-100 ps--active-y" style="width: 100%; height: 100%; background-color: rgb(255, 255, 255);">
+  <div id="preview" class="preview">
+    <div style="display: none;">
+      <iframe id="fileFrame" src="about:blank" style="border-radius: 15px; border-width: 80px 10px; border-style: solid; border-color: rgb(51, 51, 51); border-image: none; box-sizing: content-box; overflow: hidden; transform-origin: center center 0px; will-change: transform; margin: 0px auto;" class="mdb-d-flex mdb-justify-content-center mdb-align-items-center"></iframe>
+    </div>
+    <div>
+      <div style="position: relative;" data-draggable="true" class="">
+        <!---->
+        <!---->
+        <section draggable="false" class="container pt-5" data-v-271253ee="">
+          <section class="mb-10">
+            <img src="https://mdbootstrap.com/img/new/slides/198.jpg" class="img-fluid shadow-1-strong rounded-5 mb-4" alt="" data-builder-edit="image" data-builder-name="image1" aria-controls="#picker-editor">
+            <div class="row align-items-center mb-4">
+              <div class="col-lg-7">
+                <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20(23).jpg" class="rounded-circle me-2" height="35" alt="" loading="lazy" data-builder-edit="image" data-builder-name="image2" aria-controls="#picker-editor">
+                <span> Published <u data-builder-edit="text" data-builder-name="text1" contenteditable="true">15.07.2020</u> by </span>
+                <a href="undefined" class="text-dark" data-builder-edit="text" data-builder-href="https://mdb-builder.com/" contenteditable="true" aria-controls="#picker-editor">Anna Maria Doe</a>
+              </div>
+            </div>
+            <h1 class="fw-bold mb-4" data-builder-edit="text" data-builder-name="text2" contenteditable="true">An intriguing title for an interesting article</h1>
+            <p data-builder-edit="text" data-builder-name="text3" contenteditable="true">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi harum tempore cupiditate asperiores provident, itaque, quo ex iusto rerum voluptatum delectus corporis quisquam maxime a ipsam nisi sapiente qui optio! Dignissimos harum quod culpa officiis suscipit soluta labore! Expedita quas, nesciunt similique autem, sunt, doloribus pariatur maxime qui sint id enim. Placeat, maxime labore. Dolores ex provident ipsa impedit, omnis magni earum. Sed fuga ex ducimus consequatur corporis, architecto nesciunt vitae ipsum consequuntur perspiciatis nulla esse voluptatem quos dolorum delectus similique eum vero in est velit quasi pariatur blanditiis incidunt quam.</p>
+          </section>
+        </section>
+        <!---->
+      </div>
+
+      <div style="position: relative;" data-draggable="true" class="">
+        <!---->
+        <!---->
+        <section draggable="false" class="container pt-5" data-v-271253ee="">
+          <section class="mb-10">
+            <h5 class="fw-bold text-center mb-5">
+              <strong data-builder-edit="text" data-builder-name="text1" contenteditable="true">Leave a reply</strong>
+            </h5>
+            <form>
+              <!-- Name input -->
+              <div class="form-outline mb-4">
+                <input type="text" id="form4Example1" class="form-control">
+                <label class="form-label" for="form4Example1" data-builder-edit="text" data-builder-name="text2" style="margin-left: 0px;" contenteditable="true">Name</label>
+                <div class="form-notch">
+                  <div class="form-notch-leading" style="width: 9px;"></div>
+                  <div class="form-notch-middle" style="width: 42.4px;"></div>
+                  <div class="form-notch-trailing"></div>
+                </div>
+              </div>
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="email" id="form4Example2" class="form-control">
+                <label class="form-label" for="form4Example2" data-builder-edit="text" data-builder-name="text3" style="margin-left: 0px;" contenteditable="true">Email address</label>
+                <div class="form-notch">
+                  <div class="form-notch-leading" style="width: 9px;"></div>
+                  <div class="form-notch-middle" style="width: 88.8px;"></div>
+                  <div class="form-notch-trailing"></div>
+                </div>
+              </div>
+              <!-- Message input -->
+              <div class="form-outline mb-4">
+                <textarea class="form-control" id="form4Example3" rows="4"></textarea>
+                <label class="form-label" for="form4Example3" data-builder-edit="text" data-builder-name="text4" style="margin-left: 0px;" contenteditable="true">Text</label>
+                <div class="form-notch">
+                  <div class="form-notch-leading" style="width: 9px;"></div>
+                  <div class="form-notch-middle" style="width: 32px;"></div>
+                  <div class="form-notch-trailing"></div>
+                </div>
+              </div>
+              <!-- Checkbox -->
+              <div class="form-check d-flex justify-content-center mb-4">
+                <input class="form-check-input me-2" type="checkbox" value="" id="form4Example4" checked="">
+                <label class="form-check-label" for="form4Example4" data-builder-edit="text" data-builder-name="text5" contenteditable="true">Send me a copy of this comment</label>
+              </div>
+              <!-- Submit button -->
+              <button type="submit" class="btn  btn-primary btn-rounded w-100 mb-4" data-builder-edit="button" data-builder-name="button1" aria-controls="#picker-editor">Publish</button>
+            </form>
+          </section>
+        </section>
+        <!---->
+      </div>
+    </div>
+  </div>
+  <button type="button" role="button" class="mdb-btn mdb-btn-secondary mdb-btn-lg mdb-btn-floating mdb-ripple-surface" style="position: fixed; left: 25px; bottom: 85px; z-index: 1030;">
+    <i class="fas fa-eraser"></i>
+  </button>
+  <div class="ps__rail-x" style="left: 0px; bottom: -1896px;">
+    <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+  </div>
+  <div class="ps__rail-y" style="top: 1896px; right: 0px; height: 210px;">
+    <div class="ps__thumb-y" tabindex="0" style="top: 190px; height: 20px;"></div>
+  </div>
+</div>
+
+    <!-- MDB -->
+    <script type="text/javascript" src="efekty/adds/hero/js/mdb.min.js"></script>
+    <!-- Custom scripts -->
+    <script type="text/javascript"></script>

@@ -1,0 +1,339 @@
+<!-- Modalny do edycji elementu -->
+<div class="modal fade" id="editItemModal" tabindex="-1" aria-labelledby="editItemModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editItemModalLabel">Edytuj element</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editItemForm">
+                    <!-- Edytowalne pola formularza znajdują się tutaj -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-wtórny" data-bs-dismiss="modal">Zamknij</button>
+                <button type="button" class="btn btn-primary" id="saveItemChangesBtn">Zapisz zmiany</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row" id="carouselItemsContainer">
+        {% for item in data.carouselItems %}
+        <div class="col-md-4 mb-3" data-index="{{ loop.index }}">
+            <div class="card">
+                <div class="card-header">
+                    Slide {{ loop.index }}
+                    <button type="button" class="btn btn-warning btn-sm float-end ms-2 edit-btn">Edit</button>
+                    <button type="button" class="btn btn-danger btn-sm float-end remove-btn">Remove</button>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="videoSrc_{{ loop.index }}" class="form-label">Video Source:</label>
+                        <input type="text" class="form-control" id="videoSrc_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][videoSrc]" value="{{ item.videoSrc }}" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="videoMobileSrc_{{ loop.index }}" class="form-label">Video Mobile Source:</label>
+                        <input type="text" class="form-control" id="videoMobileSrc_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][videoMobileSrc]" value="{{ item.videoMobileSrc }}" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="maskColor_{{ loop.index }}" class="form-label">Mask Color:</label>
+                        <input type="text" class="form-control" id="maskColor_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][maskColor]" value="{{ item.maskColor }}" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="heading_{{ loop.index }}" class="form-label">Heading:</label>
+                        <input type="text" class="form-control" id="heading_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][heading]" value="{{ item.heading }}" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="subheading_{{ loop.index }}" class="form-label">Subheading:</label>
+                        <input type="text" class="form-control" id="subheading_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][subheading]" value="{{ item.subheading }}" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="buttonText_{{ loop.index }}" class="form-label">Button Text:</label>
+                        <input type="text" class="form-control" id="buttonText_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][buttons][0][text]" value="{{ item.buttons[0].text }}" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="buttonUrl_{{ loop.index }}" class="form-label">Button URL:</label>
+                        <input type="text" class="form-control" id="buttonUrl_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][buttons][0][url]" value="{{ item.buttons[0].url }}" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="videoPreview_{{ loop.index }}" class="form-label">Video Preview:</label>
+                        <video id="videoPreview_{{ loop.index }}" class="w-100" controls>
+                            <source src="{{ url_for('static', filename=item.videoSrc.lstrip('/')) }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Button to add a new item -->
+    <div class="d-flex justify-content-center mt-3">
+        <button type="button" class="btn btn-primary" id="addNewItemBtn">Add New Item</button>
+    </div>
+</div>
+
+<script src="//cdn.jsdelivr.net/npm/sortablejs@1.8.4/Sortable.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('carouselItemsContainer');
+
+    if (!container) {
+        console.error('Container not found');
+        return;
+    }
+
+    // Enable drag-and-drop sorting
+    Sortable.create(container, {
+        animation: 150,
+        onEnd: function (evt) {
+            console.log('Item moved');
+        }
+    });
+
+    // Event delegation for Edit and Remove buttons
+    container.addEventListener('click', function(event) {
+        const target = event.target;
+        if (target.classList.contains('edit-btn')) {
+            const card = target.closest('.col-md-4');
+            if (card) {
+                console.log('Edit button clicked for card:', card.dataset.index);
+                editItem(card);
+            }
+        } else if (target.classList.contains('remove-btn')) {
+            const card = target.closest('.col-md-4');
+            if (card) {
+                console.log('Remove button clicked for card:', card.dataset.index);
+                removeItem(card);
+            }
+        }
+    });
+
+    // Handle the "Add New Item" button
+    document.getElementById('addNewItemBtn').addEventListener('click', addItem);
+
+    // Handle saving changes in the modal
+    document.getElementById('saveItemChangesBtn').addEventListener('click', saveItemChanges);
+});
+
+function editItem(card) {
+    console.log('Wywołano funkcję edycji elementu dla indeksu karty:', card.dataset.index);
+
+    const modalElement = document.getElementById('editItemModal');
+    if (!modalElement) {
+        console.error('Nie znaleziono modalu edycji elementu.');
+        return;
+    }
+
+    const modal = new bootstrap.Modal(modalElement);
+    modal.show();
+
+    const modalBody = modalElement.querySelector('.modal-body');
+    if (!modalBody) {
+        console.error('Nie znaleziono ciała modalu.');
+        return;
+    }
+
+    const index = card.dataset.index; // Pobierz dynamicznie indeks z atrybutu data-index karty
+
+    // Usuń poprzedni formularz, jeśli istnieje
+    modalBody.innerHTML = '';
+
+    // Wygeneruj nowy formularz
+    const form = document.createElement('form');
+    form.id = 'editItemForm';
+    form.dataset.index = index;
+
+    const videoSrc = card.querySelector(`[name="carouselItems[${index - 1}][videoSrc]"]`);
+    const videoMobileSrc = card.querySelector(`[name="carouselItems[${index - 1}][videoMobileSrc]"]`);
+    const maskColor = card.querySelector(`[name="carouselItems[${index - 1}][maskColor]"]`);
+    const heading = card.querySelector(`[name="carouselItems[${index - 1}][heading]"]`);
+    const subheading = card.querySelector(`[name="carouselItems[${index - 1}][subheading]"]`);
+    const buttonText = card.querySelector(`[name="carouselItems[${index - 1}][buttons][0][text]"]`);
+    const buttonUrl = card.querySelector(`[name="carouselItems[${index - 1}][buttons][0][url]"]`);
+
+    if (!videoSrc || !videoMobileSrc || !maskColor || !heading || !subheading || !buttonText || !buttonUrl) {
+        console.error('Nie znaleziono jednego lub więcej elementów w karcie.');
+        return;
+    }
+
+    form.innerHTML = `
+        <div class="mb-3">
+            <label for="videoSrc_${index}" class="form-label">Video Source:</label>
+            <input type="text" class="form-control" id="videoSrc_${index}" name="carouselItems[${index - 1}][videoSrc]" value="${videoSrc.value}">
+        </div>
+        <div class="mb-3">
+            <label for="videoMobileSrc_${index}" class="form-label">Video Mobile Source:</label>
+            <input type="text" class="form-control" id="videoMobileSrc_${index}" name="carouselItems[${index - 1}][videoMobileSrc]" value="${videoMobileSrc.value}">
+        </div>
+        <div class="mb-3">
+            <label for="maskColor_${index}" class="form-label">Mask Color:</label>
+            <input type="text" class="form-control" id="maskColor_${index}" name="carouselItems[${index - 1}][maskColor]" value="${maskColor.value}">
+        </div>
+        <div class="mb-3">
+            <label for="heading_${index}" class="form-label">Heading:</label>
+            <input type="text" class="form-control" id="heading_${index}" name="carouselItems[${index - 1}][heading]" value="${heading.value}">
+        </div>
+        <div class="mb-3">
+            <label for="subheading_${index}" class="form-label">Subheading:</label>
+            <input type="text" class="form-control" id="subheading_${index}" name="carouselItems[${index - 1}][subheading]" value="${subheading.value}">
+        </div>
+        <div class="mb-3">
+            <label for="buttonText_${index}" class="form-label">Button Text:</label>
+            <input type="text" class="form-control" id="buttonText_${index}" name="carouselItems[${index - 1}][buttons][0][text]" value="${buttonText.value}">
+        </div>
+        <div class="mb-3">
+            <label for="buttonUrl_${index}" class="form-label">Button URL:</label>
+            <input type="text" class="form-control" id="buttonUrl_${index}" name="carouselItems[${index - 1}][buttons][0][url]" value="${buttonUrl.value}">
+        </div>
+    `;
+    
+    // Dodaj formularz do ciała modalu
+    modalBody.appendChild(form);
+}
+
+
+function saveItemChanges() {
+    const form = document.getElementById('editItemForm');
+    if (!form) {
+        console.error('Edit form not found.');
+        return;
+    }
+
+    const index = form.dataset.index;
+    if (!index) {
+        console.error('Form index not found.');
+        return;
+    }
+
+    const card = document.querySelector(`div[data-index="${index}"] .card-body`);
+    if (!card) {
+        console.error('Card not found for index:', index);
+        return;
+    }
+
+    // Update card fields with form values
+    console.log('Saving changes for card index:', index);
+    const inputs = form.querySelectorAll('input');
+    inputs.forEach(input => {
+        const field = card.querySelector(`#${input.id}`);
+        if (field) {
+            field.value = input.value;
+        }
+    });
+}
+
+
+function addItem() {
+    console.log('addItem function called');
+
+    const container = document.getElementById('carouselItemsContainer');
+    const newIndex = container.querySelectorAll('.col-md-4').length + 1;
+    const newItem = document.createElement('div');
+    newItem.className = 'col-md-4 mb-3';
+    newItem.dataset.index = newIndex;
+    newItem.innerHTML = `
+        <div class="card">
+            <div class="card-header">
+                Slide ${newIndex}
+                <button type="button" class="btn btn-warning btn-sm float-end ms-2 edit-btn">Edit</button>
+                <button type="button" class="btn btn-danger btn-sm float-end remove-btn">Remove</button>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label for="videoSrc_${newIndex}" class="form-label">Video Source:</label>
+                    <input type="text" class="form-control" id="videoSrc_${newIndex}" name="carouselItems[${newIndex - 1}][videoSrc]">
+                    <input type="file" class="form-control mt-2" id="videoFileSrc_${newIndex}" data-index="${newIndex}" data-type="komputer" accept="video/mp4">
+                    <button type="button" class="btn btn-secondary mt-2 browse-btn" data-index="${newIndex}" data-type="komputer">Browse Server Files</button>
+                </div>
+                <div class="mb-3">
+                    <label for="videoMobileSrc_${newIndex}" class="form-label">Video Mobile Source:</label>
+                    <input type="text" class="form-control" id="videoMobileSrc_${newIndex}" name="carouselItems[${newIndex - 1}][videoMobileSrc]">
+                    <input type="file" class="form-control mt-2" id="videoFileMobileSrc_${newIndex}" data-index="${newIndex}" data-type="mobile" accept="video/mp4">
+                    <button type="button" class="btn btn-secondary mt-2 browse-btn" data-index="${newIndex}" data-type="mobile">Browse Server Files</button>
+                </div>
+                <!-- Other form fields remain the same -->
+                <div class="mb-3">
+                    <label for="videoPreview_${newIndex}" class="form-label">Video Preview:</label>
+                    <video id="videoPreview_${newIndex}" class="w-100" controls>
+                        <source src="" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    `;
+    container.appendChild(newItem);
+
+    // Event listeners for file inputs
+    document.getElementById(`videoFileSrc_${newIndex}`).addEventListener('change', uploadFile);
+    document.getElementById(`videoFileMobileSrc_${newIndex}`).addEventListener('change', uploadFile);
+
+    // Event listeners for browse buttons
+    document.querySelector(`.browse-btn[data-index="${newIndex}"][data-type="komputer"]`).addEventListener('click', browseFiles);
+    document.querySelector(`.browse-btn[data-index="${newIndex}"][data-type="mobile"]`).addEventListener('click', browseFiles);
+}
+
+function uploadFile(event) {
+    const fileInput = event.target;
+    const index = fileInput.dataset.index;
+    const type = fileInput.dataset.type;
+    const formData = new FormData();
+    formData.append('file', fileInput.files[0]);
+
+    fetch(`/user/upload_video?type=${type}&index=${index}`, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            document.getElementById(`videoSrc_${index}`).value = data.filePath;
+            document.getElementById(`videoPreview_${index}`).querySelector('source').src = data.filePath;
+            document.getElementById(`videoPreview_${index}`).load();
+        } else {
+            alert('File upload failed');
+        }
+    })
+    .catch(error => console.error('Error uploading file:', error));
+}
+
+function browseFiles(event) {
+    const button = event.target;
+    const index = button.dataset.index;
+    const type = button.dataset.type;
+
+    fetch(`/user/browse_files?type=${type}`)
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            let fileList = prompt('Select a file:\n' + data.files.join('\n'));
+            if (fileList) {
+                const filePath = `efekty/adds/galeria/video/${type}/${fileList}`;
+                document.getElementById(`videoSrc_${index}`).value = filePath;
+                document.getElementById(`videoPreview_${index}`).querySelector('source').src = filePath;
+                document.getElementById(`videoPreview_${index}`).load();
+            }
+        } else {
+            alert('Failed to retrieve files');
+        }
+    })
+    .catch(error => console.error('Error browsing files:', error));
+}
+
+function removeItem(card) {
+    console.log('removeItem function called for card:', card.dataset.index);
+
+    if (card) {
+        card.remove();
+        console.log('Card removed:', card.dataset.index);
+    } else {
+        console.error('Card not found.');
+    }
+}
+</script>
