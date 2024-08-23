@@ -1,10 +1,23 @@
 import os
 
 class Config:
-    MAIL_SERVER = 'smtp.example.com'
-    MAIL_PORT = 587
-    MAIL_USE_TLS = True
-    MAIL_USERNAME = 'your_email@example.com'
-    MAIL_PASSWORD = 'your_password'
-    MAIL_DEFAULT_SENDER = 'your_email@example.com'
-    SECRET_KEY = os.urandom(24)  # Klucz do zabezpieczania sesji
+    # Ustawienia dla wysyłania e-maili (SMTP)
+    MAIL_SERVER = 'mail0.mydevil.net'  # Adres serwera SMTP
+    MAIL_PORT = 587  # Port dla STARTTLS
+    MAIL_USE_TLS = True  # Używaj TLS
+    MAIL_USERNAME = 'kontakt@promoviegroup.com'  # Twój adres e-mail
+    MAIL_PASSWORD = '=PLama=1'  # Twoje hasło do e-maila
+    MAIL_DEFAULT_SENDER = 'kontakt@promoviegroup.com'  # Adres nadawcy
+
+    # Ustawienia dla odbierania e-maili (IMAP)
+    IMAP_SERVER = 'mail0.mydevil.net'  # Adres serwera IMAP
+    IMAP_PORT = 993  # Port TLS dla IMAP
+
+    # Ustawienia dla odbierania e-maili (POP3)
+    POP3_SERVER = 'mail0.mydevil.net'  # Adres serwera POP3
+    POP3_PORT = 995  # Port TLS dla POP3
+
+    # Klucz do zabezpieczania sesji
+    SECRET_KEY = os.urandom(24)
+
+    # Możesz dodać inne opcje konfiguracyjne, jeśli są wymagane
