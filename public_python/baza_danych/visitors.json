@@ -6343,5 +6343,185 @@
         "browser": "Firefox",
         "os": "Windows",
         "device": "Other"
+    },
+    {
+        "ip": "127.0.0.1",
+        "date": "2024-08-23 12:09:55",
+        "location": {
+            "ip": "127.0.0.1",
+            "city": null,
+            "region": null,
+            "country": null,
+            "latitude": null,
+            "longitude": null
+        },
+        "browser": "Firefox",
+        "os": "Windows",
+        "device": "Other"
+    },
+    {
+        "ip": "127.0.0.1",
+        "date": "2024-08-23 12:09:55",
+        "location": {
+            "ip": "127.0.0.1",
+            "city": null,
+            "region": null,
+            "country": null,
+            "latitude": null,
+            "longitude": null
+        },
+        "browser": "Firefox",
+        "os": "Windows",
+        "device": "Other"
+    },
+    {
+        "ip": "127.0.0.1",
+        "date": "2024-08-23 12:11:36",
+        "location": {
+            "ip": "127.0.0.1",
+            "city": null,
+            "region": null,
+            "country": null,
+            "latitude": null,
+            "longitude": null
+        },
+        "browser": "Firefox",
+        "os": "Windows",
+        "device": "Other"
+    },
+    {
+        "ip": "127.0.0.1",
+        "date": "2024-08-23 12:12:37",
+        "location": {
+            "ip": "127.0.0.1",
+            "city": null,
+            "region": null,
+            "country": null,
+            "latitude": null,
+            "longitude": null
+        },
+        "browser": "Firefox",
+        "os": "Windows",
+        "device": "Other"
+    },
+    {
+        "ip": "127.0.0.1",
+        "date": "2024-08-23 12:13:08",
+        "location": {
+            "ip": "127.0.0.1",
+            "city": null,
+            "region": null,
+            "country": null,
+            "latitude": null,
+            "longitude": null
+        },
+        "browser": "Firefox",
+        "os": "Windows",
+        "device": "Other"
+    },
+    {
+        "ip": "127.0.0.1",
+        "date": "2024-08-23 12:14:11",
+        "location": {
+            "ip": "127.0.0.1",
+            "city": null,
+            "region": null,
+            "country": null,
+            "latitude": null,
+            "longitude": null
+        },
+        "browser": "Firefox",
+        "os": "Windows",
+        "device": "Other"
+    },
+    {
+        "ip": "127.0.0.1",
+        "date": "2024-08-23 12:14:31",
+        "location": {
+            "ip": "127.0.0.1",
+            "city": null,
+            "region": null,
+            "country": null,
+            "latitude": null,
+            "longitude": null
+        },
+        "browser": "Chrome",
+        "os": "Windows",
+        "device": "Other"
+    },
+    {
+        "ip": "127.0.0.1",
+        "date": "2024-08-23 12:14:56",
+        "location": {
+            "ip": "127.0.0.1",
+            "city": null,
+            "region": null,
+            "country": null,
+            "latitude": null,
+            "longitude": null
+        },
+        "browser": "Chrome",
+        "os": "Windows",
+        "device": "Other"
+    },
+    {
+        "ip": "127.0.0.1",
+        "date": "2024-08-23 12:15:08",
+        "location": {
+            "ip": "127.0.0.1",
+            "city": null,
+            "region": null,
+            "country": null,
+            "latitude": null,
+            "longitude": null
+        },
+        "browser": "Chrome",
+        "os": "Windows",
+        "device": "Other"
+    },
+    {
+        "ip": "127.0.0.1",
+        "date": "2024-08-23 12:16:07",
+        "location": {
+            "ip": "127.0.0.1",
+            "city": null,
+            "region": null,
+            "country": null,
+            "latitude": null,
+            "longitude": null
+        },
+        "browser": "Chrome",
+        "os": "Windows",
+        "device": "Other"
+    },
+    {
+        "ip": "127.0.0.1",
+        "date": "2024-08-23 12:16:14",
+        "location": {
+            "ip": "127.0.0.1",
+            "city": null,
+            "region": null,
+            "country": null,
+            "latitude": null,
+            "longitude": null
+        },
+        "browser": "Chrome",
+        "os": "Windows",
+        "device": "Other"
+    },
+    {
+        "ip": "127.0.0.1",
+        "date": "2024-08-23 12:16:57",
+        "location": {
+            "ip": "127.0.0.1",
+            "city": null,
+            "region": null,
+            "country": null,
+            "latitude": null,
+            "longitude": null
+        },
+        "browser": "Chrome",
+        "os": "Windows",
+        "device": "Other"
     }
 ]
