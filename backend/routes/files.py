@@ -26,6 +26,11 @@ register_directory_route('frontend/static/efekty/adds/opinie/images', '/efekty/a
 register_directory_route('frontend/static/efekty/adds/testimonials/img', '/efekty/adds/testimonials/img', 'testimonials_img')
 register_directory_route('frontend/static/efekty/adds/testimonials-grid-section-frontendmentor/images', '/efekty/adds/testimonials-grid-section-frontendmentor/images', 'testimonials_grid_section_images')
 register_directory_route('frontend/static/efekty/adds/workers/img', '/efekty/adds/workers/img', 'workers_img')
+register_directory_route('frontend/static/efekty/adds/hero/assets/video', '/efekty/adds/hero/assets/video', 'hero_assets_video')
+register_directory_route('frontend/static/efekty/adds/hero/assets/mobile', '/efekty/adds/hero/assets/mobile', 'hero_assets_mobile')
+register_directory_route('frontend/static/efekty/adds/hero/assets/loga', '/efekty/adds/hero/assets/loga', 'hero_loga')
+# frontend/templates/index/js
+
 
 # Rejestracja tras dla plików
 register_file_route('frontend/static/full_logo.png', '/full_logo.png', 'full_logo')
