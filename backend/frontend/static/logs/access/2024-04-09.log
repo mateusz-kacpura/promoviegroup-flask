@@ -1,2 +1,0 @@
-158.75.64.82 - - [09/Apr/2024:09:42:57 +0200] "GET / HTTP/1.1" 200 2383 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0"
-158.75.64.82 - - [09/Apr/2024:09:42:58 +0200] "GET /favicon.ico HTTP/1.1" 404 2576 "http://mateuszkacpura.ct8.pl/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0"
