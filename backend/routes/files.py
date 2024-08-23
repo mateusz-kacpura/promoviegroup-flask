@@ -20,17 +20,17 @@ register_directory_route('frontend/static/efekty/adds/galeria/assets', '/efekty/
 register_directory_route('frontend/static/efekty/adds/galeria/rolki', '/efekty/adds/galeria/rolki', 'reels_assets')
 register_directory_route('frontend/static/efekty/adds/galeria/video', '/efekty/adds/galeria/video', 'galeria_video')
 register_directory_route('frontend/static/efekty/adds/hero/img', '/efekty/adds/hero/img', 'hero_img')
-register_directory_route('frontend/static/efekty/adds/hero/assets', '/efekty/adds/hero/assets', 'hero_assets')
 register_directory_route('frontend/static/efekty/adds/oferta/images', '/efekty/adds/oferta/images', 'oferta_images')
 register_directory_route('frontend/static/efekty/adds/opinie/images', '/efekty/adds/opinie/images', 'opinie_images')
 register_directory_route('frontend/static/efekty/adds/testimonials/img', '/efekty/adds/testimonials/img', 'testimonials_img')
 register_directory_route('frontend/static/efekty/adds/testimonials-grid-section-frontendmentor/images', '/efekty/adds/testimonials-grid-section-frontendmentor/images', 'testimonials_grid_section_images')
 register_directory_route('frontend/static/efekty/adds/workers/img', '/efekty/adds/workers/img', 'workers_img')
+register_directory_route('frontend/static/efekty/adds/hero/assets', '/efekty/adds/hero/assets', 'hero_assets')
 register_directory_route('frontend/static/efekty/adds/hero/assets/video', '/efekty/adds/hero/assets/video', 'hero_assets_video')
 register_directory_route('frontend/static/efekty/adds/hero/assets/mobile', '/efekty/adds/hero/assets/mobile', 'hero_assets_mobile')
 register_directory_route('frontend/static/efekty/adds/hero/assets/loga', '/efekty/adds/hero/assets/loga', 'hero_loga')
 # frontend/templates/index/js
-
+# efekty/adds/hero/assets/video/Screenshot 2024-05-17 at 14-08-14 Orły Polska Fundacja Promocji i Wspierania Sportu.png
 
 # Rejestracja tras dla plików
 register_file_route('frontend/static/full_logo.png', '/full_logo.png', 'full_logo')
