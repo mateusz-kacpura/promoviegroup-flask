@@ -185,3 +185,134 @@ def delete_mail():
         print(f"Error occurred: {e}")  # Zamień na logger w aplikacji produkcyjnej
         return jsonify({'status': 'error', 'message': 'Failed to delete email'}), 500
 
+
+VISITORS_JSON_PATH = os.path.join('baza_danych', 'visitors.json')
+
+@user_bp.route('/profile/pages/visitors', methods=['GET'])
+@login_required
+def display_visitors():
+    try:
+        with open(VISITORS_JSON_PATH, 'r', encoding='utf-8') as json_file:
+            visitors = json.load(json_file)
+    except (FileNotFoundError, json.JSONDecodeError):
+        visitors = []
+
+    return render_template('profile/pages/visitors.html', visitors=visitors)
+
+@user_bp.route('/profile/pages/delete_visitor', methods=['POST'])
+@login_required
+def delete_visitor():
+    id_to_delete = request.form.get('id')
+
+    if not id_to_delete:
+        return jsonify({'status': 'error', 'message': 'No ID provided'}), 400
+
+    try:
+        with open(VISITORS_JSON_PATH, 'r+', encoding='utf-8') as json_file:
+            visitors = json.load(json_file)
+            
+            # Filtrujemy wizyty i usuwamy te z podanym id
+            visitors = [visitor for visitor in visitors if visitor.get('id') != id_to_delete]
+            
+            # Ustawiamy wskaźnik na początek pliku i zapisujemy zmienioną listę
+            json_file.seek(0)
+            json.dump(visitors, json_file, ensure_ascii=False, indent=4)
+            
+            # Usuwamy pozostałe dane po zmienionej liście
+            json_file.truncate()
+        
+        return redirect(url_for('user.display_visitors'))
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        print(f"Error occurred: {e}")  # Zamień na logger w aplikacji produkcyjnej
+        return jsonify({'status': 'error', 'message': 'Failed to delete visitor'}), 500
+    
+
+# Ścieżka do pliku JSON
+OPINIE_JSON_PATH = os.path.join('baza_danych', 'opinie.json')
+
+def load_opinie():
+    try:
+        with open(OPINIE_JSON_PATH, 'r', encoding='utf-8') as file:
+            return json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
+def save_opinie(data):
+    try:
+        with open(OPINIE_JSON_PATH, 'w', encoding='utf-8') as file:
+            json.dump(data, file, indent=4, ensure_ascii=False)
+    except IOError:
+        return False
+    return True
+
+# Widok do przeglądania i edycji opinii
+@user_bp.route('/profile/pages/opinie', methods=['GET', 'POST'])
+@login_required
+def update_opinie():
+    if request.method == 'POST':
+        # Pobieranie danych z formularza
+        try:
+            data = request.form.to_dict(flat=False)  # Pobieranie danych jako słownik
+
+            # Przetwarzanie danych z formularza (konwersja na odpowiedni format)
+            processed_data = {
+                "hero": {
+                    "backgroundImage": data.get("hero[backgroundImage]", [""])[0],
+                    "title": data.get("hero[title]", [""])[0],
+                    "description": data.get("hero[description]", [""])[0],
+                },
+                "about": {
+                    "title": data.get("about[title]", [""])[0],
+                    "description": data.get("about[description]", [""])[0],
+                    "buttonText": data.get("about[buttonText]", [""])[0],
+                    "image1": data.get("about[image1]", [""])[0],
+                    "image2": data.get("about[image2]", [""])[0],
+                },
+                "clients": data.get("clients", []),
+                "testimonials": [
+                    {
+                        "photo": data.get(f"testimonials[{i}][photo]", [""])[0],
+                        "author": data.get(f"testimonials[{i}][author]", [""])[0],
+                        "occupation": data.get(f"testimonials[{i}][occupation]", [""])[0],
+                        "quote": data.get(f"testimonials[{i}][quote]", [""])[0],
+                        "social": {
+                            "facebook": data.get(f"testimonials[{i}][social][facebook]", [""])[0],
+                            "twitter": data.get(f"testimonials[{i}][social][twitter]", [""])[0],
+                            "instagram": data.get(f"testimonials[{i}][social][instagram]", [""])[0],
+                        }
+                    } for i in range(len(data.get("testimonials[0][photo]", [])))
+                ],
+                "aboutUs": {
+                    "videoSrc": data.get("aboutUs[videoSrc]", [""])[0],
+                    "title": data.get("aboutUs[title]", [""])[0],
+                    "description": data.get("aboutUs[description]", [""])[0],
+                    "bulletPoints": data.get("aboutUs[bulletPoints]", []),
+                },
+                "contact": {
+                    "backgroundImage": data.get("contact[backgroundImage]", [""])[0],
+                    "title": data.get("contact[title]", [""])[0],
+                    "buttonLink": data.get("contact[buttonLink]", [""])[0],
+                    "buttonText": data.get("contact[buttonText]", [""])[0],
+                    "email": data.get("contact[email]", [""])[0],
+                    "phone": data.get("contact[phone]", [""])[0],
+                    "address": data.get("contact[address]", [""])[0],
+                    "mapUrl": data.get("contact[mapUrl]", [""])[0],
+                    "social": {
+                        "facebook": data.get("contact[social][facebook]", [""])[0],
+                        "linkedin": data.get("contact[social][linkedin]", [""])[0],
+                        "instagram": data.get("contact[social][instagram]", [""])[0],
+                    }
+                }
+            }
+
+            # Zapisywanie przetworzonych danych
+            if save_opinie(processed_data):
+                return jsonify({"success": True, "message": "Dane zostały zapisane pomyślnie!"})
+            else:
+                return jsonify({"success": False, "message": "Błąd podczas zapisu danych!"})
+        except Exception as e:
+            return jsonify({"success": False, "message": str(e)})
+
+    # Gdy metoda jest GET
+    opinie_data = load_opinie()
+    return render_template('profile/pages/opinie.html', user=current_user, data=opinie_data)

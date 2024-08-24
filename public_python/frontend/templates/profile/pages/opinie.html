@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edytuj Opinie</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Dodatkowy styl dla lepszej czytelności */
+        .nav-tabs .nav-link.active {
+            background-color: #007bff;
+            color: white;
+        }
+        .tab-content {
+            border: 1px solid #dee2e6;
+            border-top: 0;
+            padding: 20px;
+        }
+        .remove-btn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .remove-btn:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    {% include 'profile/navbar.html' %}
+    <div class="container mt-5">
+        <h1>Edytuj Opinie</h1>
+        <form action="{{ url_for('user.update_opinie') }}" method="POST" enctype="multipart/form-data">
+            <!-- Zakładki (Tabs) -->
+            <ul class="nav nav-tabs" id="editTabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="hero-tab" data-bs-toggle="tab" href="#hero" role="tab" aria-controls="hero" aria-selected="true">Hero</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="about-tab" data-bs-toggle="tab" href="#about" role="tab" aria-controls="about" aria-selected="false">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="clients-tab" data-bs-toggle="tab" href="#clients" role="tab" aria-controls="clients" aria-selected="false">Clients</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="testimonials-tab" data-bs-toggle="tab" href="#testimonials" role="tab" aria-controls="testimonials" aria-selected="false">Testimonials</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="about-us-tab" data-bs-toggle="tab" href="#about-us" role="tab" aria-controls="about-us" aria-selected="false">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="editTabContent">
+                <!-- Hero Section -->
+                <div class="tab-pane fade show active" id="hero" role="tabpanel" aria-labelledby="hero-tab">
+                    <h2>Hero Section</h2>
+                    <div class="mb-3">
+                        <label for="heroBackgroundImage" class="form-label">Tło (URL do obrazu)</label>
+                        <input type="text" class="form-control" id="heroBackgroundImage" name="hero[backgroundImage]" value="{{ data.hero.backgroundImage }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="heroTitle" class="form-label">Tytuł</label>
+                        <input type="text" class="form-control" id="heroTitle" name="hero[title]" value="{{ data.hero.title }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="heroDescription" class="form-label">Opis</label>
+                        <textarea class="form-control" id="heroDescription" name="hero[description]" rows="3">{{ data.hero.description }}</textarea>
+                    </div>
+                </div>
+
+                <!-- About Section -->
+                <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab">
+                    <h2>About Section</h2>
+                    <div class="mb-3">
+                        <label for="aboutTitle" class="form-label">Tytuł</label>
+                        <input type="text" class="form-control" id="aboutTitle" name="about[title]" value="{{ data.about.title }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="aboutDescription" class="form-label">Opis</label>
+                        <textarea class="form-control" id="aboutDescription" name="about[description]" rows="3">{{ data.about.description }}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="aboutButtonText" class="form-label">Tekst Przycisku</label>
+                        <input type="text" class="form-control" id="aboutButtonText" name="about[buttonText]" value="{{ data.about.buttonText }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="aboutImage1" class="form-label">Obraz 1 (URL)</label>
+                        <input type="text" class="form-control" id="aboutImage1" name="about[image1]" value="{{ data.about.image1 }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="aboutImage2" class="form-label">Obraz 2 (URL)</label>
+                        <input type="text" class="form-control" id="aboutImage2" name="about[image2]" value="{{ data.about.image2 }}">
+                    </div>
+                </div>
+
+                <!-- Clients Section -->
+                <div class="tab-pane fade" id="clients" role="tabpanel" aria-labelledby="clients-tab">
+                    <h2>Clients Section</h2>
+                    <div id="clients-list">
+                        {% for i in range(data.clients|length) %}
+                        <div class="mb-3 client-item">
+                            <label for="client{{ i }}" class="form-label">Logo Klienta {{ i+1 }} (URL)</label>
+                            <input type="text" class="form-control" id="client{{ i }}" name="clients[{{ i }}]" value="{{ data.clients[i] }}">
+                            <button type="button" class="remove-btn" onclick="removeClient(this)">Usuń</button>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <button type="button" class="btn btn-secondary" onclick="addClient()">Dodaj Klienta</button>
+                </div>
+
+                <!-- Testimonials Section -->
+                <div class="tab-pane fade" id="testimonials" role="tabpanel" aria-labelledby="testimonials-tab">
+                    <h2>Testimonials</h2>
+                    <div id="testimonials-list">
+                        {% for i in range(data.testimonials|length) %}
+                        <div class="testimonial-item mb-4">
+                            <h3>Opinia {{ i+1 }}</h3>
+                            <div class="mb-3">
+                                <label for="testimonialPhoto{{ i }}" class="form-label">Zdjęcie (URL)</label>
+                                <input type="text" class="form-control" id="testimonialPhoto{{ i }}" name="testimonials[{{ i }}][photo]" value="{{ data.testimonials[i].photo }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="testimonialAuthor{{ i }}" class="form-label">Autor</label>
+                                <input type="text" class="form-control" id="testimonialAuthor{{ i }}" name="testimonials[{{ i }}][author]" value="{{ data.testimonials[i].author }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="testimonialOccupation{{ i }}" class="form-label">Zawód</label>
+                                <input type="text" class="form-control" id="testimonialOccupation{{ i }}" name="testimonials[{{ i }}][occupation]" value="{{ data.testimonials[i].occupation }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="testimonialQuote{{ i }}" class="form-label">Cytat</label>
+                                <textarea class="form-control" id="testimonialQuote{{ i }}" name="testimonials[{{ i }}][quote]" rows="3">{{ data.testimonials[i].quote }}</textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="testimonialFacebook{{ i }}" class="form-label">Facebook (URL)</label>
+                                <input type="text" class="form-control" id="testimonialFacebook{{ i }}" name="testimonials[{{ i }}][social][facebook]" value="{{ data.testimonials[i].social.facebook }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="testimonialLinkedin{{ i }}" class="form-label">LinkedIn (URL)</label>
+                                <input type="text" class="form-control" id="testimonialLinkedin{{ i }}" name="testimonials[{{ i }}][social][linkedin]" value="{{ data.testimonials[i].social.linkedin }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="testimonialGoogle{{ i }}" class="form-label">Google (URL)</label>
+                                <input type="text" class="form-control" id="testimonialGoogle{{ i }}" name="testimonials[{{ i }}][social][google]" value="{{ data.testimonials[i].social.google }}">
+                            </div>
+                            <button type="button" class="remove-btn" onclick="removeTestimonial(this)">Usuń</button>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <button type="button" class="btn btn-secondary" onclick="addTestimonial()">Dodaj Opinię</button>
+                </div>
+                <!-- Kontynuacja kodu -->
+                <!-- About Us Section -->
+                <div class="tab-pane fade" id="about-us" role="tabpanel" aria-labelledby="about-us-tab">
+                    <h2>About Us</h2>
+                    <div class="mb-3">
+                        <label for="aboutUsTitle" class="form-label">Tytuł</label>
+                        <input type="text" class="form-control" id="aboutUsTitle" name="aboutUs[title]" value="{{ data.aboutUs.title }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="aboutUsDescription" class="form-label">Opis</label>
+                        <textarea class="form-control" id="aboutUsDescription" name="aboutUs[description]" rows="3">{{ data.aboutUs.description }}</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="aboutUsImage" class="form-label">Obraz (URL)</label>
+                        <input type="text" class="form-control" id="aboutUsImage" name="aboutUs[image]" value="{{ data.aboutUs.image }}">
+                    </div>
+                    <div id="aboutUsPointsList">
+                        {% for i in range(data.aboutUs.points|length) %}
+                        <div class="mb-3 about-us-point-item">
+                            <label for="aboutUsPoint{{ i }}" class="form-label">Punkt {{ i+1 }}</label>
+                            <input type="text" class="form-control" id="aboutUsPoint{{ i }}" name="aboutUs[points][{{ i }}]" value="{{ data.aboutUs.points[i] }}">
+                            <button type="button" class="remove-btn" onclick="removeAboutUsPoint(this)">Usuń</button>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <button type="button" class="btn btn-secondary" onclick="addAboutUsPoint()">Dodaj Punkt</button>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    <h2>Contact</h2>
+                    <div class="mb-3">
+                        <label for="contactEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="contactEmail" name="contact[email]" value="{{ data.contact.email }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="contactPhone" class="form-label">Telefon</label>
+                        <input type="text" class="form-control" id="contactPhone" name="contact[phone]" value="{{ data.contact.phone }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="contactAddress" class="form-label">Adres</label>
+                        <input type="text" class="form-control" id="contactAddress" name="contact[address]" value="{{ data.contact.address }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="contactMapUrl" class="form-label">Google Maps URL</label>
+                        <input type="text" class="form-control" id="contactMapUrl" name="contact[mapUrl]" value="{{ data.contact.mapUrl }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="contactFacebook" class="form-label">Facebook (URL)</label>
+                        <input type="text" class="form-control" id="contactFacebook" name="contact[social][facebook]" value="{{ data.contact.social.facebook }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="contactLinkedin" class="form-label">LinkedIn (URL)</label>
+                        <input type="text" class="form-control" id="contactLinkedin" name="contact[social][linkedin]" value="{{ data.contact.social.linkedin }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="contactInstagram" class="form-label">Instagram (URL)</label>
+                        <input type="text" class="form-control" id="contactInstagram" name="contact[social][instagram]" value="{{ data.contact.social.instagram }}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <button type="submit" class="btn btn-primary">Zapisz zmiany</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function addClient() {
+            const clientList = document.getElementById('clients-list');
+            const newClientIndex = clientList.children.length;
+            const clientItem = document.createElement('div');
+            clientItem.classList.add('mb-3', 'client-item');
+            clientItem.innerHTML = `
+                <label for="client${newClientIndex}" class="form-label">Logo Klienta ${newClientIndex + 1} (URL)</label>
+                <input type="text" class="form-control" id="client${newClientIndex}" name="clients[${newClientIndex}]">
+                <button type="button" class="remove-btn" onclick="removeClient(this)">Usuń</button>
+            `;
+            clientList.appendChild(clientItem);
+        }
+
+        function removeClient(button) {
+            const clientItem = button.closest('.client-item');
+            clientItem.remove();
+        }
+
+        function addTestimonial() {
+            const testimonialsList = document.getElementById('testimonials-list');
+            const newTestimonialIndex = testimonialsList.children.length;
+            const testimonialItem = document.createElement('div');
+            testimonialItem.classList.add('testimonial-item', 'mb-4');
+            testimonialItem.innerHTML = `
+                <h3>Opinia ${newTestimonialIndex + 1}</h3>
+                <div class="mb-3">
+                    <label for="testimonialPhoto${newTestimonialIndex}" class="form-label">Zdjęcie (URL)</label>
+                    <input type="text" class="form-control" id="testimonialPhoto${newTestimonialIndex}" name="testimonials[${newTestimonialIndex}][photo]">
+                </div>
+                <div class="mb-3">
+                    <label for="testimonialAuthor${newTestimonialIndex}" class="form-label">Autor</label>
+                    <input type="text" class="form-control" id="testimonialAuthor${newTestimonialIndex}" name="testimonials[${newTestimonialIndex}][author]">
+                </div>
+                <div class="mb-3">
+                    <label for="testimonialOccupation${newTestimonialIndex}" class="form-label">Zawód</label>
+                    <input type="text" class="form-control" id="testimonialOccupation${newTestimonialIndex}" name="testimonials[${newTestimonialIndex}][occupation]">
+                </div>
+                <div class="mb-3">
+                    <label for="testimonialQuote${newTestimonialIndex}" class="form-label">Cytat</label>
+                    <textarea class="form-control" id="testimonialQuote${newTestimonialIndex}" name="testimonials[${newTestimonialIndex}][quote]" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="testimonialFacebook${newTestimonialIndex}" class="form-label">Facebook (URL)</label>
+                    <input type="text" class="form-control" id="testimonialFacebook${newTestimonialIndex}" name="testimonials[${newTestimonialIndex}][social][facebook]">
+                </div>
+                <div class="mb-3">
+                    <label for="testimonialLinkedin${newTestimonialIndex}" class="form-label">LinkedIn (URL)</label>
+                    <input type="text" class="form-control" id="testimonialLinkedin${newTestimonialIndex}" name="testimonials[${newTestimonialIndex}][social][linkedin]">
+                </div>
+                <div class="mb-3">
+                    <label for="testimonialGoogle${newTestimonialIndex}" class="form-label">Google (URL)</label>
+                    <input type="text" class="form-control" id="testimonialGoogle${newTestimonialIndex}" name="testimonials[${newTestimonialIndex}][social][google]">
+                </div>
+                <button type="button" class="remove-btn" onclick="removeTestimonial(this)">Usuń</button>
+            `;
+            testimonialsList.appendChild(testimonialItem);
+        }
+
+        function removeTestimonial(button) {
+            const testimonialItem = button.closest('.testimonial-item');
+            testimonialItem.remove();
+        }
+
+        function addAboutUsPoint() {
+            const aboutUsPointsList = document.getElementById('aboutUsPointsList');
+            const newPointIndex = aboutUsPointsList.children.length;
+            const pointItem = document.createElement('div');
+            pointItem.classList.add('mb-3', 'about-us-point-item');
+            pointItem.innerHTML = `
+                <label for="aboutUsPoint${newPointIndex}" class="form-label">Punkt ${newPointIndex + 1}</label>
+                <input type="text" class="form-control" id="aboutUsPoint${newPointIndex}" name="aboutUs[points][${newPointIndex}]">
+                <button type="button" class="remove-btn" onclick="removeAboutUsPoint(this)">Usuń</button>
+            `;
+            aboutUsPointsList.appendChild(pointItem);
+        }
+
+        function removeAboutUsPoint(button) {
+            const pointItem = button.closest('.about-us-point-item');
+            pointItem.remove();
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

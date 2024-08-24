@@ -64,7 +64,7 @@ def create_email_blueprint(mail):
         except Exception as e:
             logging.error(f'Błąd podczas wysyłania wiadomości e-mail: {e}')
             write_to_file(log_entry, file_path)
-            return jsonify({"message": "Błąd podczas wysyłania wiadomości."}), 500
+            return jsonify({"message": "Niestety nie udało się wysłać do nas e-maila, ale Twoja wiadomość szczęśliwie dotarła do nas!"}), 500
 
     def is_valid_email(email):
         """Sprawdza, czy e-mail ma poprawny format."""

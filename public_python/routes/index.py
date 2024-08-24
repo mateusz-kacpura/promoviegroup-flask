@@ -1,3 +1,4 @@
+import uuid
 from flask import Blueprint, render_template, request, abort
 from user_agents import parse
 from services.location_service import get_location
@@ -17,6 +18,7 @@ pages = {
     'wsparcie': 'wsparcie.html'
 }
 
+
 @index_bp.route('/')
 @index_bp.route('/<page>')
 def index(page='o-nas'):
@@ -32,6 +34,7 @@ def index(page='o-nas'):
         visit_time = datetime.now()
 
         visitor_info = {
+            "id": str(uuid.uuid4()),  # Generowanie unikalnego ID
             "ip": ip_address,
             "date": visit_time.strftime("%Y-%m-%d %H:%M:%S"),
             "location": location,
