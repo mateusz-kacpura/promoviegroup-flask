@@ -157,85 +157,31 @@
 
     <!-- Loader Script -->
     <script>
-document.addEventListener("DOMContentLoaded", function () {
-    let loaderPercentage = document.getElementById('loader-percentage');
-    let loaderWrapper = document.getElementById('loader-wrapper');
+        document.addEventListener("DOMContentLoaded", function () {
+            let loaderPercentage = document.getElementById('loader-percentage');
+            let images = document.images;
+            let totalImages = images.length;
+            let imagesLoaded = 0;
 
-    let images = document.images;
-    let videos = document.querySelectorAll('video[src$=".mp4"]'); // Znajduje wszystkie elementy video z plikami mp4
+            for (let i = 0; i < totalImages; i++) {
+                let img = new Image();
+                img.src = images[i].src;
+                img.onload = imageLoaded;
+                img.onerror = imageLoaded;
+            }
 
-    let totalMedia = images.length + videos.length;
-    let mediaLoaded = 0;
+            function imageLoaded() {
+                imagesLoaded++;
+                let percentage = Math.floor((imagesLoaded / totalImages) * 100);
+                loaderPercentage.innerText = percentage + "%";
 
-    // Użycie Promises do obsługi ładowania obrazów i filmów
-    let mediaPromises = [];
-
-    for (let i = 0; i < images.length; i++) {
-        mediaPromises.push(loadImage(images[i].src));
-    }
-
-    for (let i = 0; i < videos.length; i++) {
-        mediaPromises.push(loadVideo(videos[i]));
-    }
-
-    Promise.all(mediaPromises)
-        .then(() => {
-
-            setTimeout(() => {
-
-                loaderWrapper.style.transition = 'opacity 0s ease'; 
-                loaderWrapper.style.opacity = 0;
-
-                setTimeout(() => {
-                    loaderWrapper.style.display = 'none';
-                }, 0); 
-            }, 2000);
-        })
-        .catch(error => {
-            console.error('Błąd ładowania mediów:', error);
+                if (imagesLoaded === totalImages) {
+                    setTimeout(() => {
+                        document.getElementById('loader-wrapper').style.display = 'none';
+                    }, 500); // Dodatkowe opóźnienie na płynne zniknięcie loadera
+                }
+            }
         });
-
-    // Funkcja do ładowania pojedynczego obrazu
-    function loadImage(src) {
-        return new Promise((resolve, reject) => {
-            let img = new Image();
-            img.src = src;
-            img.onload = () => {
-                mediaLoaded++;
-                updateLoaderPercentage();
-                resolve();
-            };
-            img.onerror = () => {
-                mediaLoaded++;
-                updateLoaderPercentage();
-                reject(`Nie udało się załadować obrazu: ${src}`);
-            };
-        });
-    }
-
-    // Funkcja do ładowania pojedynczego wideo
-    function loadVideo(video) {
-        return new Promise((resolve, reject) => {
-            video.onloadeddata = () => {
-                mediaLoaded++;
-                updateLoaderPercentage();
-                resolve();
-            };
-            video.onerror = () => {
-                mediaLoaded++;
-                updateLoaderPercentage();
-                reject(`Nie udało się załadować wideo: ${video.src}`);
-            };
-        });
-    }
-
-    // Aktualizacja wyświetlanego procentu załadowanych mediów (obrazy + wideo)
-    function updateLoaderPercentage() {
-        let percentage = Math.floor((mediaLoaded / totalMedia) * 100);
-        loaderPercentage.innerText = percentage + "%";
-    }
-});
-
     </script>
 </body>
 </html>
