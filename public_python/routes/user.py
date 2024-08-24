@@ -321,7 +321,68 @@ def update_opinie():
 
         except Exception as e:
             return jsonify({"success": False, "message": str(e)})
+    else:
+        opinie_data = load_opinie()
+        page = request.args.get('page', 1, type=int)
+        per_page = 1
+        total_testimonials = len(opinie_data.get('testimonials', []))
+        start_idx = (page - 1) * per_page
+        end_idx = start_idx + per_page
+        paginated_testimonials = opinie_data.get('testimonials', [])[start_idx:end_idx]
 
-    # Gdy metoda jest GET
-    opinie_data = load_opinie()
-    return render_template('profile/pages/opinie.html', user=current_user, data=opinie_data)
+        pagination_info = {
+            "current_page": page,
+            "total_pages": (total_testimonials + per_page - 1) // per_page,
+            "has_next": page * per_page < total_testimonials,
+            "has_prev": page > 1,
+        }
+
+        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            return jsonify({"testimonials": paginated_testimonials, "pagination": pagination_info})
+
+        return render_template('profile/pages/opinie.html', user=current_user, data=opinie_data, testimonials=paginated_testimonials, pagination=pagination_info)
+
+@user_bp.route('/profile/pages/opinie/add', methods=['POST'])
+@login_required
+def add_opinia():
+    try:
+        opinie_data = load_opinie()
+        new_testimonial = {
+            "photo": request.form.get('photo', ''),
+            "author": request.form.get('author', ''),
+            "occupation": request.form.get('occupation', ''),
+            "quote": request.form.get('quote', ''),
+            "social": {
+                "facebook": request.form.get('facebook', ''),
+                "linkedin": request.form.get('linkedin', ''),
+                "google": request.form.get('google', '')
+            }
+        }
+        opinie_data['testimonials'].append(new_testimonial)
+
+        if save_opinie(opinie_data):
+            return jsonify({"success": True, "message": "Opinia została dodana!"})
+        else:
+            return jsonify({"success": False, "message": "Błąd podczas dodawania opinii!"})
+
+    except Exception as e:
+        return jsonify({"success": False, "message": str(e)})
+
+
+@user_bp.route('/profile/pages/opinie/remove/<int:index>', methods=['DELETE'])
+@login_required
+def remove_opinia(index):
+    try:
+        opinie_data = load_opinie()
+        if 0 <= index < len(opinie_data['testimonials']):
+            del opinie_data['testimonials'][index]
+
+            if save_opinie(opinie_data):
+                return jsonify({"success": True, "message": "Opinia została usunięta!"})
+            else:
+                return jsonify({"success": False, "message": "Błąd podczas usuwania opinii!"})
+        else:
+            return jsonify({"success": False, "message": "Nieprawidłowy indeks!"})
+
+    except Exception as e:
+        return jsonify({"success": False, "message": str(e)})

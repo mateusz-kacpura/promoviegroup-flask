@@ -430,5 +430,37 @@
         "browser": "Firefox",
         "os": "Windows",
         "device": "Other"
+    },
+    {
+        "id": "ed2e3137-b3a8-4ce6-956a-9a121b222151",
+        "ip": "127.0.0.1",
+        "date": "2024-08-24 20:56:30",
+        "location": {
+            "ip": "127.0.0.1",
+            "city": null,
+            "region": null,
+            "country": null,
+            "latitude": null,
+            "longitude": null
+        },
+        "browser": "Firefox",
+        "os": "Windows",
+        "device": "Other"
+    },
+    {
+        "id": "4826627b-4149-4da5-a6b0-2fd9a87d2b23",
+        "ip": "127.0.0.1",
+        "date": "2024-08-24 20:57:10",
+        "location": {
+            "ip": "127.0.0.1",
+            "city": null,
+            "region": null,
+            "country": null,
+            "latitude": null,
+            "longitude": null
+        },
+        "browser": "Firefox",
+        "os": "Windows",
+        "device": "Other"
     }
 ]

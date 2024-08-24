@@ -112,48 +112,32 @@
                     </div>
                     <button type="button" class="btn btn-secondary" onclick="addClient()">Dodaj Klienta</button>
                 </div>
-
+                
                 <!-- Testimonials Section -->
                 <div class="tab-pane fade" id="testimonials" role="tabpanel" aria-labelledby="testimonials-tab">
                     <h2>Testimonials</h2>
                     <div id="testimonials-list">
-                        {% for i in range(data.testimonials|length) %}
-                        <div class="testimonial-item mb-4">
-                            <h3>Opinia {{ i+1 }}</h3>
-                            <div class="mb-3">
-                                <label for="testimonialPhoto{{ i }}" class="form-label">Zdjęcie (URL)</label>
-                                <input type="text" class="form-control" id="testimonialPhoto{{ i }}" name="testimonials[{{ i }}][photo]" value="{{ data.testimonials[i].photo }}">
-                            </div>
-                            <div class="mb-3">
-                                <label for="testimonialAuthor{{ i }}" class="form-label">Autor</label>
-                                <input type="text" class="form-control" id="testimonialAuthor{{ i }}" name="testimonials[{{ i }}][author]" value="{{ data.testimonials[i].author }}">
-                            </div>
-                            <div class="mb-3">
-                                <label for="testimonialOccupation{{ i }}" class="form-label">Zawód</label>
-                                <input type="text" class="form-control" id="testimonialOccupation{{ i }}" name="testimonials[{{ i }}][occupation]" value="{{ data.testimonials[i].occupation }}">
-                            </div>
-                            <div class="mb-3">
-                                <label for="testimonialQuote{{ i }}" class="form-label">Cytat</label>
-                                <textarea class="form-control" id="testimonialQuote{{ i }}" name="testimonials[{{ i }}][quote]" rows="3">{{ data.testimonials[i].quote }}</textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label for="testimonialFacebook{{ i }}" class="form-label">Facebook (URL)</label>
-                                <input type="text" class="form-control" id="testimonialFacebook{{ i }}" name="testimonials[{{ i }}][social][facebook]" value="{{ data.testimonials[i].social.facebook }}">
-                            </div>
-                            <div class="mb-3">
-                                <label for="testimonialLinkedin{{ i }}" class="form-label">LinkedIn (URL)</label>
-                                <input type="text" class="form-control" id="testimonialLinkedin{{ i }}" name="testimonials[{{ i }}][social][linkedin]" value="{{ data.testimonials[i].social.linkedin }}">
-                            </div>
-                            <div class="mb-3">
-                                <label for="testimonialGoogle{{ i }}" class="form-label">Google (URL)</label>
-                                <input type="text" class="form-control" id="testimonialGoogle{{ i }}" name="testimonials[{{ i }}][social][google]" value="{{ data.testimonials[i].social.google }}">
-                            </div>
-                            <button type="button" class="remove-btn" onclick="removeTestimonial(this)">Usuń</button>
-                        </div>
-                        {% endfor %}
+                        <!-- Tutaj będą ładowane opinie przez AJAX -->
                     </div>
+                
+                    <!-- Paginacja -->
+                    <nav aria-label="Testimonials pagination">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#" id="prevPage" onclick="changePage(-1)">Poprzednia</a>
+                            </li>
+                            <li class="page-item disabled">
+                                <span class="page-link" id="pagination-info"></span>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" id="nextPage" onclick="changePage(1)">Następna</a>
+                            </li>
+                        </ul>
+                    </nav>
+                
                     <button type="button" class="btn btn-secondary" onclick="addTestimonial()">Dodaj Opinię</button>
                 </div>
+
                 <!-- Kontynuacja kodu -->
                 <!-- About Us Section -->
                 <div class="tab-pane fade" id="about-us" role="tabpanel" aria-labelledby="about-us-tab">
@@ -339,49 +323,97 @@
             clientItem.remove();
         }
 
-        function addTestimonial() {
-            const testimonialsList = document.getElementById('testimonials-list');
-            const newTestimonialIndex = testimonialsList.children.length;
-            const testimonialItem = document.createElement('div');
-            testimonialItem.classList.add('testimonial-item', 'mb-4');
-            testimonialItem.innerHTML = `
-                <h3>Opinia ${newTestimonialIndex + 1}</h3>
-                <div class="mb-3">
-                    <label for="testimonialPhoto${newTestimonialIndex}" class="form-label">Zdjęcie (URL)</label>
-                    <input type="text" class="form-control" id="testimonialPhoto${newTestimonialIndex}" name="testimonials[${newTestimonialIndex}][photo]">
-                </div>
-                <div class="mb-3">
-                    <label for="testimonialAuthor${newTestimonialIndex}" class="form-label">Autor</label>
-                    <input type="text" class="form-control" id="testimonialAuthor${newTestimonialIndex}" name="testimonials[${newTestimonialIndex}][author]">
-                </div>
-                <div class="mb-3">
-                    <label for="testimonialOccupation${newTestimonialIndex}" class="form-label">Zawód</label>
-                    <input type="text" class="form-control" id="testimonialOccupation${newTestimonialIndex}" name="testimonials[${newTestimonialIndex}][occupation]">
-                </div>
-                <div class="mb-3">
-                    <label for="testimonialQuote${newTestimonialIndex}" class="form-label">Cytat</label>
-                    <textarea class="form-control" id="testimonialQuote${newTestimonialIndex}" name="testimonials[${newTestimonialIndex}][quote]" rows="3"></textarea>
-                </div>
-                <div class="mb-3">
-                    <label for="testimonialFacebook${newTestimonialIndex}" class="form-label">Facebook (URL)</label>
-                    <input type="text" class="form-control" id="testimonialFacebook${newTestimonialIndex}" name="testimonials[${newTestimonialIndex}][social][facebook]">
-                </div>
-                <div class="mb-3">
-                    <label for="testimonialLinkedin${newTestimonialIndex}" class="form-label">LinkedIn (URL)</label>
-                    <input type="text" class="form-control" id="testimonialLinkedin${newTestimonialIndex}" name="testimonials[${newTestimonialIndex}][social][linkedin]">
-                </div>
-                <div class="mb-3">
-                    <label for="testimonialGoogle${newTestimonialIndex}" class="form-label">Google (URL)</label>
-                    <input type="text" class="form-control" id="testimonialGoogle${newTestimonialIndex}" name="testimonials[${newTestimonialIndex}][social][google]">
-                </div>
-                <button type="button" class="remove-btn" onclick="removeTestimonial(this)">Usuń</button>
-            `;
-            testimonialsList.appendChild(testimonialItem);
+        let currentPage = 1;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadTestimonials(currentPage);
+        });
+
+        function loadTestimonials(page) {
+            fetch(`/profile/pages/opinie?page=${page}`)
+                .then(response => response.json())
+                .then(data => {
+                    const testimonialsList = document.getElementById('testimonials-list');
+                    testimonialsList.innerHTML = ''; // Wyczyszczenie obecnych opinii
+                    data.testimonials.forEach(testimonial => {
+                        testimonialsList.innerHTML += `
+                            <div class="testimonial-item mb-4">
+                                <h3>Opinia</h3>
+                                <div class="mb-3">
+                                    <label class="form-label">Zdjęcie (URL)</label>
+                                    <input type="text" class="form-control" value="${testimonial.photo}">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Autor</label>
+                                    <input type="text" class="form-control" value="${testimonial.author}">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Zawód</label>
+                                    <input type="text" class="form-control" value="${testimonial.occupation}">
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Cytat</label>
+                                    <textarea class="form-control" rows="3">${testimonial.quote}</textarea>
+                                </div>
+                            </div>`;
+                    });
+
+                    // Aktualizacja paginacji
+                    document.getElementById('pagination-info').textContent = `Strona ${data.pagination.current_page} z ${data.pagination.total_pages}`;
+                    document.getElementById('prevPage').style.display = data.pagination.has_prev ? 'block' : 'none';
+                    document.getElementById('nextPage').style.display = data.pagination.has_next ? 'block' : 'none';
+                });
         }
 
-        function removeTestimonial(button) {
-            const testimonialItem = button.closest('.testimonial-item');
-            testimonialItem.remove();
+        function changePage(direction) {
+            currentPage += direction;
+            loadTestimonials(currentPage);
+        }
+
+        function addTestimonial() {
+            const formData = new FormData();
+            formData.append('photo', '');
+            formData.append('author', '');
+            formData.append('occupation', '');
+            formData.append('quote', '');
+            formData.append('facebook', '');
+            formData.append('linkedin', '');
+            formData.append('google', '');
+
+            fetch('/profile/pages/opinie/add', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text()) // Zamiast .json(), użyj .text() aby zobaczyć co dokładnie zwraca serwer
+            .then(text => {
+                console.log("Odpowiedź serwera:", text);
+                const data = JSON.parse(text); // Jeśli to jest poprawny JSON, parsowanie zadziała.
+                if (data.success) {
+                    alert(data.message);
+                    loadTestimonials(currentPage);  // Odświeżenie listy opinii
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => console.error('Błąd:', error));
+        }
+
+        function removeTestimonial(index) {
+            if (confirm('Czy na pewno chcesz usunąć tę opinię?')) {
+                fetch(`/profile/pages/opinie/remove/${index}`, {
+                    method: 'DELETE'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert(data.message);
+                        loadTestimonials(currentPage);  // Odświeżenie listy opinii
+                    } else {
+                        alert(data.message);
+                    }
+                })
+                .catch(error => console.error('Błąd:', error));
+            }
         }
 
         function addAboutUsPoint() {
