@@ -144,3 +144,44 @@ def browse_files():
         print(f"Error browsing files: {str(e)}")
         return jsonify(success=False, error="An unexpected error occurred")
 
+MAIL_JSON_PATH = os.path.join('baza_danych', 'mail.json')
+
+@user_bp.route('/profile/pages/mail', methods=['GET'])
+@login_required
+def display_mail():
+    try:
+        with open(MAIL_JSON_PATH, 'r', encoding='utf-8') as json_file:
+            mails = json.load(json_file)
+    except (FileNotFoundError, json.JSONDecodeError):
+        mails = []
+
+    return render_template('profile/pages/mail.html', mails=mails)
+
+@user_bp.route('/profile/pages/delete_mail', methods=['POST'])
+@login_required
+def delete_mail():
+    id_to_delete = request.form.get('id')
+
+    if not id_to_delete:
+        return jsonify({'status': 'error', 'message': 'No ID provided'}), 400
+
+    try:
+        with open(MAIL_JSON_PATH, 'r+', encoding='utf-8') as json_file:
+            mails = json.load(json_file)
+            
+            # Filtrujemy maile i usuwamy te z podanym id
+            mails = [mail for mail in mails if mail.get('id') != id_to_delete]
+            
+            # Ustawiamy wskaźnik na początek pliku i zapisujemy zmienioną listę
+            json_file.seek(0)
+            json.dump(mails, json_file, ensure_ascii=False, indent=4)
+            
+            # Usuwamy pozostałe dane po zmienionej liście
+            json_file.truncate()
+        
+        return redirect(url_for('user.display_mail'))
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        # Logujemy błędy oraz zwracamy odpowiedni komunikat
+        print(f"Error occurred: {e}")  # Zamień na logger w aplikacji produkcyjnej
+        return jsonify({'status': 'error', 'message': 'Failed to delete email'}), 500
+

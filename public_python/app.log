@@ -505,3 +505,521 @@
 2024-08-24 08:12:16,023 INFO: 127.0.0.1 - - [24/Aug/2024 08:12:16] "[36mGET /efekty/adds/galeria/assets/393015856_6635869109854408_5074807102227126407_n.jpg HTTP/1.1[0m" 304 -
 2024-08-24 08:12:16,029 INFO: 127.0.0.1 - - [24/Aug/2024 08:12:16] "[36mGET /efekty/adds/hero/assets/pexels-caleboquendo-4889279.jpg HTTP/1.1[0m" 304 -
 2024-08-24 08:12:16,782 INFO: 127.0.0.1 - - [24/Aug/2024 08:12:16] "GET /galeria HTTP/1.1" 200 -
+2024-08-24 08:13:33,402 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "GET /galeria HTTP/1.1" 200 -
+2024-08-24 08:13:33,419 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "GET / HTTP/1.1" 200 -
+2024-08-24 08:13:33,588 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "GET /galeria HTTP/1.1" 200 -
+2024-08-24 08:13:33,653 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/service-website-template/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2024-08-24 08:13:33,656 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/hero/css/mdb.min.css HTTP/1.1[0m" 304 -
+2024-08-24 08:13:33,660 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/service-website-template/css/owl.carousel.min.css HTTP/1.1[0m" 304 -
+2024-08-24 08:13:33,663 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/service-website-template/css/owl.theme.default.min.css HTTP/1.1[0m" 304 -
+2024-08-24 08:13:33,664 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/service-website-template/css/aos.css HTTP/1.1[0m" 304 -
+2024-08-24 08:13:33,666 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/service-website-template/css/jquery.fancybox.min.css HTTP/1.1[0m" 304 -
+2024-08-24 08:13:33,670 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/service-website-template/css/style.css HTTP/1.1[0m" 304 -
+2024-08-24 08:13:33,673 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/service-website-template/fonts/icomoon/style.css HTTP/1.1[0m" 304 -
+2024-08-24 08:13:33,677 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/service-website-template/fonts/feather/style.css HTTP/1.1[0m" 304 -
+2024-08-24 08:13:33,678 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/service-website-template/fonts/flaticon/font/flaticon.css HTTP/1.1[0m" 304 -
+2024-08-24 08:13:33,681 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/index/main.css HTTP/1.1[0m" 304 -
+2024-08-24 08:13:33,684 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/hero/render.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:33,689 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/service-website-template/js/jquery-3.5.1.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:33,690 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/service-website-template/js/jquery-migrate-3.0.0.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:33,692 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/service-website-template/js/popper.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:33,696 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/service-website-template/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:33,697 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/hero/js/mdb.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:33,699 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/service-website-template/js/owl.carousel.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:33,703 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/service-website-template/js/aos.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:33,707 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/service-website-template/js/imagesloaded.pkgd.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:33,710 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/service-website-template/js/isotope.pkgd.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:33,711 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/service-website-template/js/jquery.animateNumber.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:33,717 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/service-website-template/js/jquery.waypoints.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:33,717 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/service-website-template/js/jquery.stellar.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:33,719 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/service-website-template/js/jquery.fancybox.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:33,721 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/service-website-template/js/custom.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:33,724 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:33] "[36mGET /static/efekty/adds/index/footerSection.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:34,177 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:34] "GET /get-json?file=hero.json HTTP/1.1" 200 -
+2024-08-24 08:13:34,178 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:34] "[36mGET /logo.svg HTTP/1.1[0m" 304 -
+2024-08-24 08:13:34,352 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:34] "[36mGET /efekty/adds/hero/assets/DSC05450.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:13:34,357 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:34] "[36mGET /efekty/adds/hero/assets/loga/294797940_479086210808504_8667669129994940009_n.png HTTP/1.1[0m" 304 -
+2024-08-24 08:13:34,357 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:34] "[36mGET /efekty/adds/hero/assets/DSC05455.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:13:34,364 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:34] "[36mGET /efekty/adds/hero/assets/loga/logo.png HTTP/1.1[0m" 304 -
+2024-08-24 08:13:34,365 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:34] "[36mGET /efekty/adds/hero/assets/image3.jpeg HTTP/1.1[0m" 304 -
+2024-08-24 08:13:34,367 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:34] "[36mGET /efekty/adds/hero/assets/loga/image_6487327a.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:13:34,373 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:34] "[36mGET /efekty/adds/hero/assets/loga/Logo_z_halem-owal-300dpi.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:13:34,378 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:34] "[36mGET /efekty/adds/hero/assets/loga/1706801724426.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:13:34,381 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:34] "[36mGET /efekty/adds/hero/assets/loga/1706801724412.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:13:34,383 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:34] "[36mGET /efekty/adds/hero/assets/loga/CUF-Ubezpieczenia_page-0001.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:13:34,384 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:34] "[36mGET /efekty/adds/hero/assets/video/11.png HTTP/1.1[0m" 304 -
+2024-08-24 08:13:34,390 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:34] "[36mGET /efekty/adds/hero/assets/video/22.png HTTP/1.1[0m" 304 -
+2024-08-24 08:13:34,401 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:34] "[36mGET /efekty/adds/hero/assets/video/33.png HTTP/1.1[0m" 304 -
+2024-08-24 08:13:34,565 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:34] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-24 08:13:37,375 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:37] "GET / HTTP/1.1" 200 -
+2024-08-24 08:13:40,155 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "GET /galeria HTTP/1.1" 200 -
+2024-08-24 08:13:40,311 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /static/efekty/adds/service-website-template/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,313 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /static/efekty/adds/hero/css/mdb.min.css HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,315 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /static/efekty/adds/service-website-template/css/owl.theme.default.min.css HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,315 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /static/efekty/adds/service-website-template/css/owl.carousel.min.css HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,320 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /static/efekty/adds/service-website-template/css/jquery.fancybox.min.css HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,322 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /static/efekty/adds/service-website-template/css/style.css HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,323 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /static/efekty/adds/service-website-template/css/aos.css HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,324 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /static/efekty/adds/service-website-template/fonts/icomoon/style.css HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,329 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /static/efekty/adds/service-website-template/fonts/feather/style.css HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,330 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /static/efekty/adds/service-website-template/fonts/flaticon/font/flaticon.css HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,333 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /static/efekty/adds/index/main.css HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,335 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /static/efekty/adds/service-website-template/js/jquery-3.5.1.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,338 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /static/efekty/adds/service-website-template/js/jquery-migrate-3.0.0.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,340 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /static/efekty/adds/service-website-template/js/popper.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,344 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /static/efekty/adds/service-website-template/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,344 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /static/efekty/adds/hero/js/mdb.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,348 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /static/efekty/adds/service-website-template/js/owl.carousel.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,350 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /static/efekty/adds/service-website-template/js/aos.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,353 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /static/efekty/adds/service-website-template/js/imagesloaded.pkgd.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,355 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /static/efekty/adds/service-website-template/js/isotope.pkgd.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,358 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /static/efekty/adds/service-website-template/js/jquery.animateNumber.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,361 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /static/efekty/adds/service-website-template/js/jquery.stellar.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,362 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /static/efekty/adds/service-website-template/js/jquery.waypoints.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,365 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /static/efekty/adds/service-website-template/js/jquery.fancybox.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,367 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /static/efekty/adds/service-website-template/js/custom.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,368 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /static/efekty/adds/index/footerSection.js HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,487 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "GET /efekty/adds/galeria/assets/322679947_831537901271177_2854626816657091469_n.jpg HTTP/1.1" 200 -
+2024-08-24 08:13:40,489 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "GET /efekty/adds/galeria/assets/184285412_3911701732271173_664944797408423679_n.jpg HTTP/1.1" 200 -
+2024-08-24 08:13:40,491 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "GET /efekty/adds/galeria/assets/195688778_3986667734774572_6652058005580401895_n.jpg HTTP/1.1" 200 -
+2024-08-24 08:13:40,492 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "GET /efekty/adds/galeria/assets/355120523_6245759822198674_7575173158746098612_n.jpg HTTP/1.1" 200 -
+2024-08-24 08:13:40,494 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "GET /efekty/adds/galeria/assets/336767407_6131000973587482_5005028003242857146_n.jpg HTTP/1.1" 200 -
+2024-08-24 08:13:40,891 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /efekty/adds/galeria/assets/48921969_1960271264052333_3732463173068914688_n.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,897 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "GET /logo.svg HTTP/1.1" 200 -
+2024-08-24 08:13:40,900 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /efekty/adds/galeria/assets/118083887_3162074360567251_317893365180175413_n.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,926 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /efekty/adds/galeria/assets/209158276_4064455230329155_4712343838012056478_n.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,939 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /efekty/adds/galeria/assets/331483299_713620376899847_51941713472726588_n.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,960 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /efekty/adds/galeria/assets/387859034_122113918622064369_8563166061592335975_n.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,968 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /efekty/adds/galeria/assets/393015856_6635869109854408_5074807102227126407_n.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:13:40,977 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:40] "[36mGET /efekty/adds/hero/assets/pexels-caleboquendo-4889279.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:13:41,150 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-24 08:13:49,582 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:49] "[33mGET /static/efekty/adds/service-website-template/js/popper.min.js.map HTTP/1.1[0m" 404 -
+2024-08-24 08:13:49,693 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:49] "[36mGET /static/efekty/adds/hero/js/mdb.min.js.map HTTP/1.1[0m" 304 -
+2024-08-24 08:13:50,364 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:50] "GET /galeria HTTP/1.1" 200 -
+2024-08-24 08:13:50,385 INFO: 127.0.0.1 - - [24/Aug/2024 08:13:50] "GET /galeria HTTP/1.1" 200 -
+2024-08-24 08:15:06,745 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:06] "GET /o-nas HTTP/1.1" 200 -
+2024-08-24 08:15:06,964 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:06] "GET /static/efekty/adds/service-website-template/css/bootstrap.min.css HTTP/1.1" 200 -
+2024-08-24 08:15:06,967 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:06] "GET /static/efekty/adds/service-website-template/css/owl.carousel.min.css HTTP/1.1" 200 -
+2024-08-24 08:15:06,968 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:06] "GET /static/efekty/adds/service-website-template/css/owl.theme.default.min.css HTTP/1.1" 200 -
+2024-08-24 08:15:06,970 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:06] "GET /static/efekty/adds/service-website-template/css/aos.css HTTP/1.1" 200 -
+2024-08-24 08:15:06,972 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:06] "GET /static/efekty/adds/service-website-template/css/jquery.fancybox.min.css HTTP/1.1" 200 -
+2024-08-24 08:15:06,974 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:06] "GET /static/efekty/adds/service-website-template/css/style.css HTTP/1.1" 200 -
+2024-08-24 08:15:06,978 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:06] "GET /static/efekty/adds/service-website-template/fonts/icomoon/style.css HTTP/1.1" 200 -
+2024-08-24 08:15:06,978 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:06] "GET /static/efekty/adds/service-website-template/fonts/feather/style.css HTTP/1.1" 200 -
+2024-08-24 08:15:06,981 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:06] "GET /static/efekty/adds/service-website-template/fonts/flaticon/font/flaticon.css HTTP/1.1" 200 -
+2024-08-24 08:15:06,985 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:06] "GET /static/efekty/adds/index/main.css HTTP/1.1" 200 -
+2024-08-24 08:15:06,988 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:06] "GET /static/efekty/adds/hero/render.js HTTP/1.1" 200 -
+2024-08-24 08:15:06,989 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:06] "GET /static/efekty/adds/service-website-template/js/jquery-3.5.1.min.js HTTP/1.1" 200 -
+2024-08-24 08:15:06,991 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:06] "GET /static/efekty/adds/service-website-template/js/jquery-migrate-3.0.0.min.js HTTP/1.1" 200 -
+2024-08-24 08:15:06,994 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:06] "GET /static/efekty/adds/service-website-template/js/popper.min.js HTTP/1.1" 200 -
+2024-08-24 08:15:07,001 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "[36mGET /static/efekty/adds/hero/css/mdb.min.css HTTP/1.1[0m" 304 -
+2024-08-24 08:15:07,006 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "GET /static/efekty/adds/service-website-template/js/bootstrap.min.js HTTP/1.1" 200 -
+2024-08-24 08:15:07,008 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "GET /static/efekty/adds/hero/js/mdb.min.js HTTP/1.1" 200 -
+2024-08-24 08:15:07,009 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "GET /static/efekty/adds/service-website-template/js/owl.carousel.min.js HTTP/1.1" 200 -
+2024-08-24 08:15:07,012 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "GET /static/efekty/adds/service-website-template/js/aos.js HTTP/1.1" 200 -
+2024-08-24 08:15:07,013 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "GET /static/efekty/adds/service-website-template/js/imagesloaded.pkgd.js HTTP/1.1" 200 -
+2024-08-24 08:15:07,018 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "GET /static/efekty/adds/service-website-template/js/isotope.pkgd.min.js HTTP/1.1" 200 -
+2024-08-24 08:15:07,020 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "GET /static/efekty/adds/service-website-template/js/jquery.animateNumber.min.js HTTP/1.1" 200 -
+2024-08-24 08:15:07,022 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "GET /static/efekty/adds/service-website-template/js/jquery.stellar.min.js HTTP/1.1" 200 -
+2024-08-24 08:15:07,026 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "GET /static/efekty/adds/service-website-template/js/jquery.waypoints.min.js HTTP/1.1" 200 -
+2024-08-24 08:15:07,027 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "GET /static/efekty/adds/service-website-template/js/jquery.fancybox.min.js HTTP/1.1" 200 -
+2024-08-24 08:15:07,032 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "GET /static/efekty/adds/service-website-template/js/custom.js HTTP/1.1" 200 -
+2024-08-24 08:15:07,032 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "GET /static/efekty/adds/index/footerSection.js HTTP/1.1" 200 -
+2024-08-24 08:15:07,450 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "GET /logo.svg HTTP/1.1" 200 -
+2024-08-24 08:15:07,490 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "GET /get-json?file=hero.json HTTP/1.1" 200 -
+2024-08-24 08:15:07,503 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-24 08:15:07,640 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "GET /efekty/adds/hero/assets/loga/294797940_479086210808504_8667669129994940009_n.png HTTP/1.1" 200 -
+2024-08-24 08:15:07,645 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "GET /efekty/adds/hero/assets/loga/1706801724412.jpg HTTP/1.1" 200 -
+2024-08-24 08:15:07,645 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "GET /efekty/adds/hero/assets/loga/image_6487327a.jpg HTTP/1.1" 200 -
+2024-08-24 08:15:07,646 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "GET /efekty/adds/hero/assets/loga/1706801724426.jpg HTTP/1.1" 200 -
+2024-08-24 08:15:07,647 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "[36mGET /efekty/adds/hero/assets/DSC05450.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:15:07,649 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "GET /efekty/adds/hero/assets/loga/CUF-Ubezpieczenia_page-0001.jpg HTTP/1.1" 200 -
+2024-08-24 08:15:07,656 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "[36mGET /efekty/adds/hero/assets/image3.jpeg HTTP/1.1[0m" 304 -
+2024-08-24 08:15:07,669 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "[36mGET /efekty/adds/hero/assets/DSC05455.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:15:07,720 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "[36mGET /efekty/adds/hero/assets/loga/logo.png HTTP/1.1[0m" 304 -
+2024-08-24 08:15:07,732 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "[36mGET /efekty/adds/hero/assets/loga/Logo_z_halem-owal-300dpi.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:15:07,767 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "[36mGET /efekty/adds/hero/assets/video/11.png HTTP/1.1[0m" 304 -
+2024-08-24 08:15:07,777 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "[36mGET /efekty/adds/hero/assets/video/22.png HTTP/1.1[0m" 304 -
+2024-08-24 08:15:07,793 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:07] "[36mGET /efekty/adds/hero/assets/video/33.png HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,564 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "GET /o-nas HTTP/1.1" 200 -
+2024-08-24 08:15:47,741 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/service-website-template/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,742 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/service-website-template/css/owl.carousel.min.css HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,745 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/service-website-template/css/owl.theme.default.min.css HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,748 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/hero/css/mdb.min.css HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,749 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/service-website-template/css/aos.css HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,753 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/service-website-template/css/jquery.fancybox.min.css HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,755 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/service-website-template/css/style.css HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,756 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/service-website-template/fonts/icomoon/style.css HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,758 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/service-website-template/fonts/feather/style.css HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,761 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/service-website-template/fonts/flaticon/font/flaticon.css HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,765 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/index/main.css HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,767 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/hero/render.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,768 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/service-website-template/js/jquery-3.5.1.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,771 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/service-website-template/js/jquery-migrate-3.0.0.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,774 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/service-website-template/js/popper.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,776 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/service-website-template/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,779 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/hero/js/mdb.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,783 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/service-website-template/js/owl.carousel.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,785 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/service-website-template/js/aos.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,785 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/service-website-template/js/imagesloaded.pkgd.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,788 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/service-website-template/js/isotope.pkgd.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,791 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/service-website-template/js/jquery.animateNumber.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,795 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/service-website-template/js/jquery.stellar.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,799 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/service-website-template/js/jquery.waypoints.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,800 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/service-website-template/js/jquery.fancybox.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,804 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/service-website-template/js/custom.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:47,804 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:47] "[36mGET /static/efekty/adds/index/footerSection.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:48,307 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:48] "GET /get-json?file=hero.json HTTP/1.1" 200 -
+2024-08-24 08:15:48,307 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:48] "[36mGET /logo.svg HTTP/1.1[0m" 304 -
+2024-08-24 08:15:48,479 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:48] "[36mGET /efekty/adds/hero/assets/DSC05450.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:15:48,480 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:48] "[36mGET /efekty/adds/hero/assets/image3.jpeg HTTP/1.1[0m" 304 -
+2024-08-24 08:15:48,486 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:48] "[36mGET /efekty/adds/hero/assets/loga/1706801724412.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:15:48,486 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:48] "[36mGET /efekty/adds/hero/assets/loga/Logo_z_halem-owal-300dpi.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:15:48,489 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:48] "[36mGET /efekty/adds/hero/assets/loga/logo.png HTTP/1.1[0m" 304 -
+2024-08-24 08:15:48,492 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:48] "[36mGET /efekty/adds/hero/assets/loga/1706801724426.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:15:48,496 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:48] "[36mGET /efekty/adds/hero/assets/loga/image_6487327a.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:15:48,496 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:48] "[36mGET /efekty/adds/hero/assets/DSC05455.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:15:48,501 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:48] "[36mGET /efekty/adds/hero/assets/loga/294797940_479086210808504_8667669129994940009_n.png HTTP/1.1[0m" 304 -
+2024-08-24 08:15:48,503 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:48] "[36mGET /efekty/adds/hero/assets/loga/CUF-Ubezpieczenia_page-0001.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:15:48,505 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:48] "[36mGET /efekty/adds/hero/assets/video/22.png HTTP/1.1[0m" 304 -
+2024-08-24 08:15:48,509 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:48] "[36mGET /efekty/adds/hero/assets/video/33.png HTTP/1.1[0m" 304 -
+2024-08-24 08:15:48,513 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:48] "[36mGET /efekty/adds/hero/assets/video/11.png HTTP/1.1[0m" 304 -
+2024-08-24 08:15:48,657 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:48] "[35m[1mGET /efekty/adds/galeria/video/komputer/part00000025.mp4 HTTP/1.1[0m" 206 -
+2024-08-24 08:15:48,670 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:48] "[35m[1mGET /efekty/adds/galeria/video/mobile/part00000025.mp4 HTTP/1.1[0m" 206 -
+2024-08-24 08:15:48,685 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:48] "[35m[1mGET /efekty/adds/galeria/video/komputer/part00000050.mp4 HTTP/1.1[0m" 206 -
+2024-08-24 08:15:48,718 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:48] "[35m[1mGET /efekty/adds/galeria/video/komputer/part00000150.mp4 HTTP/1.1[0m" 206 -
+2024-08-24 08:15:48,739 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:48] "[35m[1mGET /efekty/adds/galeria/video/mobile/part00000150.mp4 HTTP/1.1[0m" 206 -
+2024-08-24 08:15:48,756 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:48] "[35m[1mGET /efekty/adds/galeria/video/komputer/part00000600.mp4 HTTP/1.1[0m" 206 -
+2024-08-24 08:15:48,934 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:48] "[35m[1mGET /efekty/adds/galeria/video/mobile/part00000600.mp4 HTTP/1.1[0m" 206 -
+2024-08-24 08:15:49,379 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:49] "[35m[1mGET /efekty/adds/galeria/video/mobile/part00000050.mp4 HTTP/1.1[0m" 206 -
+2024-08-24 08:15:51,589 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "GET /galeria HTTP/1.1" 200 -
+2024-08-24 08:15:51,721 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "[36mGET /static/efekty/adds/service-website-template/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2024-08-24 08:15:51,724 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "[36mGET /static/efekty/adds/service-website-template/css/owl.carousel.min.css HTTP/1.1[0m" 304 -
+2024-08-24 08:15:51,726 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "[36mGET /static/efekty/adds/service-website-template/css/owl.theme.default.min.css HTTP/1.1[0m" 304 -
+2024-08-24 08:15:51,727 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "[36mGET /static/efekty/adds/hero/css/mdb.min.css HTTP/1.1[0m" 304 -
+2024-08-24 08:15:51,732 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "[36mGET /static/efekty/adds/service-website-template/css/jquery.fancybox.min.css HTTP/1.1[0m" 304 -
+2024-08-24 08:15:51,734 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "[36mGET /static/efekty/adds/service-website-template/css/aos.css HTTP/1.1[0m" 304 -
+2024-08-24 08:15:51,738 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "[36mGET /static/efekty/adds/service-website-template/css/style.css HTTP/1.1[0m" 304 -
+2024-08-24 08:15:51,740 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "[36mGET /static/efekty/adds/service-website-template/fonts/icomoon/style.css HTTP/1.1[0m" 304 -
+2024-08-24 08:15:51,744 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "[36mGET /static/efekty/adds/service-website-template/fonts/feather/style.css HTTP/1.1[0m" 304 -
+2024-08-24 08:15:51,747 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "[36mGET /static/efekty/adds/service-website-template/fonts/flaticon/font/flaticon.css HTTP/1.1[0m" 304 -
+2024-08-24 08:15:51,751 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "[36mGET /static/efekty/adds/index/main.css HTTP/1.1[0m" 304 -
+2024-08-24 08:15:51,754 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "[36mGET /static/efekty/adds/service-website-template/js/jquery-3.5.1.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:51,756 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "[36mGET /static/efekty/adds/service-website-template/js/jquery-migrate-3.0.0.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:51,758 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "[36mGET /static/efekty/adds/service-website-template/js/popper.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:51,762 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "[36mGET /static/efekty/adds/service-website-template/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:51,766 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "[36mGET /static/efekty/adds/hero/js/mdb.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:51,769 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "[36mGET /static/efekty/adds/service-website-template/js/owl.carousel.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:51,770 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "[36mGET /static/efekty/adds/service-website-template/js/aos.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:51,772 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "[36mGET /static/efekty/adds/service-website-template/js/imagesloaded.pkgd.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:51,778 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "[36mGET /static/efekty/adds/service-website-template/js/isotope.pkgd.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:51,780 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "[36mGET /static/efekty/adds/service-website-template/js/jquery.animateNumber.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:51,781 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "[36mGET /static/efekty/adds/service-website-template/js/jquery.stellar.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:51,787 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "[36mGET /static/efekty/adds/service-website-template/js/jquery.waypoints.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:51,789 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "[36mGET /static/efekty/adds/service-website-template/js/jquery.fancybox.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:51,791 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "[36mGET /static/efekty/adds/service-website-template/js/custom.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:51,794 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "[36mGET /static/efekty/adds/index/footerSection.js HTTP/1.1[0m" 304 -
+2024-08-24 08:15:51,888 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "GET /efekty/adds/galeria/assets/322679947_831537901271177_2854626816657091469_n.jpg HTTP/1.1" 200 -
+2024-08-24 08:15:51,888 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "GET /efekty/adds/galeria/assets/184285412_3911701732271173_664944797408423679_n.jpg HTTP/1.1" 200 -
+2024-08-24 08:15:51,890 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "GET /efekty/adds/galeria/assets/195688778_3986667734774572_6652058005580401895_n.jpg HTTP/1.1" 200 -
+2024-08-24 08:15:51,891 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "GET /efekty/adds/galeria/assets/355120523_6245759822198674_7575173158746098612_n.jpg HTTP/1.1" 200 -
+2024-08-24 08:15:51,893 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:51] "GET /efekty/adds/galeria/assets/336767407_6131000973587482_5005028003242857146_n.jpg HTTP/1.1" 200 -
+2024-08-24 08:15:52,305 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:52] "[36mGET /efekty/adds/galeria/assets/48921969_1960271264052333_3732463173068914688_n.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:15:52,327 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:52] "[36mGET /efekty/adds/galeria/assets/118083887_3162074360567251_317893365180175413_n.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:15:52,334 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:52] "[36mGET /logo.svg HTTP/1.1[0m" 304 -
+2024-08-24 08:15:52,357 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:52] "[36mGET /efekty/adds/galeria/assets/209158276_4064455230329155_4712343838012056478_n.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:15:52,377 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:52] "[36mGET /efekty/adds/galeria/assets/331483299_713620376899847_51941713472726588_n.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:15:52,406 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:52] "[36mGET /efekty/adds/galeria/assets/387859034_122113918622064369_8563166061592335975_n.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:15:52,415 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:52] "[36mGET /efekty/adds/galeria/assets/393015856_6635869109854408_5074807102227126407_n.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:15:52,422 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:52] "[36mGET /efekty/adds/hero/assets/pexels-caleboquendo-4889279.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:15:53,114 INFO: 127.0.0.1 - - [24/Aug/2024 08:15:53] "GET /galeria HTTP/1.1" 200 -
+2024-08-24 08:16:15,921 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:15] "GET /o-nas HTTP/1.1" 200 -
+2024-08-24 08:16:16,053 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/service-website-template/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,055 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/hero/css/mdb.min.css HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,057 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/service-website-template/css/owl.carousel.min.css HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,059 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/service-website-template/css/owl.theme.default.min.css HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,061 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/service-website-template/css/aos.css HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,067 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/service-website-template/css/jquery.fancybox.min.css HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,069 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/service-website-template/css/style.css HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,070 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/service-website-template/fonts/icomoon/style.css HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,073 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/service-website-template/fonts/feather/style.css HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,076 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/service-website-template/fonts/flaticon/font/flaticon.css HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,078 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/index/main.css HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,078 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/hero/render.js HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,083 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/service-website-template/js/jquery-3.5.1.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,084 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/service-website-template/js/jquery-migrate-3.0.0.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,088 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/service-website-template/js/popper.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,089 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/service-website-template/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,090 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/hero/js/mdb.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,092 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/service-website-template/js/owl.carousel.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,095 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/service-website-template/js/aos.js HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,098 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/service-website-template/js/imagesloaded.pkgd.js HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,100 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/service-website-template/js/isotope.pkgd.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,105 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/service-website-template/js/jquery.animateNumber.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,107 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/service-website-template/js/jquery.stellar.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,108 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/service-website-template/js/jquery.waypoints.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,110 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/service-website-template/js/jquery.fancybox.min.js HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,114 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/service-website-template/js/custom.js HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,115 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /static/efekty/adds/index/footerSection.js HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,568 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "GET /get-json?file=hero.json HTTP/1.1" 200 -
+2024-08-24 08:16:16,569 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "GET /logo.svg HTTP/1.1" 200 -
+2024-08-24 08:16:16,734 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "GET /efekty/adds/hero/assets/loga/1706801724412.jpg HTTP/1.1" 200 -
+2024-08-24 08:16:16,734 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "GET /efekty/adds/hero/assets/loga/1706801724426.jpg HTTP/1.1" 200 -
+2024-08-24 08:16:16,739 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "GET /efekty/adds/hero/assets/loga/294797940_479086210808504_8667669129994940009_n.png HTTP/1.1" 200 -
+2024-08-24 08:16:16,742 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /efekty/adds/hero/assets/DSC05450.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,742 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "GET /efekty/adds/hero/assets/loga/CUF-Ubezpieczenia_page-0001.jpg HTTP/1.1" 200 -
+2024-08-24 08:16:16,745 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "GET /efekty/adds/hero/assets/loga/image_6487327a.jpg HTTP/1.1" 200 -
+2024-08-24 08:16:16,756 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /efekty/adds/hero/assets/image3.jpeg HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,776 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /efekty/adds/hero/assets/DSC05455.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,830 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /efekty/adds/hero/assets/loga/logo.png HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,845 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /efekty/adds/hero/assets/loga/Logo_z_halem-owal-300dpi.jpg HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,882 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /efekty/adds/hero/assets/video/11.png HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,898 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /efekty/adds/hero/assets/video/22.png HTTP/1.1[0m" 304 -
+2024-08-24 08:16:16,939 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:16] "[36mGET /efekty/adds/hero/assets/video/33.png HTTP/1.1[0m" 304 -
+2024-08-24 08:16:17,051 INFO: 127.0.0.1 - - [24/Aug/2024 08:16:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-24 11:41:34,808 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-24 11:41:34,808 INFO: [33mPress CTRL+C to quit[0m
+2024-08-24 11:41:34,812 INFO:  * Restarting with stat
+2024-08-24 11:41:35,432 WARNING:  * Debugger is active!
+2024-08-24 11:41:35,436 INFO:  * Debugger PIN: 886-544-002
+2024-08-24 11:41:35,867 INFO: 127.0.0.1 - - [24/Aug/2024 11:41:35] "GET /auth/login?next=/user/profile/pages/hero HTTP/1.1" 200 -
+2024-08-24 11:41:36,108 INFO: 127.0.0.1 - - [24/Aug/2024 11:41:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-24 11:41:37,556 INFO: 127.0.0.1 - - [24/Aug/2024 11:41:37] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2024-08-24 11:41:37,647 INFO: 127.0.0.1 - - [24/Aug/2024 11:41:37] "GET /user/profile HTTP/1.1" 200 -
+2024-08-24 11:41:42,666 INFO: 127.0.0.1 - - [24/Aug/2024 11:41:42] "GET /user/profile/pages/mail HTTP/1.1" 200 -
+2024-08-24 11:41:52,335 INFO: 127.0.0.1 - - [24/Aug/2024 11:41:52] "GET /user/profile/pages/mail HTTP/1.1" 200 -
+2024-08-24 11:43:06,129 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "GET / HTTP/1.1" 200 -
+2024-08-24 11:43:06,592 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "GET /static/efekty/adds/service-website-template/css/owl.carousel.min.css HTTP/1.1" 200 -
+2024-08-24 11:43:06,608 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "GET /static/efekty/adds/service-website-template/fonts/feather/style.css HTTP/1.1" 200 -
+2024-08-24 11:43:06,625 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "GET /static/efekty/adds/service-website-template/fonts/flaticon/font/flaticon.css HTTP/1.1" 200 -
+2024-08-24 11:43:06,643 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "GET /static/efekty/adds/index/main.css HTTP/1.1" 200 -
+2024-08-24 11:43:06,644 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "GET /static/efekty/adds/service-website-template/css/aos.css HTTP/1.1" 200 -
+2024-08-24 11:43:06,673 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "GET /static/efekty/adds/hero/render.js HTTP/1.1" 200 -
+2024-08-24 11:43:06,684 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "GET /static/efekty/adds/service-website-template/css/style.css HTTP/1.1" 200 -
+2024-08-24 11:43:06,684 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "GET /static/efekty/adds/service-website-template/css/owl.theme.default.min.css HTTP/1.1" 200 -
+2024-08-24 11:43:06,686 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "GET /static/efekty/adds/service-website-template/css/jquery.fancybox.min.css HTTP/1.1" 200 -
+2024-08-24 11:43:06,689 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "GET /static/efekty/adds/service-website-template/fonts/icomoon/style.css HTTP/1.1" 200 -
+2024-08-24 11:43:06,735 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "GET /static/efekty/adds/service-website-template/js/jquery-migrate-3.0.0.min.js HTTP/1.1" 200 -
+2024-08-24 11:43:06,755 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "GET /static/efekty/adds/service-website-template/js/popper.min.js HTTP/1.1" 200 -
+2024-08-24 11:43:06,758 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "GET /static/efekty/adds/service-website-template/js/jquery-3.5.1.min.js HTTP/1.1" 200 -
+2024-08-24 11:43:06,766 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "GET /static/efekty/adds/service-website-template/js/owl.carousel.min.js HTTP/1.1" 200 -
+2024-08-24 11:43:06,778 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "GET /static/efekty/adds/service-website-template/js/bootstrap.min.js HTTP/1.1" 200 -
+2024-08-24 11:43:06,795 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "GET /static/efekty/adds/service-website-template/js/aos.js HTTP/1.1" 200 -
+2024-08-24 11:43:06,809 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "GET /static/efekty/adds/service-website-template/js/imagesloaded.pkgd.js HTTP/1.1" 200 -
+2024-08-24 11:43:06,826 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "GET /static/efekty/adds/service-website-template/js/jquery.animateNumber.min.js HTTP/1.1" 200 -
+2024-08-24 11:43:06,827 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "GET /static/efekty/adds/hero/js/mdb.min.js HTTP/1.1" 200 -
+2024-08-24 11:43:06,829 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "GET /static/efekty/adds/service-website-template/js/isotope.pkgd.min.js HTTP/1.1" 200 -
+2024-08-24 11:43:06,842 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "GET /static/efekty/adds/service-website-template/js/jquery.stellar.min.js HTTP/1.1" 200 -
+2024-08-24 11:43:06,844 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "GET /static/efekty/adds/service-website-template/js/jquery.waypoints.min.js HTTP/1.1" 200 -
+2024-08-24 11:43:06,862 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "[36mGET /static/efekty/adds/service-website-template/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2024-08-24 11:43:06,869 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "[36mGET /static/efekty/adds/hero/css/mdb.min.css HTTP/1.1[0m" 304 -
+2024-08-24 11:43:06,870 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "GET /static/efekty/adds/service-website-template/js/custom.js HTTP/1.1" 200 -
+2024-08-24 11:43:06,874 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "GET /static/efekty/adds/index/footerSection.js HTTP/1.1" 200 -
+2024-08-24 11:43:06,877 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:06] "GET /static/efekty/adds/service-website-template/js/jquery.fancybox.min.js HTTP/1.1" 200 -
+2024-08-24 11:43:07,298 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:07] "GET /get-json?file=hero.json HTTP/1.1" 200 -
+2024-08-24 11:43:07,322 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:07] "GET /logo.svg HTTP/1.1" 200 -
+2024-08-24 11:43:07,447 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-24 11:43:07,696 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:07] "GET /efekty/adds/hero/assets/loga/1706801724412.jpg HTTP/1.1" 200 -
+2024-08-24 11:43:07,701 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:07] "GET /efekty/adds/hero/assets/loga/294797940_479086210808504_8667669129994940009_n.png HTTP/1.1" 200 -
+2024-08-24 11:43:07,710 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:07] "GET /efekty/adds/hero/assets/loga/1706801724426.jpg HTTP/1.1" 200 -
+2024-08-24 11:43:07,710 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:07] "[35m[1mGET /efekty/adds/galeria/video/komputer/part00000025.mp4 HTTP/1.1[0m" 206 -
+2024-08-24 11:43:07,714 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:07] "[35m[1mGET /efekty/adds/galeria/video/komputer/part00000600.mp4 HTTP/1.1[0m" 206 -
+2024-08-24 11:43:07,714 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:07] "GET /efekty/adds/hero/assets/loga/CUF-Ubezpieczenia_page-0001.jpg HTTP/1.1" 200 -
+2024-08-24 11:43:07,714 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:07] "GET /efekty/adds/hero/assets/loga/image_6487327a.jpg HTTP/1.1" 200 -
+2024-08-24 11:43:07,734 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:07] "[36mGET /efekty/adds/hero/assets/DSC05450.jpg HTTP/1.1[0m" 304 -
+2024-08-24 11:43:07,743 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:07] "[36mGET /efekty/adds/hero/assets/image3.jpeg HTTP/1.1[0m" 304 -
+2024-08-24 11:43:07,793 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:07] "[36mGET /efekty/adds/hero/assets/DSC05455.jpg HTTP/1.1[0m" 304 -
+2024-08-24 11:43:07,862 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:07] "[36mGET /efekty/adds/hero/assets/loga/logo.png HTTP/1.1[0m" 304 -
+2024-08-24 11:43:07,870 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:07] "[36mGET /efekty/adds/hero/assets/loga/Logo_z_halem-owal-300dpi.jpg HTTP/1.1[0m" 304 -
+2024-08-24 11:43:07,909 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:07] "[36mGET /efekty/adds/hero/assets/video/11.png HTTP/1.1[0m" 304 -
+2024-08-24 11:43:07,930 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:07] "[36mGET /efekty/adds/hero/assets/video/22.png HTTP/1.1[0m" 304 -
+2024-08-24 11:43:07,942 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:07] "[36mGET /efekty/adds/hero/assets/video/33.png HTTP/1.1[0m" 304 -
+2024-08-24 11:43:07,970 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:07] "[35m[1mGET /efekty/adds/galeria/video/mobile/part00000025.mp4 HTTP/1.1[0m" 206 -
+2024-08-24 11:43:07,994 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:07] "[35m[1mGET /efekty/adds/galeria/video/komputer/part00000050.mp4 HTTP/1.1[0m" 206 -
+2024-08-24 11:43:08,025 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:08] "[35m[1mGET /efekty/adds/galeria/video/komputer/part00000150.mp4 HTTP/1.1[0m" 206 -
+2024-08-24 11:43:08,030 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:08] "[35m[1mGET /efekty/adds/galeria/video/mobile/part00000150.mp4 HTTP/1.1[0m" 206 -
+2024-08-24 11:43:08,053 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:08] "[35m[1mGET /efekty/adds/galeria/video/mobile/part00000600.mp4 HTTP/1.1[0m" 206 -
+2024-08-24 11:43:08,158 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:08] "[35m[1mGET /efekty/adds/galeria/video/mobile/part00000050.mp4 HTTP/1.1[0m" 206 -
+2024-08-24 11:43:11,504 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:11] "GET /kontakt HTTP/1.1" 200 -
+2024-08-24 11:43:12,133 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /static/efekty/adds/service-website-template/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2024-08-24 11:43:12,137 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /static/efekty/adds/hero/css/mdb.min.css HTTP/1.1[0m" 304 -
+2024-08-24 11:43:12,139 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /static/efekty/adds/service-website-template/css/owl.carousel.min.css HTTP/1.1[0m" 304 -
+2024-08-24 11:43:12,145 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /static/efekty/adds/service-website-template/css/owl.theme.default.min.css HTTP/1.1[0m" 304 -
+2024-08-24 11:43:12,151 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /static/efekty/adds/service-website-template/css/aos.css HTTP/1.1[0m" 304 -
+2024-08-24 11:43:12,156 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /static/efekty/adds/service-website-template/css/jquery.fancybox.min.css HTTP/1.1[0m" 304 -
+2024-08-24 11:43:12,162 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /static/efekty/adds/service-website-template/css/style.css HTTP/1.1[0m" 304 -
+2024-08-24 11:43:12,166 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /static/efekty/adds/service-website-template/fonts/icomoon/style.css HTTP/1.1[0m" 304 -
+2024-08-24 11:43:12,170 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /static/efekty/adds/service-website-template/fonts/feather/style.css HTTP/1.1[0m" 304 -
+2024-08-24 11:43:12,175 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /static/efekty/adds/service-website-template/fonts/flaticon/font/flaticon.css HTTP/1.1[0m" 304 -
+2024-08-24 11:43:12,181 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /static/efekty/adds/index/main.css HTTP/1.1[0m" 304 -
+2024-08-24 11:43:12,197 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "GET /static/efekty/adds/background/css/back-main.css HTTP/1.1" 200 -
+2024-08-24 11:43:12,215 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "GET /static/efekty/adds/contact_form/contact-form.css HTTP/1.1" 200 -
+2024-08-24 11:43:12,222 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "GET /static/efekty/adds/background/js/show-demo-source.js HTTP/1.1" 200 -
+2024-08-24 11:43:12,228 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /static/efekty/adds/service-website-template/js/jquery-3.5.1.min.js HTTP/1.1[0m" 304 -
+2024-08-24 11:43:12,228 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "GET /static/efekty/adds/background/js/webgl-utils.js HTTP/1.1" 200 -
+2024-08-24 11:43:12,230 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "GET /static/efekty/adds/background/js/shader-web-background-api.js HTTP/1.1" 200 -
+2024-08-24 11:43:12,232 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /static/efekty/adds/service-website-template/js/jquery-migrate-3.0.0.min.js HTTP/1.1[0m" 304 -
+2024-08-24 11:43:12,240 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "GET /static/efekty/adds/background/js/shader-web-background.js HTTP/1.1" 200 -
+2024-08-24 11:43:12,248 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /static/efekty/adds/service-website-template/js/popper.min.js HTTP/1.1[0m" 304 -
+2024-08-24 11:43:12,257 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /static/efekty/adds/service-website-template/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+2024-08-24 11:43:12,259 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /static/efekty/adds/hero/js/mdb.min.js HTTP/1.1[0m" 304 -
+2024-08-24 11:43:12,259 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "GET /static/efekty/adds/background/render.js HTTP/1.1" 200 -
+2024-08-24 11:43:12,266 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /static/efekty/adds/service-website-template/js/owl.carousel.min.js HTTP/1.1[0m" 304 -
+2024-08-24 11:43:12,270 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /static/efekty/adds/service-website-template/js/isotope.pkgd.min.js HTTP/1.1[0m" 304 -
+2024-08-24 11:43:12,273 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /static/efekty/adds/service-website-template/js/aos.js HTTP/1.1[0m" 304 -
+2024-08-24 11:43:12,277 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /static/efekty/adds/service-website-template/js/imagesloaded.pkgd.js HTTP/1.1[0m" 304 -
+2024-08-24 11:43:12,289 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /static/efekty/adds/service-website-template/js/jquery.animateNumber.min.js HTTP/1.1[0m" 304 -
+2024-08-24 11:43:12,294 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /static/efekty/adds/service-website-template/js/jquery.stellar.min.js HTTP/1.1[0m" 304 -
+2024-08-24 11:43:12,297 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /static/efekty/adds/service-website-template/js/jquery.waypoints.min.js HTTP/1.1[0m" 304 -
+2024-08-24 11:43:12,304 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /static/efekty/adds/service-website-template/js/jquery.fancybox.min.js HTTP/1.1[0m" 304 -
+2024-08-24 11:43:12,308 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /static/efekty/adds/service-website-template/js/custom.js HTTP/1.1[0m" 304 -
+2024-08-24 11:43:12,309 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /static/efekty/adds/index/footerSection.js HTTP/1.1[0m" 304 -
+2024-08-24 11:43:12,967 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:12] "[36mGET /logo.svg HTTP/1.1[0m" 304 -
+2024-08-24 11:43:26,388 INFO: Próba wys³ania e-maila: Nowa wiadomoœæ od Mateusz Kacpura
+2024-08-24 11:43:33,375 INFO: Próba wys³ania e-maila: Nowa wiadomoœæ od Mateusz Kacpura
+2024-08-24 11:43:36,114 ERROR: B³¹d podczas wysy³ania wiadomoœci e-mail: (535, b'Incorrect authentication data')
+2024-08-24 11:43:36,115 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:36] "[35m[1mPOST /submit_form HTTP/1.1[0m" 500 -
+2024-08-24 11:43:40,515 INFO: Próba wys³ania e-maila: Nowa wiadomoœæ od Mateusz Kacpura
+2024-08-24 11:43:47,030 ERROR: B³¹d podczas wysy³ania wiadomoœci e-mail: (535, b'Incorrect authentication data')
+2024-08-24 11:43:47,030 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:47] "[35m[1mPOST /submit_form HTTP/1.1[0m" 500 -
+2024-08-24 11:43:50,089 ERROR: B³¹d podczas wysy³ania wiadomoœci e-mail: (535, b'Incorrect authentication data')
+2024-08-24 11:43:50,089 INFO: 127.0.0.1 - - [24/Aug/2024 11:43:50] "[35m[1mPOST /submit_form HTTP/1.1[0m" 500 -
+2024-08-24 11:45:39,882 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\email.py', reloading
+2024-08-24 11:45:39,938 INFO:  * Restarting with stat
+2024-08-24 11:45:40,499 WARNING:  * Debugger is active!
+2024-08-24 11:45:40,504 INFO:  * Debugger PIN: 886-544-002
+2024-08-24 11:45:59,598 INFO: Próba wys³ania e-maila: Nowa wiadomoœæ od Mateusz Kacpura
+2024-08-24 11:46:09,039 ERROR: B³¹d podczas wysy³ania wiadomoœci e-mail: (535, b'Incorrect authentication data')
+2024-08-24 11:46:09,041 INFO: 127.0.0.1 - - [24/Aug/2024 11:46:09] "[35m[1mPOST /submit_form HTTP/1.1[0m" 500 -
+2024-08-24 11:46:20,684 INFO: Próba wys³ania e-maila: Nowa wiadomoœæ od Mateusz Kacpura
+2024-08-24 11:46:26,199 ERROR: B³¹d podczas wysy³ania wiadomoœci e-mail: (535, b'Incorrect authentication data')
+2024-08-24 11:46:26,200 INFO: 127.0.0.1 - - [24/Aug/2024 11:46:26] "[35m[1mPOST /submit_form HTTP/1.1[0m" 500 -
+2024-08-24 11:47:30,074 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\email.py', reloading
+2024-08-24 11:47:30,122 INFO:  * Restarting with stat
+2024-08-24 11:47:30,685 WARNING:  * Debugger is active!
+2024-08-24 11:47:30,691 INFO:  * Debugger PIN: 886-544-002
+2024-08-24 11:47:35,441 INFO: Próba wys³ania e-maila: Nowa wiadomoœæ od Mateusz Kacpura
+2024-08-24 11:47:44,449 INFO: Próba wys³ania e-maila: Nowa wiadomoœæ od Mateusz Kacpura
+2024-08-24 11:47:56,484 ERROR: B³¹d podczas wysy³ania wiadomoœci e-mail: [WinError 10060] Próba po³¹czenia nie powiod³a siê, poniewa¿ po³¹czona strona nie odpowiedzia³a poprawnie po ustalonym okresie czasu lub utworzone po³¹czenie nie powiod³o siê, poniewa¿ po³¹czony host nie odpowiedzia³
+2024-08-24 11:47:56,485 INFO: 127.0.0.1 - - [24/Aug/2024 11:47:56] "[35m[1mPOST /submit_form HTTP/1.1[0m" 500 -
+2024-08-24 11:48:05,493 ERROR: B³¹d podczas wysy³ania wiadomoœci e-mail: [WinError 10060] Próba po³¹czenia nie powiod³a siê, poniewa¿ po³¹czona strona nie odpowiedzia³a poprawnie po ustalonym okresie czasu lub utworzone po³¹czenie nie powiod³o siê, poniewa¿ po³¹czony host nie odpowiedzia³
+2024-08-24 11:48:05,494 INFO: 127.0.0.1 - - [24/Aug/2024 11:48:05] "[35m[1mPOST /submit_form HTTP/1.1[0m" 500 -
+2024-08-24 11:49:46,406 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\email.py', reloading
+2024-08-24 11:49:46,462 INFO:  * Restarting with stat
+2024-08-24 11:49:47,113 WARNING:  * Debugger is active!
+2024-08-24 11:49:47,118 INFO:  * Debugger PIN: 886-544-002
+2024-08-24 11:49:53,621 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:53] "GET /kontakt HTTP/1.1" 200 -
+2024-08-24 11:49:54,032 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "[36mGET /static/efekty/adds/service-website-template/css/bootstrap.min.css HTTP/1.1[0m" 304 -
+2024-08-24 11:49:54,038 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "GET /static/efekty/adds/service-website-template/js/jquery-migrate-3.0.0.min.js HTTP/1.1" 200 -
+2024-08-24 11:49:54,039 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "GET /static/efekty/adds/service-website-template/js/aos.js HTTP/1.1" 200 -
+2024-08-24 11:49:54,045 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "GET /static/efekty/adds/service-website-template/js/imagesloaded.pkgd.js HTTP/1.1" 200 -
+2024-08-24 11:49:54,046 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "GET /static/efekty/adds/service-website-template/js/isotope.pkgd.min.js HTTP/1.1" 200 -
+2024-08-24 11:49:54,051 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "GET /static/efekty/adds/service-website-template/js/popper.min.js HTTP/1.1" 200 -
+2024-08-24 11:49:54,053 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "GET /static/efekty/adds/service-website-template/js/jquery.animateNumber.min.js HTTP/1.1" 200 -
+2024-08-24 11:49:54,056 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "GET /static/efekty/adds/service-website-template/js/owl.carousel.min.js HTTP/1.1" 200 -
+2024-08-24 11:49:54,056 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "GET /static/efekty/adds/service-website-template/js/bootstrap.min.js HTTP/1.1" 200 -
+2024-08-24 11:49:54,057 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "GET /static/efekty/adds/service-website-template/js/jquery.stellar.min.js HTTP/1.1" 200 -
+2024-08-24 11:49:54,058 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "GET /static/efekty/adds/hero/js/mdb.min.js HTTP/1.1" 200 -
+2024-08-24 11:49:54,063 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "GET /static/efekty/adds/service-website-template/js/jquery.waypoints.min.js HTTP/1.1" 200 -
+2024-08-24 11:49:54,065 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "GET /static/efekty/adds/service-website-template/js/jquery.fancybox.min.js HTTP/1.1" 200 -
+2024-08-24 11:49:54,075 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "GET /static/efekty/adds/service-website-template/js/custom.js HTTP/1.1" 200 -
+2024-08-24 11:49:54,077 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "GET /static/efekty/adds/index/footerSection.js HTTP/1.1" 200 -
+2024-08-24 11:49:54,080 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "[36mGET /static/efekty/adds/hero/css/mdb.min.css HTTP/1.1[0m" 304 -
+2024-08-24 11:49:54,088 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "[36mGET /static/efekty/adds/service-website-template/css/owl.carousel.min.css HTTP/1.1[0m" 304 -
+2024-08-24 11:49:54,090 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "[36mGET /static/efekty/adds/service-website-template/css/aos.css HTTP/1.1[0m" 304 -
+2024-08-24 11:49:54,092 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "[36mGET /static/efekty/adds/service-website-template/css/owl.theme.default.min.css HTTP/1.1[0m" 304 -
+2024-08-24 11:49:54,096 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "[36mGET /static/efekty/adds/service-website-template/css/jquery.fancybox.min.css HTTP/1.1[0m" 304 -
+2024-08-24 11:49:54,100 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "[36mGET /static/efekty/adds/service-website-template/css/style.css HTTP/1.1[0m" 304 -
+2024-08-24 11:49:54,103 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "[36mGET /static/efekty/adds/service-website-template/fonts/icomoon/style.css HTTP/1.1[0m" 304 -
+2024-08-24 11:49:54,107 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "[36mGET /static/efekty/adds/service-website-template/fonts/feather/style.css HTTP/1.1[0m" 304 -
+2024-08-24 11:49:54,110 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "[36mGET /static/efekty/adds/service-website-template/fonts/flaticon/font/flaticon.css HTTP/1.1[0m" 304 -
+2024-08-24 11:49:54,112 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "[36mGET /static/efekty/adds/index/main.css HTTP/1.1[0m" 304 -
+2024-08-24 11:49:54,114 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "[36mGET /static/efekty/adds/contact_form/contact-form.css HTTP/1.1[0m" 304 -
+2024-08-24 11:49:54,121 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "[36mGET /static/efekty/adds/background/css/back-main.css HTTP/1.1[0m" 304 -
+2024-08-24 11:49:54,122 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "[36mGET /static/efekty/adds/background/js/show-demo-source.js HTTP/1.1[0m" 304 -
+2024-08-24 11:49:54,125 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "[36mGET /static/efekty/adds/background/js/shader-web-background-api.js HTTP/1.1[0m" 304 -
+2024-08-24 11:49:54,128 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "[36mGET /static/efekty/adds/background/js/webgl-utils.js HTTP/1.1[0m" 304 -
+2024-08-24 11:49:54,131 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "[36mGET /static/efekty/adds/background/js/shader-web-background.js HTTP/1.1[0m" 304 -
+2024-08-24 11:49:54,131 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "[36mGET /static/efekty/adds/background/render.js HTTP/1.1[0m" 304 -
+2024-08-24 11:49:54,135 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "GET /static/efekty/adds/service-website-template/js/jquery-3.5.1.min.js HTTP/1.1" 200 -
+2024-08-24 11:49:54,560 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "GET /logo.svg HTTP/1.1" 200 -
+2024-08-24 11:49:54,582 INFO: 127.0.0.1 - - [24/Aug/2024 11:49:54] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-24 11:50:09,427 INFO: Próba wys³ania e-maila: Nowa wiadomoœæ od Mateusz hjk
+2024-08-24 11:50:30,458 ERROR: B³¹d podczas wysy³ania wiadomoœci e-mail: [WinError 10060] Próba po³¹czenia nie powiod³a siê, poniewa¿ po³¹czona strona nie odpowiedzia³a poprawnie po ustalonym okresie czasu lub utworzone po³¹czenie nie powiod³o siê, poniewa¿ po³¹czony host nie odpowiedzia³
+2024-08-24 11:50:30,459 INFO: 127.0.0.1 - - [24/Aug/2024 11:50:30] "[35m[1mPOST /submit_form HTTP/1.1[0m" 500 -
+2024-08-24 11:50:43,153 INFO: Próba wys³ania e-maila: Nowa wiadomoœæ od Mateusz hjk
+2024-08-24 11:51:04,195 ERROR: B³¹d podczas wysy³ania wiadomoœci e-mail: [WinError 10060] Próba po³¹czenia nie powiod³a siê, poniewa¿ po³¹czona strona nie odpowiedzia³a poprawnie po ustalonym okresie czasu lub utworzone po³¹czenie nie powiod³o siê, poniewa¿ po³¹czony host nie odpowiedzia³
+2024-08-24 11:51:04,195 INFO: 127.0.0.1 - - [24/Aug/2024 11:51:04] "[35m[1mPOST /submit_form HTTP/1.1[0m" 500 -
+2024-08-24 11:53:43,297 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\services\\file_service.py', reloading
+2024-08-24 11:53:43,352 INFO:  * Restarting with stat
+2024-08-24 11:53:44,031 WARNING:  * Debugger is active!
+2024-08-24 11:53:44,042 INFO:  * Debugger PIN: 886-544-002
+2024-08-24 11:53:52,119 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\services\\file_service.py', reloading
+2024-08-24 11:53:52,157 INFO:  * Restarting with stat
+2024-08-24 11:53:52,676 WARNING:  * Debugger is active!
+2024-08-24 11:53:52,680 INFO:  * Debugger PIN: 886-544-002
+2024-08-24 11:54:07,866 INFO: Próba wys³ania e-maila: Nowa wiadomoœæ od Mateusz hjk
+2024-08-24 11:54:28,914 ERROR: B³¹d podczas wysy³ania wiadomoœci e-mail: [WinError 10060] Próba po³¹czenia nie powiod³a siê, poniewa¿ po³¹czona strona nie odpowiedzia³a poprawnie po ustalonym okresie czasu lub utworzone po³¹czenie nie powiod³o siê, poniewa¿ po³¹czony host nie odpowiedzia³
+2024-08-24 11:54:28,914 ERROR: B³¹d dekodowania JSON podczas odczytu pliku
+2024-08-24 11:54:28,916 INFO: 127.0.0.1 - - [24/Aug/2024 11:54:28] "[35m[1mPOST /submit_form HTTP/1.1[0m" 500 -
+2024-08-24 11:54:33,306 INFO: Próba wys³ania e-maila: Nowa wiadomoœæ od Mateusz hjk
+2024-08-24 11:54:54,348 ERROR: B³¹d podczas wysy³ania wiadomoœci e-mail: [WinError 10060] Próba po³¹czenia nie powiod³a siê, poniewa¿ po³¹czona strona nie odpowiedzia³a poprawnie po ustalonym okresie czasu lub utworzone po³¹czenie nie powiod³o siê, poniewa¿ po³¹czony host nie odpowiedzia³
+2024-08-24 11:54:54,349 INFO: 127.0.0.1 - - [24/Aug/2024 11:54:54] "[35m[1mPOST /submit_form HTTP/1.1[0m" 500 -
+2024-08-24 12:02:21,249 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-24 12:02:21,290 INFO:  * Restarting with stat
+2024-08-24 12:02:21,851 WARNING:  * Debugger is active!
+2024-08-24 12:02:21,855 INFO:  * Debugger PIN: 886-544-002
+2024-08-24 12:02:36,939 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-24 12:02:36,980 INFO:  * Restarting with stat
+2024-08-24 12:02:37,539 WARNING:  * Debugger is active!
+2024-08-24 12:02:37,543 INFO:  * Debugger PIN: 886-544-002
+2024-08-24 12:02:59,354 INFO: 127.0.0.1 - - [24/Aug/2024 12:02:59] "[32mGET /user/profile/pages/mail HTTP/1.1[0m" 302 -
+2024-08-24 12:02:59,385 INFO: 127.0.0.1 - - [24/Aug/2024 12:02:59] "GET /auth/login?next=/user/profile/pages/mail HTTP/1.1" 200 -
+2024-08-24 12:03:01,233 INFO: 127.0.0.1 - - [24/Aug/2024 12:03:01] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2024-08-24 12:03:01,255 INFO: 127.0.0.1 - - [24/Aug/2024 12:03:01] "GET /user/profile HTTP/1.1" 200 -
+2024-08-24 12:03:02,705 INFO: 127.0.0.1 - - [24/Aug/2024 12:03:02] "GET /user/profile/pages/mail HTTP/1.1" 200 -
+2024-08-24 12:03:13,914 INFO: 127.0.0.1 - - [24/Aug/2024 12:03:13] "GET /user/profile/pages/mail HTTP/1.1" 200 -
+2024-08-24 12:03:14,756 INFO: 127.0.0.1 - - [24/Aug/2024 12:03:14] "GET /user/profile/pages/menusy HTTP/1.1" 200 -
+2024-08-24 12:03:15,442 INFO: 127.0.0.1 - - [24/Aug/2024 12:03:15] "GET /user/profile/pages/mail HTTP/1.1" 200 -
+2024-08-24 12:04:30,111 INFO: 127.0.0.1 - - [24/Aug/2024 12:04:30] "GET /user/profile/pages/mail HTTP/1.1" 200 -
+2024-08-24 12:07:22,012 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-24 12:07:22,053 INFO:  * Restarting with stat
+2024-08-24 12:07:22,628 WARNING:  * Debugger is active!
+2024-08-24 12:07:22,633 INFO:  * Debugger PIN: 886-544-002
+2024-08-24 12:07:29,522 INFO: 127.0.0.1 - - [24/Aug/2024 12:07:29] "[32mGET /user/profile/pages/mail HTTP/1.1[0m" 302 -
+2024-08-24 12:07:29,553 INFO: 127.0.0.1 - - [24/Aug/2024 12:07:29] "GET /auth/login?next=/user/profile/pages/mail HTTP/1.1" 200 -
+2024-08-24 12:07:29,759 INFO: 127.0.0.1 - - [24/Aug/2024 12:07:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-24 12:07:30,915 INFO: 127.0.0.1 - - [24/Aug/2024 12:07:30] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2024-08-24 12:07:30,943 INFO: 127.0.0.1 - - [24/Aug/2024 12:07:30] "GET /user/profile HTTP/1.1" 200 -
+2024-08-24 12:07:31,753 INFO: 127.0.0.1 - - [24/Aug/2024 12:07:31] "GET /user/profile/pages/mail HTTP/1.1" 200 -
+2024-08-24 12:07:40,874 INFO: 127.0.0.1 - - [24/Aug/2024 12:07:40] "[32mPOST /user/profile/pages/delete_mail HTTP/1.1[0m" 302 -
+2024-08-24 12:07:40,894 INFO: 127.0.0.1 - - [24/Aug/2024 12:07:40] "GET /user/profile/pages/mail HTTP/1.1" 200 -
+2024-08-24 12:11:04,786 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\email.py', reloading
+2024-08-24 12:11:04,823 INFO:  * Restarting with stat
+2024-08-24 12:11:05,334 WARNING:  * Debugger is active!
+2024-08-24 12:11:05,338 INFO:  * Debugger PIN: 886-544-002
+2024-08-24 12:11:14,234 INFO: Próba wys³ania e-maila: Nowa wiadomoœæ od Mateusz hjk
+2024-08-24 12:11:35,277 ERROR: B³¹d podczas wysy³ania wiadomoœci e-mail: [WinError 10060] Próba po³¹czenia nie powiod³a siê, poniewa¿ po³¹czona strona nie odpowiedzia³a poprawnie po ustalonym okresie czasu lub utworzone po³¹czenie nie powiod³o siê, poniewa¿ po³¹czony host nie odpowiedzia³
+2024-08-24 12:11:35,278 INFO: 127.0.0.1 - - [24/Aug/2024 12:11:35] "[35m[1mPOST /submit_form HTTP/1.1[0m" 500 -
+2024-08-24 12:11:46,942 INFO: 127.0.0.1 - - [24/Aug/2024 12:11:46] "[32mGET /user/profile/pages/mail HTTP/1.1[0m" 302 -
+2024-08-24 12:11:46,976 INFO: 127.0.0.1 - - [24/Aug/2024 12:11:46] "GET /auth/login?next=/user/profile/pages/mail HTTP/1.1" 200 -
+2024-08-24 12:11:48,505 INFO: 127.0.0.1 - - [24/Aug/2024 12:11:48] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2024-08-24 12:11:48,580 INFO: 127.0.0.1 - - [24/Aug/2024 12:11:48] "GET /user/profile HTTP/1.1" 200 -
+2024-08-24 12:11:49,583 INFO: 127.0.0.1 - - [24/Aug/2024 12:11:49] "GET /user/profile/pages/mail HTTP/1.1" 200 -
+2024-08-24 12:12:23,760 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-24 12:12:23,796 INFO:  * Restarting with stat
+2024-08-24 12:12:24,302 WARNING:  * Debugger is active!
+2024-08-24 12:12:24,306 INFO:  * Debugger PIN: 886-544-002
+2024-08-24 12:13:10,562 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-24 12:13:10,600 INFO:  * Restarting with stat
+2024-08-24 12:13:11,098 WARNING:  * Debugger is active!
+2024-08-24 12:13:11,102 INFO:  * Debugger PIN: 886-544-002
+2024-08-24 12:13:18,150 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-24 12:13:18,197 INFO:  * Restarting with stat
+2024-08-24 12:13:18,773 WARNING:  * Debugger is active!
+2024-08-24 12:13:18,777 INFO:  * Debugger PIN: 886-544-002
+2024-08-24 12:13:24,824 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-24 12:13:24,884 INFO:  * Restarting with stat
+2024-08-24 12:13:25,516 WARNING:  * Debugger is active!
+2024-08-24 12:13:25,522 INFO:  * Debugger PIN: 886-544-002
