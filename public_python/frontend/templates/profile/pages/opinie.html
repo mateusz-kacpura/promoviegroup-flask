@@ -159,6 +159,10 @@
                 <div class="tab-pane fade" id="about-us" role="tabpanel" aria-labelledby="about-us-tab">
                     <h2>About Us</h2>
                     <div class="mb-3">
+                        <label for="aboutUsVideoSrc" class="form-label">Video URL</label>
+                        <input type="text" class="form-control" id="aboutUsVideoSrc" name="aboutUs[videoSrc]" value="{{ data.aboutUs.videoSrc }}">
+                    </div>
+                    <div class="mb-3">
                         <label for="aboutUsTitle" class="form-label">Tytuł</label>
                         <input type="text" class="form-control" id="aboutUsTitle" name="aboutUs[title]" value="{{ data.aboutUs.title }}">
                     </div>
@@ -185,35 +189,74 @@
                 <!-- Contact Section -->
                 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                     <h2>Contact</h2>
+                    
+                    <!-- Background Image -->
+                    <div class="mb-3">
+                        <label for="contactBackgroundImage" class="form-label">Background Image URL</label>
+                        <input type="text" class="form-control" id="contactBackgroundImage" name="contact[backgroundImage]" value="{{ data.contact.backgroundImage }}">
+                    </div>
+
+                    <!-- Title -->
+                    <div class="mb-3">
+                        <label for="contactTitle" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="contactTitle" name="contact[title]" value="{{ data.contact.title }}">
+                    </div>
+
+                    <!-- Button Link -->
+                    <div class="mb-3">
+                        <label for="contactButtonLink" class="form-label">Button Link</label>
+                        <input type="text" class="form-control" id="contactButtonLink" name="contact[buttonLink]" value="{{ data.contact.buttonLink }}">
+                    </div>
+
+                    <!-- Button Text -->
+                    <div class="mb-3">
+                        <label for="contactButtonText" class="form-label">Button Text</label>
+                        <input type="text" class="form-control" id="contactButtonText" name="contact[buttonText]" value="{{ data.contact.buttonText }}">
+                    </div>
+
+                    <!-- Email -->
                     <div class="mb-3">
                         <label for="contactEmail" class="form-label">Email</label>
                         <input type="email" class="form-control" id="contactEmail" name="contact[email]" value="{{ data.contact.email }}">
                     </div>
+
+                    <!-- Phone -->
                     <div class="mb-3">
                         <label for="contactPhone" class="form-label">Telefon</label>
                         <input type="text" class="form-control" id="contactPhone" name="contact[phone]" value="{{ data.contact.phone }}">
                     </div>
+
+                    <!-- Address -->
                     <div class="mb-3">
                         <label for="contactAddress" class="form-label">Adres</label>
                         <input type="text" class="form-control" id="contactAddress" name="contact[address]" value="{{ data.contact.address }}">
                     </div>
+
+                    <!-- Google Maps URL -->
                     <div class="mb-3">
                         <label for="contactMapUrl" class="form-label">Google Maps URL</label>
                         <input type="text" class="form-control" id="contactMapUrl" name="contact[mapUrl]" value="{{ data.contact.mapUrl }}">
                     </div>
+
+                    <!-- Facebook URL -->
                     <div class="mb-3">
                         <label for="contactFacebook" class="form-label">Facebook (URL)</label>
                         <input type="text" class="form-control" id="contactFacebook" name="contact[social][facebook]" value="{{ data.contact.social.facebook }}">
                     </div>
+
+                    <!-- LinkedIn URL -->
                     <div class="mb-3">
                         <label for="contactLinkedin" class="form-label">LinkedIn (URL)</label>
                         <input type="text" class="form-control" id="contactLinkedin" name="contact[social][linkedin]" value="{{ data.contact.social.linkedin }}">
                     </div>
+
+                    <!-- Instagram URL -->
                     <div class="mb-3">
                         <label for="contactInstagram" class="form-label">Instagram (URL)</label>
                         <input type="text" class="form-control" id="contactInstagram" name="contact[social][instagram]" value="{{ data.contact.social.instagram }}">
                     </div>
                 </div>
+
             </div>
 
             <div class="mt-4">
@@ -222,7 +265,62 @@
         </form>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="statusModal" tabindex="-1" aria-labelledby="statusModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="statusModalLabel">Status operacji</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            <p id="statusMessage"></p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+            </div>
+        </div>
+        </div>
+    </div>
+  
     <script>
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form'); // Zakładam, że masz formularz na stronie
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Zatrzymanie domyślnego działania formularza
+
+                const formData = new FormData(form);
+                
+                // Wysłanie danych AJAX do serwera
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Sprawdzenie, czy operacja się powiodła
+                    const statusMessage = document.getElementById('statusMessage');
+                    if (data.success) {
+                        statusMessage.textContent = data.message;
+                    } else {
+                        statusMessage.textContent = `Błąd: ${data.message}`;
+                    }
+                    // Wywołanie modala
+                    const statusModal = new bootstrap.Modal(document.getElementById('statusModal'));
+                    statusModal.show();
+                })
+                .catch(error => {
+                    // Obsługa błędów po stronie klienta
+                    const statusMessage = document.getElementById('statusMessage');
+                    statusMessage.textContent = `Błąd: ${error}`;
+                    const statusModal = new bootstrap.Modal(document.getElementById('statusModal'));
+                    statusModal.show();
+                });
+            });
+        });
+
         function addClient() {
             const clientList = document.getElementById('clients-list');
             const newClientIndex = clientList.children.length;

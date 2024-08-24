@@ -245,16 +245,36 @@ def save_opinie(data):
         return False
     return True
 
-# Widok do przeglądania i edycji opinii
 @user_bp.route('/profile/pages/opinie', methods=['GET', 'POST'])
 @login_required
 def update_opinie():
     if request.method == 'POST':
-        # Pobieranie danych z formularza
         try:
             data = request.form.to_dict(flat=False)  # Pobieranie danych jako słownik
 
             # Przetwarzanie danych z formularza (konwersja na odpowiedni format)
+            testimonials_data = []
+            testimonial_keys = [key for key in data.keys() if key.startswith('testimonials[')]
+            
+            # Zbieranie unikalnych indeksów dla testimonials
+            indices = set()
+            for key in testimonial_keys:
+                index = int(key.split('[')[1].split(']')[0])
+                indices.add(index)
+            
+            for i in sorted(indices):
+                testimonials_data.append({
+                    "photo": data.get(f"testimonials[{i}][photo]", [""])[0],
+                    "author": data.get(f"testimonials[{i}][author]", [""])[0],
+                    "occupation": data.get(f"testimonials[{i}][occupation]", [""])[0],
+                    "quote": data.get(f"testimonials[{i}][quote]", [""])[0],
+                    "social": {
+                        "facebook": data.get(f"testimonials[{i}][social][facebook]", [""])[0],
+                        "twitter": data.get(f"testimonials[{i}][social][twitter]", [""])[0],
+                        "instagram": data.get(f"testimonials[{i}][social][instagram]", [""])[0],
+                    }
+                })
+            
             processed_data = {
                 "hero": {
                     "backgroundImage": data.get("hero[backgroundImage]", [""])[0],
@@ -268,20 +288,8 @@ def update_opinie():
                     "image1": data.get("about[image1]", [""])[0],
                     "image2": data.get("about[image2]", [""])[0],
                 },
-                "clients": data.get("clients", []),
-                "testimonials": [
-                    {
-                        "photo": data.get(f"testimonials[{i}][photo]", [""])[0],
-                        "author": data.get(f"testimonials[{i}][author]", [""])[0],
-                        "occupation": data.get(f"testimonials[{i}][occupation]", [""])[0],
-                        "quote": data.get(f"testimonials[{i}][quote]", [""])[0],
-                        "social": {
-                            "facebook": data.get(f"testimonials[{i}][social][facebook]", [""])[0],
-                            "twitter": data.get(f"testimonials[{i}][social][twitter]", [""])[0],
-                            "instagram": data.get(f"testimonials[{i}][social][instagram]", [""])[0],
-                        }
-                    } for i in range(len(data.get("testimonials[0][photo]", [])))
-                ],
+                "clients": [value[0] for key, value in data.items() if key.startswith('clients[')],
+                "testimonials": testimonials_data,
                 "aboutUs": {
                     "videoSrc": data.get("aboutUs[videoSrc]", [""])[0],
                     "title": data.get("aboutUs[title]", [""])[0],
@@ -310,6 +318,7 @@ def update_opinie():
                 return jsonify({"success": True, "message": "Dane zostały zapisane pomyślnie!"})
             else:
                 return jsonify({"success": False, "message": "Błąd podczas zapisu danych!"})
+
         except Exception as e:
             return jsonify({"success": False, "message": str(e)})
 

@@ -1,82 +1,77 @@
 {
-  "hero": {
-      "backgroundImage": "efekty/adds/opinie/images/DSC05482-1-2.jpg",
-      "title": "Oferta Usług Fotograficznych, Filmowych, Dronowych i Transmisji na Stronę Internetową",
-      "description": "Nasz zespół oferuje kompleksowe usługi w zakresie fotografii, filmowania, dronów oraz transmisji na stronę internetową. Jesteśmy gotowi uchwycić najważniejsze chwile i dostarczyć wyjątkowe treści wizualne dla Państwa."
-  },
-  "about": {
-      "title": "Odkryj wyjątkowy świat fotografii i filmu",
-      "description": "Wejdź w świat magii i emocji, jaką oferuje fotografia i film. Nasze projekty przeniosą Cię w niezwykłe podróże, gdzie każde zdjęcie opowiada własną historię.",
-      "buttonText": "Zamów u nas film",
-      "image1": "efekty/adds/opinie/images/431220026_930507098566627_1926631657014937817_n.jpg",
-      "image2": "efekty/adds/opinie/images/433112654_1562209211229027_546412977909240967_n.jpg"
-  },
-  "clients": [
-      "efekty/adds/hero/assets/loga/294797940_479086210808504_8667669129994940009_n.png",
-      "efekty/adds/hero/assets/loga/1706801724412.jpg",
-      "efekty/adds/hero/assets/loga/1706801724426.jpg",
-      "efekty/adds/hero/assets/loga/da635a33-ac6f-4f65-b6eb-fee731bbd382_kopia.jpg",
-      "efekty/adds/hero/assets/loga/logo.png"
-  ],
-  "testimonials": [
-      {
-          "photo": "efekty/adds/opinie/images/klienci/pawelmiszczynski.jpg",
-          "author": "Paweł Miszczynski",
-          "occupation": "Chiropraktyk i Fizjoterapeuta",
-          "quote": "Współpraca z Pro Movie Group okazała się niezwykle satysfakcjonująca. Ich profesjonalizm oraz umiejętność realizacji projektów video przekroczyły moje oczekiwania. Od pierwszego kontaktu do końcowego montażu, cały proces przebiegał sprawnie i efektywnie. Firma wykazała się zrozumieniem naszych potrzeb oraz dostosowaniem się do harmonogramu pracy. Efekty ich pracy były imponujące i zdecydowanie poleciłbym ich usługi wszystkim poszukującym wysokiej jakości produkcji video.",
-          "social": {
-              "facebook": "https://www.facebook.com/pawel.miszczynski",
-              "twitter": "https://twitter.com",
-              "instagram": "https://instagram.com"
-          }
-      },
-      {
-          "photo": "efekty/adds/opinie/images/klienci/jakubwitek.jpg",
-          "author": "Jakub Witek",
-          "occupation": "Prezes Zarządu Orły Polska Fundacja Promocji i Wspierania Sportu",
-          "quote": "Realizacje materiałów wideo z organizowanych przez nas wydarzeń od lat powierzamy Pro Movie Group. To projekt złożony z profesjonalistów, którzy, doskonale radząc sobie z uwiecznianiem tego co dla naszej fundacji najważniejsze i czym później możemy się dzielić z naszymi odbiorcami. Serdecznie polecam.",
-          "social": {
-              "facebook": "https://facebook.com/JakubWitekPL",
-              "twitter": "https://twitter.com",
-              "instagram": "https://instagram.com"
-          }
-      },
-      {
-          "photo": "efekty/adds/opinie/images/klienci/aniagacek.jpg",
-          "author": "Ania Gacek",
-          "occupation": "Klient",
-          "quote": "Chcielibyśmy serdecznie polecić firmę Pana Grzegorza, który kręcił dla nas klip z okazji 15 rocznicy ślubu. Jego profesjonalizm i zaangażowanie były widoczne na każdym kroku. Pan Grzegorz uchwycił wszystkie ważne momenty w sposób naturalny i pełen emocji, co sprawiło że film jest dla nas wspaniałą pamiątką na całe życie. Gorąco polecamy jego usługi wszystkim którzy szukają profesjonalnego i utalentowanego kamerzysty. Ania i Robert",
-          "social": {
-              "facebook": "https://facebook.com/ania.gacek.96",
-              "twitter": "https://twitter.com",
-              "instagram": "https://instagram.com"
-          }
-      }
-  ],
-  "aboutUs": {
-      "videoSrc": "logo_1080p.mp4",
-      "title": "Kim Jesteśmy",
-      "description": "Firma Pro Movie Group to zespół pasjonatów filmu i fotografii, którzy od lat tworzą wyjątkowe projekty dla naszych klientów. Nasze doświadczenie i zaangażowanie pozwoliło nam zdobyć uznanie w branży oraz zbudować silne relacje z naszymi klientami. Nasza firma powstała z miłości do sztuki filmowej i fotografii. Jesteśmy dumni z naszych osiągnięć i ciągle dążymy do doskonałości w tym, co robimy. Zaufaj nam, aby uwiecznić ważne chwile Twojego życia i przekształcić je w niezapomniane wspomnienia.",
-      "bulletPoints": [
-          "Doświadczenie i pasja w tworzeniu filmów i zdjęć",
-          "Uznanie w branży i silne relacje z klientami",
-          "Zaufaj nam, aby uwiecznić ważne chwile Twojego życia",
-          "Ciągłe dążenie do doskonałości i innowacyjność"
-      ]
-  },
-  "contact": {
-      "backgroundImage": "efekty/adds/opinie/images/DSC05454_crop.jpg",
-      "title": "Gotowi by utrwalić Twoje wyjątkowe chwile",
-      "buttonLink": "kontakt",
-      "buttonText": "Kontakt",
-      "email": "info@promoviegroup.com",
-      "phone": "+48 123 456 789",
-      "address": "Warszawa, Polska",
-      "mapUrl": "https://maps.google.com/example",
-      "social": {
-          "facebook": "https://www.facebook.com/ProMovieGroup",
-          "linkedin": "https://www.linkedin.com/company/promoviegroup",
-          "instagram": "https://www.instagram.com/promoviegroup"
-      }
-  }
+    "hero": {
+        "backgroundImage": "efekty/adds/opinie/images/DSC05482-1-2.jpg",
+        "title": "Oferta Usług Fotograficznych, Filmowych, Dronowych i Transmisji na Stronę Internetową",
+        "description": "Nasz zespół oferuje kompleksowe usługi w zakresie fotografii, filmowania, dronów oraz transmisji na stronę internetową. Jesteśmy gotowi uchwycić najważniejsze chwile i dostarczyć wyjątkowe treści wizualne dla Państwa."
+    },
+    "about": {
+        "title": "Odkryj wyjątkowy świat fotografii i filmu",
+        "description": "Wejdź w świat magii i emocji, jaką oferuje fotografia i film. Nasze projekty przeniosą Cię w niezwykłe podróże, gdzie każde zdjęcie opowiada własną historię.",
+        "buttonText": "Zamów u nas film",
+        "image1": "efekty/adds/opinie/images/431220026_930507098566627_1926631657014937817_n.jpg",
+        "image2": "efekty/adds/opinie/images/433112654_1562209211229027_546412977909240967_n.jpg"
+    },
+    "clients": [
+        "efekty/adds/hero/assets/loga/294797940_479086210808504_8667669129994940009_n.png",
+        "efekty/adds/hero/assets/loga/1706801724412.jpg",
+        "efekty/adds/hero/assets/loga/1706801724426.jpg",
+        "efekty/adds/hero/assets/loga/da635a33-ac6f-4f65-b6eb-fee731bbd382_kopia.jpg",
+        "efekty/adds/hero/assets/loga/logo.png"
+    ],
+    "testimonials": [
+        {
+            "photo": "efekty/adds/opinie/images/klienci/pawelmiszczynski.jpg",
+            "author": "Paweł Miszczynski",
+            "occupation": "Chiropraktyk i Fizjoterapeuta",
+            "quote": "Współpraca z Pro Movie Group okazała się niezwykle satysfakcjonująca. Ich profesjonalizm oraz umiejętność realizacji projektów video przekroczyły moje oczekiwania. Od pierwszego kontaktu do końcowego montażu, cały proces przebiegał sprawnie i efektywnie. Firma wykazała się zrozumieniem naszych potrzeb oraz dostosowaniem się do harmonogramu pracy. Efekty ich pracy były imponujące i zdecydowanie poleciłbym ich usługi wszystkim poszukującym wysokiej jakości produkcji video.",
+            "social": {
+                "facebook": "https://www.facebook.com/pawel.miszczynski",
+                "twitter": "",
+                "instagram": ""
+            }
+        },
+        {
+            "photo": "efekty/adds/opinie/images/klienci/jakubwitek.jpg",
+            "author": "Jakub Witek",
+            "occupation": "Prezes Zarządu Orły Polska Fundacja Promocji i Wspierania Sportu",
+            "quote": "Realizacje materiałów wideo z organizowanych przez nas wydarzeń od lat powierzamy Pro Movie Group. To projekt złożony z profesjonalistów, którzy, doskonale radząc sobie z uwiecznianiem tego co dla naszej fundacji najważniejsze i czym później możemy się dzielić z naszymi odbiorcami. Serdecznie polecam.",
+            "social": {
+                "facebook": "https://facebook.com/JakubWitekPL",
+                "twitter": "",
+                "instagram": ""
+            }
+        },
+        {
+            "photo": "efekty/adds/opinie/images/klienci/aniagacek.jpg",
+            "author": "Ania Gacek",
+            "occupation": "Klient",
+            "quote": "Chcielibyśmy serdecznie polecić firmę Pana Grzegorza, który kręcił dla nas klip z okazji 15 rocznicy ślubu. Jego profesjonalizm i zaangażowanie były widoczne na każdym kroku. Pan Grzegorz uchwycił wszystkie ważne momenty w sposób naturalny i pełen emocji, co sprawiło że film jest dla nas wspaniałą pamiątką na całe życie. Gorąco polecamy jego usługi wszystkim którzy szukają profesjonalnego i utalentowanego kamerzysty. Ania i Robert",
+            "social": {
+                "facebook": "https://facebook.com/ania.gacek.96",
+                "twitter": "",
+                "instagram": ""
+            }
+        }
+    ],
+    "aboutUs": {
+        "videoSrc": "logo_1080p.mp4",
+        "title": "Kim Jesteśmy",
+        "description": "Firma Pro Movie Group to zespół pasjonatów filmu i fotografii, którzy od lat tworzą wyjątkowe projekty dla naszych klientów. Nasze doświadczenie i zaangażowanie pozwoliło nam zdobyć uznanie w branży oraz zbudować silne relacje z naszymi klientami. Nasza firma powstała z miłości do sztuki filmowej i fotografii. Jesteśmy dumni z naszych osiągnięć i ciągle dążymy do doskonałości w tym, co robimy. Zaufaj nam, aby uwiecznić ważne chwile Twojego życia i przekształcić je w niezapomniane wspomnienia.",
+        "bulletPoints": []
+    },
+    "contact": {
+        "backgroundImage": "efekty/adds/opinie/images/DSC05454_crop.jpg",
+        "title": "Gotowi by utrwalić Twoje wyjątkowe chwile",
+        "buttonLink": "kontakt",
+        "buttonText": "Kontakt",
+        "email": "info@promoviegroup.com",
+        "phone": "+48 123 456 789",
+        "address": "Warszawa, Polska",
+        "mapUrl": "https://maps.google.com/example",
+        "social": {
+            "facebook": "https://www.facebook.com/ProMovieGroup",
+            "linkedin": "https://www.linkedin.com/company/promoviegroup",
+            "instagram": "https://www.instagram.com/promoviegroup"
+        }
+    }
 }
