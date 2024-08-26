@@ -4966,3 +4966,16 @@
 2024-08-26 16:11:44,327 INFO: 127.0.0.1 - - [26/Aug/2024 16:11:44] "[36mGET /static/efekty/adds/hero/assets/video/11.png HTTP/1.1[0m" 304 -
 2024-08-26 16:11:44,336 INFO: 127.0.0.1 - - [26/Aug/2024 16:11:44] "[36mGET /static/efekty/adds/hero/assets/video/22.png HTTP/1.1[0m" 304 -
 2024-08-26 16:11:44,336 INFO: 127.0.0.1 - - [26/Aug/2024 16:11:44] "[36mGET /static/efekty/adds/hero/assets/video/33.png HTTP/1.1[0m" 304 -
+2024-08-26 16:17:37,544 INFO: 127.0.0.1 - - [26/Aug/2024 16:17:37] "GET /user/profile/pages/menusy HTTP/1.1" 200 -
+2024-08-26 16:17:37,885 INFO: 127.0.0.1 - - [26/Aug/2024 16:17:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-26 16:17:38,451 INFO: 127.0.0.1 - - [26/Aug/2024 16:17:38] "GET /user/profile/pages/hero HTTP/1.1" 200 -
+2024-08-26 16:17:38,665 INFO: 127.0.0.1 - - [26/Aug/2024 16:17:38] "GET /static/efekty/adds/hero/assets/loga/294797940_479086210808504_8667669129994940009_n.png HTTP/1.1" 200 -
+2024-08-26 16:17:38,666 INFO: 127.0.0.1 - - [26/Aug/2024 16:17:38] "GET /static/efekty/adds/hero/assets/loga/1706801724412.jpg HTTP/1.1" 200 -
+2024-08-26 16:17:38,668 INFO: 127.0.0.1 - - [26/Aug/2024 16:17:38] "GET /static/efekty/adds/hero/assets/loga/1706801724426.jpg HTTP/1.1" 200 -
+2024-08-26 16:17:38,670 INFO: 127.0.0.1 - - [26/Aug/2024 16:17:38] "GET /static/efekty/adds/hero/assets/loga/image_6487327a.jpg HTTP/1.1" 200 -
+2024-08-26 16:17:38,671 INFO: 127.0.0.1 - - [26/Aug/2024 16:17:38] "GET /static/efekty/adds/hero/assets/loga/CUF-Ubezpieczenia_page-0001.jpg HTTP/1.1" 200 -
+2024-08-26 16:17:38,742 INFO: 127.0.0.1 - - [26/Aug/2024 16:17:38] "[36mGET /static/efekty/adds/hero/assets/loga/logo.png HTTP/1.1[0m" 304 -
+2024-08-26 16:17:38,751 INFO: 127.0.0.1 - - [26/Aug/2024 16:17:38] "[36mGET /static/efekty/adds/hero/assets/loga/Logo_z_halem-owal-300dpi.jpg HTTP/1.1[0m" 304 -
+2024-08-26 16:17:38,785 INFO: 127.0.0.1 - - [26/Aug/2024 16:17:38] "[36mGET /static/efekty/adds/hero/assets/video/11.png HTTP/1.1[0m" 304 -
+2024-08-26 16:17:38,792 INFO: 127.0.0.1 - - [26/Aug/2024 16:17:38] "[36mGET /static/efekty/adds/hero/assets/video/22.png HTTP/1.1[0m" 304 -
+2024-08-26 16:17:38,801 INFO: 127.0.0.1 - - [26/Aug/2024 16:17:38] "[36mGET /static/efekty/adds/hero/assets/video/33.png HTTP/1.1[0m" 304 -
