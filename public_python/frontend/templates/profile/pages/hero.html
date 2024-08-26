@@ -162,44 +162,94 @@
 
                 <!-- Team Section -->
                 <div class="tab-pane fade" id="team" role="tabpanel" aria-labelledby="team-tab">
-                    <h2>Team Members</h2>
+                    <h2 class="text-center mb-4">Team Members</h2>
+
+                    <!-- Team Title and Subtitle -->
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="teamTitle" class="form-label">Team Title</label>
+                                <input type="text" class="form-control" id="teamTitle" name="membersTeamSection[teamTitle]" value="{{ json_data.membersTeamSection.teamTitle }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="teamSubtitle" class="form-label">Team Subtitle</label>
+                                <input type="text" class="form-control" id="teamSubtitle" name="membersTeamSection[teamSubtitle]" value="{{ json_data.membersTeamSection.teamSubtitle }}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Team Members List -->
                     <div id="team-list">
                         {% for member in json_data.membersTeamSection.members %}
-                        <div class="team-member mb-4">
-                            <h3>Member {{ loop.index }}</h3>
-                            <div class="mb-3">
-                                <label for="teamName{{ loop.index }}" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="teamName{{ loop.index }}" name="membersTeamSection[members][{{ loop.index0 }}][name]" value="{{ member.name }}">
+                        <div class="card shadow-sm mb-4 team-member">
+                            <div class="card-body">
+                                <h4 class="card-title">Member {{ loop.index }}</h4>
+                                
+                                <!-- Name and Role -->
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="teamName{{ loop.index }}" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="teamName{{ loop.index }}" name="membersTeamSection[members][{{ loop.index0 }}][name]" value="{{ member.name }}">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="teamRole{{ loop.index }}" class="form-label">Role</label>
+                                        <input type="text" class="form-control" id="teamRole{{ loop.index }}" name="membersTeamSection[members][{{ loop.index0 }}][role]" value="{{ member.role }}">
+                                    </div>
+                                </div>
+
+                                <!-- Image and Biography -->
+                                <div class="row">
+                                    <div class="col-md-4 mb-3">
+                                        <label for="teamImage{{ loop.index }}" class="form-label">Image URL</label>
+                                        <input type="text" class="form-control" id="teamImage{{ loop.index }}" name="membersTeamSection[members][{{ loop.index0 }}][imageURL]" value="{{ member.imageURL }}">
+                                    </div>
+                                    <div class="col-md-8 mb-3">
+                                        <label for="teamBiography{{ loop.index }}" class="form-label">Biography</label>
+                                        <textarea class="form-control" id="teamBiography{{ loop.index }}" name="membersTeamSection[members][{{ loop.index0 }}][details][biography]" rows="3">{{ member.details.biography }}</textarea>
+                                    </div>
+                                </div>
+
+                                <!-- Experience, Projects, Techniques -->
+                                <div class="mb-3">
+                                    <label for="teamExperience{{ loop.index }}" class="form-label">Experience</label>
+                                    <textarea class="form-control" id="teamExperience{{ loop.index }}" name="membersTeamSection[members][{{ loop.index0 }}][details][expirience]" rows="2">{{ member.details.expirience }}</textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="teamProjects{{ loop.index }}" class="form-label">Projects</label>
+                                    <textarea class="form-control" id="teamProjects{{ loop.index }}" name="membersTeamSection[members][{{ loop.index0 }}][details][projects]" rows="2">{{ member.details.projects }}</textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="teamTechniques{{ loop.index }}" class="form-label">Techniques</label>
+                                    <textarea class="form-control" id="teamTechniques{{ loop.index }}" name="membersTeamSection[members][{{ loop.index0 }}][details][techniques]" rows="2">{{ member.details.techniques }}</textarea>
+                                </div>
+
+                                <!-- Social Icons and Links -->
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="teamSocialIcons{{ loop.index }}" class="form-label">Social Icons</label>
+                                        {% for icon in member.socialIcons %}
+                                        <input type="text" class="form-control mb-1" id="teamSocialIcons{{ loop.index }}_{{ loop.index0 }}" name="membersTeamSection[members][{{ loop.index0 }}][socialIcons][]" value="{{ icon }}">
+                                        {% endfor %}
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="teamSocialLinks{{ loop.index }}" class="form-label">Social Links</label>
+                                        {% for link in member.socialLinks %}
+                                        <input type="text" class="form-control mb-1" id="teamSocialLinks{{ loop.index }}_{{ loop.index0 }}" name="membersTeamSection[members][{{ loop.index0 }}][socialLinks][]" value="{{ link }}">
+                                        {% endfor %}
+                                    </div>
+                                </div>
+
+                                <!-- Remove Button -->
+                                <button type="button" class="btn btn-danger btn-sm mt-3" onclick="removeTeamMember(this)">Usuń</button>
                             </div>
-                            <div class="mb-3">
-                                <label for="teamRole{{ loop.index }}" class="form-label">Role</label>
-                                <input type="text" class="form-control" id="teamRole{{ loop.index }}" name="membersTeamSection[members][{{ loop.index0 }}][role]" value="{{ member.role }}">
-                            </div>
-                            <div class="mb-3">
-                                <label for="teamImage{{ loop.index }}" class="form-label">Image URL</label>
-                                <input type="text" class="form-control" id="teamImage{{ loop.index }}" name="membersTeamSection[members][{{ loop.index0 }}][imageURL]" value="{{ member.imageURL }}">
-                            </div>
-                            <div class="mb-3">
-                                <label for="teamBiography{{ loop.index }}" class="form-label">Biography</label>
-                                <textarea class="form-control" id="teamBiography{{ loop.index }}" name="membersTeamSection[members][{{ loop.index0 }}][details][biography]">{{ member.details.biography }}</textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label for="teamExperience{{ loop.index }}" class="form-label">Experience</label>
-                                <textarea class="form-control" id="teamExperience{{ loop.index }}" name="membersTeamSection[members][{{ loop.index0 }}][details][expirience]">{{ member.details.expirience }}</textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label for="teamProjects{{ loop.index }}" class="form-label">Projects</label>
-                                <textarea class="form-control" id="teamProjects{{ loop.index }}" name="membersTeamSection[members][{{ loop.index0 }}][details][projects]">{{ member.details.projects }}</textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label for="teamTechniques{{ loop.index }}" class="form-label">Techniques</label>
-                                <textarea class="form-control" id="teamTechniques{{ loop.index }}" name="membersTeamSection[members][{{ loop.index0 }}][details][techniques]">{{ member.details.techniques }}</textarea>
-                            </div>
-                            <button type="button" class="remove-btn" onclick="removeTeamMember(this)">Usuń</button>
                         </div>
                         {% endfor %}
                     </div>
-                    <button type="button" class="btn btn-secondary" onclick="addTeamMember()">Dodaj Członka</button>
+
+                    <!-- Add Member Button -->
+                    <div class="text-center mt-4">
+                        <button type="button" class="btn btn-primary" onclick="addTeamMember()">Dodaj Członka</button>
+                    </div>
                 </div>
 
                 <!-- Jumbotron Section -->
@@ -689,38 +739,122 @@
             }
         }
 
-        // Functions to add/remove team members
-        function addTeamMember() {
-            const teamList = document.getElementById('team-list');
-            const teamCount = teamList.children.length;
-            const newMember = document.createElement('div');
-            newMember.className = 'team-member mb-4';
-            newMember.innerHTML = `
-                <h3>Member ${teamCount + 1}</h3>
-                <div class="mb-3">
-                    <label for="teamName${teamCount + 1}" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="teamName${teamCount + 1}" name="team[${teamCount}][name]">
-                </div>
-                <div class="mb-3">
-                    <label for="teamRole${teamCount + 1}" class="form-label">Role</label>
-                    <input type="text" class="form-control" id="teamRole${teamCount + 1}" name="team[${teamCount}][role]">
-                </div>
-                <div class="mb-3">
-                    <label for="teamImage${teamCount + 1}" class="form-label">Image URL</label>
-                    <input type="text" class="form-control" id="teamImage${teamCount + 1}" name="team[${teamCount}][image]">
-                </div>
-                <div class="mb-3">
-                    <label for="teamDescription${teamCount + 1}" class="form-label">Description</label>
-                    <textarea class="form-control" id="teamDescription${teamCount + 1}" name="team[${teamCount}][description]"></textarea>
-                </div>
-                <button type="button" class="remove-btn" onclick="removeTeamMember(this)">Usuń</button>
-            `;
-            teamList.appendChild(newMember);
-        }
+        document.addEventListener('DOMContentLoaded', function() {
+            // Dodawanie nowego członka zespołu
+            window.addTeamMember = function() {
+                // Pobierz listę członków zespołu
+                const teamList = document.getElementById('team-list');
+                const memberIndex = teamList.children.length + 1;
 
-        function removeTeamMember(button) {
-            button.closest('.team-member').remove();
-        }
+                // Utwórz nową kartę członka zespołu
+                const newMember = document.createElement('div');
+                newMember.className = 'card shadow-sm mb-4 team-member';
+                newMember.innerHTML = `
+                    <div class="card-body">
+                        <h4 class="card-title">Member ${memberIndex}</h4>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="teamName${memberIndex}" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="teamName${memberIndex}" name="membersTeamSection[members][${memberIndex - 1}][name]" value="">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="teamRole${memberIndex}" class="form-label">Role</label>
+                                <input type="text" class="form-control" id="teamRole${memberIndex}" name="membersTeamSection[members][${memberIndex - 1}][role]" value="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <label for="teamImage${memberIndex}" class="form-label">Image URL</label>
+                                <input type="text" class="form-control" id="teamImage${memberIndex}" name="membersTeamSection[members][${memberIndex - 1}][imageURL]" value="">
+                            </div>
+                            <div class="col-md-8 mb-3">
+                                <label for="teamBiography${memberIndex}" class="form-label">Biography</label>
+                                <textarea class="form-control" id="teamBiography${memberIndex}" name="membersTeamSection[members][${memberIndex - 1}][details][biography]" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="teamExperience${memberIndex}" class="form-label">Experience</label>
+                            <textarea class="form-control" id="teamExperience${memberIndex}" name="membersTeamSection[members][${memberIndex - 1}][details][expirience]" rows="2"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="teamProjects${memberIndex}" class="form-label">Projects</label>
+                            <textarea class="form-control" id="teamProjects${memberIndex}" name="membersTeamSection[members][${memberIndex - 1}][details][projects]" rows="2"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="teamTechniques${memberIndex}" class="form-label">Techniques</label>
+                            <textarea class="form-control" id="teamTechniques${memberIndex}" name="membersTeamSection[members][${memberIndex - 1}][details][techniques]" rows="2"></textarea>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="teamSocialIcons${memberIndex}" class="form-label">Social Icons</label>
+                                <input type="text" class="form-control mb-1" id="teamSocialIcons${memberIndex}_0" name="membersTeamSection[members][${memberIndex - 1}][socialIcons][]" value="">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="teamSocialLinks${memberIndex}" class="form-label">Social Links</label>
+                                <input type="text" class="form-control mb-1" id="teamSocialLinks${memberIndex}_0" name="membersTeamSection[members][${memberIndex - 1}][socialLinks][]" value="">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-danger btn-sm mt-3" onclick="removeTeamMember(this)">Usuń</button>
+                    </div>
+                `;
+                
+                // Dodaj nowego członka do listy
+                teamList.appendChild(newMember);
+            };
+
+            // Usuwanie członka zespołu
+            window.removeTeamMember = function(button) {
+                const memberCard = button.closest('.team-member');
+                memberCard.remove();
+
+                // Aktualizacja numeracji członków zespołu
+                const teamList = document.getElementById('team-list');
+                const members = teamList.children;
+                for (let i = 0; i < members.length; i++) {
+                    members[i].querySelector('.card-title').textContent = `Member ${i + 1}`;
+                    updateMemberFields(members[i], i);
+                }
+            };
+
+            // Aktualizacja identyfikatorów pól dla członków zespołu
+            function updateMemberFields(memberElement, index) {
+                const memberIndex = index + 1;
+
+                memberElement.querySelector('[id^="teamName"]').id = `teamName${memberIndex}`;
+                memberElement.querySelector('[name^="membersTeamSection[members]"]').name = `membersTeamSection[members][${index}][name]`;
+                
+                memberElement.querySelector('[id^="teamRole"]').id = `teamRole${memberIndex}`;
+                memberElement.querySelector('[name^="membersTeamSection[members]"]').name = `membersTeamSection[members][${index}][role]`;
+
+                memberElement.querySelector('[id^="teamImage"]').id = `teamImage${memberIndex}`;
+                memberElement.querySelector('[name^="membersTeamSection[members]"]').name = `membersTeamSection[members][${index}][imageURL]`;
+
+                memberElement.querySelector('[id^="teamBiography"]').id = `teamBiography${memberIndex}`;
+                memberElement.querySelector('[name^="membersTeamSection[members]"]').name = `membersTeamSection[members][${index}][details][biography]`;
+
+                memberElement.querySelector('[id^="teamExperience"]').id = `teamExperience${memberIndex}`;
+                memberElement.querySelector('[name^="membersTeamSection[members]"]').name = `membersTeamSection[members][${index}][details][expirience]`;
+
+                memberElement.querySelector('[id^="teamProjects"]').id = `teamProjects${memberIndex}`;
+                memberElement.querySelector('[name^="membersTeamSection[members]"]').name = `membersTeamSection[members][${index}][details][projects]`;
+
+                memberElement.querySelector('[id^="teamTechniques"]').id = `teamTechniques${memberIndex}`;
+                memberElement.querySelector('[name^="membersTeamSection[members]"]').name = `membersTeamSection[members][${index}][details][techniques]`;
+
+                const socialIcons = memberElement.querySelectorAll('[id^="teamSocialIcons"]');
+                socialIcons.forEach((icon, i) => {
+                    icon.id = `teamSocialIcons${memberIndex}_${i}`;
+                    icon.name = `membersTeamSection[members][${index}][socialIcons][${i}]`;
+                });
+
+                const socialLinks = memberElement.querySelectorAll('[id^="teamSocialLinks"]');
+                socialLinks.forEach((link, i) => {
+                    link.id = `teamSocialLinks${memberIndex}_${i}`;
+                    link.name = `membersTeamSection[members][${index}][socialLinks][${i}]`;
+                });
+            }
+        });
+
 
         // Functions to add/remove articles
         function addArticle() {
