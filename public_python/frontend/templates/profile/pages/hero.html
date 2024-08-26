@@ -63,86 +63,88 @@
             </ul>
 
             <div class="tab-content" id="adminTabContent">
-                <!-- Modalny do edycji elementu -->
-                <div class="modal fade" id="editItemModal" tabindex="-1" aria-labelledby="editItemModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="editItemModalLabel">Edytuj element</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form id="editItemForm">
-                                    <!-- Edytowalne pola formularza znajdują się tutaj -->
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-wtórny" data-bs-dismiss="modal">Zamknij</button>
-                                <button type="button" class="btn btn-primary" id="saveItemChangesBtn">Zapisz zmiany</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="container">
-                    <div class="row" id="carouselItemsContainer">
-                        {% for item in json_data.carouselItems %}
-                        <div class="col-md-4 mb-3" data-index="{{ loop.index }}">
-                            <div class="card">
-                                <div class="card-header">
-                                    Slide {{ loop.index }}
-                                    <button type="button" class="btn btn-warning btn-sm float-end ms-2 edit-btn">Edit</button>
-                                    <button type="button" class="btn btn-danger btn-sm float-end remove-btn">Remove</button>
+                <!-- Carousel Section -->
+                <div class="tab-pane fade show active" id="carousel" role="tabpanel" aria-labelledby="carousel-tab">
+                    <!-- Modalny do edycji elementu -->
+                    <div class="modal fade" id="editItemModal" tabindex="-1" aria-labelledby="editItemModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="editItemModalLabel">Edytuj element</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
                                 </div>
-                                <div class="card-body">
-                                    <div class="mb-3">
-                                        <label for="videoSrc_{{ loop.index }}" class="form-label">Video Source:</label>
-                                        <input type="text" class="form-control" id="videoSrc_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][videoSrc]" value="{{ item.videoSrc }}" readonly>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="videoMobileSrc_{{ loop.index }}" class="form-label">Video Mobile Source:</label>
-                                        <input type="text" class="form-control" id="videoMobileSrc_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][videoMobileSrc]" value="{{ item.videoMobileSrc }}" readonly>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="maskColor_{{ loop.index }}" class="form-label">Mask Color:</label>
-                                        <input type="text" class="form-control" id="maskColor_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][maskColor]" value="{{ item.maskColor }}" readonly>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="heading_{{ loop.index }}" class="form-label">Heading:</label>
-                                        <input type="text" class="form-control" id="heading_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][heading]" value="{{ item.heading }}" readonly>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="subheading_{{ loop.index }}" class="form-label">Subheading:</label>
-                                        <input type="text" class="form-control" id="subheading_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][subheading]" value="{{ item.subheading }}" readonly>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="buttonText_{{ loop.index }}" class="form-label">Button Text:</label>
-                                        <input type="text" class="form-control" id="buttonText_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][buttons][0][text]" value="{{ item.buttons[0].text }}" readonly>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="buttonUrl_{{ loop.index }}" class="form-label">Button URL:</label>
-                                        <input type="text" class="form-control" id="buttonUrl_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][buttons][0][url]" value="{{ item.buttons[0].url }}" readonly>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="videoPreview_{{ loop.index }}" class="form-label">Video Preview:</label>
-                                        <video id="videoPreview_{{ loop.index }}" class="w-100" controls>
-                                            <source src="{{ url_for('static', filename=item.videoSrc.lstrip('/')) }}" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                        </video>                        
-                                    </div>
+                                <div class="modal-body">
+                                    <form id="editItemForm">
+                                        <!-- Edytowalne pola formularza znajdują się tutaj -->
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-wtórny" data-bs-dismiss="modal">Zamknij</button>
+                                    <button type="button" class="btn btn-primary" id="saveItemChangesBtn">Zapisz zmiany</button>
                                 </div>
                             </div>
                         </div>
-                        {% endfor %}
                     </div>
 
-                    <!-- Button to add a new item -->
-                    <div class="d-flex justify-content-center mt-3">
-                        <button type="button" class="btn btn-primary" id="addNewItemBtn">Add New Item</button>
+
+                    <div class="container">
+                        <div class="row" id="carouselItemsContainer">
+                            {% for item in json_data.carouselItems %}
+                            <div class="col-md-4 mb-3" data-index="{{ loop.index }}">
+                                <div class="card">
+                                    <div class="card-header">
+                                        Slide {{ loop.index }}
+                                        <button type="button" class="btn btn-warning btn-sm float-end ms-2 edit-btn">Edit</button>
+                                        <button type="button" class="btn btn-danger btn-sm float-end remove-btn">Remove</button>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="mb-3">
+                                            <label for="videoSrc_{{ loop.index }}" class="form-label">Video Source:</label>
+                                            <input type="text" class="form-control" id="videoSrc_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][videoSrc]" value="{{ item.videoSrc }}" readonly>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="videoMobileSrc_{{ loop.index }}" class="form-label">Video Mobile Source:</label>
+                                            <input type="text" class="form-control" id="videoMobileSrc_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][videoMobileSrc]" value="{{ item.videoMobileSrc }}" readonly>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="maskColor_{{ loop.index }}" class="form-label">Mask Color:</label>
+                                            <input type="text" class="form-control" id="maskColor_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][maskColor]" value="{{ item.maskColor }}" readonly>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="heading_{{ loop.index }}" class="form-label">Heading:</label>
+                                            <input type="text" class="form-control" id="heading_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][heading]" value="{{ item.heading }}" readonly>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="subheading_{{ loop.index }}" class="form-label">Subheading:</label>
+                                            <input type="text" class="form-control" id="subheading_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][subheading]" value="{{ item.subheading }}" readonly>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="buttonText_{{ loop.index }}" class="form-label">Button Text:</label>
+                                            <input type="text" class="form-control" id="buttonText_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][buttons][0][text]" value="{{ item.buttons[0].text }}" readonly>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="buttonUrl_{{ loop.index }}" class="form-label">Button URL:</label>
+                                            <input type="text" class="form-control" id="buttonUrl_{{ loop.index }}" name="carouselItems[{{ loop.index0 }}][buttons][0][url]" value="{{ item.buttons[0].url }}" readonly>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="videoPreview_{{ loop.index }}" class="form-label">Video Preview:</label>
+                                            <video id="videoPreview_{{ loop.index }}" class="w-100" controls>
+                                                <source src="{{ url_for('static', filename=item.videoSrc.lstrip('/')) }}" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        <!-- Button to add a new item -->
+                        <div class="d-flex justify-content-center mt-3">
+                            <button type="button" class="btn btn-primary" id="addNewItemBtn">Add New Item</button>
+                        </div>
                     </div>
                 </div>
-
                 <!-- Main Section -->
                 <div class="tab-pane fade" id="main-section" role="tabpanel" aria-labelledby="main-section-tab">
                     <h2>Main Section</h2>
