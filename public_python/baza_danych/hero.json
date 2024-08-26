@@ -192,6 +192,11 @@
         "efekty/adds/hero/assets/loga/logo.png"
     ],
     "video": {
+        "titles":[
+            "",
+            "",
+            ""
+        ],
         "images": [
             "efekty/adds/hero/assets/video/11.png",
             "efekty/adds/hero/assets/video/22.png",

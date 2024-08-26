@@ -281,31 +281,43 @@
                 <div class="tab-pane fade" id="articles" role="tabpanel" aria-labelledby="articles-tab">
                     <h2>Articles</h2>
                     <div id="articles-list">
+                        <!-- Loop through articles -->
                         {% for article in json_data.latestArticles %}
-                        <div class="article-item mb-4">
-                            <h3>{{ article.title }}</h3>
-                            <div class="mb-3">
-                                <label for="articleCategory{{ loop.index }}" class="form-label">Category</label>
-                                <input type="text" class="form-control" id="articleCategory{{ loop.index }}" name="latestArticles[{{ loop.index0 }}][category]" value="{{ article.category }}">
+                        <div class="article-item mb-4 border p-3 rounded">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="articleTitle{{ loop.index }}" class="form-label">Title</label>
+                                    <input type="text" class="form-control" id="articleTitle{{ loop.index }}" name="latestArticles[{{ loop.index0 }}][title]" value="{{ article.title }}">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="articleCategory{{ loop.index }}" class="form-label">Category</label>
+                                    <input type="text" class="form-control" id="articleCategory{{ loop.index }}" name="latestArticles[{{ loop.index0 }}][category]" value="{{ article.category }}">
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="articleDescription1{{ loop.index }}" class="form-label">Description 1</label>
-                                <input type="text" class="form-control" id="articleDescription1{{ loop.index }}" name="latestArticles[{{ loop.index0 }}][description1]" value="{{ article.description1 }}">
-                            </div>
-                            <div class="mb-3">
-                                <label for="articleDescription2{{ loop.index }}" class="form-label">Description 2</label>
-                                <input type="text" class="form-control" id="articleDescription2{{ loop.index }}" name="latestArticles[{{ loop.index0 }}][description2]" value="{{ article.description2 }}">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="articleDescription1{{ loop.index }}" class="form-label">Description 1</label>
+                                    <input type="text" class="form-control" id="articleDescription1{{ loop.index }}" name="latestArticles[{{ loop.index0 }}][description1]" value="{{ article.description1 }}">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="articleDescription2{{ loop.index }}" class="form-label">Description 2</label>
+                                    <input type="text" class="form-control" id="articleDescription2{{ loop.index }}" name="latestArticles[{{ loop.index0 }}][description2]" value="{{ article.description2 }}">
+                                </div>
                             </div>
                             <div class="mb-3">
                                 <label for="articleImageURL{{ loop.index }}" class="form-label">Image URL</label>
                                 <input type="text" class="form-control" id="articleImageURL{{ loop.index }}" name="latestArticles[{{ loop.index0 }}][imageURL]" value="{{ article.imageURL }}">
                             </div>
-                            <button type="button" class="remove-btn" onclick="removeArticle(this)">Usuń</button>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button type="button" class="btn btn-danger btn-sm" onclick="removeArticle(this)">Usuń</button>
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="editArticle(this)">Edytuj</button>
+                            </div>
                         </div>
                         {% endfor %}
                     </div>
-                    <button type="button" class="btn btn-secondary" onclick="addArticle()">Dodaj Artykuł</button>
+                    <button type="button" class="btn btn-primary mt-3" onclick="addArticle()">Dodaj Artykuł</button>
                 </div>
+
 
                 <!-- Adventure Section -->
                 <div class="tab-pane fade" id="adventure" role="tabpanel" aria-labelledby="adventure-tab">
@@ -328,17 +340,15 @@
                 <div class="tab-pane fade" id="partners" role="tabpanel" aria-labelledby="partners-tab">
                     <h2>{{ json_data.partners.text1 }}</h2>
                     <div class="row">
+                        <div class="mb-3">
+                            <label for="partnersText" class="form-label">Text</label>
+                            <input type="text" class="form-control" id="partnersText" name="adventure[description]" value="{{ json_data.partners.text1 }}">
+                        </div>
                         {% for i in range(json_data.partners.images|length) %}
                         <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
                             <div class="card">
                                 <img src="{{ url_for('static', filename=json_data.partners.images[i]) }}" class="img-fluid card-img-top" alt="Partner logo">
                                 <div class="card-body">
-                                    <!-- Partner Name (Optional) -->
-                                    <div class="mb-3">
-                                        <label for="partnerName{{ i }}" class="form-label">Partner Name {{ i+1 }}</label>
-                                        <input type="text" class="form-control" id="partnerName{{ i }}" name="partners[partnerNames][{{ i }}]" value="{{ json_data.partners.partnerNames[i] if json_data.partners.partnerNames is defined else '' }}">
-                                    </div>
-
                                     <!-- Image Link -->
                                     <div class="mb-3">
                                         <label for="partnerImage{{ i }}" class="form-label">Image Link {{ i+1 }}</label>
@@ -390,7 +400,7 @@
             </div>
         </form>
     </div>
-    {{ json_data | tojson }}
+
     <!-- Modalny do edycji elementu -->
     <div class="modal fade" id="editItemModal" tabindex="-1" aria-labelledby="editItemModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -855,30 +865,68 @@
             }
         });
 
+        let articleIndex = {{ json_data.latestArticles | length }}; // Start index for new articles
 
-        // Functions to add/remove articles
+        // Function to add a new article
         function addArticle() {
-            const articlesList = document.getElementById('articles-list');
-            const articleCount = articlesList.children.length;
-            const newArticle = document.createElement('div');
-            newArticle.className = 'article-item mb-4';
-            newArticle.innerHTML = `
-                <h3>Article ${articleCount + 1}</h3>
-                <div class="mb-3">
-                    <label for="articleTitle${articleCount + 1}" class="form-label">Title</label>
-                    <input type="text" class="form-control" id="articleTitle${articleCount + 1}" name="articles[${articleCount}][title]">
+            articleIndex++; // Increment index for new article
+
+            // Create a new article element
+            const articleHTML = `
+                <div class="article-item mb-4 border p-3 rounded">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="articleTitle${articleIndex}" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="articleTitle${articleIndex}" name="latestArticles[${articleIndex}][title]">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="articleCategory${articleIndex}" class="form-label">Category</label>
+                            <input type="text" class="form-control" id="articleCategory${articleIndex}" name="latestArticles[${articleIndex}][category]">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="articleDescription1${articleIndex}" class="form-label">Description 1</label>
+                            <input type="text" class="form-control" id="articleDescription1${articleIndex}" name="latestArticles[${articleIndex}][description1]">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="articleDescription2${articleIndex}" class="form-label">Description 2</label>
+                            <input type="text" class="form-control" id="articleDescription2${articleIndex}" name="latestArticles[${articleIndex}][description2]">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="articleImageURL${articleIndex}" class="form-label">Image URL</label>
+                        <input type="text" class="form-control" id="articleImageURL${articleIndex}" name="latestArticles[${articleIndex}][imageURL]">
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <button type="button" class="btn btn-danger btn-sm" onclick="removeArticle(this)">Usuń</button>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="editArticle(this)">Edytuj</button>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="articleContent${articleCount + 1}" class="form-label">Content</label>
-                    <textarea class="form-control" id="articleContent${articleCount + 1}" name="articles[${articleCount}][content]"></textarea>
-                </div>
-                <button type="button" class="remove-btn" onclick="removeArticle(this)">Usuń</button>
             `;
-            articlesList.appendChild(newArticle);
+
+            // Append the new article to the articles list
+            document.getElementById('articles-list').insertAdjacentHTML('beforeend', articleHTML);
         }
 
+        // Function to remove an article
         function removeArticle(button) {
-            button.closest('.article-item').remove();
+            const articleItem = button.closest('.article-item');
+            articleItem.remove(); // Remove the article item from the DOM
+        }
+
+        // Function to edit an article (for now, just logs the edit action)
+        function editArticle(button) {
+            const articleItem = button.closest('.article-item');
+            const title = articleItem.querySelector('input[name$="[title]"]').value;
+            const category = articleItem.querySelector('input[name$="[category]"]').value;
+            const description1 = articleItem.querySelector('input[name$="[description1]"]').value;
+            const description2 = articleItem.querySelector('input[name$="[description2]"]').value;
+            const imageURL = articleItem.querySelector('input[name$="[imageURL]"]').value;
+
+            console.log('Edit Article:', { title, category, description1, description2, imageURL });
+
+            // You can replace the console log with actual edit functionality
         }
 
         // Funkcja do usuwania partnera
@@ -903,10 +951,6 @@
                 <div class="card">
                     <img src="default-image.jpg" class="img-fluid card-img-top" alt="Partner logo">
                     <div class="card-body">
-                        <div class="mb-3">
-                            <label for="partnerName${newIndex}" class="form-label">Partner Name ${newIndex + 1}</label>
-                            <input type="text" class="form-control" id="partnerName${newIndex}" name="partners[partnerNames][${newIndex}]" value="">
-                        </div>
                         <div class="mb-3">
                             <label for="partnerImage${newIndex}" class="form-label">Image Link ${newIndex + 1}</label>
                             <input type="text" class="form-control" id="partnerImage${newIndex}" name="partners[images][${newIndex}]" value="default-image.jpg">

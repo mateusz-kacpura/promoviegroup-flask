@@ -56,85 +56,120 @@ def update_hero():
             # Pobranie danych z formularza
             data = request.form.to_dict(flat=False)  # Pobierz dane jako słownik
 
-            # Przekształcenie danych w strukturę JSON
             hero_data = {
                 "carouselItems": [],
-                "mainSection": {
-                    "backgroundURL": data.get('mainSection[backgroundURL]', [''])[0],
-                    "title1": data.get('mainSection[title1]', [''])[0],
-                    "title2": data.get('mainSection[title2]', [''])[0],
-                    "button1Text": data.get('mainSection[button1Text]', [''])[0],
-                    "button2Text": data.get('mainSection[button2Text]', [''])[0],
-                    "phoneNumber": data.get('mainSection[phoneNumber]', [''])[0],
-                    "email": data.get('mainSection[email]', [''])[0],
-                },
-                "membersTeamSection": {
-                    "members": []
-                },
-                "jumbotron": {
-                    "title1": data.get('jumbotron[title1]', [''])[0],
-                    "title2": data.get('jumbotron[title2]', [''])[0],
-                    "button1Text": data.get('jumbotron[button1Text]', [''])[0],
-                    "button2Text": data.get('jumbotron[button2Text]', [''])[0],
-                    "imageURL": data.get('jumbotron[imageURL]', [''])[0],
-                },
+                "mainSection": {},
+                "membersTeamSection": {"members": []},
+                "jumbotron": {},
                 "latestArticles": [],
-                "adventure": {
-                    "title1": data.get('adventure[title1]', [''])[0],
-                    "title2": data.get('adventure[title2]', [''])[0],
-                    "description": data.get('adventure[description]', [''])[0],
-                },
-                "partners": {
-                    "text1": data.get('partners[text1]', [''])[0],
-                    "partnerNames": data.get('partners[partnerNames]', []),
-                    "images": data.get('partners[images]', [])
-                },
-                "video": {
-                    "videos": data.get('video[videos]', []),
-                    "titles": data.get('video[titles]', []),
-                    "images": data.get('video[images]', [])
-                }
+                "adventure": {},
+                "partners": {"images": []},
+                "video": {"videos": [], "images": [], "titles": []}
             }
 
-            # Obsługa carouselItems
-            carousel_count = len(data.get('carouselItems[0][videoSrc]', []))
-            for i in range(carousel_count):
-                hero_data["carouselItems"].append({
-                    "videoSrc": data[f'carouselItems[{i}][videoSrc]'][0],
-                    "videoMobileSrc": data[f'carouselItems[{i}][videoMobileSrc]'][0],
-                    "maskColor": data[f'carouselItems[{i}][maskColor]'][0],
-                    "heading": data[f'carouselItems[{i}][heading]'][0],
-                    "subheading": data[f'carouselItems[{i}][subheading]'][0],
-                    "buttons": [{
-                        "text": data[f'carouselItems[{i}][buttons][0][text]'][0],
-                        "url": data[f'carouselItems[{i}][buttons][0][url]'][0]
-                    }]
-                })
+            # Procesowanie sekcji Carousel
+            carousel_items = []
+            index = 0
+            while f'carouselItems[{index}][videoSrc]' in data:
+                carousel_item = {
+                    "videoSrc": data[f'carouselItems[{index}][videoSrc]'][0],
+                    "videoMobileSrc": data[f'carouselItems[{index}][videoMobileSrc]'][0],
+                    "maskColor": data[f'carouselItems[{index}][maskColor]'][0],
+                    "heading": data[f'carouselItems[{index}][heading]'][0],
+                    "subheading": data[f'carouselItems[{index}][subheading]'][0],
+                    "buttons": [
+                        {
+                            "text": data[f'carouselItems[{index}][buttons][0][text]'][0],
+                            "url": data[f'carouselItems[{index}][buttons][0][url]'][0],
+                            "class": data[f'carouselItems[{index}][buttons][0][class]'][0]
+                        }
+                    ]
+                }
+                carousel_items.append(carousel_item)
+                index += 1
+            hero_data["carouselItems"] = carousel_items
 
-            # Obsługa team members
-            team_member_count = len(data.get('membersTeamSection[members][0][name]', []))
-            for i in range(team_member_count):
-                hero_data["membersTeamSection"]["members"].append({
-                    "name": data[f'membersTeamSection[members][{i}][name]'][0],
-                    "role": data[f'membersTeamSection[members][{i}][role]'][0],
-                    "imageURL": data[f'membersTeamSection[members][{i}][imageURL]'][0],
+            # Procesowanie sekcji Main Section
+            hero_data["mainSection"] = {
+                "backgroundURL": data.get('mainSection[backgroundURL]', [''])[0],
+                "title1": data.get('mainSection[title1]', [''])[0],
+                "title2": data.get('mainSection[title2]', [''])[0],
+                "button1Text": data.get('mainSection[button1Text]', [''])[0],
+                "button2Text": data.get('mainSection[button2Text]', [''])[0],
+                "phoneNumber": data.get('mainSection[phoneNumber]', [''])[0],
+                "email": data.get('mainSection[email]', [''])[0]
+            }
+
+            # Procesowanie sekcji Team
+            team_members = []
+            index = 0
+            while f'membersTeamSection[members][{index}][name]' in data:
+                member = {
+                    "name": data[f'membersTeamSection[members][{index}][name]'][0],
+                    "role": data[f'membersTeamSection[members][{index}][role]'][0],
+                    "imageURL": data[f'membersTeamSection[members][{index}][imageURL]'][0],
                     "details": {
-                        "biography": data[f'membersTeamSection[members][{i}][details][biography]'][0],
-                        "expirience": data[f'membersTeamSection[members][{i}][details][expirience]'][0],
-                        "projects": data[f'membersTeamSection[members][{i}][details][projects]'][0],
-                        "techniques": data[f'membersTeamSection[members][{i}][details][techniques]'][0]
-                    }
-                })
+                        "biography": data[f'membersTeamSection[members][{index}][details][biography]'][0],
+                        "expirience": data[f'membersTeamSection[members][{index}][details][expirience]'][0],
+                        "projects": data[f'membersTeamSection[members][{index}][details][projects]'][0],
+                        "techniques": data[f'membersTeamSection[members][{index}][details][techniques]'][0]
+                    },
+                    "socialIcons": data.get(f'membersTeamSection[members][{index}][socialIcons]', []),
+                    "socialLinks": data.get(f'membersTeamSection[members][{index}][socialLinks]', [])
+                }
+                team_members.append(member)
+                index += 1
+            hero_data["membersTeamSection"]["members"] = team_members
 
-            # Obsługa articles
-            article_count = len(data.get('latestArticles[0][category]', []))
-            for i in range(article_count):
-                hero_data["latestArticles"].append({
-                    "category": data[f'latestArticles[{i}][category]'][0],
-                    "description1": data[f'latestArticles[{i}][description1]'][0],
-                    "description2": data[f'latestArticles[{i}][description2]'][0],
-                    "imageURL": data[f'latestArticles[{i}][imageURL]'][0]
-                })
+            # Procesowanie sekcji Jumbotron
+            hero_data["jumbotron"] = {
+                "title1": data.get('jumbotron[title1]', [''])[0],
+                "title2": data.get('jumbotron[title2]', [''])[0],
+                "button1Text": data.get('jumbotron[button1Text]', [''])[0],
+                "button2Text": data.get('jumbotron[button2Text]', [''])[0],
+                "imageURL": data.get('jumbotron[imageURL]', [''])[0]
+            }
+
+            # Procesowanie sekcji Articles
+            articles = []
+            index = 0
+            while f'latestArticles[{index}][title]' in data:
+                article = {
+                    "title": data[f'latestArticles[{index}][title]'][0],
+                    "category": data[f'latestArticles[{index}][category]'][0],
+                    "description1": data[f'latestArticles[{index}][description1]'][0],
+                    "description2": data[f'latestArticles[{index}][description2]'][0],
+                    "imageURL": data[f'latestArticles[{index}][imageURL]'][0]
+                }
+                articles.append(article)
+                index += 1
+            hero_data["latestArticles"] = articles
+
+            # Procesowanie sekcji Adventure
+            hero_data["adventure"] = {
+                "title1": data.get('adventure[title1]', [''])[0],
+                "title2": data.get('adventure[title2]', [''])[0],
+                "description": data.get('adventure[description]', [''])[0]
+            }
+
+            # Procesowanie sekcji Partners
+            hero_data["partners"]["text1"] = data.get('partners[description]', [''])[0]
+            hero_data["partners"]["images"] = []
+            index = 0
+            while f'partners[images][{index}]' in data:
+                hero_data["partners"]["images"].append(data[f'partners[images][{index}]'][0])
+                index += 1
+
+            # Procesowanie sekcji Video
+            hero_data["video"]["videos"] = []
+            hero_data["video"]["images"] = []
+            hero_data["video"]["titles"] = []
+            index = 0
+            while f'video[videos][{index}]' in data:
+                hero_data["video"]["videos"].append(data[f'video[videos][{index}]'][0])
+                hero_data["video"]["images"].append(data[f'video[images][{index}]'][0])
+                hero_data["video"]["titles"].append(data.get(f'video[title{index + 1}]', [''])[0])
+                index += 1
 
             # Zapis przetworzonych danych do pliku JSON
             save_hero(hero_data)
