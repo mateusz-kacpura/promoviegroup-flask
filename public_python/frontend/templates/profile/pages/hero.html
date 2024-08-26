@@ -494,7 +494,6 @@
             });
         }
 
-
         function addItem() {
             console.log('addItem function called');
 
@@ -523,7 +522,26 @@
                             <input type="file" class="form-control mt-2" id="videoFileMobileSrc_${newIndex}" data-index="${newIndex}" data-type="mobile" accept="video/mp4">
                             <button type="button" class="btn btn-secondary mt-2 browse-btn" data-index="${newIndex}" data-type="mobile">Browse Server Files</button>
                         </div>
-                        <!-- Other form fields remain the same -->
+                        <div class="mb-3">
+                            <label for="maskColor_${newIndex}" class="form-label">Mask Color:</label>
+                            <input type="text" class="form-control" id="maskColor_${newIndex}" name="carouselItems[${newIndex - 1}][maskColor]">
+                        </div>
+                        <div class="mb-3">
+                            <label for="heading_${newIndex}" class="form-label">Heading:</label>
+                            <input type="text" class="form-control" id="heading_${newIndex}" name="carouselItems[${newIndex - 1}][heading]">
+                        </div>
+                        <div class="mb-3">
+                            <label for="subheading_${newIndex}" class="form-label">Subheading:</label>
+                            <input type="text" class="form-control" id="subheading_${newIndex}" name="carouselItems[${newIndex - 1}][subheading]">
+                        </div>
+                        <div class="mb-3">
+                            <label for="buttonText_${newIndex}" class="form-label">Button Text:</label>
+                            <input type="text" class="form-control" id="buttonText_${newIndex}" name="carouselItems[${newIndex - 1}][buttons][0][text]">
+                        </div>
+                        <div class="mb-3">
+                            <label for="buttonUrl_${newIndex}" class="form-label">Button URL:</label>
+                            <input type="text" class="form-control" id="buttonUrl_${newIndex}" name="carouselItems[${newIndex - 1}][buttons][0][url]">
+                        </div>
                         <div class="mb-3">
                             <label for="videoPreview_${newIndex}" class="form-label">Video Preview:</label>
                             <video id="videoPreview_${newIndex}" class="w-100" controls>
@@ -544,6 +562,7 @@
             document.querySelector(`.browse-btn[data-index="${newIndex}"][data-type="komputer"]`).addEventListener('click', browseFiles);
             document.querySelector(`.browse-btn[data-index="${newIndex}"][data-type="mobile"]`).addEventListener('click', browseFiles);
         }
+
 
         function uploadFile(event) {
             const fileInput = event.target;
