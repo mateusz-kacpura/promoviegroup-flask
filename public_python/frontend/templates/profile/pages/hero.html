@@ -1,4 +1,3 @@
-<!-- C:\Users\engli\Documents\flask\backend\frontend\templates\profile/hero.html -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,16 +6,523 @@
     <title>Edit Hero Section</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
+<style>
+    .nav-tabs .nav-link.active {
+        background-color: #007bff;
+        color: white;
+    }
+    .tab-content {
+        border: 1px solid #dee2e6;
+        border-top: 0;
+        padding: 20px;
+    }
+    .remove-btn {
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+    .remove-btn:hover {
+        background-color: #c82333;
+    }
+</style>
+</head>
 <body>
     {% include 'profile/navbar.html' %}
+
     <div class="container mt-5">
-        <h1>Edit Hero Section</h1>
-        <form method="post" action="{{ url_for('user.update_hero') }}">
-            {% include 'profile/pages/hero/carousel_items.html' %}
-            {% include 'profile/pages/hero/main_section.html' %}
-            <button type="submit" class="btn btn-primary">Save Changes</button>
+        <h1>Panel Administracyjny</h1>
+        <form action="/update-json" method="POST">
+            <!-- Zakładki (Tabs) -->
+            <ul class="nav nav-tabs" id="adminTabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="carousel-tab" data-bs-toggle="tab" href="#carousel" role="tab" aria-controls="carousel" aria-selected="true">Carousel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="main-section-tab" data-bs-toggle="tab" href="#main-section" role="tab" aria-controls="main-section" aria-selected="false">Main Section</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="team-tab" data-bs-toggle="tab" href="#team" role="tab" aria-controls="team" aria-selected="false">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="jumbotron-tab" data-bs-toggle="tab" href="#jumbotron" role="tab" aria-controls="jumbotron" aria-selected="false">Jumbotron</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="articles-tab" data-bs-toggle="tab" href="#articles" role="tab" aria-controls="articles" aria-selected="false">Articles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="adventure-tab" data-bs-toggle="tab" href="#adventure" role="tab" aria-controls="adventure" aria-selected="false">Adventure</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="partners-tab" data-bs-toggle="tab" href="#partners" role="tab" aria-controls="partners" aria-selected="false">Partners</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="video-tab" data-bs-toggle="tab" href="#video" role="tab" aria-controls="video" aria-selected="false">Video</a>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="adminTabContent">
+                <!-- Carousel Section -->
+                <div class="tab-pane fade show active" id="carousel" role="tabpanel" aria-labelledby="carousel-tab">
+                    <h2>Carousel Items</h2>
+                    <div id="carousel-list">
+                        {% for item in json_data.carouselItems %}
+                        <div class="carousel-item-form">
+                            <h3>Item {{ loop.index }}</h3>
+                            
+                            <div class="form-group">
+                                <label for="heading-{{ loop.index }}">Heading:</label>
+                                <input type="text" class="form-control" id="heading-{{ loop.index }}" name="json_data.carouselItems[{{ loop.index0 }}][heading]" value="{{ item.heading }}">
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="subheading-{{ loop.index }}">Subheading:</label>
+                                <input type="text" class="form-control" id="subheading-{{ loop.index }}" name="json_data.carouselItems[{{ loop.index0 }}][subheading]" value="{{ item.subheading }}">
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="maskColor-{{ loop.index }}">Mask Color:</label>
+                                <input type="text" class="form-control" id="maskColor-{{ loop.index }}" name="json_data.carouselItems[{{ loop.index0 }}][maskColor]" value="{{ item.maskColor }}">
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="videoSrc-{{ loop.index }}">Video Source:</label>
+                                <input type="text" class="form-control" id="videoSrc-{{ loop.index }}" name="json_data.carouselItems[{{ loop.index0 }}][videoSrc]" value="{{ item.videoSrc }}">
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="videoMobileSrc-{{ loop.index }}">Video Mobile Source:</label>
+                                <input type="text" class="form-control" id="videoMobileSrc-{{ loop.index }}" name="json_data.carouselItems[{{ loop.index0 }}][videoMobileSrc]" value="{{ item.videoMobileSrc }}">
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="button-text-{{ loop.index }}">Button Text:</label>
+                                <input type="text" class="form-control" id="button-text-{{ loop.index }}" name="json_data.carouselItems[{{ loop.index0 }}][buttons][0][text]" value="{{ item.buttons[0].text }}">
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="button-url-{{ loop.index }}">Button URL:</label>
+                                <input type="text" class="form-control" id="button-url-{{ loop.index }}" name="json_data.carouselItems[{{ loop.index0 }}][buttons][0][url]" value="{{ item.buttons[0].url }}">
+                            </div>
+            
+                            <div class="form-group">
+                                <label for="button-class-{{ loop.index }}">Button Class:</label>
+                                <input type="text" class="form-control" id="button-class-{{ loop.index }}" name="json_data.carouselItems[{{ loop.index0 }}][buttons][0][class]" value="{{ item.buttons[0].class }}">
+                            </div>
+            
+                            <hr>
+                        </div>
+                    {% endfor %}
+            
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                    <button type="button" class="btn btn-secondary" onclick="addCarouselItem()">Dodaj Element</button>
+                </div>
+
+
+                <!-- Main Section -->
+                <div class="tab-pane fade" id="main-section" role="tabpanel" aria-labelledby="main-section-tab">
+                    <h2>Main Section</h2>
+                    <div class="mb-3">
+                        <label for="mainBackgroundURL" class="form-label">Background Image URL</label>
+                        <input type="text" class="form-control" id="mainBackgroundURL" name="mainSection[backgroundURL]" value="{{ json_data.mainSection.backgroundURL }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mainTitle1" class="form-label">Title 1</label>
+                        <input type="text" class="form-control" id="mainTitle1" name="mainSection[title1]" value="{{ json_data.mainSection.title1 }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mainTitle2" class="form-label">Title 2</label>
+                        <input type="text" class="form-control" id="mainTitle2" name="mainSection[title2]" value="{{ json_data.mainSection.title2 }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mainButton1Text" class="form-label">Button 1 Text</label>
+                        <input type="text" class="form-control" id="mainButton1Text" name="mainSection[button1Text]" value="{{ json_data.mainSection.button1Text }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mainButton2Text" class="form-label">Button 2 Text</label>
+                        <input type="text" class="form-control" id="mainButton2Text" name="mainSection[button2Text]" value="{{ json_data.mainSection.button2Text }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mainPhoneNumber" class="form-label">Phone Number</label>
+                        <input type="text" class="form-control" id="mainPhoneNumber" name="mainSection[phoneNumber]" value="{{ json_data.mainSection.phoneNumber }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="mainEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="mainEmail" name="mainSection[email]" value="{{ json_data.mainSection.email }}">
+                    </div>
+                </div>
+
+                <!-- Team Section -->
+                <div class="tab-pane fade" id="team" role="tabpanel" aria-labelledby="team-tab">
+                    <h2>Team Members</h2>
+                    <div id="team-list">
+                        {% for member in json_data.membersTeamSection.members %}
+                        <div class="team-member mb-4">
+                            <h3>Member {{ loop.index }}</h3>
+                            <div class="mb-3">
+                                <label for="teamName{{ loop.index }}" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="teamName{{ loop.index }}" name="membersTeamSection[members][{{ loop.index0 }}][name]" value="{{ member.name }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="teamRole{{ loop.index }}" class="form-label">Role</label>
+                                <input type="text" class="form-control" id="teamRole{{ loop.index }}" name="membersTeamSection[members][{{ loop.index0 }}][role]" value="{{ member.role }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="teamImage{{ loop.index }}" class="form-label">Image URL</label>
+                                <input type="text" class="form-control" id="teamImage{{ loop.index }}" name="membersTeamSection[members][{{ loop.index0 }}][imageURL]" value="{{ member.imageURL }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="teamBiography{{ loop.index }}" class="form-label">Biography</label>
+                                <textarea class="form-control" id="teamBiography{{ loop.index }}" name="membersTeamSection[members][{{ loop.index0 }}][details][biography]">{{ member.details.biography }}</textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="teamExperience{{ loop.index }}" class="form-label">Experience</label>
+                                <textarea class="form-control" id="teamExperience{{ loop.index }}" name="membersTeamSection[members][{{ loop.index0 }}][details][expirience]">{{ member.details.expirience }}</textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="teamProjects{{ loop.index }}" class="form-label">Projects</label>
+                                <textarea class="form-control" id="teamProjects{{ loop.index }}" name="membersTeamSection[members][{{ loop.index0 }}][details][projects]">{{ member.details.projects }}</textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="teamTechniques{{ loop.index }}" class="form-label">Techniques</label>
+                                <textarea class="form-control" id="teamTechniques{{ loop.index }}" name="membersTeamSection[members][{{ loop.index0 }}][details][techniques]">{{ member.details.techniques }}</textarea>
+                            </div>
+                            <button type="button" class="remove-btn" onclick="removeTeamMember(this)">Usuń</button>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <button type="button" class="btn btn-secondary" onclick="addTeamMember()">Dodaj Członka</button>
+                </div>
+
+                <!-- Jumbotron Section -->
+                <div class="tab-pane fade" id="jumbotron" role="tabpanel" aria-labelledby="jumbotron-tab">
+                    <h2>Jumbotron</h2>
+                    <div class="mb-3">
+                        <label for="jumbotronTitle1" class="form-label">Title 1</label>
+                        <input type="text" class="form-control" id="jumbotronTitle1" name="jumbotron[title1]" value="{{ json_data.jumbotron.title1 }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="jumbotronTitle2" class="form-label">Title 2</label>
+                        <input type="text" class="form-control" id="jumbotronTitle2" name="jumbotron[title2]" value="{{ json_data.jumbotron.title2 }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="jumbotronButton1Text" class="form-label">Button 1 Text</label>
+                        <input type="text" class="form-control" id="jumbotronButton1Text" name="jumbotron[button1Text]" value="{{ json_data.jumbotron.button1Text }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="jumbotronButton2Text" class="form-label">Button 2 Text</label>
+                        <input type="text" class="form-control" id="jumbotronButton2Text" name="jumbotron[button2Text]" value="{{ json_data.jumbotron.button2Text }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="jumbotronImageURL" class="form-label">Image URL</label>
+                        <input type="text" class="form-control" id="jumbotronImageURL" name="jumbotron[imageURL]" value="{{ json_data.jumbotron.imageURL }}">
+                    </div>
+                </div>                
+
+                <!-- Articles Section -->
+                <div class="tab-pane fade" id="articles" role="tabpanel" aria-labelledby="articles-tab">
+                    <h2>Articles</h2>
+                    <div id="articles-list">
+                        {% for article in json_data.latestArticles %}
+                        <div class="article-item mb-4">
+                            <h3>{{ article.title }}</h3>
+                            <div class="mb-3">
+                                <label for="articleCategory{{ loop.index }}" class="form-label">Category</label>
+                                <input type="text" class="form-control" id="articleCategory{{ loop.index }}" name="latestArticles[{{ loop.index0 }}][category]" value="{{ article.category }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="articleDescription1{{ loop.index }}" class="form-label">Description 1</label>
+                                <input type="text" class="form-control" id="articleDescription1{{ loop.index }}" name="latestArticles[{{ loop.index0 }}][description1]" value="{{ article.description1 }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="articleDescription2{{ loop.index }}" class="form-label">Description 2</label>
+                                <input type="text" class="form-control" id="articleDescription2{{ loop.index }}" name="latestArticles[{{ loop.index0 }}][description2]" value="{{ article.description2 }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="articleImageURL{{ loop.index }}" class="form-label">Image URL</label>
+                                <input type="text" class="form-control" id="articleImageURL{{ loop.index }}" name="latestArticles[{{ loop.index0 }}][imageURL]" value="{{ article.imageURL }}">
+                            </div>
+                            <button type="button" class="remove-btn" onclick="removeArticle(this)">Usuń</button>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <button type="button" class="btn btn-secondary" onclick="addArticle()">Dodaj Artykuł</button>
+                </div>
+
+                <!-- Adventure Section -->
+                <div class="tab-pane fade" id="adventure" role="tabpanel" aria-labelledby="adventure-tab">
+                    <h2>Adventure</h2>
+                    <div class="mb-3">
+                        <label for="adventureTitle1" class="form-label">Title 1</label>
+                        <input type="text" class="form-control" id="adventureTitle1" name="adventure[title1]" value="{{ json_data.adventure.title1 }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="adventureTitle2" class="form-label">Title 2</label>
+                        <input type="text" class="form-control" id="adventureTitle2" name="adventure[title2]" value="{{ json_data.adventure.title2 }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="adventureDescription" class="form-label">Description</label>
+                        <input type="text" class="form-control" id="adventureDescription" name="adventure[description]" value="{{ json_data.adventure.description }}">
+                    </div>
+                </div>                
+                 
+                <!-- Partners Section -->
+                <div class="tab-pane fade" id="partners" role="tabpanel" aria-labelledby="partners-tab">
+                    <h2>{{ json_data.partners.text1 }}</h2>
+                    <div class="row">
+                        {% for image in json_data.partners.images %}
+                        <div class="col-md-4">
+                            <img src="{{ url_for('static', filename=image) }}" class="img-fluid" alt="Partner logo">
+                            <button type="button" class="remove-btn" onclick="removePartner(this)">Usuń</button>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <button type="button" class="btn btn-secondary" onclick="addPartner()">Dodaj Partnera</button>
+                </div>
+
+                <!-- Video Section -->
+                <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="video-tab">
+                    <h2>Video Gallery</h2>
+                    <div class="row">
+                        {% for i in range(json_data.video.videos|length) %}
+                        <div class="col-md-4">
+                            <a href="{{ json_data.video.videos[i] }}" target="_blank">
+                                <img src="{{ url_for('static', filename=json_data.video.images[i]) }}" class="img-fluid" alt="Video thumbnail">
+                            </a>             
+                            <div class="col-md-12 mb-3">
+                                <label for="videoTitle{{ i }}" class="form-label">Title {{ i+1 }}</label>
+                                <input type="text" class="form-control" id="videoTitle{{ i }}" name="video[title{{ i+1 }}]" value="{{ json_data.video.titles[i] if json_data.video.titles is defined else '' }}">
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <label for="videoLink{{ i }}" class="form-label">Video Link {{ i+1 }}</label>
+                                <input type="url" class="form-control" id="videoLink{{ i }}" name="video[videos][{{ i }}]" value="{{ json_data.video.videos[i] }}">
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <label for="videoImage{{ i }}" class="form-label">Video Image {{ i+1 }}</label>
+                                <input type="text" class="form-control" id="videoImage{{ i }}" name="video[images][{{ i }}]" value="{{ json_data.video.images[i] }}">
+                            </div>
+                            <button type="button" class="remove-btn" onclick="removeVideo(this)">Usuń</button>    
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <button type="button" class="btn btn-secondary" onclick="addVideo()">Dodaj Video</button>
+                </div>  
+
+            </div>
+            <div class="mt-4">
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </div>
         </form>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    {{ json_data | tojson }}
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        // Functions to add/remove carousel items
+        function addCarouselItem() {
+            const carouselList = document.getElementById('carousel-list');
+            const carouselCount = carouselList.children.length;
+            const newItem = document.createElement('div');
+            newItem.className = 'carousel-item mb-4';
+            newItem.innerHTML = `
+                <h3>Item ${carouselCount + 1}</h3>
+                <div class="mb-3">
+                    <label for="carouselVideoSrc${carouselCount + 1}" class="form-label">Video Source (Desktop)</label>
+                    <input type="text" class="form-control" id="carouselVideoSrc${carouselCount + 1}" name="carouselItems[${carouselCount}][videoSrc]">
+                </div>
+                <div class="mb-3">
+                    <label for="carouselVideoMobileSrc${carouselCount + 1}" class="form-label">Video Source (Mobile)</label>
+                    <input type="text" class="form-control" id="carouselVideoMobileSrc${carouselCount + 1}" name="carouselItems[${carouselCount}][videoMobileSrc]">
+                </div>
+                <div class="mb-3">
+                    <label for="carouselMaskColor${carouselCount + 1}" class="form-label">Mask Color</label>
+                    <input type="text" class="form-control" id="carouselMaskColor${carouselCount + 1}" name="carouselItems[${carouselCount}][maskColor]">
+                </div>
+                <div class="mb-3">
+                    <label for="carouselHeading${carouselCount + 1}" class="form-label">Heading</label>
+                    <input type="text" class="form-control" id="carouselHeading${carouselCount + 1}" name="carouselItems[${carouselCount}][heading]">
+                </div>
+                <div class="mb-3">
+                    <label for="carouselSubheading${carouselCount + 1}" class="form-label">Subheading</label>
+                    <input type="text" class="form-control" id="carouselSubheading${carouselCount + 1}" name="carouselItems[${carouselCount}][subheading]">
+                </div>
+                <div class="mb-3">
+                    <label for="carouselButtonText${carouselCount + 1}_0" class="form-label">Button Text</label>
+                    <input type="text" class="form-control" id="carouselButtonText${carouselCount + 1}_0" name="carouselItems[${carouselCount}][buttons][0][text]">
+                </div>
+                <div class="mb-3">
+                    <label for="carouselButtonUrl${carouselCount + 1}_0" class="form-label">Button URL</label>
+                    <input type="text" class="form-control" id="carouselButtonUrl${carouselCount + 1}_0" name="carouselItems[${carouselCount}][buttons][0][url]">
+                </div>
+                <button type="button" class="remove-btn" onclick="removeCarouselItem(this)">Usuń</button>
+            `;
+            carouselList.appendChild(newItem);
+        }
+
+        function removeCarouselItem(button) {
+            const carouselList = document.getElementById('carousel-list');
+            button.closest('.carousel-item').remove();
+
+            // Update the indexes after removing an item
+            Array.from(carouselList.children).forEach((item, index) => {
+                item.querySelector('h3').textContent = `Item ${index + 1}`;
+                item.querySelectorAll('input').forEach(input => {
+                    input.name = input.name.replace(/\[\d+\]/g, `[${index}]`);
+                    input.id = input.id.replace(/\d+/g, index + 1);
+                });
+            });
+        }
+
+        // Functions to add/remove team members
+        function addTeamMember() {
+            const teamList = document.getElementById('team-list');
+            const teamCount = teamList.children.length;
+            const newMember = document.createElement('div');
+            newMember.className = 'team-member mb-4';
+            newMember.innerHTML = `
+                <h3>Member ${teamCount + 1}</h3>
+                <div class="mb-3">
+                    <label for="teamName${teamCount + 1}" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="teamName${teamCount + 1}" name="team[${teamCount}][name]">
+                </div>
+                <div class="mb-3">
+                    <label for="teamRole${teamCount + 1}" class="form-label">Role</label>
+                    <input type="text" class="form-control" id="teamRole${teamCount + 1}" name="team[${teamCount}][role]">
+                </div>
+                <div class="mb-3">
+                    <label for="teamImage${teamCount + 1}" class="form-label">Image URL</label>
+                    <input type="text" class="form-control" id="teamImage${teamCount + 1}" name="team[${teamCount}][image]">
+                </div>
+                <div class="mb-3">
+                    <label for="teamDescription${teamCount + 1}" class="form-label">Description</label>
+                    <textarea class="form-control" id="teamDescription${teamCount + 1}" name="team[${teamCount}][description]"></textarea>
+                </div>
+                <button type="button" class="remove-btn" onclick="removeTeamMember(this)">Usuń</button>
+            `;
+            teamList.appendChild(newMember);
+        }
+
+        function removeTeamMember(button) {
+            button.closest('.team-member').remove();
+        }
+
+        // Functions to add/remove articles
+        function addArticle() {
+            const articlesList = document.getElementById('articles-list');
+            const articleCount = articlesList.children.length;
+            const newArticle = document.createElement('div');
+            newArticle.className = 'article-item mb-4';
+            newArticle.innerHTML = `
+                <h3>Article ${articleCount + 1}</h3>
+                <div class="mb-3">
+                    <label for="articleTitle${articleCount + 1}" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="articleTitle${articleCount + 1}" name="articles[${articleCount}][title]">
+                </div>
+                <div class="mb-3">
+                    <label for="articleContent${articleCount + 1}" class="form-label">Content</label>
+                    <textarea class="form-control" id="articleContent${articleCount + 1}" name="articles[${articleCount}][content]"></textarea>
+                </div>
+                <button type="button" class="remove-btn" onclick="removeArticle(this)">Usuń</button>
+            `;
+            articlesList.appendChild(newArticle);
+        }
+
+        function removeArticle(button) {
+            button.closest('.article-item').remove();
+        }
+
+        function addPartner() {
+            const partnersList = document.getElementById('partners-list');
+            const partnerCount = partnersList.children.length;
+            const newPartner = document.createElement('div');
+            newPartner.className = 'partner-item mb-4';
+            newPartner.innerHTML = `
+                <h3>Partner ${partnerCount + 1}</h3>
+                <div class="mb-3">
+                    <label for="partnerName${partnerCount + 1}" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="partnerName${partnerCount + 1}" name="partners[${partnerCount}][name]">
+                </div>
+                <div class="mb-3">
+                    <label for="partnerLogo${partnerCount + 1}" class="form-label">Logo URL</label>
+                    <input type="text" class="form-control" id="partnerLogo${partnerCount + 1}" name="partners[${partnerCount}][logo]">
+                </div>
+                <button type="button" class="remove-btn" onclick="removePartner(this)">Usuń</button>
+            `;
+            partnersList.appendChild(newPartner);
+        }
+
+        function removePartner(button) {
+            button.closest('.partner-item').remove();
+        }
+
+        // Functions to add/remove clients
+        function addClient() {
+            const clientsList = document.getElementById('clients-list');
+            const clientCount = clientsList.children.length;
+            const newClient = document.createElement('div');
+            newClient.className = 'client-item mb-4';
+            newClient.innerHTML = `
+                <h3>Client ${clientCount + 1}</h3>
+                <div class="mb-3">
+                    <label for="clientName${clientCount + 1}" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="clientName${clientCount + 1}" name="clients[${clientCount}][name]">
+                </div>
+                <div class="mb-3">
+                    <label for="clientLogo${clientCount + 1}" class="form-label">Logo URL</label>
+                    <input type="text" class="form-control" id="clientLogo${clientCount + 1}" name="clients[${clientCount}][logo]">
+                </div>
+                <button type="button" class="remove-btn" onclick="removeClient(this)">Usuń</button>
+            `;
+            clientsList.appendChild(newClient);
+        }
+
+        function removeClient(button) {
+            button.closest('.client-item').remove();
+        }
+
+        function addVideo() {
+            // Pobierz numer wideo (liczba istniejących elementów)
+            const videoCount = document.querySelectorAll('#video .col-md-4').length;
+
+            // Znajdź kontener wideo
+            const videoContainer = document.querySelector('#video .row');
+
+            // Stwórz nowy blok HTML
+            const newVideoBlock = `
+                <div class="col-md-4">
+                    <a href="#" target="_blank">
+                        <img src="" class="img-fluid" alt="Video thumbnail">
+                    </a>             
+                    <div class="col-md-12 mb-3">
+                        <label for="videoTitle${videoCount}" class="form-label">Title ${videoCount + 1}</label>
+                        <input type="text" class="form-control" id="videoTitle${videoCount}" name="video[title${videoCount + 1}]" value="">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label for="videoLink${videoCount}" class="form-label">Video Link ${videoCount + 1}</label>
+                        <input type="url" class="form-control" id="videoLink${videoCount}" name="video[videos][${videoCount}]" value="">
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <label for="videoImage${videoCount}" class="form-label">Video Image ${videoCount + 1}</label>
+                        <input type="text" class="form-control" id="videoImage${videoCount}" name="video[images][${videoCount}]" value="">
+                    </div>
+                    <button type="button" class="remove-btn" onclick="removeVideo(this)">Usuń</button>    
+                </div>
+            `;
+
+            // Dodaj nowy blok do kontenera
+            videoContainer.insertAdjacentHTML('beforeend', newVideoBlock);
+        }
+
+        function removeVideo(button) {
+            // Znajdź kontener rodzica i usuń go
+            const videoBlock = button.closest('.col-md-4');
+            videoBlock.remove();
+        }
+
+
+    </script>
 </body>
 </html>

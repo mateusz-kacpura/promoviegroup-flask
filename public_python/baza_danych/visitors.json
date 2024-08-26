@@ -1,40 +1,8 @@
 [
     {
-        "id": "1ef1071f-f453-4cc7-89b6-ee6a1b70218c",
-        "ip": "127.0.0.1",
-        "date": "2024-08-24 12:50:32",
-        "location": {
-            "ip": "127.0.0.1",
-            "city": null,
-            "region": null,
-            "country": null,
-            "latitude": null,
-            "longitude": null
-        },
-        "browser": "Firefox",
-        "os": "Windows",
-        "device": "Other"
-    },
-    {
         "id": "eac8ecc1-d8f4-4e88-a7ff-e9654cb730ea",
         "ip": "127.0.0.1",
         "date": "2024-08-24 13:12:27",
-        "location": {
-            "ip": "127.0.0.1",
-            "city": null,
-            "region": null,
-            "country": null,
-            "latitude": null,
-            "longitude": null
-        },
-        "browser": "Firefox",
-        "os": "Windows",
-        "device": "Other"
-    },
-    {
-        "id": "951b5ca6-ca95-4959-bbc6-231ea70c49b2",
-        "ip": "127.0.0.1",
-        "date": "2024-08-24 13:12:31",
         "location": {
             "ip": "127.0.0.1",
             "city": null,
@@ -400,9 +368,9 @@
         "device": "Other"
     },
     {
-        "id": "7a3a947e-db8b-4668-973f-599629d0376d",
+        "id": "54768f15-f2b5-4254-8f69-c4f6a31ed894",
         "ip": "127.0.0.1",
-        "date": "2024-08-24 17:04:07",
+        "date": "2024-08-26 13:02:35",
         "location": {
             "ip": "127.0.0.1",
             "city": null,
@@ -416,9 +384,9 @@
         "device": "Other"
     },
     {
-        "id": "9be692b1-1310-42da-840d-200dbe4e6032",
+        "id": "da099ef6-15ba-4fdf-8689-f535439d1887",
         "ip": "127.0.0.1",
-        "date": "2024-08-24 17:13:29",
+        "date": "2024-08-26 15:53:12",
         "location": {
             "ip": "127.0.0.1",
             "city": null,
