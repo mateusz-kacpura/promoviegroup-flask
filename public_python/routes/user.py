@@ -42,106 +42,117 @@ def profile_section(section):
 
 HERO_JSON_PATH = os.path.join('baza_danych', 'hero.json')
 
+def save_hero(hero_data):
+    """Zapisuje dane do pliku JSON."""
+    with open(HERO_JSON_PATH, 'w', encoding='utf-8') as json_file:
+        json.dump(hero_data, json_file, indent=4, ensure_ascii=False)
+
 @user_bp.route('/profile/pages/hero', methods=['GET', 'POST'])
 @login_required
 def update_hero():
+    """Obsługuje aktualizację sekcji hero."""
     if request.method == 'POST':
         try:
-            # Pobierz dane z formularza
-            data = {
-                "carouselItems": request.form.getlist('carouselItems'),
+            # Pobranie danych z formularza
+            data = request.form.to_dict(flat=False)  # Pobierz dane jako słownik
+
+            # Przekształcenie danych w strukturę JSON
+            hero_data = {
+                "carouselItems": [],
                 "mainSection": {
-                    "backgroundURL": request.form['mainSection[backgroundURL]'],
-                    "title1": request.form['mainSection[title1]'],
-                    "title2": request.form['mainSection[title2]'],
-                    "button1Text": request.form['mainSection[button1Text]'],
-                    "button2Text": request.form['mainSection[button2Text]'],
-                    "phoneNumber": request.form['mainSection[phoneNumber]'],
+                    "backgroundURL": data.get('mainSection[backgroundURL]', [''])[0],
+                    "title1": data.get('mainSection[title1]', [''])[0],
+                    "title2": data.get('mainSection[title2]', [''])[0],
+                    "button1Text": data.get('mainSection[button1Text]', [''])[0],
+                    "button2Text": data.get('mainSection[button2Text]', [''])[0],
+                    "phoneNumber": data.get('mainSection[phoneNumber]', [''])[0],
+                    "email": data.get('mainSection[email]', [''])[0],
                 },
                 "membersTeamSection": {
-                    "teamTitle": request.form['membersTeamSection[teamTitle]'],
-                    "teamSubtitle": request.form['membersTeamSection[teamSubtitle]'],
                     "members": []
                 },
                 "jumbotron": {
-                    "title1": request.form['jumbotron[title1]'],
-                    "title2": request.form['jumbotron[title2]'],
-                    "button1Text": request.form['jumbotron[button1Text]'],
-                    "button2Text": request.form['jumbotron[button2Text]'],
-                    "imageURL": request.form['jumbotron[imageURL]'],
+                    "title1": data.get('jumbotron[title1]', [''])[0],
+                    "title2": data.get('jumbotron[title2]', [''])[0],
+                    "button1Text": data.get('jumbotron[button1Text]', [''])[0],
+                    "button2Text": data.get('jumbotron[button2Text]', [''])[0],
+                    "imageURL": data.get('jumbotron[imageURL]', [''])[0],
                 },
                 "latestArticles": [],
                 "adventure": {
-                    "title1": request.form['adventure[title1]'],
-                    "title2": request.form['adventure[title2]'],
-                    "description": request.form['adventure[description]'],
+                    "title1": data.get('adventure[title1]', [''])[0],
+                    "title2": data.get('adventure[title2]', [''])[0],
+                    "description": data.get('adventure[description]', [''])[0],
                 },
                 "partners": {
-                    "text1": request.form['partners[text1]'],
-                    "text2": request.form['partners[text2]'],
-                    "text3": request.form['partners[text3]'],
-                    "images": request.form.getlist('partners[images]')
+                    "text1": data.get('partners[text1]', [''])[0],
+                    "partnerNames": data.get('partners[partnerNames]', []),
+                    "images": data.get('partners[images]', [])
                 },
-                "clients": request.form.getlist('clients'),
                 "video": {
-                    "images": request.form.getlist('video[images]'),
-                    "videos": request.form.getlist('video[videos]')
+                    "videos": data.get('video[videos]', []),
+                    "titles": data.get('video[titles]', []),
+                    "images": data.get('video[images]', [])
                 }
             }
 
-            # Obsługa członków zespołu
-            member_count = len(request.form.getlist('team[0][name]'))
-            for i in range(member_count):
-                member = {
-                    "name": request.form[f'team[{i}][name]'],
-                    "role": request.form[f'team[{i}][role]'],
-                    "imageURL": request.form[f'team[{i}][imageURL]'],
-                    "socialIcons": request.form.getlist(f'team[{i}][socialIcons]'),
-                    "socialLinks": request.form.getlist(f'team[{i}][socialLinks]'),
+            # Obsługa carouselItems
+            carousel_count = len(data.get('carouselItems[0][videoSrc]', []))
+            for i in range(carousel_count):
+                hero_data["carouselItems"].append({
+                    "videoSrc": data[f'carouselItems[{i}][videoSrc]'][0],
+                    "videoMobileSrc": data[f'carouselItems[{i}][videoMobileSrc]'][0],
+                    "maskColor": data[f'carouselItems[{i}][maskColor]'][0],
+                    "heading": data[f'carouselItems[{i}][heading]'][0],
+                    "subheading": data[f'carouselItems[{i}][subheading]'][0],
+                    "buttons": [{
+                        "text": data[f'carouselItems[{i}][buttons][0][text]'][0],
+                        "url": data[f'carouselItems[{i}][buttons][0][url]'][0]
+                    }]
+                })
+
+            # Obsługa team members
+            team_member_count = len(data.get('membersTeamSection[members][0][name]', []))
+            for i in range(team_member_count):
+                hero_data["membersTeamSection"]["members"].append({
+                    "name": data[f'membersTeamSection[members][{i}][name]'][0],
+                    "role": data[f'membersTeamSection[members][{i}][role]'][0],
+                    "imageURL": data[f'membersTeamSection[members][{i}][imageURL]'][0],
                     "details": {
-                        "biography": request.form[f'team[{i}][details][biography]'],
-                        "expirience": request.form[f'team[{i}][details][expirience]'],
-                        "techniques": request.form[f'team[{i}][details][techniques]'],
-                        "projects": request.form[f'team[{i}][details][projects]']
+                        "biography": data[f'membersTeamSection[members][{i}][details][biography]'][0],
+                        "expirience": data[f'membersTeamSection[members][{i}][details][expirience]'][0],
+                        "projects": data[f'membersTeamSection[members][{i}][details][projects]'][0],
+                        "techniques": data[f'membersTeamSection[members][{i}][details][techniques]'][0]
                     }
-                }
-                data["membersTeamSection"]["members"].append(member)
+                })
 
-            # Obsługa artykułów
-            article_count = len(request.form.getlist('latestArticles[0][title]'))
+            # Obsługa articles
+            article_count = len(data.get('latestArticles[0][category]', []))
             for i in range(article_count):
-                article = {
-                    "title": request.form[f'latestArticles[{i}][title]'],
-                    "category": request.form[f'latestArticles[{i}][category]'],
-                    "description1": request.form[f'latestArticles[{i}][description1]'],
-                    "description2": request.form[f'latestArticles[{i}][description2]'],
-                    "imageURL": request.form[f'latestArticles[{i}][imageURL]'],
-                }
-                data["latestArticles"].append(article)
+                hero_data["latestArticles"].append({
+                    "category": data[f'latestArticles[{i}][category]'][0],
+                    "description1": data[f'latestArticles[{i}][description1]'][0],
+                    "description2": data[f'latestArticles[{i}][description2]'][0],
+                    "imageURL": data[f'latestArticles[{i}][imageURL]'][0]
+                })
 
-            # Zapisz dane do pliku JSON
-            with open(HERO_JSON_PATH, 'w', encoding='utf-8') as json_file:
-                json.dump(data, json_file, ensure_ascii=False, indent=4)
+            # Zapis przetworzonych danych do pliku JSON
+            save_hero(hero_data)
 
-            flash('Dane zostały zaktualizowane.', 'success')
-            return redirect(url_for('user.update_hero'))
+            return jsonify({'success': True, 'message': 'Dane zostały zapisane pomyślnie.'})
 
         except Exception as e:
-            flash(f'Wystąpił błąd podczas aktualizacji danych: {str(e)}', 'danger')
-            return redirect(url_for('user.update_hero'))
+            return jsonify({'success': False, 'message': f'Backend: {data}, {str(e)}' })
 
-    else:
-        # Wczytaj dane z pliku JSON
-        try:
-            with open(HERO_JSON_PATH, 'r', encoding='utf-8') as json_file:
-                data = json.load(json_file)
-                print(data)  # Dodaj ten wiersz, aby sprawdzić, czy dane są poprawnie wczytywane
+    try:
+        with open(HERO_JSON_PATH, 'r', encoding='utf-8') as json_file:
+            data = json.load(json_file)
 
-            return render_template('profile/pages/hero.html', json_data=data)
+        return render_template('profile/pages/hero.html', json_data=data)
 
-        except Exception as e:
-            flash(f'Wystąpił błąd podczas wczytywania danych: {str(e)}', 'danger')
-            return redirect(url_for('user_bp.update_hero'))
+    except Exception as e:
+        flash(f'Wystąpił błąd podczas wczytywania danych: {str(e)}', 'danger')
+        return redirect(url_for('user.update_hero'))
 
 # Ścieżka do katalogów
 VIDEO_DIR = {

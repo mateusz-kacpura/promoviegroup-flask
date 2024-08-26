@@ -398,5 +398,69 @@
         "browser": "Firefox",
         "os": "Windows",
         "device": "Other"
+    },
+    {
+        "id": "ffb499a1-c0e2-4fb8-b696-3a8e210b56fa",
+        "ip": "127.0.0.1",
+        "date": "2024-08-26 17:50:36",
+        "location": {
+            "ip": "127.0.0.1",
+            "city": null,
+            "region": null,
+            "country": null,
+            "latitude": null,
+            "longitude": null
+        },
+        "browser": "Firefox",
+        "os": "Windows",
+        "device": "Other"
+    },
+    {
+        "id": "6ff15e34-6a27-4b50-ba3e-f0075dfa7d26",
+        "ip": "127.0.0.1",
+        "date": "2024-08-26 17:54:40",
+        "location": {
+            "ip": "127.0.0.1",
+            "city": null,
+            "region": null,
+            "country": null,
+            "latitude": null,
+            "longitude": null
+        },
+        "browser": "Firefox",
+        "os": "Windows",
+        "device": "Other"
+    },
+    {
+        "id": "21d2be7c-d196-43c3-8f75-021c542da930",
+        "ip": "127.0.0.1",
+        "date": "2024-08-26 17:54:44",
+        "location": {
+            "ip": "127.0.0.1",
+            "city": null,
+            "region": null,
+            "country": null,
+            "latitude": null,
+            "longitude": null
+        },
+        "browser": "Firefox",
+        "os": "Windows",
+        "device": "Other"
+    },
+    {
+        "id": "5bb05a80-3bb3-4482-b78b-6344ce270807",
+        "ip": "127.0.0.1",
+        "date": "2024-08-26 18:15:56",
+        "location": {
+            "ip": "127.0.0.1",
+            "city": null,
+            "region": null,
+            "country": null,
+            "latitude": null,
+            "longitude": null
+        },
+        "browser": "Firefox",
+        "os": "Windows",
+        "device": "Other"
     }
 ]
