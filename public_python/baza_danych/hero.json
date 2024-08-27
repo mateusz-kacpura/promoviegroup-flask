@@ -74,6 +74,12 @@
                 "name": "Justyna Morawska",
                 "role": "Montażystka / Realizator",
                 "imageURL": "efekty/adds/hero/assets/DSC05450.jpg",
+                "details": {
+                    "biography": "Justyna Morawska to doświadczona montażyystka i realizator z wieloletnim stażem w branży filmowej.",
+                    "expirience": "3 lata doświadczenia w montażu i realizacji filmowej, współpraca z licznymi studiami produkcyjnymi. Ukończyła szkolenie operatorskie w TVP.",
+                    "projects": "Uniejów, Spoty reklamowe, Współpraca ze znanymi telewizjami",
+                    "techniques": "Adobe Premiere Pro, Final Cut Pro, After Effects"
+                },
                 "socialIcons": [
                     "fab fa-github",
                     "fab fa-twitter",
@@ -83,18 +89,18 @@
                     "https://github.com/justynamorawska",
                     "https://twitter.com/justynamorawska",
                     "https://www.linkedin.com/in/justynamorawska"
-                ],
-                "details": {
-                    "biography": "Justyna Morawska to doświadczona montażyystka i realizator z wieloletnim stażem w branży filmowej.",
-                    "expirience": "3 lata doświadczenia w montażu i realizacji filmowej, współpraca z licznymi studiami produkcyjnymi. Ukończyła szkolenie operatorskie w TVP.",
-                    "techniques": "Adobe Premiere Pro, Final Cut Pro, After Effects",
-                    "projects": "Uniejów, Spoty reklamowe, Współpraca ze znanymi telewizjami"
-                }
+                ]
             },
             {
                 "name": "Mateusz Kacpura",
                 "role": "Technik telewizyjny",
                 "imageURL": "efekty/adds/hero/assets/image3.jpeg",
+                "details": {
+                    "biography": "Mateusz Kacpura specjalizuje się w fotografii i operowaniu kamerą, tworząc wizualnie przyciągające treści. Z wykształcenia informatyk i analityk danych.",
+                    "expirience": "5 lat doświadczenia w branży fotograficznej i filmowej, zrealizował wiele komercyjnych i artystycznych projektów.",
+                    "projects": "Reportaże, Spoty reklamowe, Geopolityka",
+                    "techniques": "Da Vinci Resolve, Premiere Pro, Adobe Lightroom, Photoshop"
+                },
                 "socialIcons": [
                     "fab fa-github",
                     "fab fa-twitter",
@@ -104,18 +110,18 @@
                     "https://github.com/mateuszkacpura",
                     "https://twitter.com/mateuszkacpura",
                     "https://www.linkedin.com/in/mateuszkacpura"
-                ],
-                "details": {
-                    "biography": "Mateusz Kacpura specjalizuje się w fotografii i operowaniu kamerą, tworząc wizualnie przyciągające treści. Z wykształcenia informatyk i analityk danych.",
-                    "expirience": "5 lat doświadczenia w branży fotograficznej i filmowej, zrealizował wiele komercyjnych i artystycznych projektów.",
-                    "techniques": "Da Vinci Resolve, Premiere Pro, Adobe Lightroom, Photoshop",
-                    "projects": "Reportaże, Spoty reklamowe, Geopolityka"
-                }
+                ]
             },
             {
                 "name": "Grzegorz Wac",
                 "role": "Operator kamer i drona",
                 "imageURL": "efekty/adds/hero/assets/DSC05455.jpg",
+                "details": {
+                    "biography": "Prezenter radiowy, organizator eventów w kraju i za granicą. Profesjonalny operator kamery. Współpracował z kilkoma znanymi wytwórniami filmowymi.",
+                    "expirience": "5 lat doświadczenia w operowaniu dronami, realizacja zdjęć lotniczych dla firm i produkcji filmowych.",
+                    "projects": "Spoty reklamowe, Współpraca przy produkcji seriali telewizyjnych, Realizacja eventów na żywo",
+                    "techniques": "Panasonic, Nikon, Canon"
+                },
                 "socialIcons": [
                     "fab fa-facebook-f",
                     "fab fa-twitter",
@@ -125,13 +131,7 @@
                     "https://facebook.com/grzegorzwac",
                     "https://twitter.com/grzegorzwac",
                     "https://www.linkedin.com/in/grzegorzwac"
-                ],
-                "details": {
-                    "biography": "Prezenter radiowy, organizator eventów w kraju i za granicą. Profesjonalny operator kamery. Współpracował z kilkoma znanymi wytwórniami filmowymi.",
-                    "expirience": "5 lat doświadczenia w operowaniu dronami, realizacja zdjęć lotniczych dla firm i produkcji filmowych.",
-                    "techniques": "Panasonic, Nikon, Canon",
-                    "projects": "Spoty reklamowe, Współpraca przy produkcji seriali telewizyjnych, Realizacja eventów na żywo"
-                }
+                ]
             }
         ]
     },
@@ -184,28 +184,21 @@
             "efekty/adds/hero/assets/loga/CUF-Ubezpieczenia_page-0001.jpg"
         ]
     },
-    "clients": [
-        "efekty/adds/hero/assets/loga/294797940_479086210808504_8667669129994940009_n.png",
-        "efekty/adds/hero/assets/loga/1706801724412.jpg",
-        "efekty/adds/hero/assets/loga/1706801724426.jpg",
-        "efekty/adds/hero/assets/loga/da635a33-ac6f-4f65-b6eb-fee731bbd382_kopia.jpg",
-        "efekty/adds/hero/assets/loga/logo.png"
-    ],
     "video": {
-        "titles":[
-            "",
-            "",
-            ""
+        "videos": [
+            "https://www.youtube.com/embed/HJ_SUBLP9jg?si=846R-CQXw8MjiOR9",
+            "https://www.youtube.com/embed/CQBqbGteOlc?si=Jin4ekHMWnBp5HTb",
+            "https://www.youtube.com/embed/6xjatizz5wY?si=kw0duPm-Pd2QXm9Q"
         ],
         "images": [
             "efekty/adds/hero/assets/video/11.png",
             "efekty/adds/hero/assets/video/22.png",
             "efekty/adds/hero/assets/video/33.png"
         ],
-        "videos": [
-            "https://www.youtube.com/embed/HJ_SUBLP9jg?si=846R-CQXw8MjiOR9",
-            "https://www.youtube.com/embed/CQBqbGteOlc?si=Jin4ekHMWnBp5HTb",
-            "https://www.youtube.com/embed/6xjatizz5wY?si=kw0duPm-Pd2QXm9Q"
+        "titles": [
+            "",
+            "",
+            ""
         ]
     }
 }

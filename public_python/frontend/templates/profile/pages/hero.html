@@ -342,7 +342,7 @@
                     <div class="row">
                         <div class="mb-3">
                             <label for="partnersText" class="form-label">Text</label>
-                            <input type="text" class="form-control" id="partnersText" name="adventure[description]" value="{{ json_data.partners.text1 }}">
+                            <input type="text" class="form-control" id="partnersText" name="partners[text1]" value="{{ json_data.partners.text1 }}">
                         </div>
                         {% for i in range(json_data.partners.images|length) %}
                         <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
@@ -439,6 +439,28 @@
         </div>
         </div>
     </div>
+
+    <!-- Modal for File Browser -->
+    <div class="modal fade" id="fileBrowserModal" tabindex="-1" aria-labelledby="fileBrowserModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="fileBrowserModalLabel">Browse Server Files</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- File list will be dynamically loaded here -->
+                    <ul id="fileList" class="list-group">
+                        <!-- Files will be appended here as list items -->
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
@@ -625,25 +647,38 @@
             const newItem = document.createElement('div');
             newItem.className = 'col-md-4 mb-3';
             newItem.dataset.index = newIndex;
+
             newItem.innerHTML = `
-                <div class="card">
-                    <div class="card-header">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white">
                         Slide ${newIndex}
-                        <button type="button" class="btn btn-warning btn-sm float-end ms-2 edit-btn">Edit</button>
-                        <button type="button" class="btn btn-danger btn-sm float-end remove-btn">Remove</button>
+                        <button type="button" class="btn btn-warning btn-sm float-end ms-2 edit-btn">
+                            <i class="bi bi-pencil-square"></i> Edit
+                        </button>
+                        <button type="button" class="btn btn-danger btn-sm float-end remove-btn">
+                            <i class="bi bi-trash"></i> Remove
+                        </button>
                     </div>
                     <div class="card-body">
                         <div class="mb-3">
                             <label for="videoSrc_${newIndex}" class="form-label">Video Source:</label>
-                            <input type="text" class="form-control" id="videoSrc_${newIndex}" name="carouselItems[${newIndex - 1}][videoSrc]">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="videoSrc_${newIndex}" name="carouselItems[${newIndex - 1}][videoSrc]">
+                                <button type="button" class="btn btn-secondary browse-btn" data-index="${newIndex}" data-type="komputer">
+                                    <i class="bi bi-folder-symlink"></i> Browse Server Files
+                                </button>
+                            </div>
                             <input type="file" class="form-control mt-2" id="videoFileSrc_${newIndex}" data-index="${newIndex}" data-type="komputer" accept="video/mp4">
-                            <button type="button" class="btn btn-secondary mt-2 browse-btn" data-index="${newIndex}" data-type="komputer">Browse Server Files</button>
                         </div>
                         <div class="mb-3">
                             <label for="videoMobileSrc_${newIndex}" class="form-label">Video Mobile Source:</label>
-                            <input type="text" class="form-control" id="videoMobileSrc_${newIndex}" name="carouselItems[${newIndex - 1}][videoMobileSrc]">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="videoMobileSrc_${newIndex}" name="carouselItems[${newIndex - 1}][videoMobileSrc]">
+                                <button type="button" class="btn btn-secondary browse-btn" data-index="${newIndex}" data-type="mobile">
+                                    <i class="bi bi-folder-symlink"></i> Browse Server Files
+                                </button>
+                            </div>
                             <input type="file" class="form-control mt-2" id="videoFileMobileSrc_${newIndex}" data-index="${newIndex}" data-type="mobile" accept="video/mp4">
-                            <button type="button" class="btn btn-secondary mt-2 browse-btn" data-index="${newIndex}" data-type="mobile">Browse Server Files</button>
                         </div>
                         <div class="mb-3">
                             <label for="maskColor_${newIndex}" class="form-label">Mask Color:</label>
@@ -691,6 +726,7 @@
         }
 
 
+
         function uploadFile(event) {
             const fileInput = event.target;
             const index = fileInput.dataset.index;
@@ -698,7 +734,7 @@
             const formData = new FormData();
             formData.append('file', fileInput.files[0]);
 
-            fetch(`/user/upload_video?type=${type}&index=${index}`, {
+            fetch(`/user/upload_hero_video?type=${type}&index=${index}`, {
                 method: 'POST',
                 body: formData
             })
@@ -720,23 +756,44 @@
             const index = button.dataset.index;
             const type = button.dataset.type;
 
-            fetch(`/user/browse_files?type=${type}`)
+            fetch(`/user/browse_hero_files?type=${type}`)
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    let fileList = prompt('Select a file:\n' + data.files.join('\n'));
-                    if (fileList) {
-                        const filePath = `efekty/adds/galeria/video/${type}/${fileList}`;
-                        document.getElementById(`videoSrc_${index}`).value = filePath;
-                        document.getElementById(`videoPreview_${index}`).querySelector('source').src = filePath;
-                        document.getElementById(`videoPreview_${index}`).load();
-                    }
+                    const fileListContainer = document.getElementById('fileList');
+                    fileListContainer.innerHTML = ''; // Clear any previous content
+                    
+                    data.files.forEach(file => {
+                        const listItem = document.createElement('li');
+                        listItem.className = 'list-group-item list-group-item-action';
+                        listItem.textContent = file;
+                        listItem.style.cursor = 'pointer';
+
+                        // Add click event to select the file
+                        listItem.addEventListener('click', () => {
+                            const filePath = `efekty/adds/galeria/video/${type}/${file}`;
+                            document.getElementById(`videoSrc_${index}`).value = filePath;
+                            document.getElementById(`videoPreview_${index}`).querySelector('source').src = filePath;
+                            document.getElementById(`videoPreview_${index}`).load();
+
+                            // Hide modal after selecting file
+                            const modal = bootstrap.Modal.getInstance(document.getElementById('fileBrowserModal'));
+                            modal.hide();
+                        });
+
+                        fileListContainer.appendChild(listItem);
+                    });
+
+                    // Show the modal
+                    const fileBrowserModal = new bootstrap.Modal(document.getElementById('fileBrowserModal'));
+                    fileBrowserModal.show();
                 } else {
                     alert('Failed to retrieve files');
                 }
             })
             .catch(error => console.error('Error browsing files:', error));
         }
+
 
         function removeItem(card) {
             console.log('removeItem function called for card:', card.dataset.index);
@@ -949,11 +1006,11 @@
             
             newPartner.innerHTML = `
                 <div class="card">
-                    <img src="default-image.jpg" class="img-fluid card-img-top" alt="Partner logo">
+                    <img src="" class="img-fluid card-img-top" alt="Partner logo">
                     <div class="card-body">
                         <div class="mb-3">
                             <label for="partnerImage${newIndex}" class="form-label">Image Link ${newIndex + 1}</label>
-                            <input type="text" class="form-control" id="partnerImage${newIndex}" name="partners[images][${newIndex}]" value="default-image.jpg">
+                            <input type="text" class="form-control" id="partnerImage${newIndex}" name="partners[images][${newIndex}]" value="">
                         </div>
                         <button type="button" class="btn btn-danger remove-btn" onclick="removePartner(this)">Usuń</button>
                     </div>
