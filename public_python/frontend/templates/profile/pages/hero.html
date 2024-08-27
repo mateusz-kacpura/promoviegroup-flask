@@ -440,58 +440,49 @@
         </div>
     </div>
 
-    <!-- Modal for File Browser -->
+    <!-- Modal browser HTML -->
     <div class="modal fade" id="fileBrowserModal" tabindex="-1" aria-labelledby="fileBrowserModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-xl">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="fileBrowserModalLabel">Browse Server Files</h5>
+                    <h5 class="modal-title" id="fileBrowserModalLabel">File Browser</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <!-- Search bar -->
-                    <div class="input-group mb-3">
-                        <input type="text" id="fileSearch" class="form-control" placeholder="Search files...">
-                        <button class="btn btn-outline-secondary" type="button" id="searchBtn">Search</button>
+                    <div class="mb-3">
+                        <label for="fileSearch" class="form-label">Search Files:</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="fileSearch" placeholder="Search files">
+                            <button class="btn btn-primary" id="searchBtn">Search</button>
+                        </div>
                     </div>
-                    <!-- File list with pagination -->
-                    <ul id="fileList" class="list-group mb-3">
-                        <!-- Files will be appended here as list items -->
-                    </ul>
-                    <nav>
-                        <ul class="pagination justify-content-center">
-                            <li class="page-item disabled" id="prevPage">
-                                <a class="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </a>
+                    <ul id="fileList" class="list-group mb-3"></ul>
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            <li class="page-item" id="prevPage">
+                                <button class="page-link">Previous</button>
                             </li>
-                            <li class="page-item disabled" id="nextPage">
-                                <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
+                            <li class="page-item" id="nextPage">
+                                <button class="page-link">Next</button>
                             </li>
                         </ul>
                     </nav>
-                    <!-- File preview and rename section -->
-                    <div id="fileDetails" class="d-none mt-4">
+                    <div id="fileDetails" class="d-none">
                         <div class="mb-3">
                             <label for="newFileName" class="form-label">Rename File:</label>
-                            <input type="text" id="newFileName" class="form-control" placeholder="Enter new file name">
+                            <input type="text" class="form-control" id="newFileName">
                         </div>
-                        <button type="button" class="btn btn-primary mb-3" id="renameFileBtn">Rename</button>
-                        <div id="filePreview" class="border rounded p-3">
-                            <!-- File preview will be dynamically inserted here -->
-                        </div>
+                        <button type="button" class="btn btn-primary" id="renameFileBtn">Rename</button>
+                        <div id="filePreview" class="mt-3"></div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="okBtn">OK</button>
                 </div>
             </div>
         </div>
     </div>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
@@ -756,6 +747,16 @@
             document.querySelector(`.browse-btn[data-index="${newIndex}"][data-type="mobile"]`).addEventListener('click', browseFiles);
         }
 
+        /* PRZEGLĄDARKA PLIKÓW */
+
+        let currentPage = 1;
+        const filesPerPage = 10;
+        let allFiles = [];
+        let fileType = '';
+        let selectedFile = '';
+        let selectedIndex = '';
+        let selectedFileType = '';
+
         function uploadFile(event) {
             const fileInput = event.target;
             const index = fileInput.dataset.index;
@@ -780,15 +781,12 @@
             .catch(error => console.error('Error uploading file:', error));
         }
 
-        let currentPage = 1;
-        const filesPerPage = 10;
-        let allFiles = [];
-        let fileType = '';
-
         function browseFiles(event) {
             const button = event.target;
             const index = button.dataset.index;
             const type = button.dataset.type;
+            selectedIndex = button.dataset.index;
+            selectedFileType = button.dataset.type;
             fileType = button.dataset.type; // Get file type from button data attribute
             console.log(fileType)
             fetch(`/user/browse_hero_files?type=${type}`)
@@ -860,6 +858,7 @@
         });
 
         function selectFile(file) {
+            selectedFile = file;
             document.getElementById('newFileName').value = file;
             document.getElementById('fileDetails').classList.remove('d-none');
             document.getElementById('renameFileBtn').onclick = function() {
@@ -916,6 +915,23 @@
             .catch(error => console.error('Error renaming file:', error));
         }
 
+        document.getElementById('okBtn').addEventListener('click', () => {
+            if (selectedFile && selectedIndex) {
+                const filePath = `/static/efekty/adds/galeria/video/${selectedFileType}/${selectedFile}`;
+                if (selectedFileType === 'komputer') {
+                    document.getElementById(`videoSrc_${selectedIndex}`).value = filePath;
+                    document.getElementById(`videoPreview_${selectedIndex}`).querySelector('source').src = filePath;
+                } else if (selectedFileType === 'mobile') {
+                    document.getElementById(`videoMobileSrc_${selectedIndex}`).value = filePath;
+                    document.getElementById(`videoPreview_${selectedIndex}`).querySelector('source').src = filePath;
+                }
+                document.getElementById(`videoPreview_${selectedIndex}`).load();
+                const fileBrowserModal = bootstrap.Modal.getInstance(document.getElementById('fileBrowserModal'));
+                fileBrowserModal.hide();
+            }
+        });
+
+        /* KONIEC PRZEGLĄDARKI PLIKÓW */
 
         function removeItem(card) {
             console.log('removeItem function called for card:', card.dataset.index);
