@@ -442,17 +442,47 @@
 
     <!-- Modal for File Browser -->
     <div class="modal fade" id="fileBrowserModal" tabindex="-1" aria-labelledby="fileBrowserModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="fileBrowserModalLabel">Browse Server Files</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <!-- File list will be dynamically loaded here -->
-                    <ul id="fileList" class="list-group">
+                    <!-- Search bar -->
+                    <div class="input-group mb-3">
+                        <input type="text" id="fileSearch" class="form-control" placeholder="Search files...">
+                        <button class="btn btn-outline-secondary" type="button" id="searchBtn">Search</button>
+                    </div>
+                    <!-- File list with pagination -->
+                    <ul id="fileList" class="list-group mb-3">
                         <!-- Files will be appended here as list items -->
                     </ul>
+                    <nav>
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled" id="prevPage">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item disabled" id="nextPage">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- File preview and rename section -->
+                    <div id="fileDetails" class="d-none mt-4">
+                        <div class="mb-3">
+                            <label for="newFileName" class="form-label">Rename File:</label>
+                            <input type="text" id="newFileName" class="form-control" placeholder="Enter new file name">
+                        </div>
+                        <button type="button" class="btn btn-primary mb-3" id="renameFileBtn">Rename</button>
+                        <div id="filePreview" class="border rounded p-3">
+                            <!-- File preview will be dynamically inserted here -->
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -460,6 +490,7 @@
             </div>
         </div>
     </div>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
@@ -725,8 +756,6 @@
             document.querySelector(`.browse-btn[data-index="${newIndex}"][data-type="mobile"]`).addEventListener('click', browseFiles);
         }
 
-
-
         function uploadFile(event) {
             const fileInput = event.target;
             const index = fileInput.dataset.index;
@@ -751,40 +780,23 @@
             .catch(error => console.error('Error uploading file:', error));
         }
 
+        let currentPage = 1;
+        const filesPerPage = 10;
+        let allFiles = [];
+        let fileType = '';
+
         function browseFiles(event) {
             const button = event.target;
             const index = button.dataset.index;
             const type = button.dataset.type;
-
+            fileType = button.dataset.type; // Get file type from button data attribute
+            console.log(fileType)
             fetch(`/user/browse_hero_files?type=${type}`)
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    const fileListContainer = document.getElementById('fileList');
-                    fileListContainer.innerHTML = ''; // Clear any previous content
-                    
-                    data.files.forEach(file => {
-                        const listItem = document.createElement('li');
-                        listItem.className = 'list-group-item list-group-item-action';
-                        listItem.textContent = file;
-                        listItem.style.cursor = 'pointer';
-
-                        // Add click event to select the file
-                        listItem.addEventListener('click', () => {
-                            const filePath = `efekty/adds/galeria/video/${type}/${file}`;
-                            document.getElementById(`videoSrc_${index}`).value = filePath;
-                            document.getElementById(`videoPreview_${index}`).querySelector('source').src = filePath;
-                            document.getElementById(`videoPreview_${index}`).load();
-
-                            // Hide modal after selecting file
-                            const modal = bootstrap.Modal.getInstance(document.getElementById('fileBrowserModal'));
-                            modal.hide();
-                        });
-
-                        fileListContainer.appendChild(listItem);
-                    });
-
-                    // Show the modal
+                    allFiles = data.files;
+                    renderFileList();
                     const fileBrowserModal = new bootstrap.Modal(document.getElementById('fileBrowserModal'));
                     fileBrowserModal.show();
                 } else {
@@ -792,6 +804,116 @@
                 }
             })
             .catch(error => console.error('Error browsing files:', error));
+        }
+
+        function renderFileList() {
+            const fileListContainer = document.getElementById('fileList');
+            fileListContainer.innerHTML = '';
+            const paginatedFiles = paginateFiles(allFiles, currentPage, filesPerPage);
+
+            paginatedFiles.forEach(file => {
+                const listItem = document.createElement('li');
+                listItem.className = 'list-group-item list-group-item-action d-flex justify-content-between align-items-center';
+                listItem.textContent = file;
+                listItem.style.cursor = 'pointer';
+
+                listItem.addEventListener('click', () => {
+                    selectFile(file);
+                });
+
+                fileListContainer.appendChild(listItem);
+            });
+
+            updatePaginationControls();
+        }
+
+        function paginateFiles(files, page, filesPerPage) {
+            const start = (page - 1) * filesPerPage;
+            const end = start + filesPerPage;
+            return files.slice(start, end);
+        }
+
+        function updatePaginationControls() {
+            document.getElementById('prevPage').classList.toggle('disabled', currentPage === 1);
+            document.getElementById('nextPage').classList.toggle('disabled', currentPage === Math.ceil(allFiles.length / filesPerPage));
+        }
+
+        document.getElementById('prevPage').addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                renderFileList();
+            }
+        });
+
+        document.getElementById('nextPage').addEventListener('click', () => {
+            if (currentPage < Math.ceil(allFiles.length / filesPerPage)) {
+                currentPage++;
+                renderFileList();
+            }
+        });
+
+        document.getElementById('searchBtn').addEventListener('click', () => {
+            const query = document.getElementById('fileSearch').value.toLowerCase();
+            allFiles = allFiles.filter(file => file.toLowerCase().includes(query));
+            currentPage = 1;
+            renderFileList();
+        });
+
+        function selectFile(file) {
+            document.getElementById('newFileName').value = file;
+            document.getElementById('fileDetails').classList.remove('d-none');
+            document.getElementById('renameFileBtn').onclick = function() {
+                renameFile(file);
+            };
+
+            const fileExtension = file.split('.').pop().toLowerCase();
+            const filePreviewContainer = document.getElementById('filePreview');
+            filePreviewContainer.innerHTML = '';
+
+            if (['jpg', 'jpeg', 'png', 'gif'].includes(fileExtension)) {
+                const img = document.createElement('img');
+                img.src = `/static/efekty/adds/galeria/video/${file}`;
+                img.alt = file;
+                img.className = 'img-fluid';
+                filePreviewContainer.appendChild(img);
+            } else if (fileExtension === 'mp4') {
+                const video = document.createElement('video');
+                video.className = 'w-100';
+                video.controls = true;
+                const source = document.createElement('source');
+                source.src = `/static/efekty/adds/galeria/video/${fileType}/${file}`;
+                source.type = 'video/mp4';
+                video.appendChild(source);
+                video.innerHTML += 'Your browser does not support the video tag.';
+                filePreviewContainer.appendChild(video);
+            } else {
+                const p = document.createElement('p');
+                p.textContent = 'Preview not available for this file type.';
+                filePreviewContainer.appendChild(p);
+            }
+        }
+
+        function renameFile(oldFileName) {
+            const newFileName = document.getElementById('newFileName').value;
+
+            if (!newFileName) {
+                alert('New file name cannot be empty.');
+                return;
+            }
+
+            fetch(`/user/change_hero_names_files?old_name=${encodeURIComponent(oldFileName)}&new_name=${encodeURIComponent(newFileName)}`, {
+                method: 'POST',
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('File renamed successfully.');
+                    browseFiles({ target: document.querySelector('.browse-btn') });
+                } else {
+                    alert('Failed to rename file.');
+                }
+            })
+            .catch(error => console.error('Error renaming file:', error));
         }
 
 

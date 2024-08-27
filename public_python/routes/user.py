@@ -233,6 +233,30 @@ VIDEO_DIR = {
     'mobile': os.path.join('frontend/static/efekty/adds/galeria/video/mobile/')
 }
 
+@user_bp.route('/change_hero_names_files', methods=['POST'])
+@login_required
+def change_file_name():
+    old_name = request.args.get('old_name')
+    new_name = request.args.get('new_name')
+    file_type = request.args.get('type')
+
+    if not old_name or not new_name or not file_type:
+        return jsonify({"success": False, "message": "Invalid parameters"}), 400
+
+    file_dir = os.path.join(current_app.root_path, 'efekty/adds/galeria/video', file_type)
+    old_file_path = os.path.join(file_dir, old_name)
+    new_file_path = os.path.join(file_dir, new_name)
+
+    try:
+        if os.path.exists(new_file_path):
+            return jsonify({"success": False, "message": "New file name already exists"}), 400
+
+        os.rename(old_file_path, new_file_path)
+        return jsonify({"success": True})
+    except Exception as e:
+        current_app.logger.error(f"Error renaming file: {e}")
+        return jsonify({"success": False, "message": "Error renaming file"}), 500
+
 @user_bp.route('/upload_hero_video', methods=['POST'])
 @login_required
 def upload_video():
