@@ -131,9 +131,20 @@
                 <div class="tab-pane fade" id="main-section" role="tabpanel" aria-labelledby="main-section-tab">
                     <h2>Main Section</h2>
                     <div class="mb-3">
+                        <!-- Obrazek z dynamicznym źródłem i responsywnymi stylami -->
+                        <img id="imagePreview" 
+                             src="{{ url_for('static', filename=json_data.mainSection.backgroundURL) }}" 
+                             alt="Image preview" 
+                             style="max-width: 100%; height: auto;">
+                    
+                        <!-- Etykieta i pole tekstowe do wprowadzenia URL obrazu -->
                         <label for="mainBackgroundURL" class="form-label">Background Image URL</label>
-                        <input type="text" class="form-control" id="mainBackgroundURL" name="mainSection[backgroundURL]" value="{{ json_data.mainSection.backgroundURL }}">
-                    </div>
+                        <input type="text" 
+                               class="form-control" 
+                               id="mainBackgroundURL" 
+                               name="mainSection[backgroundURL]" 
+                               value="{{ json_data.mainSection.backgroundURL }}">
+                    </div>                    
                     <div class="mb-3">
                         <label for="mainTitle1" class="form-label">Title 1</label>
                         <input type="text" class="form-control" id="mainTitle1" name="mainSection[title1]" value="{{ json_data.mainSection.title1 }}">
@@ -201,13 +212,43 @@
                                 <div class="row">
                                     <div class="col-md-4 mb-3">
                                         <label for="teamImage{{ loop.index }}" class="form-label">Image URL</label>
-                                        <input type="text" class="form-control" id="teamImage{{ loop.index }}" name="membersTeamSection[members][{{ loop.index0 }}][imageURL]" value="{{ member.imageURL }}">
+                                        <!-- Pole tekstowe do wprowadzenia URL obrazu -->
+                                        <div class="input-group">
+                                            <input type="text" id="teamImage{{ loop.index }}" 
+                                                   name="membersTeamSection[members][{{ loop.index0 }}][imageURL]" 
+                                                   value="{{ member.imageURL }}" class="form-control" 
+                                                   name="carouselItems[${newIndex - 1}][videoSrc]"
+                                                   onchange="updateImagePreview('{{ loop.index }}')">
+                                            <button type="button" class="btn btn-secondary browse-btn" data-type="member_image">
+                                                <i class="bi bi-folder-symlink"></i> Browse Server Files
+                                            </button>  <!-- Dodaj funkcje obsługującą ten button w javascript, powinna ona otwierać modala, a typ pliku member_image dodaj do python, na jego podstawie dostaniesz ścieżkę do właściwego katalogu  -->
+                                        </div>
+                                        <input type="file" class="form-control mt-2"data-type="member_image" accept="jpg">
+                                        <!-- Miniaturka obrazu -->
+                                        <div class="mt-2">
+                                            <img id="imagePreview{{ loop.index }}" 
+                                                src="{{ url_for('static', filename=member.imageURL) }}" 
+                                                alt="Image preview" 
+                                                style="max-width: 100%; height: auto; display: block; margin-top: 10px;">
+                                        </div>
                                     </div>
                                     <div class="col-md-8 mb-3">
                                         <label for="teamBiography{{ loop.index }}" class="form-label">Biography</label>
-                                        <textarea class="form-control" id="teamBiography{{ loop.index }}" name="membersTeamSection[members][{{ loop.index0 }}][details][biography]" rows="3">{{ member.details.biography }}</textarea>
+                                        <textarea class="form-control" 
+                                                id="teamBiography{{ loop.index }}" 
+                                                name="membersTeamSection[members][{{ loop.index0 }}][details][biography]" 
+                                                rows="3">{{ member.details.biography }}</textarea>
                                     </div>
                                 </div>
+
+                                <script>
+                                    function updateImagePreview(index) {
+                                        // Pobieranie URL obrazu z pola tekstowego
+                                        const imageUrl = document.getElementById(`teamImage${index}`).value;
+                                        // Ustawianie nowego URL w miniaturce obrazu
+                                        document.getElementById(`imagePreview${index}`).src = imageUrl;
+                                    }
+                                </script>
 
                                 <!-- Experience, Projects, Techniques -->
                                 <div class="mb-3">
