@@ -214,12 +214,18 @@
                                         <label for="teamImage{{ loop.index }}" class="form-label">Image URL</label>
                                         <!-- Pole tekstowe do wprowadzenia URL obrazu -->
                                         <div class="input-group">
-                                            <input type="text" id="teamImage{{ loop.index }}" 
+                                            <input type="text" 
+                                                   id="teamImage{{ loop.index }}" 
                                                    name="membersTeamSection[members][{{ loop.index0 }}][imageURL]" 
-                                                   value="{{ member.imageURL }}" class="form-control" 
+                                                   value="{{ member.imageURL }}" 
+                                                   class="form-control" 
                                                    name="carouselItems[${newIndex - 1}][videoSrc]"
                                                    onchange="updateImagePreview('{{ loop.index }}')">
-                                            <button type="button" class="btn btn-secondary browse-btn" data-type="member_image">
+                                            <button type="button" 
+                                                    class="btn btn-secondary browse-btn"
+                                                    data-index="{{ loop.index }}"  
+                                                    data-type="member_image"  
+                                                    onclick="browseFiles(event)">
                                                 <i class="bi bi-folder-symlink"></i> Browse Server Files
                                             </button>  <!-- Dodaj funkcje obsługującą ten button w javascript, powinna ona otwierać modala, a typ pliku member_image dodaj do python, na jego podstawie dostaniesz ścieżkę do właściwego katalogu  -->
                                         </div>
@@ -829,6 +835,7 @@
             selectedIndex = button.dataset.index;
             selectedFileType = button.dataset.type;
             fileType = button.dataset.type; // Get file type from button data attribute
+            console.log(type)
             console.log(fileType)
             fetch(`/user/browse_hero_files?type=${type}`)
             .then(response => response.json())
@@ -898,6 +905,13 @@
             renderFileList();
         });
 
+        const FILES = {
+            'komputer': '/static/efekty/adds/galeria/video/komputer/',
+            'mobile': '/static/efekty/adds/galeria/video/mobile/',
+            'member_image': '/static/efekty/adds/hero/assets/',
+            'galeria': '/static/efekty/adds/galeria/assets/'
+        };
+
         function selectFile(file) {
             selectedFile = file;
             document.getElementById('newFileName').value = file;
@@ -910,9 +924,19 @@
             const filePreviewContainer = document.getElementById('filePreview');
             filePreviewContainer.innerHTML = '';
 
+            let filePath = '';
+
+            // Wybór ścieżki na podstawie wartości fileType
+            if (fileType in FILES) {
+                filePath = FILES[fileType];
+            } else {
+                filePath = '/static/efekty/adds/galeria/video/';
+                console.log('Została zwrócona nieprawidłowa ścieżka, spradź zmienną const Files')
+            }
+
             if (['jpg', 'jpeg', 'png', 'gif'].includes(fileExtension)) {
                 const img = document.createElement('img');
-                img.src = `/static/efekty/adds/galeria/video/${file}`;
+                img.src = `${filePath}${file}`;
                 img.alt = file;
                 img.className = 'img-fluid';
                 filePreviewContainer.appendChild(img);
@@ -921,7 +945,7 @@
                 video.className = 'w-100';
                 video.controls = true;
                 const source = document.createElement('source');
-                source.src = `/static/efekty/adds/galeria/video/${fileType}/${file}`;
+                source.src = `${filePath}${file}`;
                 source.type = 'video/mp4';
                 video.appendChild(source);
                 video.innerHTML += 'Your browser does not support the video tag.';
@@ -932,6 +956,7 @@
                 filePreviewContainer.appendChild(p);
             }
         }
+
 
         function renameFile(oldFileName) {
             const newFileName = document.getElementById('newFileName').value;

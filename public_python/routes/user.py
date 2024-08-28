@@ -230,7 +230,9 @@ def update_hero():
 # Ścieżka do katalogów
 VIDEO_DIR = {
     'komputer': os.path.join('frontend/static/efekty/adds/galeria/video/komputer/'),
-    'mobile': os.path.join('frontend/static/efekty/adds/galeria/video/mobile/')
+    'mobile': os.path.join('frontend/static/efekty/adds/galeria/video/mobile/'),
+    'member_image': os.path.join('frontend/static/efekty/adds/hero/assets/'),
+    'galeria': os.path.join('frontend/static/efekty/adds/galeria/assets/')
 }
 
 @user_bp.route('/change_hero_names_files', methods=['POST'])
@@ -243,9 +245,15 @@ def change_file_name():
     if not old_name or not new_name or not file_type:
         return jsonify({"success": False, "message": "Invalid parameters"}), 400
 
-    file_dir = os.path.join(current_app.root_path, 'efekty/adds/galeria/video', file_type)
-    old_file_path = os.path.join(file_dir, old_name)
-    new_file_path = os.path.join(file_dir, new_name)
+    # Użycie instrukcji warunkowej do wyboru ścieżki
+    if file_type in VIDEO_DIR:
+        file_dir = VIDEO_DIR[file_type]
+    else:
+        return jsonify({"success": False, "message": "Invalid file type"}), 400
+
+    # Stworzenie pełnej ścieżki do plików
+    old_file_path = os.path.join(current_app.root_path, file_dir, old_name)
+    new_file_path = os.path.join(current_app.root_path, file_dir, new_name)
 
     try:
         if os.path.exists(new_file_path):
@@ -257,23 +265,39 @@ def change_file_name():
         current_app.logger.error(f"Error renaming file: {e}")
         return jsonify({"success": False, "message": "Error renaming file"}), 500
 
+
 @user_bp.route('/upload_hero_video', methods=['POST'])
 @login_required
 def upload_video():
     video_type = request.args.get('type')
+    
+    # Sprawdzenie, czy typ pliku jest obsługiwany
+    if video_type not in VIDEO_DIR:
+        return jsonify(success=False, error="Invalid video type"), 400
+    
+    # Sprawdzenie, czy plik został przesłany
     if 'file' not in request.files:
-        return jsonify(success=False, error="No file provided")
+        return jsonify(success=False, error="No file provided"), 400
 
     file = request.files['file']
+    
+    # Sprawdzenie, czy wybrano plik do przesłania
     if file.filename == '':
-        return jsonify(success=False, error="No selected file")
+        return jsonify(success=False, error="No selected file"), 400
 
-    file_path = os.path.join(VIDEO_DIR.get(video_type, ''), file.filename)
+    # Pobranie odpowiedniej ścieżki do zapisu pliku na podstawie typu
+    file_dir = VIDEO_DIR[video_type]
+    file_path = os.path.join(current_app.root_path, file_dir, file.filename)
+    
     try:
+        # Zapisanie pliku na dysku
         file.save(file_path)
         return jsonify(success=True, filePath=file_path)
     except Exception as e:
-        return jsonify(success=False, error=str(e))
+        # Obsługa błędów podczas zapisu pliku
+        current_app.logger.error(f"Error saving file: {e}")
+        return jsonify(success=False, error=str(e)), 500
+
 
 @user_bp.route('/browse_hero_files', methods=['GET'])
 @login_required
@@ -281,27 +305,30 @@ def browse_files():
     video_type = request.args.get('type')
     print(f"Requested video type: {video_type}")
     
+    # Sprawdzenie, czy typ pliku jest obsługiwany
     if video_type not in VIDEO_DIR:
-        return jsonify(success=False, error="Invalid video type")
+        return jsonify(success=False, error="Invalid video type"), 400
 
     directory = VIDEO_DIR[video_type]
     print(f"Accessing directory: {directory}")
 
+    # Sprawdzenie, czy katalog istnieje
     if not os.path.exists(directory):
-        return jsonify(success=False, error="Directory does not exist")
+        return jsonify(success=False, error="Directory does not exist"), 404
 
     try:
+        # Pobranie listy plików z katalogu
         files = os.listdir(directory)
         print(f"Files found: {files}")
         return jsonify(success=True, files=files)
     except FileNotFoundError:
-        return jsonify(success=False, error="Directory not found")
+        return jsonify(success=False, error="Directory not found"), 404
     except PermissionError:
-        return jsonify(success=False, error="Permission denied")
+        return jsonify(success=False, error="Permission denied"), 403
     except Exception as e:
         print(f"Error browsing files: {str(e)}")
-        return jsonify(success=False, error="An unexpected error occurred")
-
+        return jsonify(success=False, error="An unexpected error occurred"), 500
+    
 MAIL_JSON_PATH = os.path.join('baza_danych', 'mail.json')
 
 @user_bp.route('/profile/pages/mail', methods=['GET'])
