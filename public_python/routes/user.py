@@ -378,18 +378,31 @@ def delete_mail():
         return jsonify({'status': 'error', 'message': 'Failed to delete email'}), 500
 
 
+
 VISITORS_JSON_PATH = os.path.join('baza_danych', 'visitors.json')
+VISITORS_PER_PAGE = 10  # Number of visitors per page
 
 @user_bp.route('/profile/pages/visitors', methods=['GET'])
 @login_required
 def display_visitors():
+    page = int(request.args.get('page', 1))
+    start = (page - 1) * VISITORS_PER_PAGE
+    end = start + VISITORS_PER_PAGE
+
     try:
         with open(VISITORS_JSON_PATH, 'r', encoding='utf-8') as json_file:
             visitors = json.load(json_file)
-    except (FileNotFoundError, json.JSONDecodeError):
-        visitors = []
+        
+        total_visitors = len(visitors)
+        total_pages = (total_visitors + VISITORS_PER_PAGE - 1) // VISITORS_PER_PAGE
 
-    return render_template('profile/pages/visitors.html', visitors=visitors)
+        visitors_to_display = visitors[start:end]
+
+    except (FileNotFoundError, json.JSONDecodeError):
+        visitors_to_display = []
+        total_pages = 1
+
+    return render_template('profile/pages/visitors.html', visitors=visitors_to_display, page=page, total_pages=total_pages)
 
 @user_bp.route('/profile/pages/delete_visitor', methods=['POST'])
 @login_required
@@ -403,21 +416,55 @@ def delete_visitor():
         with open(VISITORS_JSON_PATH, 'r+', encoding='utf-8') as json_file:
             visitors = json.load(json_file)
             
-            # Filtrujemy wizyty i usuwamy te z podanym id
+            # Filter out the visitor with the given ID
             visitors = [visitor for visitor in visitors if visitor.get('id') != id_to_delete]
             
-            # Ustawiamy wskaźnik na początek pliku i zapisujemy zmienioną listę
+            # Write the updated list back to the file
             json_file.seek(0)
             json.dump(visitors, json_file, ensure_ascii=False, indent=4)
-            
-            # Usuwamy pozostałe dane po zmienionej liście
             json_file.truncate()
         
         return redirect(url_for('user.display_visitors'))
     except (FileNotFoundError, json.JSONDecodeError) as e:
-        print(f"Error occurred: {e}")  # Zamień na logger w aplikacji produkcyjnej
+        print(f"Error occurred: {e}")  # Replace with a proper logger in production
         return jsonify({'status': 'error', 'message': 'Failed to delete visitor'}), 500
-    
+
+@user_bp.route('/profile/pages/delete_selected_visitors', methods=['POST'])
+@login_required
+def delete_selected_visitors():
+    ids_to_delete = request.form.getlist('ids')
+
+    if not ids_to_delete:
+        return jsonify({'status': 'error', 'message': 'No IDs provided'}), 400
+
+    try:
+        with open(VISITORS_JSON_PATH, 'r+', encoding='utf-8') as json_file:
+            visitors = json.load(json_file)
+            
+            # Filter out visitors with the given IDs
+            visitors = [visitor for visitor in visitors if visitor.get('id') not in ids_to_delete]
+            
+            # Write the updated list back to the file
+            json_file.seek(0)
+            json.dump(visitors, json_file, ensure_ascii=False, indent=4)
+            json_file.truncate()
+        
+        return redirect(url_for('user.display_visitors'))
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        print(f"Error occurred: {e}")  # Replace with a proper logger in production
+        return jsonify({'status': 'error', 'message': 'Failed to delete selected visitors'}), 500
+
+@user_bp.route('/profile/pages/delete_all_visitors', methods=['POST'])
+@login_required
+def delete_all_visitors():
+    try:
+        open(VISITORS_JSON_PATH, 'w').close()  # Clear the file content by reopening it in write mode
+
+        return redirect(url_for('user.display_visitors'))
+    except Exception as e:
+        print(f"Error occurred: {e}")  # Replace with a proper logger in production
+        return jsonify({'status': 'error', 'message': 'Failed to delete all visitors'}), 500
+
 
 # Ścieżka do pliku JSON
 OPINIE_JSON_PATH = os.path.join('baza_danych', 'opinie.json')
