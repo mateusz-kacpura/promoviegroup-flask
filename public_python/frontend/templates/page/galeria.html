@@ -1,111 +1,38 @@
-
 <div class="container"></div>
 <header id="carouselContainer">
     <!-- Carousel will be rendered here -->
 </header>
-<div id=mainSection></div>
+<div id="mainSection"></div>
 <div class="container" style="margin-top: 20px;">
   <div id="sectionImage"></div>
   <!-- Modal galery image -->
 </div>
 <script>
-const dane = {
-  "carouselItems": [
-        {
-            "videoSrc": "efekty/adds/galeria/video/DJI_0078.MP4",
-            "maskColor": "rgba(0, 0, 0, 0.6)",
-            "heading": "Imprezy sportowe",
-            "subheading": "Najlepsi z najlepszych",
-            "buttons": [
-                {
-                    "text": "Zamów film już teraz",
-                    "url": "/kontakt",
-                    "class": "btn-outline-light custom-btn"
-                }
-            ]
-        },
-        {
-            "videoSrc": "efekty/adds/galeria/video/DJI_0086.MP4",
-            "maskColor": "rgba(0, 0, 0, 0.3)",
-            "heading": "Filmy promocyjne",
-            "subheading": "Wykonywane z rozmachem",
-            "buttons": [
-                {
-                    "text": "Zamów film już teraz",
-                    "url": "/kontakt",
-                    "class": "btn-outline-light custom-btn"
-                }
-            ]
-        },
-        {
-            "videoSrc": "efekty/adds/galeria/video/DJI_0079.MP4",
-            "maskColor": "linear-gradient(45deg, rgba(29, 236, 197, 0.7), rgba(91, 14, 214, 0.7) 100%)",
-            "heading": "Reklamy",
-            "subheading": "Dzielimy się swoją pasją",
-            "buttons": [
-                {
-                    "text": "Zamów film już teraz",
-                    "url": "/kontakt",
-                    "class": "btn-outline-light custom-btn"
-                }
-            ]
-        }
-    ],
-    mainSection: {
-        backgroundURL: "efekty/adds/hero/assets/pexels-caleboquendo-4889279.jpg",
-        title1: "Profesionalny zespół, któremu można",
-        title2: "zaufać",
-        button1Text: "Zadzwoń teraz",
-        button2Text: "Więcej",
-        phoneNumber: "720 760 461"
-    },
-    sectionImage: [
-        {
-          src: "/efekty/adds/galeria/assets/48921969_1960271264052333_3732463173068914688_n.jpg",
-          animationDelay: ""
-        },
-        {
-          src: "/efekty/adds/galeria/assets/118083887_3162074360567251_317893365180175413_n.jpg",
-          animationDelay: "300"
-        },
-        {
-          src: "/efekty/adds/galeria/assets/184285412_3911701732271173_664944797408423679_n.jpg",
-          animationDelay: "500"
-        },
-        {
-          src: "/efekty/adds/galeria/assets/195688778_3986667734774572_6652058005580401895_n.jpg",
-          animationDelay: ""
-        },
-        {
-          src: "/efekty/adds/galeria/assets/209158276_4064455230329155_4712343838012056478_n.jpg",
-          animationDelay: "300"
-        },
-        {
-          src: "/efekty/adds/galeria/assets/322679947_831537901271177_2854626816657091469_n.jpg",
-          animationDelay: "500"
-        },
-        {
-          src: "/efekty/adds/galeria/assets/331483299_713620376899847_51941713472726588_n.jpg",
-          animationDelay: ""
-        },
-        {
-          src: "/efekty/adds/galeria/assets/336767407_6131000973587482_5005028003242857146_n.jpg",
-          animationDelay: "300"
-        },
-        {
-          src: "/efekty/adds/galeria/assets/355120523_6245759822198674_7575173158746098612_n.jpg",
-          animationDelay: "500"
-        },
-        {
-          src: "/efekty/adds/galeria/assets/387859034_122113918622064369_8563166061592335975_n.jpg",
-          animationDelay: "500"
-        },
-        {
-          src: "/efekty/adds/galeria/assets/393015856_6635869109854408_5074807102227126407_n.jpg",
-          animationDelay: "500"
-        }
-      ]
-};
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Nazwa pliku JSON, który chcesz załadować
+    const fileName = 'galeria.json'; // Możesz tutaj ustawić dynamiczną nazwę pliku, jeśli to potrzebne
+
+    // Pobierz dane z serwera
+    fetch(`/get-json?file=${fileName}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(jsonData => {
+            // Przypisz dane do zmiennej globalnej
+            data = jsonData;
+            console.log('Dane wczytane:', data);
+
+            // Wywołaj funkcje renderujące HTML po załadowaniu danych
+            renderContent(data);
+        })
+        .catch(error => {
+            console.error('Błąd:', error);
+        });
+});
 
 function renderHeaderVideo(data) {
     const carouselIndicators = data.carouselItems.map((item, index) => {
@@ -158,25 +85,22 @@ function renderHeaderVideo(data) {
     `;
 }
 
-
 document.addEventListener('DOMContentLoaded', function() {
     // Pobierz przycisk
     var button = document.querySelector('[id="telefon"]');
     // Ustaw zdarzenie na kliknięcie przycisku
     button.addEventListener('click', function() {
         // Ustaw numer telefonu
-        var phoneNumber = "567 874 992"; /* data.mainSection.phoneNumber ;  */
+        var phoneNumber = "567 874 992"; // Skoro dane nie są jeszcze załadowane, używam wartości statycznej
         // Wstaw numer telefonu wewnątrz przycisku
         button.textContent = phoneNumber;
-        
+
         // Po 5 sekundach przywróć oryginalny tekst przycisku
         setTimeout(function() {
-            button.textContent = data.mainSection.button1Text;
+            button.textContent = data.mainSection.button1Text; // Zmieniono na prawidłowy dostęp do zmiennej data
         }, 5000);
     });
 });
-
-
 
 function generateMainSectionHTML(data) {
     return `
@@ -206,41 +130,41 @@ function generateMainSectionHTML(data) {
 }
 
 function renderSectionImage() {
-      let container = '<div class="container" style="margin-top: 20px;">';
+    let container = '<div class="container" style="margin-top: 20px;">';
 
-      for (let i = 0; i < dane.sectionImage.length; i += 3) {
+    for (let i = 0; i < data.sectionImage.length; i += 3) { // Zmieniono "dane" na "data"
         container += '<div class="row">';
 
         for (let j = 0; j < 3; j++) {
-          if (i + j < dane.sectionImage.length) {
-            const image = dane.sectionImage[i + j];
-            container += `
-              <div class="col-lg-4 col-md-6 mb-4">
-                <img
-                  src="${image.src}"
-                  class="img-fluid shadow-1-strong rounded"
-                  data-mdb-animation-init
-                  data-mdb-toggle="animation"
-                  data-mdb-animation-start="onScroll"
-                  data-mdb-animation="fade-in"
-                  ${image.animationDelay ? `data-mdb-animation-delay="${image.animationDelay}"` : ''}
-                  onclick="openModal(${i + j})"
-                  style="cursor: pointer;"
-                />
-              </div>
-            `;
-          }
+            if (i + j < data.sectionImage.length) { // Zmieniono "dane" na "data"
+                const image = data.sectionImage[i + j]; // Zmieniono "dane" na "data"
+                container += `
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <img
+                    src="${image.src}"
+                    class="img-fluid shadow-1-strong rounded"
+                    data-mdb-animation-init
+                    data-mdb-toggle="animation"
+                    data-mdb-animation-start="onScroll"
+                    data-mdb-animation="fade-in"
+                    ${image.animationDelay ? `data-mdb-animation-delay="${image.animationDelay}"` : ''}
+                    onclick="openModal(${i + j})"
+                    style="cursor: pointer;"
+                    />
+                </div>
+                `;
+            }
         }
 
         container += '</div>';
-      }
-
-      container += '</div>';
-      return container;
     }
 
-    function renderModal() {
-      return `
+    container += '</div>';
+    return container;
+}
+
+function renderModal() {
+    return `
         <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -262,35 +186,42 @@ function renderSectionImage() {
           </div>
         </div>
       `;
-    }
+}
 
-    let currentIndex = 0;
+let currentIndex = 0;
 
-    function openModal(index) {
-      currentIndex = index;
-      document.getElementById('modalImage').src = dane.sectionImage[currentIndex].src;
-      $('#imageModal').modal('show');
-    }
+function openModal(index) {
+    currentIndex = index;
+    document.getElementById('modalImage').src = data.sectionImage[currentIndex].src; // Zmieniono "dane" na "data"
+    $('#imageModal').modal('show');
+}
 
-    function prevImage() {
-      currentIndex = (currentIndex > 0) ? currentIndex - 1 : dane.sectionImage.length - 1;
-      document.getElementById('modalImage').src = dane.sectionImage[currentIndex].src;
-    }
+function prevImage() {
+    currentIndex = (currentIndex > 0) ? currentIndex - 1 : data.sectionImage.length - 1; // Zmieniono "dane" na "data"
+    document.getElementById('modalImage').src = data.sectionImage[currentIndex].src; // Zmieniono "dane" na "data"
+}
 
-    function nextImage() {
-      currentIndex = (currentIndex < dane.sectionImage.length - 1) ? currentIndex + 1 : 0;
-      document.getElementById('modalImage').src = dane.sectionImage[currentIndex].src;
-    } 
+function nextImage() {
+    currentIndex = (currentIndex < data.sectionImage.length - 1) ? currentIndex + 1 : 0; // Zmieniono "dane" na "data"
+    document.getElementById('modalImage').src = data.sectionImage[currentIndex].src; // Zmieniono "dane" na "data"
+} 
 
-// Przykład użycia funkcji
-// document.getElementById('carouselContainer').innerHTML = renderHeaderVideo(dane);
+function renderContent(data) {
+    // Renderuj karuzelę wideo i dodaj ją do kontenera
+   // const carouselHTML = renderHeaderVideo(data);
+   // document.getElementById('carouselContainer').innerHTML = carouselHTML;
 
-const mainSectionHTML = generateMainSectionHTML(dane);
-document.getElementById("mainSection").innerHTML = mainSectionHTML;
+    // Renderuj sekcję główną i dodaj ją do sekcji głównej
+    const mainSectionHTML = generateMainSectionHTML(data);
+    document.getElementById('mainSection').innerHTML = mainSectionHTML;
 
-document.getElementById('sectionImage').innerHTML = renderSectionImage() + renderModal();
+    // Renderuj obrazy i modal, a następnie dodaj je do kontenera obrazów
+    const sectionImageHTML = renderSectionImage();
+    const modalHTML = renderModal();
+    document.getElementById('sectionImage').innerHTML = sectionImageHTML + modalHTML;
+}
+
+// Przykład wywołania funkcji (powinno być już wywołane po załadowaniu danych)
+//renderContent(data);
+
 </script>
-<!--Main Navigation-->
-
-
-

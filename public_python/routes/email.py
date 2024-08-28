@@ -6,6 +6,7 @@ import os
 import json
 import logging
 import uuid  # Import do generowania unikalnych identyfikatorów
+import re 
 
 # Konfiguracja logowania
 logging.basicConfig(filename='app.log', level=logging.INFO, 
