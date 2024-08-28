@@ -133,18 +133,28 @@
                     <div class="mb-3">
                         <!-- Obrazek z dynamicznym źródłem i responsywnymi stylami -->
                         <img id="imagePreview" 
-                             src="{{ url_for('static', filename=json_data.mainSection.backgroundURL) }}" 
-                             alt="Image preview" 
-                             style="max-width: 100%; height: auto;">
-                    
+                            src="{{ url_for('static', filename=json_data.mainSection.backgroundURL) }}" 
+                            alt="Image preview" 
+                            style="max-width: 100%; height: auto;">
+                        
                         <!-- Etykieta i pole tekstowe do wprowadzenia URL obrazu -->
                         <label for="mainBackgroundURL" class="form-label">Background Image URL</label>
-                        <input type="text" 
-                               class="form-control" 
-                               id="mainBackgroundURL" 
-                               name="mainSection[backgroundURL]" 
-                               value="{{ json_data.mainSection.backgroundURL }}">
-                    </div>                    
+                        <div class="input-group">
+                            <input type="text" 
+                                   class="form-control" 
+                                   id="mainBackgroundURL" 
+                                   name="mainSection[backgroundURL]" 
+                                   value="{{ json_data.mainSection.backgroundURL }}">
+                            <button type="button" 
+                                   class="btn btn-secondary browse-btn" 
+                                   data-type="main_background" 
+                                   data-index="0" 
+                                   onclick="browseFiles(event)">
+                               <i class="bi bi-folder-symlink"></i> Browse Server Files
+                           </button>
+                        </div>
+                        <input type="file" class="form-control mt-2" data-type="main_background" accept="jpg">
+                    </div>                  
                     <div class="mb-3">
                         <label for="mainTitle1" class="form-label">Title 1</label>
                         <input type="text" class="form-control" id="mainTitle1" name="mainSection[title1]" value="{{ json_data.mainSection.title1 }}">
@@ -227,7 +237,7 @@
                                                     data-type="member_image"  
                                                     onclick="browseFiles(event)">
                                                 <i class="bi bi-folder-symlink"></i> Browse Server Files
-                                            </button>  <!-- Dodaj funkcje obsługującą ten button w javascript, powinna ona otwierać modala, a typ pliku member_image dodaj do python, na jego podstawie dostaniesz ścieżkę do właściwego katalogu  -->
+                                            </button>
                                         </div>
                                         <input type="file" class="form-control mt-2"data-type="member_image" accept="jpg">
                                         <!-- Miniaturka obrazu -->
@@ -246,15 +256,6 @@
                                                 rows="3">{{ member.details.biography }}</textarea>
                                     </div>
                                 </div>
-
-                                <script>
-                                    function updateImagePreview(index) {
-                                        // Pobieranie URL obrazu z pola tekstowego
-                                        const imageUrl = document.getElementById(`teamImage${index}`).value;
-                                        // Ustawianie nowego URL w miniaturce obrazu
-                                        document.getElementById(`imagePreview${index}`).src = imageUrl;
-                                    }
-                                </script>
 
                                 <!-- Experience, Projects, Techniques -->
                                 <div class="mb-3">
@@ -320,7 +321,31 @@
                     </div>
                     <div class="mb-3">
                         <label for="jumbotronImageURL" class="form-label">Image URL</label>
-                        <input type="text" class="form-control" id="jumbotronImageURL" name="jumbotron[imageURL]" value="{{ json_data.jumbotron.imageURL }}">
+                        <div class="input-group">
+                            <input type="text" 
+                                   class="form-control" 
+                                   id="jumbotronImageURL" 
+                                   name="jumbotron[imageURL]" 
+                                   value="{{ json_data.jumbotron.imageURL }}" 
+                                   onchange="updateImagePreview('jumbotron')">
+                            <button type="button" 
+                                    class="btn btn-secondary browse-btn" 
+                                    data-type="jumbotron" 
+                                    data-index="0" 
+                                    onclick="browseFiles(event)">
+                                <i class="bi bi-folder-symlink"></i> Browse Server Files
+                            </button>
+                        </div>
+                        <input type="file" 
+                               class="form-control mt-2" 
+                               data-type="jumbotron" 
+                               accept="jpg">
+                        <div class="mt-2">
+                            <img id="jumbotronImagePreview" 
+                                 src="{{ url_for('static', filename=json_data.jumbotron.imageURL) }}" 
+                                 alt="Image preview" 
+                                 style="max-width: 100%; height: auto;">
+                        </div>
                     </div>
                 </div>                
 
@@ -805,6 +830,14 @@
         let selectedIndex = '';
         let selectedFileType = '';
 
+        function updateImagePreview(index) {
+            console.log("Wyświetlanie obrazu")
+            // Pobieranie URL obrazu z pola tekstowego
+            const imageUrl = document.getElementById(`teamImage${index}`).value;
+            // Ustawianie nowego URL w miniaturce obrazu
+            document.getElementById(`imagePreview${index}`).src = imageUrl;
+        }
+
         function uploadFile(event) {
             const fileInput = event.target;
             const index = fileInput.dataset.index;
@@ -940,7 +973,10 @@
             'komputer': '/static/efekty/adds/galeria/video/komputer/',
             'mobile': '/static/efekty/adds/galeria/video/mobile/',
             'member_image': '/static/efekty/adds/hero/assets/',
-            'galeria': '/static/efekty/adds/galeria/assets/'
+            'galeria': '/static/efekty/adds/galeria/assets/',
+            'main_background': '/static/efekty/adds/hero/assets/',
+            'jumbotron': '/static/efekty/adds/hero/assets/',
+            'partners': '/static/efekty/adds/hero/assets/loga/'
         };
 
         function selectFile(file) {
@@ -1012,17 +1048,50 @@
             .catch(error => console.error('Error renaming file:', error));
         }
 
+
         document.getElementById('okBtn').addEventListener('click', () => {
+            //console.log("okBtn clicked"); // Debug: Sprawdzenie, czy przycisk jest klikany
+            //console.log("Selected file:", selectedFile); // Debug: Sprawdzenie wybranego pliku
+            //console.log("Selected index:", selectedIndex); // Debug: Sprawdzenie indeksu
+            //console.log("Selected file type:", selectedFileType); // Debug: Sprawdzenie typu pliku
+    
             if (selectedFile && selectedIndex) {
-                const filePath = `/static/efekty/adds/galeria/video/${selectedFileType}/${selectedFile}`;
-                if (selectedFileType === 'komputer') {
-                    document.getElementById(`videoSrc_${selectedIndex}`).value = filePath;
-                    document.getElementById(`videoPreview_${selectedIndex}`).querySelector('source').src = filePath;
-                } else if (selectedFileType === 'mobile') {
-                    document.getElementById(`videoMobileSrc_${selectedIndex}`).value = filePath;
-                    document.getElementById(`videoPreview_${selectedIndex}`).querySelector('source').src = filePath;
+                let filePath = '';
+
+                // Ustal ścieżkę do pliku na podstawie wybranego typu pliku
+                if (selectedFileType in FILES) {
+                    filePath = `${FILES[selectedFileType]}${selectedFile}`;
+                } else {
+                    filePath = `/static/efekty/adds/galeria/video/${selectedFileType}/${selectedFile}`;
                 }
-                document.getElementById(`videoPreview_${selectedIndex}`).load();
+
+                // Aktualizuj odpowiednie pole input w zależności od typu pliku
+                if (selectedFileType === 'komputer' || selectedFileType === 'mobile') {
+                    const videoSrcField = selectedFileType === 'komputer' 
+                                        ? `videoSrc_${selectedIndex}` 
+                                        : `videoMobileSrc_${selectedIndex}`;
+                    
+                    document.getElementById(videoSrcField).value = filePath;
+                    document.getElementById(`videoPreview_${selectedIndex}`).querySelector('source').src = filePath;
+                    document.getElementById(`videoPreview_${selectedIndex}`).load();
+                } else if (selectedFileType === 'main_background') {
+                    document.getElementById('mainBackgroundURL').value = filePath;
+                    document.getElementById('imagePreview').src = filePath;
+                } else if (selectedFileType === 'member_image') {
+                    document.getElementById(`teamImage${selectedIndex}`).value = filePath;
+                    document.getElementById(`imagePreview${selectedIndex}`).src = filePath;
+                } else if (selectedFileType === 'jumbotron') {
+                    document.getElementById('jumbotronImageURL').value = filePath;
+                    document.getElementById('jumbotronImagePreview').src = filePath;
+                } else if (selectedFileType === 'partners') {
+                    document.getElementById(`partnerImage${selectedIndex}`).value = filePath;
+                    document.getElementById(`partnerImagePreview${selectedIndex}`).src = filePath;
+                }
+
+                // Debug: Sprawdzenie wartości filePath
+                console.log("File path set to:", filePath);
+
+                // Zamknij modal po wybraniu pliku
                 const fileBrowserModal = bootstrap.Modal.getInstance(document.getElementById('fileBrowserModal'));
                 fileBrowserModal.hide();
             }
@@ -1227,7 +1296,6 @@
             partnerCard.remove(); // Usuwa kolumnę z DOM
         }
 
-        // Funkcja do dodawania nowego partnera
         function addPartner() {
             // Pobierz kontener z partnerami
             const partnersContainer = document.querySelector('#partners .row');
@@ -1241,11 +1309,16 @@
             
             newPartner.innerHTML = `
                 <div class="card">
-                    <img src="" class="img-fluid card-img-top" alt="Partner logo">
+                    <img id="partnerImagePreview${newIndex}" src="" class="img-fluid card-img-top" alt="Partner logo">
                     <div class="card-body">
                         <div class="mb-3">
                             <label for="partnerImage${newIndex}" class="form-label">Image Link ${newIndex + 1}</label>
-                            <input type="text" class="form-control" id="partnerImage${newIndex}" name="partners[images][${newIndex}]" value="">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="partnerImage${newIndex}" name="partners[images][${newIndex}]" value="">
+                                <button type="button" class="btn btn-secondary browse-btn" data-type="partners" data-index="${newIndex}" onclick="browseFiles(event)">
+                                    <i class="bi bi-folder-symlink"></i> Browse Server Files
+                                </button>
+                            </div>
                         </div>
                         <button type="button" class="btn btn-danger remove-btn" onclick="removePartner(this)">Usuń</button>
                     </div>

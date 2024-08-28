@@ -232,7 +232,10 @@ VIDEO_DIR = {
     'komputer': os.path.join('frontend/static/efekty/adds/galeria/video/komputer/'),
     'mobile': os.path.join('frontend/static/efekty/adds/galeria/video/mobile/'),
     'member_image': os.path.join('frontend/static/efekty/adds/hero/assets/'),
-    'galeria': os.path.join('frontend/static/efekty/adds/galeria/assets/')
+    'galeria': os.path.join('frontend/static/efekty/adds/galeria/assets/'),
+    'main_background': os.path.join('frontend/static/efekty/adds/hero/assets/'),
+    'jumbotron': os.path.join('frontend/static/efekty/adds/hero/assets/'),
+    'partners': os.path.join('frontend/static/efekty/adds/hero/assets/loga/')
 }
 
 @user_bp.route('/change_hero_names_files', methods=['POST'])
