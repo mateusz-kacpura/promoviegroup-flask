@@ -1,32 +1,9 @@
 from flask import Blueprint, render_template, send_from_directory, abort, request, redirect, url_for, jsonify, current_app, flash
 from flask_login import UserMixin, login_required, current_user
+from werkzeug.security import check_password_hash, generate_password_hash
+from models.user import User
 import json
 import os
-
-class User(UserMixin):
-    def __init__(self, id, username, password):
-        self.id = id
-        self.username = username
-        self.password = password
-
-def load_user_from_file(user_id):
-    try:
-        with open('baza_danych/users.json') as f:
-            users = json.load(f)
-        user_data = users.get(user_id)
-        if user_data:
-            return User(user_id, user_data['username'], user_data['password'])
-    except (FileNotFoundError, json.JSONDecodeError):
-        return None
-    return None
-
-def load_all_users():
-    try:
-        with open('baza_danych/users.json') as f:
-            users = json.load(f)
-        return {user_id: User(user_id, data['username'], data['password']) for user_id, data in users.items()}
-    except (FileNotFoundError, json.JSONDecodeError):
-        return {}
 
 user_bp = Blueprint('user', __name__, url_prefix='/user', template_folder='templates')
 
@@ -541,3 +518,45 @@ def update_opinie():
     opinie_data = load_opinie()
     return render_template('profile/pages/opinie.html', user=current_user, data=opinie_data)
 
+@user_bp.route('/profile/pages/users')
+@login_required
+def user_list():
+    users = User.load_all_users()
+    return render_template('profile/pages/users.html', users=users.values())
+
+@user_bp.route('/profile/pages/delete_user/<uuid>', methods=['POST'])
+@login_required
+def delete_user(uuid):
+    print("delete")
+    user = User.get_by_uuid(uuid)
+    if user is None:
+        return jsonify(success=False, message='User not found'), 404
+
+    password = request.form.get('password')
+    if not check_password_hash(current_user.password, password):
+        return jsonify(success=False, message='Invalid password'), 400
+
+    if User.delete(uuid):
+        return jsonify(success=True, message='User deleted successfully'), 200
+    else:
+        return jsonify(success=False, message='User deletion failed'), 500
+
+
+@user_bp.route('/profile/pages/edit_user/<uuid>', methods=['POST'])
+@login_required
+def edit_user(uuid):
+    user = User.get_by_uuid(uuid)
+    if user is None:
+        return jsonify(success=False, message='User not found'), 404
+
+    try:
+        new_username = request.form['username']
+        new_password = request.form.get('password', None)
+        hashed_password = generate_password_hash(new_password) if new_password else None
+
+        if User.update_user(uuid, new_username, hashed_password):
+            return jsonify(success=True)
+        else:
+            return jsonify(success=False, message='Failed to update user'), 500
+    except Exception as e:
+        return jsonify(success=False, message=str(e)), 500

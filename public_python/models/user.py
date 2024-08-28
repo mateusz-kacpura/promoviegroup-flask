@@ -16,6 +16,26 @@ class User(UserMixin):
         return self.uuid  # Return the UUID as the unique identifier
 
     @staticmethod
+    def load_all_users():
+        if not os.path.exists(User.filepath):
+            print(f"File {User.filepath} does not exist.")
+            return {}
+
+        with open(User.filepath, 'r') as file:
+            try:
+                users_data = json.load(file)
+            except json.JSONDecodeError:
+                print(f"Error decoding JSON from {User.filepath}")
+                return {}
+            
+        users = {}
+        for uuid, data in users_data.items():
+            print(f"Loaded user: {uuid} -> {data['username']}")
+            user = User(uuid, data['username'], data['password'])
+            users[uuid] = user
+        return users
+
+    @staticmethod
     def get_by_username(username):
         """Find a user by username."""
         if not os.path.exists(User.filepath):
@@ -58,9 +78,8 @@ class User(UserMixin):
         return None
 
     @staticmethod
-    def save(username, hashed_password):
+    def save(user):
         users = {}
-        uuid_str = str(uuid.uuid4())
 
         if os.path.exists(User.filepath):
             try:
@@ -68,14 +87,14 @@ class User(UserMixin):
                     if os.path.getsize(User.filepath) > 0:
                         users = json.load(f)
             except json.JSONDecodeError:
-                pass  # Jeśli JSON jest uszkodzony, zostanie utworzony nowy plik
+                pass  # Handle corrupted JSON by overwriting it
 
-        users[uuid_str] = {'username': username, 'password': hashed_password}
+        users[user.uuid] = {'username': user.username, 'password': user.password}
 
         with open(User.filepath, 'w') as f:
             json.dump(users, f, indent=4)
 
-        return uuid_str
+        return True
 
     @staticmethod
     def delete(uuid):
@@ -94,5 +113,38 @@ class User(UserMixin):
                     return True
             except json.JSONDecodeError:
                 pass
+
+        return False
+
+    @staticmethod
+    def save_all_users(users):
+        with open(User.filepath, 'w') as file:
+            json.dump({uuid: {'username': user.username, 'password': user.password} for uuid, user in users.items()}, file, indent=4)
+        return True
+    
+    @staticmethod
+    def update_user(uuid, username, hashed_password=None):
+        users = {}
+
+        # Load existing users from the file if it exists
+        if os.path.exists(User.filepath):
+            try:
+                with open(User.filepath, 'r') as f:
+                    if os.path.getsize(User.filepath) > 0:
+                        users = json.load(f)
+            except json.JSONDecodeError:
+                pass
+
+        # Check if the user exists and update details
+        if uuid in users:
+            users[uuid]['username'] = username
+            if hashed_password:
+                users[uuid]['password'] = hashed_password
+
+            # Save the updated users list back to the file
+            with open(User.filepath, 'w') as f:
+                json.dump(users, f, indent=4)
+
+            return True
 
         return False

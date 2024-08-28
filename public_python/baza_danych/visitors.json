@@ -958,5 +958,21 @@
         "browser": "Firefox",
         "os": "Windows",
         "device": "Other"
+    },
+    {
+        "id": "9ce82f36-17a7-4b86-8829-c2ab935d2c5c",
+        "ip": "127.0.0.1",
+        "date": "2024-08-28 17:23:01",
+        "location": {
+            "ip": "127.0.0.1",
+            "city": null,
+            "region": null,
+            "country": null,
+            "latitude": null,
+            "longitude": null
+        },
+        "browser": "Firefox",
+        "os": "Windows",
+        "device": "Other"
     }
 ]
