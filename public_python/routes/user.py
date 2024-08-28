@@ -266,6 +266,32 @@ def change_file_name():
         return jsonify({"success": False, "message": "Error renaming file"}), 500
 
 
+@user_bp.route('/delete_hero_files', methods=['POST'])
+@login_required
+def delete_file():
+    file_name = request.args.get('file_name')
+    file_type = request.args.get('type')
+
+    if not file_name or not file_type:
+        return jsonify(success=False, error="Invalid parameters"), 400
+
+    # Wybierz odpowiednią ścieżkę na podstawie typu pliku
+    if file_type not in VIDEO_DIR:
+        return jsonify(success=False, error="Invalid file type"), 400
+
+    file_dir = VIDEO_DIR[file_type]
+    file_path = os.path.join(current_app.root_path, file_dir, file_name)
+
+    if not os.path.exists(file_path):
+        return jsonify(success=False, error="File does not exist"), 404
+
+    try:
+        os.remove(file_path)
+        return jsonify(success=True, message="File deleted successfully")
+    except Exception as e:
+        current_app.logger.error(f"Error deleting file: {e}")
+        return jsonify(success=False, error="Error deleting file"), 500
+
 @user_bp.route('/upload_hero_video', methods=['POST'])
 @login_required
 def upload_video():
