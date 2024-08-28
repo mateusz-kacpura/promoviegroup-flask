@@ -1120,6 +1120,27 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
+            // Funkcja do dodawania nowych pól dla Social Icons i Social Links
+            window.addSocialField = function(memberIndex) {
+                const socialIconsContainer = document.getElementById(`socialIconsContainer${memberIndex}`);
+                const socialLinksContainer = document.getElementById(`socialLinksContainer${memberIndex}`);
+                const currentCount = socialIconsContainer.children.length;
+
+                const newIconField = document.createElement('input');
+                newIconField.type = 'text';
+                newIconField.className = 'form-control mb-1';
+                newIconField.id = `teamSocialIcons${memberIndex}_${currentCount}`;
+                newIconField.name = `membersTeamSection[members][${memberIndex - 1}][socialIcons][]`;
+                socialIconsContainer.appendChild(newIconField);
+
+                const newLinkField = document.createElement('input');
+                newLinkField.type = 'text';
+                newLinkField.className = 'form-control mb-1';
+                newLinkField.id = `teamSocialLinks${memberIndex}_${currentCount}`;
+                newLinkField.name = `membersTeamSection[members][${memberIndex - 1}][socialLinks][]`;
+                socialLinksContainer.appendChild(newLinkField);
+            };
+
             // Dodawanie nowego członka zespołu
             window.addTeamMember = function() {
                 // Pobierz listę członków zespołu
@@ -1145,7 +1166,16 @@
                         <div class="row">
                             <div class="col-md-4 mb-3">
                                 <label for="teamImage${memberIndex}" class="form-label">Image URL</label>
-                                <input type="text" class="form-control" id="teamImage${memberIndex}" name="membersTeamSection[members][${memberIndex - 1}][imageURL]" value="">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="teamImage${memberIndex}" name="membersTeamSection[members][${memberIndex - 1}][imageURL]" value="" onchange="updateImagePreview(${memberIndex})">
+                                    <button type="button" class="btn btn-secondary browse-btn" data-index="${memberIndex}" data-type="member_image" onclick="browseFiles(event)">
+                                        <i class="bi bi-folder-symlink"></i> Browse Server Files
+                                    </button>
+                                </div>
+                                <input type="file" class="form-control mt-2" data-type="member_image" accept="image/*">
+                                <div class="mt-2">
+                                    <img id="imagePreview${memberIndex}" src="" alt="Image preview" style="max-width: 100%; height: auto; display: block; margin-top: 10px;">
+                                </div>
                             </div>
                             <div class="col-md-8 mb-3">
                                 <label for="teamBiography${memberIndex}" class="form-label">Biography</label>
@@ -1167,13 +1197,18 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <label for="teamSocialIcons${memberIndex}" class="form-label">Social Icons</label>
-                                <input type="text" class="form-control mb-1" id="teamSocialIcons${memberIndex}_0" name="membersTeamSection[members][${memberIndex - 1}][socialIcons][]" value="">
+                                <div id="socialIconsContainer${memberIndex}">
+                                    <input type="text" class="form-control mb-1" id="teamSocialIcons${memberIndex}_0" name="membersTeamSection[members][${memberIndex - 1}][socialIcons][]" value="">
+                                </div>
                             </div>
                             <div class="col-md-6 mb-3">
                                 <label for="teamSocialLinks${memberIndex}" class="form-label">Social Links</label>
-                                <input type="text" class="form-control mb-1" id="teamSocialLinks${memberIndex}_0" name="membersTeamSection[members][${memberIndex - 1}][socialLinks][]" value="">
+                                <div id="socialLinksContainer${memberIndex}">
+                                    <input type="text" class="form-control mb-1" id="teamSocialLinks${memberIndex}_0" name="membersTeamSection[members][${memberIndex - 1}][socialLinks][]" value="">
+                                </div>
                             </div>
                         </div>
+                        <button type="button" class="btn btn-success btn-sm mt-3" onclick="addSocialField(${memberIndex})">Dodaj ikonę i link społecznościowy</button>
                         <button type="button" class="btn btn-danger btn-sm mt-3" onclick="removeTeamMember(this)">Usuń</button>
                     </div>
                 `;
