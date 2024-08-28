@@ -235,7 +235,8 @@ VIDEO_DIR = {
     'galeria': os.path.join('frontend/static/efekty/adds/galeria/assets/'),
     'main_background': os.path.join('frontend/static/efekty/adds/hero/assets/'),
     'jumbotron': os.path.join('frontend/static/efekty/adds/hero/assets/'),
-    'partners': os.path.join('frontend/static/efekty/adds/hero/assets/loga/')
+    'partners': os.path.join('frontend/static/efekty/adds/hero/assets/loga/'),
+    'video': os.path.join('frontend/static/efekty/adds/hero/assets/video/')
 }
 
 @user_bp.route('/change_hero_names_files', methods=['POST'])

@@ -456,8 +456,13 @@
                             </div>
                             <div class="col-md-12 mb-3">
                                 <label for="videoImage{{ i }}" class="form-label">Video Image {{ i+1 }}</label>
-                                <input type="text" class="form-control" id="videoImage{{ i }}" name="video[images][{{ i }}]" value="{{ json_data.video.images[i] }}">
-                            </div>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="videoImage{{ i }}" name="video[images][{{ i }}]" value="{{ json_data.video.images[i] }}">
+                                    <button type="button" class="btn btn-secondary browse-btn" data-type="video" data-index="{{ i }}" onclick="browseFiles(event)">
+                                        <i class="bi bi-folder-symlink"></i> Browse Server Files
+                                    </button>
+                                </div>
+                            </div>                            
                             <button type="button" class="remove-btn" onclick="removeVideo(this)">Usuń</button>    
                         </div>
                         {% endfor %}
@@ -976,7 +981,8 @@
             'galeria': '/static/efekty/adds/galeria/assets/',
             'main_background': '/static/efekty/adds/hero/assets/',
             'jumbotron': '/static/efekty/adds/hero/assets/',
-            'partners': '/static/efekty/adds/hero/assets/loga/'
+            'partners': '/static/efekty/adds/hero/assets/loga/',
+            'video': '/static/efekty/adds/hero/assets/video/'
         };
 
         function selectFile(file) {
@@ -1086,6 +1092,9 @@
                 } else if (selectedFileType === 'partners') {
                     document.getElementById(`partnerImage${selectedIndex}`).value = filePath;
                     document.getElementById(`partnerImagePreview${selectedIndex}`).src = filePath;
+                } else if (selectedFileType === 'video') {
+                    document.getElementById(`videoImage${selectedIndex}`).value = filePath;
+                    document.getElementById(`videoImagePreview${selectedIndex}`).src = filePath;
                 }
 
                 // Debug: Sprawdzenie wartości filePath
@@ -1319,6 +1328,7 @@
                                     <i class="bi bi-folder-symlink"></i> Browse Server Files
                                 </button>
                             </div>
+                            <input type="file" class="form-control mt-2" data-type="partners" data-index="${newIndex}" onchange="uploadFile(event)">
                         </div>
                         <button type="button" class="btn btn-danger remove-btn" onclick="removePartner(this)">Usuń</button>
                     </div>
@@ -1378,7 +1388,13 @@
                     </div>
                     <div class="col-md-12 mb-3">
                         <label for="videoImage${videoCount}" class="form-label">Video Image ${videoCount + 1}</label>
-                        <input type="text" class="form-control" id="videoImage${videoCount}" name="video[images][${videoCount}]" value="">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="videoImage${videoCount}" name="video[images][${videoCount}]" value="{{ json_data.video.images[i] }}">
+                            <button type="button" class="btn btn-secondary browse-btn" data-type="video" data-index="${videoCount}" onclick="browseFiles(event)">
+                                <i class="bi bi-folder-symlink"></i> Browse Server Files
+                            </button>
+                        </div>
+                        <input type="file" class="form-control mt-2" data-type="video" data-index="{{ i }}" onchange="uploadFile(event)">
                     </div>
                     <button type="button" class="remove-btn" onclick="removeVideo(this)">Usuń</button>    
                 </div>
