@@ -10,7 +10,7 @@ def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        user = User.get(username)
+        user = User.get_by_username(username)
         
         if user and check_password_hash(user.password, password):
             login_user(user)
@@ -31,12 +31,12 @@ def register():
             flash('Passwords do not match', 'danger')
             return redirect(url_for('auth.register'))
 
-        if User.get(username):
+        if User.get_by_username(username):
             flash('Username already exists', 'danger')
             return redirect(url_for('auth.register'))
 
         hashed_password = generate_password_hash(password)
-        User.save(username, hashed_password)
+        uuid = User.save(username, hashed_password)
         flash('Registration successful, please login', 'success')
         return redirect(url_for('auth.login'))
 

@@ -30,8 +30,8 @@ def create_app():
     login_manager.login_view = 'auth.login'
 
     @login_manager.user_loader
-    def load_user(username):
-        return User.get(username)
+    def load_user(user_id):
+        return User.get_by_uuid(user_id)
 
     # Rejestracja blueprintów
     app.register_blueprint(index_bp)

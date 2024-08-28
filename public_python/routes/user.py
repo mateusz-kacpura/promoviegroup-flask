@@ -540,3 +540,4 @@ def update_opinie():
     # Gdy metoda jest GET
     opinie_data = load_opinie()
     return render_template('profile/pages/opinie.html', user=current_user, data=opinie_data)
+
