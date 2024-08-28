@@ -522,7 +522,7 @@ def update_opinie():
 @login_required
 def user_list():
     users = User.load_all_users()
-    return render_template('profile/pages/users.html', users=users.values())
+    return render_template('profile/pages/users.html', users=users.values(), registration_enabled=current_app.config['REGISTRATION_ENABLED'])
 
 @user_bp.route('/profile/pages/delete_user/<uuid>', methods=['POST'])
 @login_required
@@ -560,3 +560,11 @@ def edit_user(uuid):
             return jsonify(success=False, message='Failed to update user'), 500
     except Exception as e:
         return jsonify(success=False, message=str(e)), 500
+
+@user_bp.route('/profile/pages//toggle_registration', methods=['POST'])
+@login_required
+def toggle_registration():
+    current_status = current_app.config['REGISTRATION_ENABLED']
+    current_app.config['REGISTRATION_ENABLED'] = not current_status
+    flash('User registration has been {}'.format('enabled' if not current_status else 'disabled'), 'success')
+    return redirect(url_for('user.user_list'))

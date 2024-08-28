@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash
+from flask import Blueprint, render_template, request, redirect, url_for, flash, current_app
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask_login import login_user, logout_user, login_required
 from models.user import User
@@ -22,6 +22,11 @@ def login():
 
 @auth_bp.route('/register', methods=['GET', 'POST'])
 def register():
+    # Uzyskaj dostęp do konfiguracji przy użyciu current_app
+    if not current_app.config.get('REGISTRATION_ENABLED', True):  # Domyślnie włączona
+        flash('Registration is currently disabled', 'danger')
+        return redirect(url_for('auth.login'))
+        
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -36,7 +41,8 @@ def register():
             return redirect(url_for('auth.register'))
 
         hashed_password = generate_password_hash(password)
-        uuid = User.save(username, hashed_password)
+        user = User(username=username, password=hashed_password)
+        User.save(user)
         flash('Registration successful, please login', 'success')
         return redirect(url_for('auth.login'))
 

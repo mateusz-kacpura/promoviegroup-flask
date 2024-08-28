@@ -9,6 +9,15 @@
 <body>
     {% include 'profile/navbar.html' %}
     <div class="container mt-5">
+        <h2>User Management</h2>
+        <form action="{{ url_for('user.toggle_registration') }}" method="POST">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="registrationToggle" name="registrationToggle" {{ 'checked' if registration_enabled else '' }}>
+                <label class="form-check-label" for="registrationToggle">Enable User Registration</label>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Save</button>
+        </form>
+
         <h2>User List</h2>
         <table class="table">
             <thead>

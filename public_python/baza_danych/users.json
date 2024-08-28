@@ -1,6 +1,6 @@
 {
     "27ba7748-26a7-453e-8f11-a77ee515c91c": {
-        "username": "test2",
-        "password": "scrypt:32768:8:1$lOjMQHF7U0n1ebdW$1288205e4683b1bf0daea2bb465978fa3c447c344c8351fd373049b7b76d07779b130af4030150f52939bba6e66685a4a5741603d3c2c6ff4272a4f7035eab6c"
+        "username": "test",
+        "password": "scrypt:32768:8:1$8In3fgRvGdXwlIS3$e2e08b561bdb5ce9332291c46ce919c5c418d5f6cc857b3c1847d4da7cc00c876a0ceac443426861d8620ff703944b26510dead4cba9399d027c400b77d00b4b"
     }
 }
