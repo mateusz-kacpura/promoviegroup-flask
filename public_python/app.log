@@ -14558,3 +14558,763 @@
 2024-08-28 23:17:05,894 INFO: 127.0.0.1 - - [28/Aug/2024 23:17:05] "[36mGET /static/efekty/adds/hero/assets/video/11.png HTTP/1.1[0m" 304 -
 2024-08-28 23:17:05,896 INFO: 127.0.0.1 - - [28/Aug/2024 23:17:05] "[36mGET /static/efekty/adds/hero/assets/video/22.png HTTP/1.1[0m" 304 -
 2024-08-28 23:17:05,914 INFO: 127.0.0.1 - - [28/Aug/2024 23:17:05] "[36mGET /static/efekty/adds/hero/assets/video/33.png HTTP/1.1[0m" 304 -
+2024-08-28 23:46:51,486 INFO: 127.0.0.1 - - [28/Aug/2024 23:46:51] "GET /user/profile/pages/background HTTP/1.1" 200 -
+2024-08-28 23:46:52,258 INFO: 127.0.0.1 - - [28/Aug/2024 23:46:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-28 23:47:00,464 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:00] "GET /user/profile/pages/galeria HTTP/1.1" 200 -
+2024-08-28 23:47:01,183 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:01] "GET /user/profile/pages/articles HTTP/1.1" 200 -
+2024-08-28 23:47:02,159 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:02] "GET /user/profile/pages/hero HTTP/1.1" 200 -
+2024-08-28 23:47:02,775 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:02] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000025.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:47:02,776 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:02] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000050.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:47:02,777 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:02] "GET /static/efekty/adds/hero/assets/loga/294797940_479086210808504_8667669129994940009_n.png HTTP/1.1" 200 -
+2024-08-28 23:47:02,777 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:02] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000600.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:47:02,777 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:02] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000150.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:47:02,777 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:02] "GET /static/efekty/adds/hero/assets/loga/1706801724412.jpg HTTP/1.1" 200 -
+2024-08-28 23:47:02,784 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:02] "GET /static/efekty/adds/hero/assets/loga/1706801724426.jpg HTTP/1.1" 200 -
+2024-08-28 23:47:02,790 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:02] "GET /static/efekty/adds/hero/assets/loga/image_6487327a.jpg HTTP/1.1" 200 -
+2024-08-28 23:47:02,808 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:02] "GET /static/efekty/adds/hero/assets/loga/CUF-Ubezpieczenia_page-0001.jpg HTTP/1.1" 200 -
+2024-08-28 23:47:02,924 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:02] "[36mGET /static/efekty/adds/hero/assets/pexels-caleboquendo-4889279.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:47:02,931 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:02] "[36mGET /static/efekty/adds/hero/assets/DSC05450.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:47:02,936 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:02] "[36mGET /static/efekty/adds/hero/assets/image3.jpeg HTTP/1.1[0m" 304 -
+2024-08-28 23:47:02,939 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:02] "[36mGET /static/efekty/adds/hero/assets/DSC05455.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:47:02,945 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:02] "[36mGET /static/efekty/adds/hero/assets/_DSC4139.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:47:02,953 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:02] "[36mGET /static/efekty/adds/hero/assets/loga/logo.png HTTP/1.1[0m" 304 -
+2024-08-28 23:47:02,956 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:02] "[36mGET /static/efekty/adds/hero/assets/loga/Logo_z_halem-owal-300dpi.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:47:02,987 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:02] "[36mGET /static/efekty/adds/hero/assets/video/11.png HTTP/1.1[0m" 304 -
+2024-08-28 23:47:02,996 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:02] "[36mGET /static/efekty/adds/hero/assets/video/22.png HTTP/1.1[0m" 304 -
+2024-08-28 23:47:03,009 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:03] "[36mGET /static/efekty/adds/hero/assets/video/33.png HTTP/1.1[0m" 304 -
+2024-08-28 23:47:10,082 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:10] "GET /user/profile/pages/opinie HTTP/1.1" 200 -
+2024-08-28 23:47:10,829 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:10] "GET /user/profile/pages/users HTTP/1.1" 200 -
+2024-08-28 23:47:11,377 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:11] "GET /user/profile/pages/visitors HTTP/1.1" 200 -
+2024-08-28 23:47:12,075 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:12] "GET /user/profile/pages/articles HTTP/1.1" 200 -
+2024-08-28 23:47:12,747 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:12] "GET /user/profile/pages/articles HTTP/1.1" 200 -
+2024-08-28 23:47:13,132 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:13] "GET /user/profile/pages/background HTTP/1.1" 200 -
+2024-08-28 23:47:13,751 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:13] "GET /user/profile/pages/galeria HTTP/1.1" 200 -
+2024-08-28 23:47:14,384 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:14] "GET /user/profile/pages/hero HTTP/1.1" 200 -
+2024-08-28 23:47:14,879 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:14] "GET /static/efekty/adds/hero/assets/loga/1706801724412.jpg HTTP/1.1" 200 -
+2024-08-28 23:47:14,880 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:14] "GET /static/efekty/adds/hero/assets/loga/294797940_479086210808504_8667669129994940009_n.png HTTP/1.1" 200 -
+2024-08-28 23:47:14,881 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:14] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000050.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:47:14,881 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:14] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000150.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:47:14,881 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:14] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000025.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:47:14,881 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:14] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000600.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:47:14,886 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:14] "GET /static/efekty/adds/hero/assets/loga/1706801724426.jpg HTTP/1.1" 200 -
+2024-08-28 23:47:14,889 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:14] "GET /static/efekty/adds/hero/assets/loga/image_6487327a.jpg HTTP/1.1" 200 -
+2024-08-28 23:47:14,896 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:14] "GET /static/efekty/adds/hero/assets/loga/CUF-Ubezpieczenia_page-0001.jpg HTTP/1.1" 200 -
+2024-08-28 23:47:14,976 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:14] "[36mGET /static/efekty/adds/hero/assets/pexels-caleboquendo-4889279.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:47:15,017 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:15] "[36mGET /static/efekty/adds/hero/assets/DSC05450.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:47:15,025 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:15] "[36mGET /static/efekty/adds/hero/assets/image3.jpeg HTTP/1.1[0m" 304 -
+2024-08-28 23:47:15,030 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:15] "[36mGET /static/efekty/adds/hero/assets/DSC05455.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:47:15,034 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:15] "[36mGET /static/efekty/adds/hero/assets/_DSC4139.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:47:15,071 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:15] "[36mGET /static/efekty/adds/hero/assets/loga/logo.png HTTP/1.1[0m" 304 -
+2024-08-28 23:47:15,085 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:15] "[36mGET /static/efekty/adds/hero/assets/loga/Logo_z_halem-owal-300dpi.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:47:15,091 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:15] "[36mGET /static/efekty/adds/hero/assets/video/11.png HTTP/1.1[0m" 304 -
+2024-08-28 23:47:15,100 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:15] "[36mGET /static/efekty/adds/hero/assets/video/22.png HTTP/1.1[0m" 304 -
+2024-08-28 23:47:15,102 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:15] "[36mGET /static/efekty/adds/hero/assets/video/33.png HTTP/1.1[0m" 304 -
+2024-08-28 23:47:15,361 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:15] "GET /user/profile/pages/mail HTTP/1.1" 200 -
+2024-08-28 23:47:16,273 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:16] "GET /user/profile/pages/oferta HTTP/1.1" 200 -
+2024-08-28 23:47:16,803 INFO: 127.0.0.1 - - [28/Aug/2024 23:47:16] "GET /user/profile/pages/opinie HTTP/1.1" 200 -
+2024-08-28 23:48:30,489 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:30] "GET /user/profile/pages/background HTTP/1.1" 200 -
+2024-08-28 23:48:30,972 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-28 23:48:31,073 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:31] "GET /user/profile/pages/galeria HTTP/1.1" 200 -
+2024-08-28 23:48:33,777 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:33] "GET /user/profile/pages/hero HTTP/1.1" 200 -
+2024-08-28 23:48:34,587 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:34] "GET /static/efekty/adds/hero/assets/loga/294797940_479086210808504_8667669129994940009_n.png HTTP/1.1" 200 -
+2024-08-28 23:48:34,588 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:34] "GET /static/efekty/adds/hero/assets/loga/CUF-Ubezpieczenia_page-0001.jpg HTTP/1.1" 200 -
+2024-08-28 23:48:34,588 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:34] "GET /static/efekty/adds/hero/assets/loga/1706801724426.jpg HTTP/1.1" 200 -
+2024-08-28 23:48:34,590 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:34] "GET /static/efekty/adds/hero/assets/loga/image_6487327a.jpg HTTP/1.1" 200 -
+2024-08-28 23:48:34,590 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:34] "GET /static/efekty/adds/hero/assets/loga/1706801724412.jpg HTTP/1.1" 200 -
+2024-08-28 23:48:34,650 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:34] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000025.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:48:34,652 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:34] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000050.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:48:34,652 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:34] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000150.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:48:34,654 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:34] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000600.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:48:34,794 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:34] "[36mGET /static/efekty/adds/hero/assets/pexels-caleboquendo-4889279.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:48:34,797 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:34] "[36mGET /static/efekty/adds/hero/assets/DSC05450.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:48:34,801 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:34] "[36mGET /static/efekty/adds/hero/assets/image3.jpeg HTTP/1.1[0m" 304 -
+2024-08-28 23:48:34,805 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:34] "[36mGET /static/efekty/adds/hero/assets/DSC05455.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:48:34,809 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:34] "[36mGET /static/efekty/adds/hero/assets/_DSC4139.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:48:34,814 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:34] "[36mGET /static/efekty/adds/hero/assets/loga/logo.png HTTP/1.1[0m" 304 -
+2024-08-28 23:48:34,825 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:34] "[36mGET /static/efekty/adds/hero/assets/loga/Logo_z_halem-owal-300dpi.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:48:34,826 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:34] "[36mGET /static/efekty/adds/hero/assets/video/11.png HTTP/1.1[0m" 304 -
+2024-08-28 23:48:34,831 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:34] "[36mGET /static/efekty/adds/hero/assets/video/22.png HTTP/1.1[0m" 304 -
+2024-08-28 23:48:34,832 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:34] "[36mGET /static/efekty/adds/hero/assets/video/33.png HTTP/1.1[0m" 304 -
+2024-08-28 23:48:35,837 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:35] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-28 23:48:43,693 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:43] "GET /user/profile/pages/articles HTTP/1.1" 200 -
+2024-08-28 23:48:44,291 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:44] "GET /user/profile HTTP/1.1" 200 -
+2024-08-28 23:48:45,003 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:45] "GET /user/profile/pages/background HTTP/1.1" 200 -
+2024-08-28 23:48:45,560 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:45] "GET /user/profile/pages/hero HTTP/1.1" 200 -
+2024-08-28 23:48:46,123 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:46] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000025.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:48:46,124 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:46] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000050.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:48:46,125 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:46] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000600.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:48:46,135 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:46] "GET /static/efekty/adds/hero/assets/loga/294797940_479086210808504_8667669129994940009_n.png HTTP/1.1" 200 -
+2024-08-28 23:48:46,137 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:46] "GET /static/efekty/adds/hero/assets/loga/1706801724412.jpg HTTP/1.1" 200 -
+2024-08-28 23:48:46,138 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:46] "GET /static/efekty/adds/hero/assets/loga/1706801724426.jpg HTTP/1.1" 200 -
+2024-08-28 23:48:46,143 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:46] "GET /static/efekty/adds/hero/assets/loga/image_6487327a.jpg HTTP/1.1" 200 -
+2024-08-28 23:48:46,145 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:46] "GET /static/efekty/adds/hero/assets/loga/CUF-Ubezpieczenia_page-0001.jpg HTTP/1.1" 200 -
+2024-08-28 23:48:46,251 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:46] "[36mGET /static/efekty/adds/hero/assets/pexels-caleboquendo-4889279.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:48:46,257 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:46] "[36mGET /static/efekty/adds/hero/assets/DSC05450.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:48:46,262 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:46] "[36mGET /static/efekty/adds/hero/assets/image3.jpeg HTTP/1.1[0m" 304 -
+2024-08-28 23:48:46,271 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:46] "[36mGET /static/efekty/adds/hero/assets/DSC05455.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:48:46,292 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:46] "[36mGET /static/efekty/adds/hero/assets/_DSC4139.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:48:46,299 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:46] "[36mGET /static/efekty/adds/hero/assets/loga/logo.png HTTP/1.1[0m" 304 -
+2024-08-28 23:48:46,308 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:46] "[36mGET /static/efekty/adds/hero/assets/loga/Logo_z_halem-owal-300dpi.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:48:46,476 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:46] "[36mGET /static/efekty/adds/hero/assets/video/11.png HTTP/1.1[0m" 304 -
+2024-08-28 23:48:46,548 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:46] "[36mGET /static/efekty/adds/hero/assets/video/22.png HTTP/1.1[0m" 304 -
+2024-08-28 23:48:46,593 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:46] "[36mGET /static/efekty/adds/hero/assets/video/33.png HTTP/1.1[0m" 304 -
+2024-08-28 23:48:46,882 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:46] "GET /user/profile/pages/mail HTTP/1.1" 200 -
+2024-08-28 23:48:47,565 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:47] "GET /user/profile/pages/hero HTTP/1.1" 200 -
+2024-08-28 23:48:48,345 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:48] "[36mGET /static/efekty/adds/hero/assets/DSC05455.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:48:48,347 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:48] "[36mGET /static/efekty/adds/hero/assets/pexels-caleboquendo-4889279.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:48:48,347 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:48] "[36mGET /static/efekty/adds/hero/assets/image3.jpeg HTTP/1.1[0m" 304 -
+2024-08-28 23:48:48,347 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:48] "[36mGET /static/efekty/adds/hero/assets/DSC05450.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:48:48,349 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:48] "[36mGET /static/efekty/adds/hero/assets/_DSC4139.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:48:48,350 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:48] "[36mGET /static/efekty/adds/hero/assets/loga/logo.png HTTP/1.1[0m" 304 -
+2024-08-28 23:48:48,369 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:48] "[36mGET /static/efekty/adds/hero/assets/loga/Logo_z_halem-owal-300dpi.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:48:48,371 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:48] "GET /user/profile/pages/hero HTTP/1.1" 200 -
+2024-08-28 23:48:48,374 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:48] "[36mGET /static/efekty/adds/hero/assets/video/11.png HTTP/1.1[0m" 304 -
+2024-08-28 23:48:48,377 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:48] "[36mGET /static/efekty/adds/hero/assets/video/22.png HTTP/1.1[0m" 304 -
+2024-08-28 23:48:48,380 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:48] "[36mGET /static/efekty/adds/hero/assets/video/33.png HTTP/1.1[0m" 304 -
+2024-08-28 23:48:49,726 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:49] "[36mGET /static/efekty/adds/hero/assets/loga/294797940_479086210808504_8667669129994940009_n.png HTTP/1.1[0m" 304 -
+2024-08-28 23:48:49,729 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:49] "[36mGET /static/efekty/adds/hero/assets/loga/image_6487327a.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:48:49,733 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:49] "[36mGET /static/efekty/adds/hero/assets/loga/1706801724412.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:48:49,736 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:49] "[36mGET /static/efekty/adds/hero/assets/loga/1706801724426.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:48:49,737 INFO: 127.0.0.1 - - [28/Aug/2024 23:48:49] "[36mGET /static/efekty/adds/hero/assets/loga/CUF-Ubezpieczenia_page-0001.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:50:38,625 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:38] "GET /user/profile/pages/background HTTP/1.1" 200 -
+2024-08-28 23:50:39,208 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-28 23:50:39,353 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:39] "GET /user/profile/pages/mail HTTP/1.1" 200 -
+2024-08-28 23:50:43,632 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:43] "GET /user/profile/pages/hero HTTP/1.1" 200 -
+2024-08-28 23:50:44,282 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:44] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000050.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:50:44,282 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:44] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000600.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:50:44,282 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:44] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000025.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:50:44,284 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:44] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000150.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:50:44,296 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:44] "GET /static/efekty/adds/hero/assets/loga/1706801724412.jpg HTTP/1.1" 200 -
+2024-08-28 23:50:44,297 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:44] "GET /static/efekty/adds/hero/assets/loga/294797940_479086210808504_8667669129994940009_n.png HTTP/1.1" 200 -
+2024-08-28 23:50:44,305 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:44] "GET /static/efekty/adds/hero/assets/loga/1706801724426.jpg HTTP/1.1" 200 -
+2024-08-28 23:50:44,306 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:44] "[36mGET /static/efekty/adds/hero/assets/pexels-caleboquendo-4889279.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:50:44,313 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:44] "GET /static/efekty/adds/hero/assets/loga/image_6487327a.jpg HTTP/1.1" 200 -
+2024-08-28 23:50:44,316 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:44] "GET /static/efekty/adds/hero/assets/loga/CUF-Ubezpieczenia_page-0001.jpg HTTP/1.1" 200 -
+2024-08-28 23:50:44,324 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:44] "[36mGET /static/efekty/adds/hero/assets/DSC05450.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:50:44,382 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:44] "[36mGET /static/efekty/adds/hero/assets/image3.jpeg HTTP/1.1[0m" 304 -
+2024-08-28 23:50:44,485 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:44] "[36mGET /static/efekty/adds/hero/assets/DSC05455.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:50:44,507 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:44] "[36mGET /static/efekty/adds/hero/assets/_DSC4139.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:50:44,529 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:44] "[36mGET /static/efekty/adds/hero/assets/loga/logo.png HTTP/1.1[0m" 304 -
+2024-08-28 23:50:44,532 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:44] "[36mGET /static/efekty/adds/hero/assets/loga/Logo_z_halem-owal-300dpi.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:50:44,545 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:44] "[36mGET /static/efekty/adds/hero/assets/video/11.png HTTP/1.1[0m" 304 -
+2024-08-28 23:50:44,546 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:44] "[36mGET /static/efekty/adds/hero/assets/video/22.png HTTP/1.1[0m" 304 -
+2024-08-28 23:50:44,548 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:44] "[36mGET /static/efekty/adds/hero/assets/video/33.png HTTP/1.1[0m" 304 -
+2024-08-28 23:50:45,580 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-28 23:50:56,946 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:56] "GET /user/profile/pages/background HTTP/1.1" 200 -
+2024-08-28 23:50:57,483 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:57] "GET /user/profile/pages/articles HTTP/1.1" 200 -
+2024-08-28 23:50:57,841 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:57] "GET /user/profile HTTP/1.1" 200 -
+2024-08-28 23:50:58,196 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-28 23:50:58,363 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:58] "GET /user/profile/pages/articles HTTP/1.1" 200 -
+2024-08-28 23:50:58,864 INFO: 127.0.0.1 - - [28/Aug/2024 23:50:58] "GET /user/profile/pages/background HTTP/1.1" 200 -
+2024-08-28 23:51:04,561 INFO: 127.0.0.1 - - [28/Aug/2024 23:51:04] "GET /user/profile/pages/background HTTP/1.1" 200 -
+2024-08-28 23:51:05,318 INFO: 127.0.0.1 - - [28/Aug/2024 23:51:05] "GET /user/profile/pages/articles HTTP/1.1" 200 -
+2024-08-28 23:51:07,785 INFO: 127.0.0.1 - - [28/Aug/2024 23:51:07] "GET /user/profile/pages/opinie HTTP/1.1" 200 -
+2024-08-28 23:51:08,382 INFO: 127.0.0.1 - - [28/Aug/2024 23:51:08] "GET /user/profile/pages/users HTTP/1.1" 200 -
+2024-08-28 23:51:08,944 INFO: 127.0.0.1 - - [28/Aug/2024 23:51:08] "GET /user/profile/pages/visitors HTTP/1.1" 200 -
+2024-08-28 23:51:09,361 INFO: 127.0.0.1 - - [28/Aug/2024 23:51:09] "GET /user/profile/pages/users HTTP/1.1" 200 -
+2024-08-28 23:51:10,129 INFO: 127.0.0.1 - - [28/Aug/2024 23:51:10] "GET /user/profile/pages/mail HTTP/1.1" 200 -
+2024-08-28 23:51:10,701 INFO: 127.0.0.1 - - [28/Aug/2024 23:51:10] "GET /user/profile/pages/articles HTTP/1.1" 200 -
+2024-08-28 23:51:11,144 INFO: 127.0.0.1 - - [28/Aug/2024 23:51:11] "GET /user/profile HTTP/1.1" 200 -
+2024-08-28 23:52:07,083 INFO: 127.0.0.1 - - [28/Aug/2024 23:52:07] "GET /user/profile/pages/background HTTP/1.1" 200 -
+2024-08-28 23:52:07,658 INFO: 127.0.0.1 - - [28/Aug/2024 23:52:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-28 23:52:10,480 INFO: 127.0.0.1 - - [28/Aug/2024 23:52:10] "GET /user/profile/pages/hero HTTP/1.1" 200 -
+2024-08-28 23:52:11,192 INFO: 127.0.0.1 - - [28/Aug/2024 23:52:11] "GET /static/efekty/adds/hero/assets/loga/1706801724426.jpg HTTP/1.1" 200 -
+2024-08-28 23:52:11,193 INFO: 127.0.0.1 - - [28/Aug/2024 23:52:11] "GET /static/efekty/adds/hero/assets/loga/image_6487327a.jpg HTTP/1.1" 200 -
+2024-08-28 23:52:11,193 INFO: 127.0.0.1 - - [28/Aug/2024 23:52:11] "GET /static/efekty/adds/hero/assets/loga/294797940_479086210808504_8667669129994940009_n.png HTTP/1.1" 200 -
+2024-08-28 23:52:11,193 INFO: 127.0.0.1 - - [28/Aug/2024 23:52:11] "GET /static/efekty/adds/hero/assets/loga/CUF-Ubezpieczenia_page-0001.jpg HTTP/1.1" 200 -
+2024-08-28 23:52:11,194 INFO: 127.0.0.1 - - [28/Aug/2024 23:52:11] "GET /static/efekty/adds/hero/assets/loga/1706801724412.jpg HTTP/1.1" 200 -
+2024-08-28 23:52:11,246 INFO: 127.0.0.1 - - [28/Aug/2024 23:52:11] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000025.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:52:11,248 INFO: 127.0.0.1 - - [28/Aug/2024 23:52:11] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000050.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:52:11,249 INFO: 127.0.0.1 - - [28/Aug/2024 23:52:11] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000150.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:52:11,250 INFO: 127.0.0.1 - - [28/Aug/2024 23:52:11] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000600.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:52:11,358 INFO: 127.0.0.1 - - [28/Aug/2024 23:52:11] "[36mGET /static/efekty/adds/hero/assets/pexels-caleboquendo-4889279.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:52:11,365 INFO: 127.0.0.1 - - [28/Aug/2024 23:52:11] "[36mGET /static/efekty/adds/hero/assets/DSC05450.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:52:11,368 INFO: 127.0.0.1 - - [28/Aug/2024 23:52:11] "[36mGET /static/efekty/adds/hero/assets/image3.jpeg HTTP/1.1[0m" 304 -
+2024-08-28 23:52:11,373 INFO: 127.0.0.1 - - [28/Aug/2024 23:52:11] "[36mGET /static/efekty/adds/hero/assets/_DSC4139.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:52:11,375 INFO: 127.0.0.1 - - [28/Aug/2024 23:52:11] "[36mGET /static/efekty/adds/hero/assets/DSC05455.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:52:11,383 INFO: 127.0.0.1 - - [28/Aug/2024 23:52:11] "[36mGET /static/efekty/adds/hero/assets/loga/logo.png HTTP/1.1[0m" 304 -
+2024-08-28 23:52:11,384 INFO: 127.0.0.1 - - [28/Aug/2024 23:52:11] "[36mGET /static/efekty/adds/hero/assets/loga/Logo_z_halem-owal-300dpi.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:52:11,392 INFO: 127.0.0.1 - - [28/Aug/2024 23:52:11] "[36mGET /static/efekty/adds/hero/assets/video/11.png HTTP/1.1[0m" 304 -
+2024-08-28 23:52:11,408 INFO: 127.0.0.1 - - [28/Aug/2024 23:52:11] "[36mGET /static/efekty/adds/hero/assets/video/22.png HTTP/1.1[0m" 304 -
+2024-08-28 23:52:11,431 INFO: 127.0.0.1 - - [28/Aug/2024 23:52:11] "[36mGET /static/efekty/adds/hero/assets/video/33.png HTTP/1.1[0m" 304 -
+2024-08-28 23:56:17,810 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:17] "GET /user/profile/pages/articles HTTP/1.1" 200 -
+2024-08-28 23:56:18,425 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:18] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-28 23:56:18,615 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:18] "GET /user/profile/pages/background HTTP/1.1" 200 -
+2024-08-28 23:56:19,592 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:19] "GET /user/profile/pages/users HTTP/1.1" 200 -
+2024-08-28 23:56:23,207 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:23] "GET /user/profile/pages/opinie HTTP/1.1" 200 -
+2024-08-28 23:56:24,231 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:24] "GET /user/profile/pages/menusy HTTP/1.1" 200 -
+2024-08-28 23:56:31,584 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:31] "GET /user/profile/pages/hero HTTP/1.1" 200 -
+2024-08-28 23:56:31,945 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:31] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000025.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:56:31,945 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:31] "GET /static/efekty/adds/hero/assets/loga/294797940_479086210808504_8667669129994940009_n.png HTTP/1.1" 200 -
+2024-08-28 23:56:31,945 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:31] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000050.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:56:31,946 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:31] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000150.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:56:31,946 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:31] "GET /static/efekty/adds/hero/assets/loga/1706801724412.jpg HTTP/1.1" 200 -
+2024-08-28 23:56:31,946 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:31] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000600.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:56:31,951 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:31] "GET /static/efekty/adds/hero/assets/loga/1706801724426.jpg HTTP/1.1" 200 -
+2024-08-28 23:56:31,956 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:31] "GET /static/efekty/adds/hero/assets/loga/image_6487327a.jpg HTTP/1.1" 200 -
+2024-08-28 23:56:31,962 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:31] "GET /static/efekty/adds/hero/assets/loga/CUF-Ubezpieczenia_page-0001.jpg HTTP/1.1" 200 -
+2024-08-28 23:56:32,014 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:32] "[36mGET /static/efekty/adds/hero/assets/pexels-caleboquendo-4889279.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:56:32,047 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:32] "[36mGET /static/efekty/adds/hero/assets/DSC05450.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:56:32,059 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:32] "[36mGET /static/efekty/adds/hero/assets/image3.jpeg HTTP/1.1[0m" 304 -
+2024-08-28 23:56:32,064 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:32] "[36mGET /static/efekty/adds/hero/assets/DSC05455.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:56:32,067 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:32] "[36mGET /static/efekty/adds/hero/assets/_DSC4139.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:56:32,078 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:32] "[36mGET /static/efekty/adds/hero/assets/loga/logo.png HTTP/1.1[0m" 304 -
+2024-08-28 23:56:32,080 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:32] "[36mGET /static/efekty/adds/hero/assets/loga/Logo_z_halem-owal-300dpi.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:56:32,089 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:32] "[36mGET /static/efekty/adds/hero/assets/video/11.png HTTP/1.1[0m" 304 -
+2024-08-28 23:56:32,092 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:32] "[36mGET /static/efekty/adds/hero/assets/video/22.png HTTP/1.1[0m" 304 -
+2024-08-28 23:56:32,104 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:32] "[36mGET /static/efekty/adds/hero/assets/video/33.png HTTP/1.1[0m" 304 -
+2024-08-28 23:56:33,050 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-28 23:56:51,111 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:51] "GET /user/profile/pages/articles HTTP/1.1" 200 -
+2024-08-28 23:56:51,899 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:51] "GET /user/profile HTTP/1.1" 200 -
+2024-08-28 23:56:52,726 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:52] "GET /user/profile/pages/menusy HTTP/1.1" 200 -
+2024-08-28 23:56:53,178 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:53] "GET /user/profile/pages/oferta HTTP/1.1" 200 -
+2024-08-28 23:56:53,566 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:53] "GET /user/profile/pages/users HTTP/1.1" 200 -
+2024-08-28 23:56:54,202 INFO: 127.0.0.1 - - [28/Aug/2024 23:56:54] "GET /user/profile/pages/visitors HTTP/1.1" 200 -
+2024-08-28 23:57:47,921 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:47] "GET /user/profile/pages/articles HTTP/1.1" 200 -
+2024-08-28 23:57:48,279 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:48] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-28 23:57:48,812 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:48] "GET /user/profile HTTP/1.1" 200 -
+2024-08-28 23:57:49,533 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:49] "GET /user/profile/pages/background HTTP/1.1" 200 -
+2024-08-28 23:57:50,034 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:50] "GET /user/profile/pages/background HTTP/1.1" 200 -
+2024-08-28 23:57:50,489 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:50] "GET /user/profile/pages/hero HTTP/1.1" 200 -
+2024-08-28 23:57:50,888 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:50] "GET /static/efekty/adds/hero/assets/loga/294797940_479086210808504_8667669129994940009_n.png HTTP/1.1" 200 -
+2024-08-28 23:57:50,889 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:50] "GET /static/efekty/adds/hero/assets/loga/CUF-Ubezpieczenia_page-0001.jpg HTTP/1.1" 200 -
+2024-08-28 23:57:50,889 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:50] "GET /static/efekty/adds/hero/assets/loga/1706801724426.jpg HTTP/1.1" 200 -
+2024-08-28 23:57:50,890 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:50] "GET /static/efekty/adds/hero/assets/loga/1706801724412.jpg HTTP/1.1" 200 -
+2024-08-28 23:57:50,890 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:50] "GET /static/efekty/adds/hero/assets/loga/image_6487327a.jpg HTTP/1.1" 200 -
+2024-08-28 23:57:50,964 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:50] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000025.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:57:50,965 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:50] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000050.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:57:50,967 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:50] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000150.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:57:50,967 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:50] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000600.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:57:51,129 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:51] "[36mGET /static/efekty/adds/hero/assets/pexels-caleboquendo-4889279.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:57:51,130 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:51] "[36mGET /static/efekty/adds/hero/assets/DSC05450.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:57:51,133 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:51] "[36mGET /static/efekty/adds/hero/assets/image3.jpeg HTTP/1.1[0m" 304 -
+2024-08-28 23:57:51,137 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:51] "[36mGET /static/efekty/adds/hero/assets/DSC05455.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:57:51,145 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:51] "[36mGET /static/efekty/adds/hero/assets/_DSC4139.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:57:51,148 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:51] "[36mGET /static/efekty/adds/hero/assets/loga/logo.png HTTP/1.1[0m" 304 -
+2024-08-28 23:57:51,151 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:51] "[36mGET /static/efekty/adds/hero/assets/loga/Logo_z_halem-owal-300dpi.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:57:51,154 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:51] "[36mGET /static/efekty/adds/hero/assets/video/11.png HTTP/1.1[0m" 304 -
+2024-08-28 23:57:51,212 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:51] "[36mGET /static/efekty/adds/hero/assets/video/22.png HTTP/1.1[0m" 304 -
+2024-08-28 23:57:51,212 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:51] "[36mGET /static/efekty/adds/hero/assets/video/33.png HTTP/1.1[0m" 304 -
+2024-08-28 23:57:51,700 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:51] "GET /user/profile/pages/mail HTTP/1.1" 200 -
+2024-08-28 23:57:53,976 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:53] "GET /o-nas HTTP/1.1" 200 -
+2024-08-28 23:57:54,305 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /static/efekty/adds/service-website-template/css/bootstrap.min.css HTTP/1.1" 200 -
+2024-08-28 23:57:54,305 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /static/efekty/adds/service-website-template/css/owl.carousel.min.css HTTP/1.1" 200 -
+2024-08-28 23:57:54,306 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /static/efekty/adds/service-website-template/css/owl.theme.default.min.css HTTP/1.1" 200 -
+2024-08-28 23:57:54,310 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /static/efekty/adds/service-website-template/css/aos.css HTTP/1.1" 200 -
+2024-08-28 23:57:54,312 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /static/efekty/adds/service-website-template/css/jquery.fancybox.min.css HTTP/1.1" 200 -
+2024-08-28 23:57:54,313 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /static/efekty/adds/service-website-template/css/style.css HTTP/1.1" 200 -
+2024-08-28 23:57:54,315 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /static/efekty/adds/service-website-template/fonts/icomoon/style.css HTTP/1.1" 200 -
+2024-08-28 23:57:54,317 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /static/efekty/adds/service-website-template/fonts/feather/style.css HTTP/1.1" 200 -
+2024-08-28 23:57:54,322 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /static/efekty/adds/service-website-template/fonts/flaticon/font/flaticon.css HTTP/1.1" 200 -
+2024-08-28 23:57:54,324 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /static/efekty/adds/hero/render.js HTTP/1.1" 200 -
+2024-08-28 23:57:54,324 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /static/efekty/adds/index/main.css HTTP/1.1" 200 -
+2024-08-28 23:57:54,330 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /static/efekty/adds/service-website-template/js/jquery-3.5.1.min.js HTTP/1.1" 200 -
+2024-08-28 23:57:54,332 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /static/efekty/adds/service-website-template/js/jquery-migrate-3.0.0.min.js HTTP/1.1" 200 -
+2024-08-28 23:57:54,335 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /static/efekty/adds/service-website-template/js/popper.min.js HTTP/1.1" 200 -
+2024-08-28 23:57:54,335 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /static/efekty/adds/service-website-template/js/bootstrap.min.js HTTP/1.1" 200 -
+2024-08-28 23:57:54,338 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /static/efekty/adds/hero/js/mdb.min.js HTTP/1.1" 200 -
+2024-08-28 23:57:54,345 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /static/efekty/adds/service-website-template/js/owl.carousel.min.js HTTP/1.1" 200 -
+2024-08-28 23:57:54,350 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /static/efekty/adds/service-website-template/js/aos.js HTTP/1.1" 200 -
+2024-08-28 23:57:54,351 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /static/efekty/adds/service-website-template/js/imagesloaded.pkgd.js HTTP/1.1" 200 -
+2024-08-28 23:57:54,353 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /static/efekty/adds/service-website-template/js/isotope.pkgd.min.js HTTP/1.1" 200 -
+2024-08-28 23:57:54,356 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /static/efekty/adds/service-website-template/js/jquery.animateNumber.min.js HTTP/1.1" 200 -
+2024-08-28 23:57:54,361 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /static/efekty/adds/service-website-template/js/jquery.stellar.min.js HTTP/1.1" 200 -
+2024-08-28 23:57:54,363 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /static/efekty/adds/service-website-template/js/jquery.waypoints.min.js HTTP/1.1" 200 -
+2024-08-28 23:57:54,367 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "[36mGET /static/efekty/adds/hero/css/mdb.min.css HTTP/1.1[0m" 304 -
+2024-08-28 23:57:54,370 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /static/efekty/adds/service-website-template/js/custom.js HTTP/1.1" 200 -
+2024-08-28 23:57:54,370 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /static/efekty/adds/service-website-template/js/jquery.fancybox.min.js HTTP/1.1" 200 -
+2024-08-28 23:57:54,372 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /static/efekty/adds/index/footerSection.js HTTP/1.1" 200 -
+2024-08-28 23:57:54,949 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /logo.svg HTTP/1.1" 200 -
+2024-08-28 23:57:54,950 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:54] "GET /get-json?file=hero.json HTTP/1.1" 200 -
+2024-08-28 23:57:55,238 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:55] "GET /efekty/adds/hero/assets/loga/294797940_479086210808504_8667669129994940009_n.png HTTP/1.1" 200 -
+2024-08-28 23:57:55,239 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:55] "GET /efekty/adds/hero/assets/loga/1706801724412.jpg HTTP/1.1" 200 -
+2024-08-28 23:57:55,241 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:55] "GET /efekty/adds/hero/assets/loga/1706801724426.jpg HTTP/1.1" 200 -
+2024-08-28 23:57:55,242 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:55] "GET /efekty/adds/hero/assets/loga/CUF-Ubezpieczenia_page-0001.jpg HTTP/1.1" 200 -
+2024-08-28 23:57:55,242 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:55] "GET /efekty/adds/hero/assets/loga/image_6487327a.jpg HTTP/1.1" 200 -
+2024-08-28 23:57:55,246 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:55] "[36mGET /efekty/adds/hero/assets/DSC05450.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:57:55,263 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:55] "[36mGET /efekty/adds/hero/assets/image3.jpeg HTTP/1.1[0m" 304 -
+2024-08-28 23:57:55,275 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:55] "[36mGET /efekty/adds/hero/assets/DSC05455.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:57:55,291 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:55] "[36mGET /efekty/adds/hero/assets/loga/logo.png HTTP/1.1[0m" 304 -
+2024-08-28 23:57:55,298 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:55] "[36mGET /efekty/adds/hero/assets/loga/Logo_z_halem-owal-300dpi.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:57:55,317 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:55] "[36mGET /efekty/adds/hero/assets/video/11.png HTTP/1.1[0m" 304 -
+2024-08-28 23:57:55,327 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:55] "[36mGET /efekty/adds/hero/assets/video/22.png HTTP/1.1[0m" 304 -
+2024-08-28 23:57:55,334 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:55] "[36mGET /efekty/adds/hero/assets/video/33.png HTTP/1.1[0m" 304 -
+2024-08-28 23:57:55,347 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:55] "[35m[1mGET /efekty/adds/galeria/video/komputer/part00000025.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:57:55,381 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:55] "[35m[1mGET /efekty/adds/galeria/video/mobile/part00000025.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:57:55,382 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:55] "[35m[1mGET /efekty/adds/galeria/video/komputer/part00000050.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:57:55,390 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:55] "[35m[1mGET /efekty/adds/galeria/video/komputer/part00000150.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:57:55,424 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:55] "[35m[1mGET /efekty/adds/galeria/video/mobile/part00000150.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:57:55,443 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:55] "[35m[1mGET /efekty/adds/galeria/video/komputer/part00000600.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:57:58,719 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:58] "[35m[1mGET /efekty/adds/galeria/video/mobile/part00000600.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:57:58,984 INFO: 127.0.0.1 - - [28/Aug/2024 23:57:58] "[35m[1mGET /efekty/adds/galeria/video/mobile/part00000050.mp4 HTTP/1.1[0m" 206 -
+2024-08-28 23:58:00,389 INFO: 127.0.0.1 - - [28/Aug/2024 23:58:00] "GET /user/profile/pages/mail HTTP/1.1" 200 -
+2024-08-28 23:58:04,162 INFO: 127.0.0.1 - - [28/Aug/2024 23:58:04] "GET /user/profile/pages/articles HTTP/1.1" 200 -
+2024-08-28 23:58:05,630 INFO: 127.0.0.1 - - [28/Aug/2024 23:58:05] "GET /user/profile/pages/articles HTTP/1.1" 200 -
+2024-08-28 23:58:06,587 INFO: 127.0.0.1 - - [28/Aug/2024 23:58:06] "GET /user/profile HTTP/1.1" 200 -
+2024-08-28 23:58:07,381 INFO: 127.0.0.1 - - [28/Aug/2024 23:58:07] "GET /user/profile/pages/articles HTTP/1.1" 200 -
+2024-08-28 23:58:08,445 INFO: 127.0.0.1 - - [28/Aug/2024 23:58:08] "GET /user/profile/pages/opinie HTTP/1.1" 200 -
+2024-08-28 23:58:09,266 INFO: 127.0.0.1 - - [28/Aug/2024 23:58:09] "GET /user/profile/pages/users HTTP/1.1" 200 -
+2024-08-28 23:58:10,031 INFO: 127.0.0.1 - - [28/Aug/2024 23:58:10] "GET /user/profile/pages/visitors HTTP/1.1" 200 -
+2024-08-28 23:58:10,911 INFO: 127.0.0.1 - - [28/Aug/2024 23:58:10] "GET /user/profile/pages/opinie HTTP/1.1" 200 -
+2024-08-28 23:58:11,509 INFO: 127.0.0.1 - - [28/Aug/2024 23:58:11] "GET /user/profile/pages/oferta HTTP/1.1" 200 -
+2024-08-28 23:59:01,834 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:01] "GET /user/profile HTTP/1.1" 200 -
+2024-08-28 23:59:02,358 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:02] "GET /user/profile/pages/articles HTTP/1.1" 200 -
+2024-08-28 23:59:02,774 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-28 23:59:02,998 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:02] "GET /user/profile/pages/background HTTP/1.1" 200 -
+2024-08-28 23:59:03,611 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:03] "GET /user/profile/pages/galeria HTTP/1.1" 200 -
+2024-08-28 23:59:04,279 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:04] "GET /user/profile/pages/hero HTTP/1.1" 200 -
+2024-08-28 23:59:04,674 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:04] "GET /static/efekty/adds/hero/assets/loga/294797940_479086210808504_8667669129994940009_n.png HTTP/1.1" 200 -
+2024-08-28 23:59:04,674 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:04] "GET /static/efekty/adds/hero/assets/loga/1706801724412.jpg HTTP/1.1" 200 -
+2024-08-28 23:59:04,676 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:04] "GET /static/efekty/adds/hero/assets/loga/1706801724426.jpg HTTP/1.1" 200 -
+2024-08-28 23:59:04,678 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:04] "GET /static/efekty/adds/hero/assets/loga/CUF-Ubezpieczenia_page-0001.jpg HTTP/1.1" 200 -
+2024-08-28 23:59:04,679 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:04] "GET /static/efekty/adds/hero/assets/loga/image_6487327a.jpg HTTP/1.1" 200 -
+2024-08-28 23:59:04,999 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:04] "[36mGET /static/efekty/adds/hero/assets/pexels-caleboquendo-4889279.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:59:05,002 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:05] "[36mGET /static/efekty/adds/hero/assets/DSC05450.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:59:05,007 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:05] "[36mGET /static/efekty/adds/hero/assets/image3.jpeg HTTP/1.1[0m" 304 -
+2024-08-28 23:59:05,017 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:05] "[36mGET /static/efekty/adds/hero/assets/DSC05455.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:59:05,020 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:05] "[36mGET /static/efekty/adds/hero/assets/_DSC4139.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:59:05,024 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:05] "[36mGET /static/efekty/adds/hero/assets/loga/logo.png HTTP/1.1[0m" 304 -
+2024-08-28 23:59:05,025 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:05] "[36mGET /static/efekty/adds/hero/assets/loga/Logo_z_halem-owal-300dpi.jpg HTTP/1.1[0m" 304 -
+2024-08-28 23:59:05,027 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:05] "[36mGET /static/efekty/adds/hero/assets/video/11.png HTTP/1.1[0m" 304 -
+2024-08-28 23:59:05,033 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:05] "[36mGET /static/efekty/adds/hero/assets/video/22.png HTTP/1.1[0m" 304 -
+2024-08-28 23:59:05,034 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:05] "[36mGET /static/efekty/adds/hero/assets/video/33.png HTTP/1.1[0m" 304 -
+2024-08-28 23:59:05,134 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:05] "GET /user/profile/pages/mail HTTP/1.1" 200 -
+2024-08-28 23:59:06,167 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:06] "GET /user/profile/pages/mail HTTP/1.1" 200 -
+2024-08-28 23:59:09,048 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:09] "GET /user/profile/pages/menusy HTTP/1.1" 200 -
+2024-08-28 23:59:09,555 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:09] "GET /user/profile/pages/oferta HTTP/1.1" 200 -
+2024-08-28 23:59:10,267 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:10] "GET /user/profile/pages/opinie HTTP/1.1" 200 -
+2024-08-28 23:59:10,919 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:10] "GET /user/profile/pages/users HTTP/1.1" 200 -
+2024-08-28 23:59:11,470 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:11] "GET /user/profile/pages/visitors HTTP/1.1" 200 -
+2024-08-28 23:59:12,599 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:12] "GET /user/profile/pages/users HTTP/1.1" 200 -
+2024-08-28 23:59:29,014 INFO: 127.0.0.1 - - [28/Aug/2024 23:59:29] "GET /user/profile/pages/galeria HTTP/1.1" 200 -
+2024-08-29 00:03:45,756 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:45] "GET /galeria HTTP/1.1" 200 -
+2024-08-29 00:03:46,164 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /static/efekty/adds/service-website-template/css/bootstrap.min.css HTTP/1.1" 200 -
+2024-08-29 00:03:46,165 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /static/efekty/adds/service-website-template/css/owl.carousel.min.css HTTP/1.1" 200 -
+2024-08-29 00:03:46,167 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /static/efekty/adds/service-website-template/css/owl.theme.default.min.css HTTP/1.1" 200 -
+2024-08-29 00:03:46,212 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "[36mGET /static/efekty/adds/hero/css/mdb.min.css HTTP/1.1[0m" 304 -
+2024-08-29 00:03:46,216 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /static/efekty/adds/service-website-template/css/aos.css HTTP/1.1" 200 -
+2024-08-29 00:03:46,221 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /static/efekty/adds/service-website-template/css/jquery.fancybox.min.css HTTP/1.1" 200 -
+2024-08-29 00:03:46,224 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /static/efekty/adds/service-website-template/css/style.css HTTP/1.1" 200 -
+2024-08-29 00:03:46,226 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /static/efekty/adds/service-website-template/fonts/icomoon/style.css HTTP/1.1" 200 -
+2024-08-29 00:03:46,227 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /static/efekty/adds/service-website-template/fonts/feather/style.css HTTP/1.1" 200 -
+2024-08-29 00:03:46,232 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /static/efekty/adds/service-website-template/fonts/flaticon/font/flaticon.css HTTP/1.1" 200 -
+2024-08-29 00:03:46,234 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /static/efekty/adds/index/main.css HTTP/1.1" 200 -
+2024-08-29 00:03:46,239 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /static/efekty/adds/service-website-template/js/jquery-3.5.1.min.js HTTP/1.1" 200 -
+2024-08-29 00:03:46,243 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /static/efekty/adds/service-website-template/js/jquery-migrate-3.0.0.min.js HTTP/1.1" 200 -
+2024-08-29 00:03:46,246 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /static/efekty/adds/service-website-template/js/popper.min.js HTTP/1.1" 200 -
+2024-08-29 00:03:46,249 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /static/efekty/adds/service-website-template/js/bootstrap.min.js HTTP/1.1" 200 -
+2024-08-29 00:03:46,252 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /static/efekty/adds/hero/js/mdb.min.js HTTP/1.1" 200 -
+2024-08-29 00:03:46,254 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /static/efekty/adds/service-website-template/js/owl.carousel.min.js HTTP/1.1" 200 -
+2024-08-29 00:03:46,258 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /static/efekty/adds/service-website-template/js/aos.js HTTP/1.1" 200 -
+2024-08-29 00:03:46,260 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /static/efekty/adds/service-website-template/js/imagesloaded.pkgd.js HTTP/1.1" 200 -
+2024-08-29 00:03:46,267 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /static/efekty/adds/service-website-template/js/isotope.pkgd.min.js HTTP/1.1" 200 -
+2024-08-29 00:03:46,272 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /static/efekty/adds/service-website-template/js/jquery.animateNumber.min.js HTTP/1.1" 200 -
+2024-08-29 00:03:46,273 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /static/efekty/adds/service-website-template/js/jquery.stellar.min.js HTTP/1.1" 200 -
+2024-08-29 00:03:46,275 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /static/efekty/adds/service-website-template/js/jquery.waypoints.min.js HTTP/1.1" 200 -
+2024-08-29 00:03:46,283 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /static/efekty/adds/service-website-template/js/jquery.fancybox.min.js HTTP/1.1" 200 -
+2024-08-29 00:03:46,286 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /static/efekty/adds/service-website-template/js/custom.js HTTP/1.1" 200 -
+2024-08-29 00:03:46,288 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /static/efekty/adds/index/footerSection.js HTTP/1.1" 200 -
+2024-08-29 00:03:46,881 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /logo.svg HTTP/1.1" 200 -
+2024-08-29 00:03:46,893 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:46] "GET /get-json?file=galeria.json HTTP/1.1" 200 -
+2024-08-29 00:03:47,047 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:47] "GET /efekty/adds/galeria/assets/195688778_3986667734774572_6652058005580401895_n.jpg HTTP/1.1" 200 -
+2024-08-29 00:03:47,047 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:47] "GET /efekty/adds/galeria/assets/322679947_831537901271177_2854626816657091469_n.jpg HTTP/1.1" 200 -
+2024-08-29 00:03:47,048 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:47] "GET /efekty/adds/galeria/assets/184285412_3911701732271173_664944797408423679_n.jpg HTTP/1.1" 200 -
+2024-08-29 00:03:47,052 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:47] "GET /efekty/adds/galeria/assets/336767407_6131000973587482_5005028003242857146_n.jpg HTTP/1.1" 200 -
+2024-08-29 00:03:47,055 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:47] "GET /efekty/adds/galeria/assets/355120523_6245759822198674_7575173158746098612_n.jpg HTTP/1.1" 200 -
+2024-08-29 00:03:47,069 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:47] "[36mGET /efekty/adds/galeria/assets/48921969_1960271264052333_3732463173068914688_n.jpg HTTP/1.1[0m" 304 -
+2024-08-29 00:03:47,103 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:47] "[36mGET /efekty/adds/galeria/assets/118083887_3162074360567251_317893365180175413_n.jpg HTTP/1.1[0m" 304 -
+2024-08-29 00:03:47,113 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:47] "[36mGET /efekty/adds/galeria/assets/209158276_4064455230329155_4712343838012056478_n.jpg HTTP/1.1[0m" 304 -
+2024-08-29 00:03:47,127 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:47] "[36mGET /efekty/adds/galeria/assets/331483299_713620376899847_51941713472726588_n.jpg HTTP/1.1[0m" 304 -
+2024-08-29 00:03:47,191 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:47] "[36mGET /efekty/adds/galeria/assets/387859034_122113918622064369_8563166061592335975_n.jpg HTTP/1.1[0m" 304 -
+2024-08-29 00:03:47,203 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:47] "[36mGET /efekty/adds/galeria/assets/393015856_6635869109854408_5074807102227126407_n.jpg HTTP/1.1[0m" 304 -
+2024-08-29 00:03:47,225 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:47] "[36mGET /efekty/adds/hero/assets/pexels-caleboquendo-4889279.jpg HTTP/1.1[0m" 304 -
+2024-08-29 00:03:47,299 INFO: 127.0.0.1 - - [29/Aug/2024 00:03:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-29 00:07:24,172 INFO: 127.0.0.1 - - [29/Aug/2024 00:07:24] "GET /user/profile/pages/background HTTP/1.1" 200 -
+2024-08-29 00:07:24,627 INFO: 127.0.0.1 - - [29/Aug/2024 00:07:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-29 00:07:24,794 INFO: 127.0.0.1 - - [29/Aug/2024 00:07:24] "GET /user/profile/pages/galeria HTTP/1.1" 200 -
+2024-08-29 00:07:25,843 INFO: 127.0.0.1 - - [29/Aug/2024 00:07:25] "GET /user/profile/pages/galeria HTTP/1.1" 200 -
+2024-08-29 00:07:26,473 INFO: 127.0.0.1 - - [29/Aug/2024 00:07:26] "GET /user/profile/pages/hero HTTP/1.1" 200 -
+2024-08-29 00:07:26,873 INFO: 127.0.0.1 - - [29/Aug/2024 00:07:26] "GET /static/efekty/adds/hero/assets/loga/1706801724412.jpg HTTP/1.1" 200 -
+2024-08-29 00:07:26,873 INFO: 127.0.0.1 - - [29/Aug/2024 00:07:26] "GET /static/efekty/adds/hero/assets/loga/294797940_479086210808504_8667669129994940009_n.png HTTP/1.1" 200 -
+2024-08-29 00:07:26,876 INFO: 127.0.0.1 - - [29/Aug/2024 00:07:26] "GET /static/efekty/adds/hero/assets/loga/1706801724426.jpg HTTP/1.1" 200 -
+2024-08-29 00:07:26,880 INFO: 127.0.0.1 - - [29/Aug/2024 00:07:26] "GET /static/efekty/adds/hero/assets/loga/image_6487327a.jpg HTTP/1.1" 200 -
+2024-08-29 00:07:26,881 INFO: 127.0.0.1 - - [29/Aug/2024 00:07:26] "GET /static/efekty/adds/hero/assets/loga/CUF-Ubezpieczenia_page-0001.jpg HTTP/1.1" 200 -
+2024-08-29 00:07:26,939 INFO: 127.0.0.1 - - [29/Aug/2024 00:07:26] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000025.mp4 HTTP/1.1[0m" 206 -
+2024-08-29 00:07:26,939 INFO: 127.0.0.1 - - [29/Aug/2024 00:07:26] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000600.mp4 HTTP/1.1[0m" 206 -
+2024-08-29 00:07:26,939 INFO: 127.0.0.1 - - [29/Aug/2024 00:07:26] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000050.mp4 HTTP/1.1[0m" 206 -
+2024-08-29 00:07:26,939 INFO: 127.0.0.1 - - [29/Aug/2024 00:07:26] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000150.mp4 HTTP/1.1[0m" 206 -
+2024-08-29 00:07:27,032 INFO: 127.0.0.1 - - [29/Aug/2024 00:07:27] "[36mGET /static/efekty/adds/hero/assets/pexels-caleboquendo-4889279.jpg HTTP/1.1[0m" 304 -
+2024-08-29 00:07:27,033 INFO: 127.0.0.1 - - [29/Aug/2024 00:07:27] "[36mGET /static/efekty/adds/hero/assets/DSC05450.jpg HTTP/1.1[0m" 304 -
+2024-08-29 00:07:27,038 INFO: 127.0.0.1 - - [29/Aug/2024 00:07:27] "[36mGET /static/efekty/adds/hero/assets/image3.jpeg HTTP/1.1[0m" 304 -
+2024-08-29 00:07:27,038 INFO: 127.0.0.1 - - [29/Aug/2024 00:07:27] "[36mGET /static/efekty/adds/hero/assets/DSC05455.jpg HTTP/1.1[0m" 304 -
+2024-08-29 00:07:27,043 INFO: 127.0.0.1 - - [29/Aug/2024 00:07:27] "[36mGET /static/efekty/adds/hero/assets/_DSC4139.jpg HTTP/1.1[0m" 304 -
+2024-08-29 00:07:27,044 INFO: 127.0.0.1 - - [29/Aug/2024 00:07:27] "[36mGET /static/efekty/adds/hero/assets/loga/logo.png HTTP/1.1[0m" 304 -
+2024-08-29 00:07:27,049 INFO: 127.0.0.1 - - [29/Aug/2024 00:07:27] "[36mGET /static/efekty/adds/hero/assets/loga/Logo_z_halem-owal-300dpi.jpg HTTP/1.1[0m" 304 -
+2024-08-29 00:07:27,052 INFO: 127.0.0.1 - - [29/Aug/2024 00:07:27] "[36mGET /static/efekty/adds/hero/assets/video/11.png HTTP/1.1[0m" 304 -
+2024-08-29 00:07:27,072 INFO: 127.0.0.1 - - [29/Aug/2024 00:07:27] "[36mGET /static/efekty/adds/hero/assets/video/22.png HTTP/1.1[0m" 304 -
+2024-08-29 00:07:27,086 INFO: 127.0.0.1 - - [29/Aug/2024 00:07:27] "[36mGET /static/efekty/adds/hero/assets/video/33.png HTTP/1.1[0m" 304 -
+2024-08-29 00:07:28,939 INFO: 127.0.0.1 - - [29/Aug/2024 00:07:28] "GET /user/profile/pages/articles HTTP/1.1" 200 -
+2024-08-29 00:07:29,755 INFO: 127.0.0.1 - - [29/Aug/2024 00:07:29] "GET /user/profile/pages/background HTTP/1.1" 200 -
+2024-08-29 00:08:32,738 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:32] "GET /user/profile/pages/background HTTP/1.1" 200 -
+2024-08-29 00:08:33,310 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-29 00:08:33,710 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:33] "GET /user/profile/pages/mail HTTP/1.1" 200 -
+2024-08-29 00:08:34,913 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:34] "GET /user/profile/pages/galeria HTTP/1.1" 200 -
+2024-08-29 00:08:36,388 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:36] "GET /user/profile/pages/hero HTTP/1.1" 200 -
+2024-08-29 00:08:36,922 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:36] "GET /static/efekty/adds/hero/assets/loga/1706801724412.jpg HTTP/1.1" 200 -
+2024-08-29 00:08:36,922 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:36] "GET /static/efekty/adds/hero/assets/loga/294797940_479086210808504_8667669129994940009_n.png HTTP/1.1" 200 -
+2024-08-29 00:08:36,924 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:36] "GET /static/efekty/adds/hero/assets/loga/image_6487327a.jpg HTTP/1.1" 200 -
+2024-08-29 00:08:36,924 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:36] "GET /static/efekty/adds/hero/assets/loga/1706801724426.jpg HTTP/1.1" 200 -
+2024-08-29 00:08:36,924 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:36] "GET /static/efekty/adds/hero/assets/loga/CUF-Ubezpieczenia_page-0001.jpg HTTP/1.1" 200 -
+2024-08-29 00:08:36,939 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:36] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000025.mp4 HTTP/1.1[0m" 206 -
+2024-08-29 00:08:36,941 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:36] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000050.mp4 HTTP/1.1[0m" 206 -
+2024-08-29 00:08:36,943 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:36] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000150.mp4 HTTP/1.1[0m" 206 -
+2024-08-29 00:08:36,945 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:36] "[35m[1mGET /static/efekty/adds/galeria/video/komputer/part00000600.mp4 HTTP/1.1[0m" 206 -
+2024-08-29 00:08:37,066 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:37] "[36mGET /static/efekty/adds/hero/assets/pexels-caleboquendo-4889279.jpg HTTP/1.1[0m" 304 -
+2024-08-29 00:08:37,116 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:37] "[36mGET /static/efekty/adds/hero/assets/DSC05450.jpg HTTP/1.1[0m" 304 -
+2024-08-29 00:08:37,121 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:37] "[36mGET /static/efekty/adds/hero/assets/image3.jpeg HTTP/1.1[0m" 304 -
+2024-08-29 00:08:37,127 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:37] "[36mGET /static/efekty/adds/hero/assets/DSC05455.jpg HTTP/1.1[0m" 304 -
+2024-08-29 00:08:37,130 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:37] "[36mGET /static/efekty/adds/hero/assets/_DSC4139.jpg HTTP/1.1[0m" 304 -
+2024-08-29 00:08:37,173 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:37] "[36mGET /static/efekty/adds/hero/assets/loga/logo.png HTTP/1.1[0m" 304 -
+2024-08-29 00:08:37,179 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:37] "[36mGET /static/efekty/adds/hero/assets/loga/Logo_z_halem-owal-300dpi.jpg HTTP/1.1[0m" 304 -
+2024-08-29 00:08:37,191 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:37] "[36mGET /static/efekty/adds/hero/assets/video/11.png HTTP/1.1[0m" 304 -
+2024-08-29 00:08:37,191 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:37] "[36mGET /static/efekty/adds/hero/assets/video/22.png HTTP/1.1[0m" 304 -
+2024-08-29 00:08:37,198 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:37] "[36mGET /static/efekty/adds/hero/assets/video/33.png HTTP/1.1[0m" 304 -
+2024-08-29 00:08:37,420 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:37] "GET /user/profile/pages/galeria HTTP/1.1" 200 -
+2024-08-29 00:08:38,524 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:38] "GET /user/profile HTTP/1.1" 200 -
+2024-08-29 00:08:39,321 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:39] "GET /user/profile/pages/galeria HTTP/1.1" 200 -
+2024-08-29 00:08:40,972 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:40] "GET /user/profile/pages/oferta HTTP/1.1" 200 -
+2024-08-29 00:08:41,639 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:41] "GET /user/profile/pages/opinie HTTP/1.1" 200 -
+2024-08-29 00:08:42,958 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:42] "GET /user/profile/pages/oferta HTTP/1.1" 200 -
+2024-08-29 00:08:46,161 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /oferta HTTP/1.1" 200 -
+2024-08-29 00:08:46,440 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /static/efekty/adds/service-website-template/css/bootstrap.min.css HTTP/1.1" 200 -
+2024-08-29 00:08:46,441 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /static/efekty/adds/service-website-template/css/owl.carousel.min.css HTTP/1.1" 200 -
+2024-08-29 00:08:46,443 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /static/efekty/adds/service-website-template/css/owl.theme.default.min.css HTTP/1.1" 200 -
+2024-08-29 00:08:46,445 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /static/efekty/adds/service-website-template/css/aos.css HTTP/1.1" 200 -
+2024-08-29 00:08:46,448 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /static/efekty/adds/service-website-template/css/jquery.fancybox.min.css HTTP/1.1" 200 -
+2024-08-29 00:08:46,450 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /static/efekty/adds/service-website-template/css/style.css HTTP/1.1" 200 -
+2024-08-29 00:08:46,454 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /static/efekty/adds/service-website-template/fonts/icomoon/style.css HTTP/1.1" 200 -
+2024-08-29 00:08:46,454 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /static/efekty/adds/oferta/render.js HTTP/1.1" 200 -
+2024-08-29 00:08:46,455 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /static/efekty/adds/service-website-template/fonts/feather/style.css HTTP/1.1" 200 -
+2024-08-29 00:08:46,457 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /static/efekty/adds/service-website-template/fonts/flaticon/font/flaticon.css HTTP/1.1" 200 -
+2024-08-29 00:08:46,465 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /static/efekty/adds/service-website-template/js/jquery-3.5.1.min.js HTTP/1.1" 200 -
+2024-08-29 00:08:46,466 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /static/efekty/adds/index/main.css HTTP/1.1" 200 -
+2024-08-29 00:08:46,470 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /static/efekty/adds/service-website-template/js/jquery-migrate-3.0.0.min.js HTTP/1.1" 200 -
+2024-08-29 00:08:46,472 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /static/efekty/adds/service-website-template/js/popper.min.js HTTP/1.1" 200 -
+2024-08-29 00:08:46,474 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /static/efekty/adds/service-website-template/js/bootstrap.min.js HTTP/1.1" 200 -
+2024-08-29 00:08:46,476 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /static/efekty/adds/hero/js/mdb.min.js HTTP/1.1" 200 -
+2024-08-29 00:08:46,478 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /static/efekty/adds/service-website-template/js/owl.carousel.min.js HTTP/1.1" 200 -
+2024-08-29 00:08:46,481 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /static/efekty/adds/service-website-template/js/aos.js HTTP/1.1" 200 -
+2024-08-29 00:08:46,485 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /static/efekty/adds/service-website-template/js/imagesloaded.pkgd.js HTTP/1.1" 200 -
+2024-08-29 00:08:46,489 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /static/efekty/adds/service-website-template/js/isotope.pkgd.min.js HTTP/1.1" 200 -
+2024-08-29 00:08:46,492 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /static/efekty/adds/service-website-template/js/jquery.animateNumber.min.js HTTP/1.1" 200 -
+2024-08-29 00:08:46,495 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /static/efekty/adds/service-website-template/js/jquery.stellar.min.js HTTP/1.1" 200 -
+2024-08-29 00:08:46,498 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /static/efekty/adds/service-website-template/js/jquery.waypoints.min.js HTTP/1.1" 200 -
+2024-08-29 00:08:46,498 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /static/efekty/adds/service-website-template/js/jquery.fancybox.min.js HTTP/1.1" 200 -
+2024-08-29 00:08:46,505 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /static/efekty/adds/service-website-template/js/custom.js HTTP/1.1" 200 -
+2024-08-29 00:08:46,510 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "GET /static/efekty/adds/index/footerSection.js HTTP/1.1" 200 -
+2024-08-29 00:08:46,511 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:46] "[36mGET /static/efekty/adds/hero/css/mdb.min.css HTTP/1.1[0m" 304 -
+2024-08-29 00:08:47,088 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:47] "GET /logo.svg HTTP/1.1" 200 -
+2024-08-29 00:08:47,100 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:47] "GET /get-json?file=oferta.json HTTP/1.1" 200 -
+2024-08-29 00:08:47,240 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:47] "GET /static/efekty/adds/service-website-template/fonts/feather/fonts/feather.ttf?bv5i04 HTTP/1.1" 200 -
+2024-08-29 00:08:47,255 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:47] "[33mGET /images/slant.svg HTTP/1.1[0m" 404 -
+2024-08-29 00:08:47,256 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:47] "GET /efekty/adds/oferta/images/features/432874290_8145193208842536_8364352731160822799_n.jpg HTTP/1.1" 200 -
+2024-08-29 00:08:47,256 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:47] "GET /efekty/adds/oferta/images/hero/DSC05488-1.jpg HTTP/1.1" 200 -
+2024-08-29 00:08:47,261 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:47] "GET /efekty/adds/oferta/images/contactSection/433163442_387962530669773_8449593097552828940_n.jpg HTTP/1.1" 200 -
+2024-08-29 00:08:47,264 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:47] "GET /efekty/adds/oferta/images/features/433061865_326664746718943_2621959967398606980_n.jpg HTTP/1.1" 200 -
+2024-08-29 00:08:47,270 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:47] "GET /efekty/adds/oferta/images/features/434837332_945900393605933_9179364738778311099_n.jpg HTTP/1.1" 200 -
+2024-08-29 00:08:47,274 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:47] "GET /efekty/adds/oferta/images/432794530_442787621460543_1651162425388667630_n.jpg HTTP/1.1" 200 -
+2024-08-29 00:08:47,275 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:47] "[35m[1mGET /logo_1080p.mp4 HTTP/1.1[0m" 206 -
+2024-08-29 00:08:47,458 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:47] "[35m[1mGET /logo_1080p.mp4 HTTP/1.1[0m" 206 -
+2024-08-29 00:08:47,492 INFO: 127.0.0.1 - - [29/Aug/2024 00:08:47] "[35m[1mGET /logo_1080p.mp4 HTTP/1.1[0m" 206 -
+2024-08-29 00:09:01,145 INFO: 127.0.0.1 - - [29/Aug/2024 00:09:01] "GET /user/profile/pages/oferta HTTP/1.1" 200 -
+2024-08-29 00:09:01,597 INFO: 127.0.0.1 - - [29/Aug/2024 00:09:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-29 00:22:58,862 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 00:22:58,917 INFO:  * Restarting with stat
+2024-08-29 00:23:00,309 WARNING:  * Debugger is active!
+2024-08-29 00:23:00,317 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 00:23:06,393 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 00:23:06,432 INFO:  * Restarting with stat
+2024-08-29 00:23:07,060 WARNING:  * Debugger is active!
+2024-08-29 00:23:07,065 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 00:23:14,997 INFO: 127.0.0.1 - - [29/Aug/2024 00:23:14] "[32mGET /user/profile/pages/oferta HTTP/1.1[0m" 302 -
+2024-08-29 00:23:15,062 INFO: 127.0.0.1 - - [29/Aug/2024 00:23:15] "GET /auth/login?next=/user/profile/pages/oferta HTTP/1.1" 200 -
+2024-08-29 00:23:15,538 INFO: 127.0.0.1 - - [29/Aug/2024 00:23:15] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-29 00:23:19,467 INFO: 127.0.0.1 - - [29/Aug/2024 00:23:19] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2024-08-29 00:23:19,502 INFO: 127.0.0.1 - - [29/Aug/2024 00:23:19] "GET /user/profile HTTP/1.1" 200 -
+2024-08-29 00:23:21,124 INFO: 127.0.0.1 - - [29/Aug/2024 00:23:21] "[35m[1mGET /user/profile/pages/oferta HTTP/1.1[0m" 500 -
+2024-08-29 00:23:21,506 INFO: 127.0.0.1 - - [29/Aug/2024 00:23:21] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-08-29 00:23:21,519 INFO: 127.0.0.1 - - [29/Aug/2024 00:23:21] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-08-29 00:23:21,566 INFO: 127.0.0.1 - - [29/Aug/2024 00:23:21] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-08-29 00:28:34,682 INFO: 127.0.0.1 - - [29/Aug/2024 00:28:34] "[35m[1mGET /user/profile/pages/oferta HTTP/1.1[0m" 500 -
+2024-08-29 00:28:34,907 INFO: 127.0.0.1 - - [29/Aug/2024 00:28:34] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-08-29 00:28:34,907 INFO: 127.0.0.1 - - [29/Aug/2024 00:28:34] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-08-29 00:28:35,075 INFO: 127.0.0.1 - - [29/Aug/2024 00:28:35] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-08-29 00:30:47,115 INFO: 127.0.0.1 - - [29/Aug/2024 00:30:47] "[35m[1mGET /user/profile/pages/oferta HTTP/1.1[0m" 500 -
+2024-08-29 00:30:47,320 INFO: 127.0.0.1 - - [29/Aug/2024 00:30:47] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-08-29 00:30:47,321 INFO: 127.0.0.1 - - [29/Aug/2024 00:30:47] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-08-29 00:30:47,476 INFO: 127.0.0.1 - - [29/Aug/2024 00:30:47] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-08-29 00:33:09,448 INFO: 127.0.0.1 - - [29/Aug/2024 00:33:09] "[35m[1mGET /user/profile/pages/oferta HTTP/1.1[0m" 500 -
+2024-08-29 00:33:09,696 INFO: 127.0.0.1 - - [29/Aug/2024 00:33:09] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-08-29 00:33:09,697 INFO: 127.0.0.1 - - [29/Aug/2024 00:33:09] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-08-29 00:33:09,910 INFO: 127.0.0.1 - - [29/Aug/2024 00:33:09] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-08-29 00:33:17,420 INFO: 127.0.0.1 - - [29/Aug/2024 00:33:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-29 00:33:18,892 INFO: 127.0.0.1 - - [29/Aug/2024 00:33:18] "GET /user/profile/pages/users HTTP/1.1" 200 -
+2024-08-29 00:33:20,272 INFO: 127.0.0.1 - - [29/Aug/2024 00:33:20] "GET /user/profile/pages/opinie HTTP/1.1" 200 -
+2024-08-29 00:33:21,127 INFO: 127.0.0.1 - - [29/Aug/2024 00:33:21] "[35m[1mGET /user/profile/pages/oferta HTTP/1.1[0m" 500 -
+2024-08-29 00:33:21,274 INFO: 127.0.0.1 - - [29/Aug/2024 00:33:21] "[36mGET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-08-29 00:33:21,276 INFO: 127.0.0.1 - - [29/Aug/2024 00:33:21] "[36mGET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-08-29 00:33:21,407 INFO: 127.0.0.1 - - [29/Aug/2024 00:33:21] "[36mGET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-08-29 08:15:54,173 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 08:15:54,319 INFO:  * Restarting with stat
+2024-08-29 08:15:56,880 WARNING:  * Debugger is active!
+2024-08-29 08:15:56,897 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 08:25:59,183 INFO: 127.0.0.1 - - [29/Aug/2024 08:25:59] "[32mGET /user/profile/pages/oferta HTTP/1.1[0m" 302 -
+2024-08-29 08:25:59,315 INFO: 127.0.0.1 - - [29/Aug/2024 08:25:59] "GET /auth/login?next=/user/profile/pages/oferta HTTP/1.1" 200 -
+2024-08-29 08:26:01,284 INFO: 127.0.0.1 - - [29/Aug/2024 08:26:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-29 08:26:03,775 INFO: 127.0.0.1 - - [29/Aug/2024 08:26:03] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2024-08-29 08:26:03,891 INFO: 127.0.0.1 - - [29/Aug/2024 08:26:03] "GET /user/profile HTTP/1.1" 200 -
+2024-08-29 08:26:06,609 INFO: 127.0.0.1 - - [29/Aug/2024 08:26:06] "[35m[1mGET /user/profile/pages/oferta HTTP/1.1[0m" 500 -
+2024-08-29 08:26:07,709 INFO: 127.0.0.1 - - [29/Aug/2024 08:26:07] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-08-29 08:26:07,721 INFO: 127.0.0.1 - - [29/Aug/2024 08:26:07] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-08-29 08:26:08,118 INFO: 127.0.0.1 - - [29/Aug/2024 08:26:08] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-08-29 08:26:28,653 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 08:26:28,791 INFO:  * Restarting with stat
+2024-08-29 08:26:30,978 WARNING:  * Debugger is active!
+2024-08-29 08:26:30,993 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 08:26:37,503 INFO: 127.0.0.1 - - [29/Aug/2024 08:26:37] "[32mGET /user/profile/pages/oferta HTTP/1.1[0m" 302 -
+2024-08-29 08:26:37,601 INFO: 127.0.0.1 - - [29/Aug/2024 08:26:37] "GET /auth/login?next=/user/profile/pages/oferta HTTP/1.1" 200 -
+2024-08-29 08:26:38,627 INFO: 127.0.0.1 - - [29/Aug/2024 08:26:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-29 08:26:42,014 INFO: 127.0.0.1 - - [29/Aug/2024 08:26:42] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2024-08-29 08:26:42,443 INFO: 127.0.0.1 - - [29/Aug/2024 08:26:42] "GET /user/profile HTTP/1.1" 200 -
+2024-08-29 08:26:45,180 INFO: 127.0.0.1 - - [29/Aug/2024 08:26:45] "GET /user/profile/pages/opinie HTTP/1.1" 200 -
+2024-08-29 08:26:46,739 INFO: 127.0.0.1 - - [29/Aug/2024 08:26:46] "[35m[1mGET /user/profile/pages/oferta HTTP/1.1[0m" 500 -
+2024-08-29 08:26:47,584 INFO: 127.0.0.1 - - [29/Aug/2024 08:26:47] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-08-29 08:26:47,593 INFO: 127.0.0.1 - - [29/Aug/2024 08:26:47] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-08-29 08:26:47,902 INFO: 127.0.0.1 - - [29/Aug/2024 08:26:47] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-08-29 08:31:50,596 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 08:31:50,724 INFO:  * Restarting with stat
+2024-08-29 08:31:52,870 WARNING:  * Debugger is active!
+2024-08-29 08:31:52,888 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 08:31:59,059 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 08:31:59,191 INFO:  * Restarting with stat
+2024-08-29 08:32:02,022 WARNING:  * Debugger is active!
+2024-08-29 08:32:02,047 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 08:32:02,309 INFO: 127.0.0.1 - - [29/Aug/2024 08:32:02] "[32mGET /user/profile/pages/oferta HTTP/1.1[0m" 302 -
+2024-08-29 08:32:02,424 INFO: 127.0.0.1 - - [29/Aug/2024 08:32:02] "GET /auth/login?next=/user/profile/pages/oferta HTTP/1.1" 200 -
+2024-08-29 08:32:04,461 INFO: 127.0.0.1 - - [29/Aug/2024 08:32:04] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-29 08:32:06,576 INFO: 127.0.0.1 - - [29/Aug/2024 08:32:06] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2024-08-29 08:32:06,649 INFO: 127.0.0.1 - - [29/Aug/2024 08:32:06] "GET /user/profile HTTP/1.1" 200 -
+2024-08-29 08:32:08,575 INFO: 127.0.0.1 - - [29/Aug/2024 08:32:08] "GET /user/profile/pages/opinie HTTP/1.1" 200 -
+2024-08-29 08:32:11,329 INFO: 127.0.0.1 - - [29/Aug/2024 08:32:11] "[35m[1mGET /user/profile/pages/oferta HTTP/1.1[0m" 500 -
+2024-08-29 08:32:12,408 INFO: 127.0.0.1 - - [29/Aug/2024 08:32:12] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-08-29 08:32:12,411 INFO: 127.0.0.1 - - [29/Aug/2024 08:32:12] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-08-29 08:32:12,970 INFO: 127.0.0.1 - - [29/Aug/2024 08:32:12] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-08-29 08:33:47,874 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 08:33:47,986 INFO:  * Restarting with stat
+2024-08-29 08:33:50,225 WARNING:  * Debugger is active!
+2024-08-29 08:33:50,244 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 08:34:51,346 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 08:34:51,468 INFO:  * Restarting with stat
+2024-08-29 08:34:53,740 WARNING:  * Debugger is active!
+2024-08-29 08:34:53,757 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 08:35:14,148 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 08:35:14,253 INFO:  * Restarting with stat
+2024-08-29 08:35:17,401 WARNING:  * Debugger is active!
+2024-08-29 08:35:17,423 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 08:35:23,217 INFO: 127.0.0.1 - - [29/Aug/2024 08:35:23] "[32mGET /user/profile/pages/oferta HTTP/1.1[0m" 302 -
+2024-08-29 08:35:23,329 INFO: 127.0.0.1 - - [29/Aug/2024 08:35:23] "GET /auth/login?next=/user/profile/pages/oferta HTTP/1.1" 200 -
+2024-08-29 08:35:25,501 INFO: 127.0.0.1 - - [29/Aug/2024 08:35:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-29 08:35:26,878 INFO: 127.0.0.1 - - [29/Aug/2024 08:35:26] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2024-08-29 08:35:26,979 INFO: 127.0.0.1 - - [29/Aug/2024 08:35:26] "GET /user/profile HTTP/1.1" 200 -
+2024-08-29 08:35:29,153 INFO: 127.0.0.1 - - [29/Aug/2024 08:35:29] "[35m[1mGET /user/profile/pages/oferta HTTP/1.1[0m" 500 -
+2024-08-29 08:35:30,082 INFO: 127.0.0.1 - - [29/Aug/2024 08:35:30] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-08-29 08:35:30,089 INFO: 127.0.0.1 - - [29/Aug/2024 08:35:30] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-08-29 08:35:30,506 INFO: 127.0.0.1 - - [29/Aug/2024 08:35:30] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-08-29 08:37:32,733 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 08:37:32,857 INFO:  * Restarting with stat
+2024-08-29 08:37:35,088 WARNING:  * Debugger is active!
+2024-08-29 08:37:35,112 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 08:37:37,609 INFO: 127.0.0.1 - - [29/Aug/2024 08:37:37] "[32mGET /user/profile/pages/oferta HTTP/1.1[0m" 302 -
+2024-08-29 08:37:37,982 INFO: 127.0.0.1 - - [29/Aug/2024 08:37:37] "GET /auth/login?next=/user/profile/pages/oferta HTTP/1.1" 200 -
+2024-08-29 08:37:39,993 INFO: 127.0.0.1 - - [29/Aug/2024 08:37:39] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-29 08:37:41,917 INFO: 127.0.0.1 - - [29/Aug/2024 08:37:41] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2024-08-29 08:37:42,000 INFO: 127.0.0.1 - - [29/Aug/2024 08:37:42] "GET /user/profile HTTP/1.1" 200 -
+2024-08-29 08:37:44,633 INFO: 127.0.0.1 - - [29/Aug/2024 08:37:44] "[35m[1mGET /user/profile/pages/oferta HTTP/1.1[0m" 500 -
+2024-08-29 08:37:45,806 INFO: 127.0.0.1 - - [29/Aug/2024 08:37:45] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-08-29 08:37:45,810 INFO: 127.0.0.1 - - [29/Aug/2024 08:37:45] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-08-29 08:37:46,188 INFO: 127.0.0.1 - - [29/Aug/2024 08:37:46] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-08-29 08:38:37,276 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 08:38:37,398 INFO:  * Restarting with stat
+2024-08-29 08:38:39,488 WARNING:  * Debugger is active!
+2024-08-29 08:38:39,519 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 08:38:53,544 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-29 08:38:53,544 INFO: [33mPress CTRL+C to quit[0m
+2024-08-29 08:38:53,560 INFO:  * Restarting with stat
+2024-08-29 08:38:55,882 WARNING:  * Debugger is active!
+2024-08-29 08:38:55,900 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 08:38:58,057 INFO: 127.0.0.1 - - [29/Aug/2024 08:38:58] "[32mGET /user/profile/pages/oferta HTTP/1.1[0m" 302 -
+2024-08-29 08:38:58,196 INFO: 127.0.0.1 - - [29/Aug/2024 08:38:58] "GET /auth/login?next=/user/profile/pages/oferta HTTP/1.1" 200 -
+2024-08-29 08:39:00,699 INFO: 127.0.0.1 - - [29/Aug/2024 08:39:00] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-29 08:39:02,474 INFO: 127.0.0.1 - - [29/Aug/2024 08:39:02] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2024-08-29 08:39:02,596 INFO: 127.0.0.1 - - [29/Aug/2024 08:39:02] "GET /user/profile HTTP/1.1" 200 -
+2024-08-29 08:39:05,664 INFO: 127.0.0.1 - - [29/Aug/2024 08:39:05] "[35m[1mGET /user/profile/pages/oferta HTTP/1.1[0m" 500 -
+2024-08-29 08:39:06,611 INFO: 127.0.0.1 - - [29/Aug/2024 08:39:06] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-08-29 08:39:06,626 INFO: 127.0.0.1 - - [29/Aug/2024 08:39:06] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-08-29 08:39:07,320 INFO: 127.0.0.1 - - [29/Aug/2024 08:39:07] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-08-29 08:41:19,312 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 08:41:19,431 INFO:  * Restarting with stat
+2024-08-29 08:41:21,774 WARNING:  * Debugger is active!
+2024-08-29 08:41:21,791 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 08:41:23,891 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 08:41:23,999 INFO:  * Restarting with stat
+2024-08-29 08:41:29,347 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-08-29 08:41:29,348 INFO: [33mPress CTRL+C to quit[0m
+2024-08-29 08:41:29,372 INFO:  * Restarting with stat
+2024-08-29 08:41:32,366 WARNING:  * Debugger is active!
+2024-08-29 08:41:32,388 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 08:41:32,461 INFO: 127.0.0.1 - - [29/Aug/2024 08:41:32] "[32mGET /user/profile/pages/oferta HTTP/1.1[0m" 302 -
+2024-08-29 08:41:32,619 INFO: 127.0.0.1 - - [29/Aug/2024 08:41:32] "GET /auth/login?next=/user/profile/pages/oferta HTTP/1.1" 200 -
+2024-08-29 08:41:37,017 INFO: 127.0.0.1 - - [29/Aug/2024 08:41:37] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2024-08-29 08:41:37,093 INFO: 127.0.0.1 - - [29/Aug/2024 08:41:37] "GET /user/profile HTTP/1.1" 200 -
+2024-08-29 08:41:40,367 INFO: 127.0.0.1 - - [29/Aug/2024 08:41:40] "[35m[1mGET /user/profile/pages/oferta HTTP/1.1[0m" 500 -
+2024-08-29 08:41:41,349 INFO: 127.0.0.1 - - [29/Aug/2024 08:41:41] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-08-29 08:41:41,354 INFO: 127.0.0.1 - - [29/Aug/2024 08:41:41] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-08-29 08:41:41,630 INFO: 127.0.0.1 - - [29/Aug/2024 08:41:41] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-08-29 08:43:35,416 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 08:43:35,536 INFO:  * Restarting with stat
+2024-08-29 08:43:38,109 WARNING:  * Debugger is active!
+2024-08-29 08:43:38,125 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 08:43:39,109 INFO: 127.0.0.1 - - [29/Aug/2024 08:43:39] "[32mGET /user/profile/pages/oferta HTTP/1.1[0m" 302 -
+2024-08-29 08:43:39,225 INFO: 127.0.0.1 - - [29/Aug/2024 08:43:39] "GET /auth/login?next=/user/profile/pages/oferta HTTP/1.1" 200 -
+2024-08-29 08:43:41,673 INFO: 127.0.0.1 - - [29/Aug/2024 08:43:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-29 08:43:43,185 INFO: 127.0.0.1 - - [29/Aug/2024 08:43:43] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2024-08-29 08:43:43,268 INFO: 127.0.0.1 - - [29/Aug/2024 08:43:43] "GET /user/profile HTTP/1.1" 200 -
+2024-08-29 08:43:45,454 INFO: 127.0.0.1 - - [29/Aug/2024 08:43:45] "[35m[1mGET /user/profile/pages/oferta HTTP/1.1[0m" 500 -
+2024-08-29 08:43:46,381 INFO: 127.0.0.1 - - [29/Aug/2024 08:43:46] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-08-29 08:43:46,390 INFO: 127.0.0.1 - - [29/Aug/2024 08:43:46] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-08-29 08:43:46,722 INFO: 127.0.0.1 - - [29/Aug/2024 08:43:46] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-08-29 08:44:21,454 INFO: 127.0.0.1 - - [29/Aug/2024 08:44:21] "[35m[1mGET /user/profile/pages/oferta HTTP/1.1[0m" 500 -
+2024-08-29 08:44:22,056 INFO: 127.0.0.1 - - [29/Aug/2024 08:44:22] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-08-29 08:44:22,058 INFO: 127.0.0.1 - - [29/Aug/2024 08:44:22] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-08-29 08:44:22,445 INFO: 127.0.0.1 - - [29/Aug/2024 08:44:22] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-08-29 08:45:56,562 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 08:45:56,685 INFO:  * Restarting with stat
+2024-08-29 08:45:58,977 WARNING:  * Debugger is active!
+2024-08-29 08:45:58,997 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 08:46:00,692 INFO: 127.0.0.1 - - [29/Aug/2024 08:46:00] "[32mGET /user/profile/pages/oferta HTTP/1.1[0m" 302 -
+2024-08-29 08:46:00,805 INFO: 127.0.0.1 - - [29/Aug/2024 08:46:00] "GET /auth/login?next=/user/profile/pages/oferta HTTP/1.1" 200 -
+2024-08-29 08:46:02,418 INFO: 127.0.0.1 - - [29/Aug/2024 08:46:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-29 08:46:04,767 INFO: 127.0.0.1 - - [29/Aug/2024 08:46:04] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2024-08-29 08:46:04,938 INFO: 127.0.0.1 - - [29/Aug/2024 08:46:04] "GET /user/profile HTTP/1.1" 200 -
+2024-08-29 08:46:07,159 INFO: 127.0.0.1 - - [29/Aug/2024 08:46:07] "[35m[1mGET /user/profile/pages/oferta HTTP/1.1[0m" 500 -
+2024-08-29 08:46:08,037 INFO: 127.0.0.1 - - [29/Aug/2024 08:46:08] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-08-29 08:46:08,039 INFO: 127.0.0.1 - - [29/Aug/2024 08:46:08] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-08-29 08:46:08,389 INFO: 127.0.0.1 - - [29/Aug/2024 08:46:08] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-08-29 08:49:22,511 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 08:49:22,644 INFO:  * Restarting with stat
+2024-08-29 08:49:24,805 WARNING:  * Debugger is active!
+2024-08-29 08:49:24,820 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 08:49:36,641 INFO: 127.0.0.1 - - [29/Aug/2024 08:49:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-29 08:49:37,184 INFO: 127.0.0.1 - - [29/Aug/2024 08:49:37] "[32mGET /user/profile/pages/oferta HTTP/1.1[0m" 302 -
+2024-08-29 08:49:37,332 INFO: 127.0.0.1 - - [29/Aug/2024 08:49:37] "GET /auth/login?next=/user/profile/pages/oferta HTTP/1.1" 200 -
+2024-08-29 08:49:40,583 INFO: 127.0.0.1 - - [29/Aug/2024 08:49:40] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2024-08-29 08:49:40,666 INFO: 127.0.0.1 - - [29/Aug/2024 08:49:40] "GET /user/profile HTTP/1.1" 200 -
+2024-08-29 08:49:42,530 INFO: 127.0.0.1 - - [29/Aug/2024 08:49:42] "[35m[1mGET /user/profile/pages/oferta HTTP/1.1[0m" 500 -
+2024-08-29 08:49:43,456 INFO: 127.0.0.1 - - [29/Aug/2024 08:49:43] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-08-29 08:49:43,457 INFO: 127.0.0.1 - - [29/Aug/2024 08:49:43] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-08-29 08:49:43,842 INFO: 127.0.0.1 - - [29/Aug/2024 08:49:43] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-08-29 08:52:16,490 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 08:52:16,660 INFO:  * Restarting with stat
+2024-08-29 08:52:19,221 WARNING:  * Debugger is active!
+2024-08-29 08:52:19,240 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 08:52:42,763 INFO: 127.0.0.1 - - [29/Aug/2024 08:52:42] "[32mGET /user/profile/pages/oferta HTTP/1.1[0m" 302 -
+2024-08-29 08:52:42,863 INFO: 127.0.0.1 - - [29/Aug/2024 08:52:42] "GET /auth/login?next=/user/profile/pages/oferta HTTP/1.1" 200 -
+2024-08-29 08:52:44,871 INFO: 127.0.0.1 - - [29/Aug/2024 08:52:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-29 08:52:46,927 INFO: 127.0.0.1 - - [29/Aug/2024 08:52:46] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2024-08-29 08:52:47,018 INFO: 127.0.0.1 - - [29/Aug/2024 08:52:47] "GET /user/profile HTTP/1.1" 200 -
+2024-08-29 08:52:49,160 INFO: 127.0.0.1 - - [29/Aug/2024 08:52:49] "GET /user/profile/pages/opinie HTTP/1.1" 200 -
+2024-08-29 08:52:51,536 INFO: 127.0.0.1 - - [29/Aug/2024 08:52:51] "[35m[1mGET /user/profile/pages/oferta HTTP/1.1[0m" 500 -
+2024-08-29 08:52:52,383 INFO: 127.0.0.1 - - [29/Aug/2024 08:52:52] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-08-29 08:52:52,389 INFO: 127.0.0.1 - - [29/Aug/2024 08:52:52] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-08-29 08:52:52,688 INFO: 127.0.0.1 - - [29/Aug/2024 08:52:52] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-08-29 08:55:15,125 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 08:55:15,234 INFO:  * Restarting with stat
+2024-08-29 08:55:17,272 WARNING:  * Debugger is active!
+2024-08-29 08:55:17,289 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 08:56:20,794 INFO: 127.0.0.1 - - [29/Aug/2024 08:56:20] "[32mGET /user/profile/pages/oferta HTTP/1.1[0m" 302 -
+2024-08-29 08:56:20,982 INFO: 127.0.0.1 - - [29/Aug/2024 08:56:20] "GET /auth/login?next=/user/profile/pages/oferta HTTP/1.1" 200 -
+2024-08-29 08:56:23,343 INFO: 127.0.0.1 - - [29/Aug/2024 08:56:23] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-29 08:56:24,795 INFO: 127.0.0.1 - - [29/Aug/2024 08:56:24] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2024-08-29 08:56:25,184 INFO: 127.0.0.1 - - [29/Aug/2024 08:56:25] "GET /user/profile HTTP/1.1" 200 -
+2024-08-29 08:56:27,236 INFO: 127.0.0.1 - - [29/Aug/2024 08:56:27] "[35m[1mGET /user/profile/pages/oferta HTTP/1.1[0m" 500 -
+2024-08-29 08:56:28,102 INFO: 127.0.0.1 - - [29/Aug/2024 08:56:28] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-08-29 08:56:28,105 INFO: 127.0.0.1 - - [29/Aug/2024 08:56:28] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-08-29 08:56:28,390 INFO: 127.0.0.1 - - [29/Aug/2024 08:56:28] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-08-29 08:59:21,282 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 08:59:21,412 INFO:  * Restarting with stat
+2024-08-29 08:59:23,756 WARNING:  * Debugger is active!
+2024-08-29 08:59:23,771 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 08:59:24,623 INFO: 127.0.0.1 - - [29/Aug/2024 08:59:24] "[32mGET /user/profile/pages/oferta HTTP/1.1[0m" 302 -
+2024-08-29 08:59:24,746 INFO: 127.0.0.1 - - [29/Aug/2024 08:59:24] "GET /auth/login?next=/user/profile/pages/oferta HTTP/1.1" 200 -
+2024-08-29 08:59:26,811 INFO: 127.0.0.1 - - [29/Aug/2024 08:59:26] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-29 08:59:29,043 INFO: 127.0.0.1 - - [29/Aug/2024 08:59:29] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2024-08-29 08:59:29,127 INFO: 127.0.0.1 - - [29/Aug/2024 08:59:29] "GET /user/profile HTTP/1.1" 200 -
+2024-08-29 08:59:30,553 INFO: 127.0.0.1 - - [29/Aug/2024 08:59:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-29 08:59:31,606 INFO: 127.0.0.1 - - [29/Aug/2024 08:59:31] "GET /user/profile/pages/opinie HTTP/1.1" 200 -
+2024-08-29 08:59:33,677 INFO: 127.0.0.1 - - [29/Aug/2024 08:59:33] "[35m[1mGET /user/profile/pages/oferta HTTP/1.1[0m" 500 -
+2024-08-29 08:59:34,472 INFO: 127.0.0.1 - - [29/Aug/2024 08:59:34] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-08-29 08:59:34,479 INFO: 127.0.0.1 - - [29/Aug/2024 08:59:34] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-08-29 08:59:34,793 INFO: 127.0.0.1 - - [29/Aug/2024 08:59:34] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-08-29 08:59:44,181 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 08:59:44,292 INFO:  * Restarting with stat
+2024-08-29 08:59:46,411 WARNING:  * Debugger is active!
+2024-08-29 08:59:46,427 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 08:59:50,590 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 08:59:50,727 INFO:  * Restarting with stat
+2024-08-29 08:59:53,000 WARNING:  * Debugger is active!
+2024-08-29 08:59:53,021 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 08:59:54,431 INFO: 127.0.0.1 - - [29/Aug/2024 08:59:54] "[32mGET /user/profile/pages/oferta HTTP/1.1[0m" 302 -
+2024-08-29 08:59:54,525 INFO: 127.0.0.1 - - [29/Aug/2024 08:59:54] "GET /auth/login?next=/user/profile/pages/oferta HTTP/1.1" 200 -
+2024-08-29 08:59:55,837 INFO: 127.0.0.1 - - [29/Aug/2024 08:59:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-29 08:59:57,925 INFO: 127.0.0.1 - - [29/Aug/2024 08:59:57] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2024-08-29 08:59:58,023 INFO: 127.0.0.1 - - [29/Aug/2024 08:59:58] "GET /user/profile HTTP/1.1" 200 -
+2024-08-29 09:00:00,478 INFO: 127.0.0.1 - - [29/Aug/2024 09:00:00] "GET /user/profile/pages/oferta HTTP/1.1" 200 -
+2024-08-29 09:00:01,767 INFO: 127.0.0.1 - - [29/Aug/2024 09:00:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-29 09:00:03,429 INFO: 127.0.0.1 - - [29/Aug/2024 09:00:03] "GET /user/profile/pages/oferta HTTP/1.1" 200 -
+2024-08-29 09:03:55,932 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 09:03:56,091 INFO:  * Restarting with stat
+2024-08-29 09:03:58,111 WARNING:  * Debugger is active!
+2024-08-29 09:03:58,128 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 09:04:10,390 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 09:04:10,526 INFO:  * Restarting with stat
+2024-08-29 09:04:12,883 WARNING:  * Debugger is active!
+2024-08-29 09:04:12,904 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 09:05:20,088 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 09:05:20,237 INFO:  * Restarting with stat
+2024-08-29 09:05:22,481 WARNING:  * Debugger is active!
+2024-08-29 09:05:22,497 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 09:05:33,743 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 09:05:33,871 INFO:  * Restarting with stat
+2024-08-29 09:05:36,520 WARNING:  * Debugger is active!
+2024-08-29 09:05:36,542 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 09:05:44,003 INFO: 127.0.0.1 - - [29/Aug/2024 09:05:44] "[32mGET /user/profile/pages/oferta HTTP/1.1[0m" 302 -
+2024-08-29 09:05:44,105 INFO: 127.0.0.1 - - [29/Aug/2024 09:05:44] "GET /auth/login?next=/user/profile/pages/oferta HTTP/1.1" 200 -
+2024-08-29 09:05:45,253 INFO: 127.0.0.1 - - [29/Aug/2024 09:05:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-08-29 09:05:48,151 INFO: 127.0.0.1 - - [29/Aug/2024 09:05:48] "[32mPOST /auth/login HTTP/1.1[0m" 302 -
+2024-08-29 09:05:48,243 INFO: 127.0.0.1 - - [29/Aug/2024 09:05:48] "GET /user/profile HTTP/1.1" 200 -
+2024-08-29 09:05:50,197 INFO: 127.0.0.1 - - [29/Aug/2024 09:05:50] "[35m[1mGET /user/profile/pages/oferta HTTP/1.1[0m" 500 -
+2024-08-29 09:05:51,056 INFO: 127.0.0.1 - - [29/Aug/2024 09:05:51] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-08-29 09:05:51,072 INFO: 127.0.0.1 - - [29/Aug/2024 09:05:51] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-08-29 09:05:51,384 INFO: 127.0.0.1 - - [29/Aug/2024 09:05:51] "GET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-08-29 09:06:10,598 INFO: 127.0.0.1 - - [29/Aug/2024 09:06:10] "[35m[1mGET /user/profile/pages/oferta HTTP/1.1[0m" 500 -
+2024-08-29 09:06:11,106 INFO: 127.0.0.1 - - [29/Aug/2024 09:06:11] "[36mGET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-08-29 09:06:11,107 INFO: 127.0.0.1 - - [29/Aug/2024 09:06:11] "[36mGET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-08-29 09:06:11,532 INFO: 127.0.0.1 - - [29/Aug/2024 09:06:11] "[36mGET /user/profile/pages/oferta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2024-08-29 09:07:32,566 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 09:07:32,684 INFO:  * Restarting with stat
+2024-08-29 09:07:35,015 WARNING:  * Debugger is active!
+2024-08-29 09:07:35,033 INFO:  * Debugger PIN: 886-544-002
+2024-08-29 09:08:07,715 INFO:  * Detected change in 'C:\\Users\\engli\\Documents\\flask\\public_python\\routes\\user.py', reloading
+2024-08-29 09:08:07,871 INFO:  * Restarting with stat

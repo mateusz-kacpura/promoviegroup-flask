@@ -615,3 +615,108 @@ def toggle_registration():
     current_app.config['REGISTRATION_ENABLED'] = not current_status
     flash('User registration has been {}'.format('enabled' if not current_status else 'disabled'), 'success')
     return redirect(url_for('user.user_list'))
+
+OFERTA_JSON_PATH = os.path.join('baza_danych', 'oferta.json')
+
+def load_offer_data():
+    """Ładuje dane z pliku JSON."""
+    if os.path.exists(OFERTA_JSON_PATH):
+        with open(OFERTA_JSON_PATH, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    return {}
+
+def save_offer_data(data):
+    """Zapisuje dane do pliku JSON."""
+    with open(OFERTA_JSON_PATH, 'w', encoding='utf-8') as f:
+        json.dump(data, f, ensure_ascii=False, indent=4)
+
+@user_bp.route('/profile/pages/oferta', methods=['GET', 'POST'])
+@login_required
+def update_oferta():
+    if request.method == 'POST':
+        # Pobieranie danych z formularza
+        updated_offer = {
+            "hero": {
+                "title": request.form.get('hero[title]'),
+                "subtitle": request.form.get('hero[subtitle]'),
+                "buttonText": request.form.get('hero[buttonText]'),
+                "buttonLink": request.form.get('hero[buttonLink]'),
+                "backgroundImage": request.form.get('hero[backgroundImage]')
+            },
+            "services": [],
+            "contactSection": {
+                "title": request.form.get('contactSection[title]'),
+                "buttonText": request.form.get('contactSection[buttonText]'),
+                "buttonLink": request.form.get('contactSection[buttonLink]'),
+                "backgroundImage": request.form.get('contactSection[backgroundImage]')
+            },
+            "features": [],
+            "blog": [],
+            "contactBanner": {
+                "title": request.form.get('contactBanner[title]'),
+                "subtitle": request.form.get('contactBanner[subtitle]'),
+                "buttonText": request.form.get('contactBanner[buttonText]'),
+                "buttonLink": request.form.get('contactBanner[buttonLink]'),
+                "backgroundImage": request.form.get('contactBanner[backgroundImage]')
+            },
+            "aboutUs": {
+                "title": request.form.get('aboutUs[title]'),
+                "content": request.form.get('aboutUs[content]')
+            }
+        }
+
+        # Przetwarzanie sekcji Usług
+        service_count = len(request.form.getlist('services[0][title]'))  # Zakładamy, że każda usługa ma tytuł
+        for i in range(service_count):
+            service = {
+                "icon": request.form.get(f'services[{i}][icon]'),
+                "title": request.form.get(f'services[{i}][title]'),
+                "description": request.form.get(f'services[{i}][description]'),
+                "buttonText": request.form.get(f'services[{i}][buttonText]'),
+                "details": {
+                    "products": [],
+                    "additionalInfo": request.form.get(f'services[{i}][details][additionalInfo]')
+                }
+            }
+
+            product_count = len(request.form.getlist(f'services[{i}][details][products][0][name]'))
+            for j in range(product_count):
+                product = {
+                    "name": request.form.get(f'services[{i}][details][products][{j}][name]'),
+                    "price": request.form.get(f'services[{i}][details][products][{j}][price]'),
+                    "details": request.form.get(f'services[{i}][details][products][{j}][details]')
+                }
+                service['details']['products'].append(product)
+
+            updated_offer["services"].append(service)
+
+        # Przetwarzanie sekcji Cech
+        feature_count = len(request.form.getlist('features[0][title]'))  # Zakładamy, że każda cecha ma tytuł
+        for i in range(feature_count):
+            feature = {
+                "title": request.form.get(f'features[{i}][title]'),
+                "description": request.form.get(f'features[{i}][description]'),
+                "icon": request.form.get(f'features[{i}][icon]')
+            }
+            updated_offer["features"].append(feature)
+
+        # Przetwarzanie sekcji Blog
+        blog_count = len(request.form.getlist('blog[0][title]'))  # Zakładamy, że każdy post ma tytuł
+        for i in range(blog_count):
+            post = {
+                "title": request.form.get(f'blog[{i}][title]'),
+                "content": request.form.get(f'blog[{i}][content]'),
+                "author": request.form.get(f'blog[{i}][author]')
+            }
+            updated_offer["blog"].append(post)
+
+        # Zapisanie zaktualizowanych danych do pliku JSON
+        save_offer_data(updated_offer)
+
+        flash('Oferta została zaktualizowana pomyślnie.', 'success')
+        return redirect(url_for('user.update_offer'))
+
+    # Jeśli metoda to GET, wyświetl formularz z aktualnymi danymi
+    current_offer = load_offer_data()
+
+    return render_template('profile/pages/oferta.html', data=current_offer)
