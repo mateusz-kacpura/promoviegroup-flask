@@ -56,7 +56,7 @@
                 <li class="nav-item">
                     <a class="nav-link" id="contact-section-tab" data-bs-toggle="tab" href="#contactSection" role="tab" aria-controls="contactSection" aria-selected="false">Sekcja kontaktu</a>
                 </li>
-            </ul>
+            </ul>            
 
             <div class="tab-content" id="editTabContent">
                 <!-- Hero Section -->
@@ -85,70 +85,296 @@
                 </div>
 
                 <!-- Services Section -->
-<div class="tab-pane fade" id="services" role="tabpanel" aria-labelledby="services-tab">
-    <h2 class="mb-4">Usługi</h2>
-    <div class="accordion" id="servicesAccordion">
-        <!-- Dynamiczne renderowanie usług -->
-        {% for service in data.services %}
-            <div class="card">
-                <div class="card-header" id="heading{{ loop.index0 }}">
-                    <h5 class="mb-0 d-flex justify-content-between align-items-center">
-                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ loop.index0 }}" aria-expanded="true" aria-controls="collapse{{ loop.index0 }}">
-                            <i class="feather {{ service.icon }}"></i> {{ service.title }}
-                        </button>
-                        <button class="btn btn-danger btn-sm" type="button" onclick="removeService({{ loop.index0 }})">Usuń</button>
-                    </h5>
-                </div>
-                <div id="collapse{{ loop.index0 }}" class="collapse {% if loop.first %}show{% endif %}" aria-labelledby="heading{{ loop.index0 }}" data-parent="#servicesAccordion">
-                    <div class="card-body">
-                        <div class="mb-3">
-                            <label for="{{ service.title }}Description" class="form-label">Opis</label>
-                            <textarea class="form-control" id="{{ service.title }}Description" name="services[{{ loop.index0 }}][description]" rows="3">{{ service.description }}</textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="{{ service.title }}ButtonText" class="form-label">Tekst Przycisku</label>
-                            <input type="text" class="form-control" id="{{ service.title }}ButtonText" name="services[{{ loop.index0 }}][buttonText]" value="{{ service.buttonText }}">
-                        </div>
-                        <div class="mb-3">
-                            <label for="{{ service.title }}Services" class="form-label">Usługi</label>
-                            <textarea class="form-control" id="{{ service.title }}Services" name="services[{{ loop.index0 }}][services]" rows="3">{{ service.services | join(', ') }}</textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="{{ service.title }}Details" class="form-label">Szczegóły</label>
-                            <textarea class="form-control" id="{{ service.title }}Details" name="services[{{ loop.index0 }}][details][additionalInfo]" rows="3">{{ service.details.additionalInfo }}</textarea>
-                        </div>
-
-                        <!-- Produkty Sekcja -->
-                        <h4>Produkty</h4>
-                        <div class="mb-3" id="productList{{ loop.index0 }}">
-                            {% for product in service.details.products %}
-                                <div class="card">
-                                    <div class="card-header d-flex justify-content-between align-items-center">
-                                        <h5 class="mb-0">{{ product.name }}</h5>
-                                        <button class="btn btn-danger btn-sm" type="button" onclick="removeProduct({{ loop.index0 }}, {{ loop.index }})">Usuń</button>
-                                    </div>
+                <div class="tab-pane fade" id="services" role="tabpanel" aria-labelledby="services-tab">
+                    <h2 class="mb-4">Usługi</h2>
+                    <div class="accordion" id="servicesAccordion">
+                        <!-- Dynamiczne renderowanie usług -->
+                        {% for service in data.services %}
+                            <div class="card">
+                                <div class="card-header" id="heading{{ loop.index0 }}">
+                                    <h5 class="mb-0 d-flex justify-content-between align-items-center">
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse{{ loop.index0 }}" aria-expanded="true" aria-controls="collapse{{ loop.index0 }}">
+                                            <i class="feather {{ service.icon }}"></i> {{ service.title }}
+                                        </button>
+                                        <button class="btn btn-danger btn-sm" type="button" onclick="removeService({{ loop.index0 }})">Usuń</button>
+                                    </h5>
+                                </div>
+                                <div id="collapse{{ loop.index0 }}" class="collapse {% if loop.first %}show{% endif %}" aria-labelledby="heading{{ loop.index0 }}" data-parent="#servicesAccordion">
                                     <div class="card-body">
                                         <div class="mb-3">
-                                            <label for="{{ product.name }}Price" class="form-label">Cena</label>
-                                            <input type="text" class="form-control" id="{{ product.name }}Price" name="services[{{ loop.index0 }}][details][products][{{ loop.index }}][price]" value="{{ product.price }}">
+                                            <label for="{{ service.title }}Icon" class="form-label">Ikona</label>
+                                            <input type="text" class="form-control" id="{{ service.title }}Icon" name="services[{{ loop.index0 }}][icon]" value="{{ service.icon }}">
                                         </div>
                                         <div class="mb-3">
-                                            <label for="{{ product.name }}Details" class="form-label">Szczegóły</label>
-                                            <textarea class="form-control" id="{{ product.name }}Details" name="services[{{ loop.index0 }}][details][products][{{ loop.index }}][details]" rows="2">{{ product.details }}</textarea>
+                                            <label for="{{ service.title }}Title" class="form-label">Tytuł</label>
+                                            <input type="text" class="form-control" id="{{ service.title }}Title" name="services[{{ loop.index0 }}][title]" value="{{ service.title }}">
                                         </div>
+                                        <div class="mb-3">
+                                            <label for="{{ service.title }}Description" class="form-label">Opis</label>
+                                            <textarea class="form-control" id="{{ service.title }}Description" name="services[{{ loop.index0 }}][description]" rows="3">{{ service.description }}</textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="{{ service.title }}ButtonText" class="form-label">Tekst Przycisku</label>
+                                            <input type="text" class="form-control" id="{{ service.title }}ButtonText" name="services[{{ loop.index0 }}][buttonText]" value="{{ service.buttonText }}">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="{{ service.title }}Services" class="form-label">Usługi</label>
+                                            <textarea class="form-control" id="{{ service.title }}Services" name="services[{{ loop.index0 }}][services]" rows="3">{{ service.services | join(', ') }}</textarea>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="{{ service.title }}Details" class="form-label">Szczegóły</label>
+                                            <textarea class="form-control" id="{{ service.title }}Details" name="services[{{ loop.index0 }}][details][additionalInfo]" rows="3">{{ service.details.additionalInfo }}</textarea>
+                                        </div>
+
+                                        <!-- Produkty Sekcja -->
+                                        <h4>Produkty</h4>
+                                        <div class="mb-3" id="productList{{ loop.index0 }}">
+                                            {% for product in service.details.products %}
+                                                <div class="card">
+                                                    <div class="card-header d-flex justify-content-between align-items-center">
+                                                        <h5 class="mb-0">{{ product.name }}</h5>
+                                                        <button class="btn btn-danger btn-sm" type="button" onclick="removeProduct({{ loop.index0 }}, {{ loop.index }})">Usuń</button>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <div class="mb-3">
+                                                            <label for="{{ product.name }}Name" class="form-label">Name</label>
+                                                            <input type="text" class="form-control" id="{{ product.name }}Name" name="services[{{ loop.index0 }}][details][products][{{ loop.index }}][name]" value="{{ product.name }}">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="{{ product.name }}Price" class="form-label">Cena</label>
+                                                            <input type="text" class="form-control" id="{{ product.name }}Price" name="services[{{ loop.index0 }}][details][products][{{ loop.index }}][price]" value="{{ product.price }}">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="{{ product.name }}Details" class="form-label">Szczegóły</label>
+                                                            <textarea class="form-control" id="{{ product.name }}Details" name="services[{{ loop.index0 }}][details][products][{{ loop.index }}][details]" rows="2">{{ product.details }}</textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                        <button class="btn btn-success" type="button" onclick="addProduct({{ loop.index0 }})">Dodaj Produkt</button>
                                     </div>
                                 </div>
-                            {% endfor %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <button class="btn btn-primary mt-4" type="button" onclick="addService()">Dodaj Usługę</button>
+                </div>
+                            
+                <!-- Features Section -->
+                <div class="tab-pane fade" id="features" role="tabpanel" aria-labelledby="features-tab">
+                    <h2>Cechy</h2>
+                    
+                    <!-- Tabs for feature editing -->
+                    <ul class="nav nav-tabs mb-4" id="featureTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active" id="feature1-tab" data-bs-toggle="tab" href="#feature1" role="tab" aria-controls="feature1" aria-selected="true">Funkcja 1</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link" id="feature2-tab" data-bs-toggle="tab" href="#feature2" role="tab" aria-controls="feature2" aria-selected="false">Funkcja 2</a>
+                        </li>
+                        <!-- More tabs will be added here dynamically -->
+                        <li class="nav-item">
+                            <button class="btn btn-primary" id="addFeatureButton">Dodaj Funkcję</button>
+                        </li>
+                    </ul>
+
+                    <!-- Tab content for feature editing -->
+                    <div class="tab-content" id="featureTabContent">
+                        <!-- Feature 1 -->
+                        <div class="tab-pane fade show active" id="feature1" role="tabpanel" aria-labelledby="feature1-tab">
+                            <h3>Funkcja 1</h3>
+                            <div class="mb-3">
+                                <label for="feature1Title" class="form-label">Tytuł</label>
+                                <input type="text" class="form-control" id="feature1Title" name="feature1[title]" value="{{ data.feature1.title }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="feature1Description" class="form-label">Opis</label>
+                                <textarea class="form-control" id="feature1Description" name="feature1[description]" rows="3">{{ data.feature1.description }}</textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="feature1ButtonText" class="form-label">Tekst Przycisku</label>
+                                <input type="text" class="form-control" id="feature1ButtonText" name="feature1[buttonText]" value="{{ data.feature1.buttonText }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="feature1ButtonLink" class="form-label">Link Przycisku</label>
+                                <input type="text" class="form-control" id="feature1ButtonLink" name="feature1[buttonLink]" value="{{ data.feature1.buttonLink }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="feature1ImageTop" class="form-label">Obraz na Górze (URL)</label>
+                                <input type="text" class="form-control" id="feature1ImageTop" name="feature1[imageTop]" value="{{ data.feature1.imageTop }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="feature1ImageBottom" class="form-label">Obraz na Dole (URL)</label>
+                                <input type="text" class="form-control" id="feature1ImageBottom" name="feature1[imageBottom]" value="{{ data.feature1.imageBottom }}">
+                            </div>
+                            <button class="btn btn-danger btn-sm" onclick="removeFeature('feature1')">Usuń</button>
                         </div>
-                        <button class="btn btn-success" type="button" onclick="addProduct({{ loop.index0 }})">Dodaj Produkt</button>
+
+                        <!-- Feature 2 -->
+                        <div class="tab-pane fade" id="feature2" role="tabpanel" aria-labelledby="feature2-tab">
+                            <h3>Funkcja 2</h3>
+                            <div class="mb-3">
+                                <label for="feature2Title" class="form-label">Tytuł</label>
+                                <input type="text" class="form-control" id="feature2Title" name="feature2[title]" value="{{ data.feature2.title }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="feature2Description" class="form-label">Opis</label>
+                                <textarea class="form-control" id="feature2Description" name="feature2[description]" rows="3">{{ data.feature2.description }}</textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="feature2ButtonText" class="form-label">Tekst Przycisku</label>
+                                <input type="text" class="form-control" id="feature2ButtonText" name="feature2[buttonText]" value="{{ data.feature2.buttonText }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="feature2ButtonLink" class="form-label">Link Przycisku</label>
+                                <input type="text" class="form-control" id="feature2ButtonLink" name="feature2[buttonLink]" value="{{ data.feature2.buttonLink }}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="feature2Image" class="form-label">Obraz (URL)</label>
+                                <input type="text" class="form-control" id="feature2Image" name="feature2[image]" value="{{ data.feature2.image }}">
+                            </div>
+                            <button class="btn btn-danger btn-sm" onclick="removeFeature('feature2')">Usuń</button>
+                        </div>
+
+                        <!-- New feature content will be added here -->
+                    </div>
+                </div>
+
+            <!-- Blog Section -->
+            <div class="tab-pane fade" id="blog" role="tabpanel" aria-labelledby="blog-tab">
+                <h2>Blog</h2>
+                
+                <div id="blogPostsContainer">
+                    <!-- Dynamiczne dodawanie postów -->
+                    <!-- Tylko dla demonstracji. W rzeczywistości posty będą generowane po stronie serwera lub w sposób dynamiczny -->
+                    {% for post in data.blog.posts %}
+                    <div class="post-item mb-4 border rounded p-3">
+                        <h3>{{ post.title }}</h3>
+                        <button type="button" class="btn btn-danger btn-sm mb-3" onclick="removePost(this)">Usuń Post</button>
+                        <div class="mb-3">
+                            <label for="blogPostImage{{ loop.index }}" class="form-label">Obraz (URL)</label>
+                            <input type="text" class="form-control" id="blogPostImage{{ loop.index }}" name="blog[posts][{{ loop.index0 }}][image]" value="{{ post.image }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="blogPostDate{{ loop.index }}" class="form-label">Data</label>
+                            <input type="date" class="form-control" id="blogPostDate{{ loop.index }}" name="blog[posts][{{ loop.index0 }}][date]" value="{{ post.date }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="blogPostContent{{ loop.index }}" class="form-label">Treść</label>
+                            <textarea class="form-control" id="blogPostContent{{ loop.index }}" name="blog[posts][{{ loop.index0 }}][content]" rows="3" required>{{ post.content }}</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="blogPostButtonText{{ loop.index }}" class="form-label">Tekst Przycisku</label>
+                            <input type="text" class="form-control" id="blogPostButtonText{{ loop.index }}" name="blog[posts][{{ loop.index0 }}][buttonText]" value="{{ post.buttonText }}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="blogPostButtonLink{{ loop.index }}" class="form-label">Link Przycisku</label>
+                            <input type="text" class="form-control" id="blogPostButtonLink{{ loop.index }}" name="blog[posts][{{ loop.index0 }}][buttonLink]" value="{{ post.buttonLink }}" >
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <button type="button" class="btn btn-primary" onclick="addPost()">Dodaj Nowy Post</button>
+                
+                <div class="mt-4">
+                    <h4>Ustawienia Bloga</h4>
+                    <div class="mb-3">
+                        <label for="blogButtonText" class="form-label">Główny Tekst Przycisku</label>
+                        <input type="text" class="form-control" id="blogButtonText" name="blog[buttonText]" value="{{ data.blog.buttonText }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="blogButtonLink" class="form-label">Główny Link Przycisku</label>
+                        <input type="text" class="form-control" id="blogButtonLink" name="blog[buttonLink]" value="{{ data.blog.buttonLink }}" required>
                     </div>
                 </div>
             </div>
-        {% endfor %}
-    </div>
-    <button class="btn btn-primary mt-4" type="button" onclick="addService()">Dodaj Usługę</button>
-</div>
 
+            <!-- Contact Banner Section -->
+            <div class="tab-pane fade" id="contactBanner" role="tabpanel" aria-labelledby="contact-banner-tab">
+                <h2>Baner kontaktowy</h2>
+                <div class="mb-3">
+                    <label for="contactBannerTitle" class="form-label">Tytuł</label>
+                    <input type="text" class="form-control" id="contactBannerTitle" name="contactBanner[title]" value="{{ data.contactBanner.title }}">
+                </div>
+                <div class="mb-3">
+                    <label for="contactBannerButtonText" class="form-label">Tekst Przycisku</label>
+                    <input type="text" class="form-control" id="contactBannerButtonText" name="contactBanner[buttonText]" value="{{ data.contactBanner.buttonText }}">
+                </div>
+                <div class="mb-3">
+                    <label for="contactBannerButtonLink" class="form-label">Link Przycisku</label>
+                    <input type="text" class="form-control" id="contactBannerButtonLink" name="contactBanner[buttonLink]" value="{{ data.contactBanner.buttonLink }}">
+                </div>
+                <div class="mb-3">
+                    <label for="contactBannerBackgroundImage" class="form-label">Obraz tła (URL)</label>
+                    <input type="text" class="form-control" id="contactBannerBackgroundImage" name="contactBanner[backgroundImage]" value="{{ data.contactBanner.backgroundImage }}">
+                </div>
+            </div>
+
+            <!-- About Us Section -->
+            <div class="tab-pane fade" id="aboutUs" role="tabpanel" aria-labelledby="about-tab">
+                <h2>O nas</h2>
+                <div class="mb-3">
+                    <label for="aboutTitle" class="form-label">Tytuł</label>
+                    <input type="text" class="form-control" id="aboutTitle" name="aboutUs[title]" value="{{ data.aboutUs.title }}">
+                </div>
+                <div class="mb-3">
+                    <label for="aboutDescription" class="form-label">Opis</label>
+                    <textarea class="form-control" id="aboutDescription" name="aboutUs[description]" rows="3">{{ data.aboutUs.description }}</textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="aboutImageSrc" class="form-label">Źródło obrazu (URL)</label>
+                    <input type="text" class="form-control" id="aboutImageSrc" name="aboutUs[imageSrc]" value="{{ data.aboutUs.imageSrc }}">
+                </div>
+                <div class="mb-3">
+                    <label for="aboutBulletPoints" class="form-label">Punkty</label>
+                    <textarea class="form-control" id="aboutBulletPoints" name="aboutUs[bulletPoints]" rows="3">{{ data.aboutUs.bulletPoints | join(', ') }}</textarea>
+                </div>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="tab-pane fade" id="contactSection" role="tabpanel" aria-labelledby="contact-tab">
+                <h2>{{ data.contactSection.title }}</h2>
+                <div class="mb-3">
+                    <label for="contactTitle" class="form-label">Tytuł</label>
+                    <input type="text" class="form-control" id="contactTitle" name="contactSection[title]" value="{{ data.contactSection.title }}">
+                </div>
+                <div class="mb-3">
+                    <label for="contactDescription" class="form-label">Opis</label>
+                    <textarea class="form-control" id="contactDescription" name="contactSection[description]" rows="3">{{ data.contactSection.description }}</textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="contactAddress" class="form-label">Adres</label>
+                    <input type="text" class="form-control" id="contactAddress" name="contactSection[address]" value="{{ data.contactSection.address }}">
+                </div>
+                <div class="mb-3">
+                    <label for="contactPhone" class="form-label">Telefon</label>
+                    <input type="text" class="form-control" id="contactPhone" name="contactSection[phone]" value="{{ data.contactSection.phone }}">
+                </div>
+                <div class="mb-3">
+                    <label for="contactEmail" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="contactEmail" name="contactSection[email]" value="{{ data.contactSection.email }}">
+                </div>
+                <div class="mb-3">
+                    <label for="contactMap" class="form-label">Link do mapy</label>
+                    <input type="text" class="form-control" id="contactMap" name="contactSection[map]" value="{{ data.contactSection.map }}">
+                </div>
+                <div class="mb-3">
+                    <label for="contactButtonLink" class="form-label">Link przycisku</label>
+                    <input type="text" class="form-control" id="contactButtonLink" name="contactSection[buttonLink]" value="{{ data.contactSection.buttonLink }}">
+                </div>
+            </div>
+
+            <!-- Przyciski nawigacyjne -->
+            <div class="mt-4">
+                <button type="submit" class="btn btn-primary">Zapisz zmiany</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 <script>
     let services = {{ data.services | tojson }};
     
@@ -208,6 +434,14 @@
                     <div id="collapse${serviceIndex}" class="collapse show" aria-labelledby="heading${serviceIndex}" data-parent="#servicesAccordion">
                         <div class="card-body">
                             <div class="mb-3">
+                                <label for="${service.title}Icon" class="form-label">Ikona</label>
+                                <input type="text" class="form-control" id="${service.title}Icon" name="services[${serviceIndex}][icon]" value="${service.icon}">
+                            </div>
+                            <div class="mb-3">
+                                <label for="${service.title}Title" class="form-label">Tytuł</label>
+                                <input type="text" class="form-control" id="${service.title}Title" name="services[${serviceIndex}][title]" value="${service.title}">
+                            </div>
+                            <div class="mb-3">
                                 <label for="${service.title}Description" class="form-label">Opis</label>
                                 <textarea class="form-control" id="${service.title}Description" name="services[${serviceIndex}][description]" rows="3">${service.description}</textarea>
                             </div>
@@ -235,6 +469,10 @@
                                         </div>
                                         <div class="card-body">
                                             <div class="mb-3">
+                                                <label for="${product.name}Name" class="form-label">Tytuł</label>
+                                                <input type="text" class="form-control" id="${product.name}Name" name="services[${serviceIndex}][details][products][${productIndex}][name]" value="${product.name}">
+                                            </div>
+                                            <div class="mb-3">
                                                 <label for="${product.name}Price" class="form-label">Cena</label>
                                                 <input type="text" class="form-control" id="${product.name}Price" name="services[${serviceIndex}][details][products][${productIndex}][price]" value="${product.price}">
                                             </div>
@@ -259,146 +497,124 @@
     document.addEventListener("DOMContentLoaded", renderServices);
 </script>
 
+<script>
+    function addPost() {
+        const container = document.getElementById('blogPostsContainer');
+        const index = container.children.length;
 
-                <!-- Features Section -->
-                <div class="tab-pane fade" id="features" role="tabpanel" aria-labelledby="features-tab">
-                    <h2>Cechy</h2>
-                    <!-- Feature 1 -->
-                    <div class="mb-4">
-                        <h3>{{ data.feature1.title }}</h3>
-                        <div class="mb-3">
-                            <label for="feature1Description" class="form-label">Opis</label>
-                            <textarea class="form-control" id="feature1Description" name="feature1[description]" rows="3">{{ data.feature1.description }}</textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="feature1ButtonText" class="form-label">Tekst Przycisku</label>
-                            <input type="text" class="form-control" id="feature1ButtonText" name="feature1[buttonText]" value="{{ data.feature1.buttonText }}">
-                        </div>
-                        <div class="mb-3">
-                            <label for="feature1ButtonLink" class="form-label">Link Przycisku</label>
-                            <input type="text" class="form-control" id="feature1ButtonLink" name="feature1[buttonLink]" value="{{ data.feature1.buttonLink }}">
-                        </div>
-                        <div class="mb-3">
-                            <label for="feature1ImageTop" class="form-label">Obraz na Górze (URL)</label>
-                            <input type="text" class="form-control" id="feature1ImageTop" name="feature1[imageTop]" value="{{ data.feature1.imageTop }}">
-                        </div>
-                    </div>
-                    <!-- Feature 2 -->
-                    <div class="mb-4">
-                        <h3>{{ data.feature2.title }}</h3>
-                        <div class="mb-3">
-                            <label for="feature2Description" class="form-label">Opis</label>
-                            <textarea class="form-control" id="feature2Description" name="feature2[description]" rows="3">{{ data.feature2.description }}</textarea>
-                        </div>
-                        <div class="mb-3">
-                            <label for="feature2ButtonText" class="form-label">Tekst Przycisku</label>
-                            <input type="text" class="form-control" id="feature2ButtonText" name="feature2[buttonText]" value="{{ data.feature2.buttonText }}">
-                        </div>
-                        <div class="mb-3">
-                            <label for="feature2ButtonLink" class="form-label">Link Przycisku</label>
-                            <input type="text" class="form-control" id="feature2ButtonLink" name="feature2[buttonLink]" value="{{ data.feature2.buttonLink }}">
-                        </div>
-                        <div class="mb-3">
-                            <label for="feature2ImageTop" class="form-label">Obraz na Górze (URL)</label>
-                            <input type="text" class="form-control" id="feature2ImageTop" name="feature2[imageTop]" value="{{ data.feature2.imageTop }}">
-                        </div>
-                    </div>
+        const postHTML = `
+            <div class="post-item mb-4 border rounded p-3">
+                <h3>Nowy Post ${index + 1}</h3>
+                <button type="button" class="btn btn-danger btn-sm mb-3" onclick="removePost(this)">Usuń Post</button>
+                <div class="mb-3">
+                    <label for="blogPostImage${index}" class="form-label">Obraz (URL)</label>
+                    <input type="text" class="form-control" id="blogPostImage${index}" name="blog[posts][${index}][image]" required>
                 </div>
-
-                <!-- Blog Section -->
-                <div class="tab-pane fade" id="blog" role="tabpanel" aria-labelledby="blog-tab">
-                    <h2>Blog</h2>
-                    {% for post in data.blog %}
-                        <div class="mb-4">
-                            <h3>{{ post.title }}</h3>
-                            <div class="mb-3">
-                                <label for="{{ post.title }}Content" class="form-label">Treść</label>
-                                <textarea class="form-control" id="{{ post.title }}Content" name="blog[{{ loop.index0 }}][content]" rows="3">{{ post.content }}</textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label for="{{ post.title }}Author" class="form-label">Autor</label>
-                                <input type="text" class="form-control" id="{{ post.title }}Author" name="blog[{{ loop.index0 }}][author]" value="{{ post.author }}">
-                            </div>
-                            <div class="mb-3">
-                                <label for="{{ post.title }}Date" class="form-label">Data</label>
-                                <input type="date" class="form-control" id="{{ post.title }}Date" name="blog[{{ loop.index0 }}][date]" value="{{ post.date }}">
-                            </div>
-                        </div>
-                    {% endfor %}
+                <div class="mb-3">
+                    <label for="blogPostDate${index}" class="form-label">Data</label>
+                    <input type="date" class="form-control" id="blogPostDate${index}" name="blog[posts][${index}][date]" required>
                 </div>
-
-                <!-- Contact Banner Section -->
-                <div class="tab-pane fade" id="contactBanner" role="tabpanel" aria-labelledby="contact-banner-tab">
-                    <h2>Baner kontaktowy</h2>
-                    <div class="mb-3">
-                        <label for="contactBannerText" class="form-label">Tekst</label>
-                        <input type="text" class="form-control" id="contactBannerText" name="contactBanner[text]" value="{{ data.contactBanner.text }}">
-                    </div>
-                    <div class="mb-3">
-                        <label for="contactBannerButtonText" class="form-label">Tekst Przycisku</label>
-                        <input type="text" class="form-control" id="contactBannerButtonText" name="contactBanner[buttonText]" value="{{ data.contactBanner.buttonText }}">
-                    </div>
-                    <div class="mb-3">
-                        <label for="contactBannerButtonLink" class="form-label">Link Przycisku</label>
-                        <input type="text" class="form-control" id="contactBannerButtonLink" name="contactBanner[buttonLink]" value="{{ data.contactBanner.buttonLink }}">
-                    </div>
+                <div class="mb-3">
+                    <label for="blogPostContent${index}" class="form-label">Treść</label>
+                    <textarea class="form-control" id="blogPostContent${index}" name="blog[posts][${index}][content]" rows="3" required></textarea>
                 </div>
-
-                <!-- About Us Section -->
-                <div class="tab-pane fade" id="aboutUs" role="tabpanel" aria-labelledby="about-tab">
-                    <h2>O nas</h2>
-                    <div class="mb-3">
-                        <label for="aboutTitle" class="form-label">Tytuł</label>
-                        <input type="text" class="form-control" id="aboutTitle" name="aboutUs[title]" value="{{ data.aboutUs.title }}">
-                    </div>
-                    <div class="mb-3">
-                        <label for="aboutSubtitle" class="form-label">Podtytuł</label>
-                        <textarea class="form-control" id="aboutSubtitle" name="aboutUs[subtitle]" rows="3">{{ data.aboutUs.subtitle }}</textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label for="aboutImageUrl" class="form-label">Obraz (URL)</label>
-                        <input type="text" class="form-control" id="aboutImageUrl" name="aboutUs[imageUrl]" value="{{ data.aboutUs.imageUrl }}">
-                    </div>
-                    <div class="mb-3">
-                        <label for="aboutText" class="form-label">Tekst</label>
-                        <textarea class="form-control" id="aboutText" name="aboutUs[text]" rows="3">{{ data.aboutUs.text }}</textarea>
-                    </div>
+                <div class="mb-3">
+                    <label for="blogPostButtonText${index}" class="form-label">Tekst Przycisku</label>
+                    <input type="text" class="form-control" id="blogPostButtonText${index}" name="blog[posts][${index}][buttonText]" required>
                 </div>
-
-                <!-- Contact Section -->
-                <div class="tab-pane fade" id="contactSection" role="tabpanel" aria-labelledby="contactBanner-section-tab">
-                    <h2>Sekcja kontaktu</h2>
-                    <div class="mb-3">
-                        <label for="contactTitle" class="form-label">Tytuł</label>
-                        <input type="text" class="form-control" id="contactTitle" name="contactBanner[title]" value="{{ data.contactBanner.title }}">
-                    </div>
-                    <div class="mb-3">
-                        <label for="contactSubtitle" class="form-label">Podtytuł</label>
-                        <textarea class="form-control" id="contactSubtitle" name="contactBanner[subtitle]" rows="3">{{ data.contactBanner.subtitle }}</textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label for="contactAddress" class="form-label">Adres</label>
-                        <input type="text" class="form-control" id="contactAddress" name="contactBanner[address]" value="{{ data.contactBanner.address }}">
-                    </div>
-                    <div class="mb-3">
-                        <label for="contactPhone" class="form-label">Telefon</label>
-                        <input type="text" class="form-control" id="contactPhone" name="contactBanner[phone]" value="{{ data.contactBanner.phone }}">
-                    </div>
-                    <div class="mb-3">
-                        <label for="contactEmail" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="contactEmail" name="contactBanner[email]" value="{{ data.contactBanner.email }}">
-                    </div>
+                <div class="mb-3">
+                    <label for="blogPostButtonLink${index}" class="form-label">Link Przycisku</label>
+                    <input type="text" class="form-control" id="blogPostButtonLink${index}" name="blog[posts][${index}][buttonLink]" >
                 </div>
             </div>
+        `;
+        
+        container.insertAdjacentHTML('beforeend', postHTML);
+    }
 
-            <!-- Przyciski nawigacyjne -->
-            <div class="mt-4">
-                <button type="submit" class="btn btn-primary">Zapisz zmiany</button>
+    function removePost(button) {
+        button.closest('.post-item').remove();
+    }
+</script>
+
+<script>
+    let featureCount = 2; // Start from feature 2
+    
+    document.getElementById('addFeatureButton').addEventListener('click', function() {
+        featureCount++;
+        
+        // Create new tab link
+        const tabLink = document.createElement('li');
+        tabLink.className = 'nav-item';
+        tabLink.innerHTML = `
+            <a class="nav-link" id="feature${featureCount}-tab" data-bs-toggle="tab" href="#feature${featureCount}" role="tab" aria-controls="feature${featureCount}" aria-selected="false">Funkcja ${featureCount}</a>
+        `;
+        
+        // Append new tab link to tab list
+        document.getElementById('featureTabs').insertBefore(tabLink, document.getElementById('addFeatureButton').parentElement);
+        
+        // Create new tab content
+        const tabContent = document.createElement('div');
+        tabContent.className = 'tab-pane fade';
+        tabContent.id = `feature${featureCount}`;
+        tabContent.role = 'tabpanel';
+        tabContent.setAttribute('aria-labelledby', `feature${featureCount}-tab`);
+        tabContent.innerHTML = `
+            <h3>Funkcja ${featureCount}</h3>
+            <div class="mb-3">
+                <label for="feature${featureCount}Title" class="form-label">Tytuł</label>
+                <input type="text" class="form-control" id="feature${featureCount}Title" name="feature${featureCount}[title]" value="">
             </div>
-        </form>
-    </div>
+            <div class="mb-3">
+                <label for="feature${featureCount}Description" class="form-label">Opis</label>
+                <textarea class="form-control" id="feature${featureCount}Description" name="feature${featureCount}[description]" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="feature${featureCount}ButtonText" class="form-label">Tekst Przycisku</label>
+                <input type="text" class="form-control" id="feature${featureCount}ButtonText" name="feature${featureCount}[buttonText]" value="">
+            </div>
+            <div class="mb-3">
+                <label for="feature${featureCount}ButtonLink" class="form-label">Link Przycisku</label>
+                <input type="text" class="form-control" id="feature${featureCount}ButtonLink" name="feature${featureCount}[buttonLink]" value="">
+            </div>
+            <div class="mb-3">
+                <label for="feature${featureCount}ImageTop" class="form-label">Obraz na Górze (URL)</label>
+                <input type="text" class="form-control" id="feature${featureCount}ImageTop" name="feature${featureCount}[imageTop]" value="">
+            </div>
+            <div class="mb-3">
+                <label for="feature${featureCount}ImageBottom" class="form-label">Obraz na Dole (URL)</label>
+                <input type="text" class="form-control" id="feature${featureCount}ImageBottom" name="feature${featureCount}[imageBottom]" value="">
+            </div>
+            <button class="btn btn-danger btn-sm" onclick="removeFeature('feature${featureCount}')">Usuń</button>
+        `;
+    
+        // Append new tab content to tab content area
+        document.getElementById('featureTabContent').appendChild(tabContent);
+        
+        // Activate new tab
+        const newTab = new bootstrap.Tab(document.getElementById(`feature${featureCount}-tab`));
+        newTab.show();
+    });
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    function removeFeature(featureId) {
+        // Remove tab content
+        document.getElementById(featureId).remove();
+        
+        // Remove tab link
+        const tabLink = document.getElementById(`${featureId}-tab`);
+        tabLink.parentElement.remove();
+        
+        // Activate the first tab if there are any tabs left
+        const firstTab = document.querySelector('.nav-link');
+        if (firstTab) {
+            const firstTabContentId = firstTab.getAttribute('href').substring(1);
+            const firstTabContent = document.getElementById(firstTabContentId);
+            if (firstTabContent) {
+                const firstBootstrapTab = new bootstrap.Tab(firstTab);
+                firstBootstrapTab.show();
+            }
+        }
+    }
+    </script>
 </body>
 </html>

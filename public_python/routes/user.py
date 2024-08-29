@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, send_from_directory, abort, request, redirect, url_for, jsonify, current_app, flash
 from flask_login import UserMixin, login_required, current_user
 from werkzeug.security import check_password_hash, generate_password_hash
+from datetime import datetime
 from models.user import User
 import json
 import os
@@ -618,105 +619,149 @@ def toggle_registration():
 
 OFERTA_JSON_PATH = os.path.join('baza_danych', 'oferta.json')
 
+# Mapping Polish month names to English month names
+MONTHS_TO_ENGLISH = {
+    'stycznia': 'January', 'lutego': 'February', 'marca': 'March', 'kwietnia': 'April',
+    'maja': 'May', 'czerwca': 'June', 'lipca': 'July', 'sierpnia': 'August',
+    'września': 'September', 'października': 'October', 'listopada': 'November', 'grudnia': 'December'
+}
+
+# Reverse mapping from English month names to Polish month names
+ENGLISH_TO_MONTHS = {v: k for k, v in MONTHS_TO_ENGLISH.items()}
+
+def convert_month_name_to_english(date_string):
+    for pl_month, en_month in MONTHS_TO_ENGLISH.items():
+        if pl_month in date_string:
+            return date_string.replace(pl_month, en_month)
+    return date_string
+
+def convert_month_name_to_polish(date_string):
+    for en_month, pl_month in ENGLISH_TO_MONTHS.items():
+        if en_month in date_string:
+            return date_string.replace(en_month, pl_month)
+    return date_string
+
+def format_date(date_string, to_english=True):
+    """Convert date format with optional language conversion."""
+    if to_english:
+        # Convert from Polish month names to English
+        date_string = convert_month_name_to_english(date_string)
+        # Convert date from format "25 April 2019" to "2019-04-25"
+        return datetime.strptime(date_string, "%d %B %Y").strftime("%Y-%m-%d")
+    else:
+        # Convert date from format "2019-04-25" to "25 kwietnia 2019"
+        dt = datetime.strptime(date_string, "%Y-%m-%d")
+        date_string = dt.strftime("%d %B %Y")
+        return convert_month_name_to_polish(date_string)
+
+def update_dates_in_posts(data, to_english=True):
+    """Aktualizuje format dat w postach na blogu."""
+    if 'blog' in data and 'posts' in data['blog']:
+        for post in data['blog']['posts']:
+            post['date'] = format_date(post['date'], to_english)
+    return data
+
 def load_offer_data():
     """Ładuje dane z pliku JSON."""
     if os.path.exists(OFERTA_JSON_PATH):
         with open(OFERTA_JSON_PATH, 'r', encoding='utf-8') as f:
-            return json.load(f)
+            return update_dates_in_posts(json.load(f), to_english=True)
     return {}
 
 def save_offer_data(data):
     """Zapisuje dane do pliku JSON."""
+    # Convert dates back to Polish format before saving
+    updated_data = update_dates_in_posts(data, to_english=False)
     with open(OFERTA_JSON_PATH, 'w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=4)
+        json.dump(updated_data, f, ensure_ascii=False, indent=4)
+
+def update_section(data, form_data, section_name):
+    """Aktualizuje sekcję danych na podstawie formularza."""
+    for key, value in form_data.items():
+        if key.startswith(f'{section_name}['):
+            sub_key = key[len(section_name) + 1:-1]  # Usuwa "section_name[" z początku i "]" z końca
+            data[section_name][sub_key] = value[0]
+
+def update_services_section(oferta_data, form_data):
+    services = []
+    service_keys = [key for key in form_data.keys() if 'services[' in key and '][' in key]
+    service_indices = sorted(set(int(key.split('[')[1].split(']')[0]) for key in service_keys))
+
+    for idx in service_indices:
+        service_data = {
+            'icon': form_data.get(f'services[{idx}][icon]', [''])[0],
+            'title': form_data.get(f'services[{idx}][title]', [''])[0],
+            'description': form_data.get(f'services[{idx}][description]', [''])[0],
+            'buttonText': form_data.get(f'services[{idx}][buttonText]', [''])[0],
+            'services': form_data.get(f'services[{idx}][services]', [''])[0].split(', '),
+            'details': {
+                'additionalInfo': form_data.get(f'services[{idx}][details][additionalInfo]', [''])[0],
+                'products': []
+            }
+        }
+
+        product_keys = [key for key in form_data.keys() if f'services[{idx}][details][products][' in key]
+        product_indices = sorted(set(int(key.split('[')[4].split(']')[0]) for key in product_keys))
+
+        for p_idx in product_indices:
+            product_data = {
+                'name': form_data.get(f'services[{idx}][details][products][{p_idx}][name]', [''])[0],
+                'price': form_data.get(f'services[{idx}][details][products][{p_idx}][price]', [''])[0],
+                'details': form_data.get(f'services[{idx}][details][products][{p_idx}][details]', [''])[0],
+            }
+            service_data['details']['products'].append(product_data)
+
+        services.append(service_data)
+
+    oferta_data['services'] = services
 
 @user_bp.route('/profile/pages/oferta', methods=['GET', 'POST'])
 @login_required
 def update_oferta():
     if request.method == 'POST':
-        # Pobieranie danych z formularza
-        updated_offer = {
-            "hero": {
-                "title": request.form.get('hero[title]'),
-                "subtitle": request.form.get('hero[subtitle]'),
-                "buttonText": request.form.get('hero[buttonText]'),
-                "buttonLink": request.form.get('hero[buttonLink]'),
-                "backgroundImage": request.form.get('hero[backgroundImage]')
-            },
-            "services": [],
-            "contactSection": {
-                "title": request.form.get('contactSection[title]'),
-                "buttonText": request.form.get('contactSection[buttonText]'),
-                "buttonLink": request.form.get('contactSection[buttonLink]'),
-                "backgroundImage": request.form.get('contactSection[backgroundImage]')
-            },
-            "features": [],
-            "blog": [],
-            "contactBanner": {
-                "title": request.form.get('contactBanner[title]'),
-                "subtitle": request.form.get('contactBanner[subtitle]'),
-                "buttonText": request.form.get('contactBanner[buttonText]'),
-                "buttonLink": request.form.get('contactBanner[buttonLink]'),
-                "backgroundImage": request.form.get('contactBanner[backgroundImage]')
-            },
-            "aboutUs": {
-                "title": request.form.get('aboutUs[title]'),
-                "content": request.form.get('aboutUs[content]')
-            }
-        }
+        try:
+            form_data = request.form.to_dict(flat=False)
+            oferta_data = load_offer_data()
 
-        # Przetwarzanie sekcji Usług
-        service_count = len(request.form.getlist('services[0][title]'))  # Zakładamy, że każda usługa ma tytuł
-        for i in range(service_count):
-            service = {
-                "icon": request.form.get(f'services[{i}][icon]'),
-                "title": request.form.get(f'services[{i}][title]'),
-                "description": request.form.get(f'services[{i}][description]'),
-                "buttonText": request.form.get(f'services[{i}][buttonText]'),
-                "details": {
-                    "products": [],
-                    "additionalInfo": request.form.get(f'services[{i}][details][additionalInfo]')
-                }
-            }
+            # Aktualizacja sekcji "hero"
+            update_section(oferta_data, form_data, 'hero')
 
-            product_count = len(request.form.getlist(f'services[{i}][details][products][0][name]'))
-            for j in range(product_count):
-                product = {
-                    "name": request.form.get(f'services[{i}][details][products][{j}][name]'),
-                    "price": request.form.get(f'services[{i}][details][products][{j}][price]'),
-                    "details": request.form.get(f'services[{i}][details][products][{j}][details]')
-                }
-                service['details']['products'].append(product)
+            # Aktualizacja sekcji "services"
+            update_services_section(oferta_data, form_data)
 
-            updated_offer["services"].append(service)
+            # Aktualizacja pozostałych sekcji
+            for section in ['contactSection', 'feature1', 'feature2', 'contactBanner', 'aboutUs']:
+                if section in form_data:
+                    update_section(oferta_data, form_data, section)
 
-        # Przetwarzanie sekcji Cech
-        feature_count = len(request.form.getlist('features[0][title]'))  # Zakładamy, że każda cecha ma tytuł
-        for i in range(feature_count):
-            feature = {
-                "title": request.form.get(f'features[{i}][title]'),
-                "description": request.form.get(f'features[{i}][description]'),
-                "icon": request.form.get(f'features[{i}][icon]')
-            }
-            updated_offer["features"].append(feature)
+            # Aktualizacja sekcji "blog"
+            if 'blog' in form_data:
+                posts = []
+                post_keys = [key for key in form_data.keys() if 'blog[posts]' in key]
+                post_indices = sorted(set(int(key.split('[')[2].split(']')[0]) for key in post_keys))
 
-        # Przetwarzanie sekcji Blog
-        blog_count = len(request.form.getlist('blog[0][title]'))  # Zakładamy, że każdy post ma tytuł
-        for i in range(blog_count):
-            post = {
-                "title": request.form.get(f'blog[{i}][title]'),
-                "content": request.form.get(f'blog[{i}][content]'),
-                "author": request.form.get(f'blog[{i}][author]')
-            }
-            updated_offer["blog"].append(post)
+                for idx in post_indices:
+                    post_data = {
+                        'image': form_data.get(f'blog[posts][{idx}][image]', [''])[0],
+                        'title': form_data.get(f'blog[posts][{idx}][title]', [''])[0],
+                        'date': form_data.get(f'blog[posts][{idx}][date]', [''])[0],
+                        'content': form_data.get(f'blog[posts][{idx}][content]', [''])[0],
+                        'buttonText': form_data.get(f'blog[posts][{idx}][buttonText]', [''])[0],
+                        'buttonLink': form_data.get(f'blog[posts][{idx}][buttonLink]', [''])[0]
+                    }
+                    posts.append(post_data)
 
-        # Zapisanie zaktualizowanych danych do pliku JSON
-        save_offer_data(updated_offer)
+                oferta_data['blog']['posts'] = posts
+                update_section(oferta_data['blog'], form_data, 'blog')
 
-        flash('Oferta została zaktualizowana pomyślnie.', 'success')
-        return redirect(url_for('user.update_offer'))
+            save_offer_data(oferta_data)
 
-    # Jeśli metoda to GET, wyświetl formularz z aktualnymi danymi
+            flash('Oferta została zaktualizowana pomyślnie!', 'success')
+            return redirect(url_for('user.update_oferta'))
+
+        except Exception as e:
+            flash(f'Wystąpił błąd podczas aktualizacji oferty: {str(e)}', 'danger')
+            return redirect(url_for('user.update_oferta'))
+
     current_offer = load_offer_data()
-
     return render_template('profile/pages/oferta.html', data=current_offer)
