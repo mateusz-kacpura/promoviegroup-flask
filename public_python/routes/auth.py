@@ -14,7 +14,7 @@ def login():
         
         if user and check_password_hash(user.password, password):
             login_user(user)
-            return redirect(url_for('user.profile'))
+            return redirect(url_for('user.admin'))
         
         flash('Invalid credentials', 'danger')
     

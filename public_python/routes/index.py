@@ -7,7 +7,7 @@ from datetime import datetime
 
 index_bp = Blueprint('index', __name__)
 
-pages = {
+dashboard = {
     'o-nas': 'hero.html',
     'oferta': 'oferta.html',
     'galeria': 'galeria.html',
@@ -22,7 +22,7 @@ pages = {
 @index_bp.route('/')
 @index_bp.route('/<page>')
 def index(page='o-nas'):
-    if page in pages:
+    if page in dashboard:
         ip_address = request.remote_addr
         user_agent = request.headers.get('User-Agent')
         parsed_ua = parse(user_agent)

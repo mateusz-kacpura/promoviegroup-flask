@@ -1,6 +1,6 @@
 {
     "hero": {
-        "backgroundImage": "efekty/adds/opinie/images/DSC05482-1-2.jpg",
+        "backgroundImage": "adds/opinie/images/DSC05482-1-2.jpg",
         "title": "Oferta Usług Fotograficznych, Filmowych, Dronowych i Transmisji na Stronę Internetową",
         "description": "Nasz zespół oferuje kompleksowe usługi w zakresie fotografii, filmowania, dronów oraz transmisji na stronę internetową. Jesteśmy gotowi uchwycić najważniejsze chwile i dostarczyć wyjątkowe treści wizualne dla Państwa."
     },
@@ -8,19 +8,19 @@
         "title": "Odkryj wyjątkowy świat fotografii i filmu",
         "description": "Wejdź w świat magii i emocji, jaką oferuje fotografia i film. Nasze projekty przeniosą Cię w niezwykłe podróże, gdzie każde zdjęcie opowiada własną historię.",
         "buttonText": "Zamów u nas film",
-        "image1": "efekty/adds/opinie/images/431220026_930507098566627_1926631657014937817_n.jpg",
-        "image2": "efekty/adds/opinie/images/433112654_1562209211229027_546412977909240967_n.jpg"
+        "image1": "adds/opinie/images/431220026_930507098566627_1926631657014937817_n.jpg",
+        "image2": "adds/opinie/images/433112654_1562209211229027_546412977909240967_n.jpg"
     },
     "clients": [
-        "efekty/adds/hero/assets/loga/294797940_479086210808504_8667669129994940009_n.png",
-        "efekty/adds/hero/assets/loga/1706801724412.jpg",
-        "efekty/adds/hero/assets/loga/1706801724426.jpg",
-        "efekty/adds/hero/assets/loga/da635a33-ac6f-4f65-b6eb-fee731bbd382_kopia.jpg",
-        "efekty/adds/hero/assets/loga/logo.png"
+        "adds/hero/assets/loga/294797940_479086210808504_8667669129994940009_n.png",
+        "adds/hero/assets/loga/1706801724412.jpg",
+        "adds/hero/assets/loga/1706801724426.jpg",
+        "adds/hero/assets/loga/da635a33-ac6f-4f65-b6eb-fee731bbd382_kopia.jpg",
+        "adds/hero/assets/loga/logo.png"
     ],
     "testimonials": [
         {
-            "photo": "efekty/adds/opinie/images/klienci/pawelmiszczynski.jpg",
+            "photo": "adds/opinie/images/klienci/pawelmiszczynski.jpg",
             "author": "Paweł Miszczynski",
             "occupation": "Chiropraktyk i Fizjoterapeuta",
             "quote": "Współpraca z Pro Movie Group okazała się niezwykle satysfakcjonująca. Ich profesjonalizm oraz umiejętność realizacji projektów video przekroczyły moje oczekiwania. Od pierwszego kontaktu do końcowego montażu, cały proces przebiegał sprawnie i efektywnie. Firma wykazała się zrozumieniem naszych potrzeb oraz dostosowaniem się do harmonogramu pracy. Efekty ich pracy były imponujące i zdecydowanie poleciłbym ich usługi wszystkim poszukującym wysokiej jakości produkcji video.",
@@ -31,7 +31,7 @@
             }
         },
         {
-            "photo": "efekty/adds/opinie/images/klienci/jakubwitek.jpg",
+            "photo": "adds/opinie/images/klienci/jakubwitek.jpg",
             "author": "Jakub Witek",
             "occupation": "Prezes Zarządu Orły Polska Fundacja Promocji i Wspierania Sportu",
             "quote": "Realizacje materiałów wideo z organizowanych przez nas wydarzeń od lat powierzamy Pro Movie Group. To projekt złożony z profesjonalistów, którzy, doskonale radząc sobie z uwiecznianiem tego co dla naszej fundacji najważniejsze i czym później możemy się dzielić z naszymi odbiorcami. Serdecznie polecam.",
@@ -42,7 +42,7 @@
             }
         },
         {
-            "photo": "efekty/adds/opinie/images/klienci/aniagacek.jpg",
+            "photo": "adds/opinie/images/klienci/aniagacek.jpg",
             "author": "Ania Gacek",
             "occupation": "Klient",
             "quote": "Chcielibyśmy serdecznie polecić firmę Pana Grzegorza, który kręcił dla nas klip z okazji 15 rocznicy ślubu. Jego profesjonalizm i zaangażowanie były widoczne na każdym kroku. Pan Grzegorz uchwycił wszystkie ważne momenty w sposób naturalny i pełen emocji, co sprawiło że film jest dla nas wspaniałą pamiątką na całe życie. Gorąco polecamy jego usługi wszystkim którzy szukają profesjonalnego i utalentowanego kamerzysty. Ania i Robert",
@@ -60,7 +60,7 @@
         "bulletPoints": []
     },
     "contact": {
-        "backgroundImage": "efekty/adds/opinie/images/DSC05454_crop.jpg",
+        "backgroundImage": "adds/opinie/images/DSC05454_crop.jpg",
         "title": "Gotowi by utrwalić Twoje wyjątkowe chwile",
         "buttonLink": "kontakt",
         "buttonText": "Kontakt",

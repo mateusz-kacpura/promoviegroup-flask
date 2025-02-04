@@ -8,15 +8,15 @@ import os
 
 user_bp = Blueprint('user', __name__, url_prefix='/user', template_folder='templates')
 
-@user_bp.route('/profile')
+@user_bp.route('/admin')
 @login_required
-def profile():
-    return render_template('profile.html', user=current_user, section='home')
+def admin():
+    return render_template('admin.html', user=current_user, section='home')
 
-@user_bp.route('/profile/pages/<section>')
+@user_bp.route('/admin/dashboard/<section>')
 @login_required
-def profile_section(section):
-    return render_template('profile.html', user=current_user, section=section)
+def admin_section(section):
+    return render_template('admin.html', user=current_user, section=section)
 
 HERO_JSON_PATH = os.path.join('baza_danych', 'hero.json')
 
@@ -41,7 +41,7 @@ def split_into_columns(data):
     result = columns
     return result
 
-@user_bp.route('/profile/pages/hero', methods=['GET', 'POST'])
+@user_bp.route('/admin/dashboard/hero', methods=['GET', 'POST'])
 @login_required
 def update_hero():
     """Obsługuje aktualizację sekcji hero."""
@@ -199,7 +199,7 @@ def update_hero():
         with open(HERO_JSON_PATH, 'r', encoding='utf-8') as json_file:
             data = json.load(json_file)
 
-        return render_template('profile/pages/hero.html', json_data=data)
+        return render_template('admin/dashboard/hero.html', json_data=data)
 
     except Exception as e:
         flash(f'Wystąpił błąd podczas wczytywania danych: {str(e)}', 'danger')
@@ -339,7 +339,7 @@ def browse_files():
     
 MAIL_JSON_PATH = os.path.join('baza_danych', 'mail.json')
 
-@user_bp.route('/profile/pages/mail', methods=['GET'])
+@user_bp.route('/admin/dashboard/mail', methods=['GET'])
 @login_required
 def display_mail():
     try:
@@ -348,9 +348,9 @@ def display_mail():
     except (FileNotFoundError, json.JSONDecodeError):
         mails = []
 
-    return render_template('profile/pages/mail.html', mails=mails)
+    return render_template('admin/dashboard/mail.html', mails=mails)
 
-@user_bp.route('/profile/pages/delete_mail', methods=['POST'])
+@user_bp.route('/admin/dashboard/delete_mail', methods=['POST'])
 @login_required
 def delete_mail():
     id_to_delete = request.form.get('id')
@@ -383,7 +383,7 @@ def delete_mail():
 VISITORS_JSON_PATH = os.path.join('baza_danych', 'visitors.json')
 VISITORS_PER_PAGE = 10  # Number of visitors per page
 
-@user_bp.route('/profile/pages/visitors', methods=['GET'])
+@user_bp.route('/admin/dashboard/visitors', methods=['GET'])
 @login_required
 def display_visitors():
     page = int(request.args.get('page', 1))
@@ -395,17 +395,17 @@ def display_visitors():
             visitors = json.load(json_file)
         
         total_visitors = len(visitors)
-        total_pages = (total_visitors + VISITORS_PER_PAGE - 1) // VISITORS_PER_PAGE
+        total_dashboard = (total_visitors + VISITORS_PER_PAGE - 1) // VISITORS_PER_PAGE
 
         visitors_to_display = visitors[start:end]
 
     except (FileNotFoundError, json.JSONDecodeError):
         visitors_to_display = []
-        total_pages = 1
+        total_dashboard = 1
 
-    return render_template('profile/pages/visitors.html', visitors=visitors_to_display, page=page, total_pages=total_pages)
+    return render_template('admin/dashboard/visitors.html', visitors=visitors_to_display, page=page, total_dashboard=total_dashboard)
 
-@user_bp.route('/profile/pages/delete_visitor', methods=['POST'])
+@user_bp.route('/admin/dashboard/delete_visitor', methods=['POST'])
 @login_required
 def delete_visitor():
     id_to_delete = request.form.get('id')
@@ -430,7 +430,7 @@ def delete_visitor():
         print(f"Error occurred: {e}")  # Replace with a proper logger in production
         return jsonify({'status': 'error', 'message': 'Failed to delete visitor'}), 500
 
-@user_bp.route('/profile/pages/delete_selected_visitors', methods=['POST'])
+@user_bp.route('/admin/dashboard/delete_selected_visitors', methods=['POST'])
 @login_required
 def delete_selected_visitors():
     ids_to_delete = request.form.getlist('ids')
@@ -455,7 +455,7 @@ def delete_selected_visitors():
         print(f"Error occurred: {e}")  # Replace with a proper logger in production
         return jsonify({'status': 'error', 'message': 'Failed to delete selected visitors'}), 500
 
-@user_bp.route('/profile/pages/delete_all_visitors', methods=['POST'])
+@user_bp.route('/admin/dashboard/delete_all_visitors', methods=['POST'])
 @login_required
 def delete_all_visitors():
     try:
@@ -485,7 +485,7 @@ def save_opinie(data):
         return False
     return True
 
-@user_bp.route('/profile/pages/opinie', methods=['GET', 'POST'])
+@user_bp.route('/admin/dashboard/opinie', methods=['GET', 'POST'])
 @login_required
 def update_opinie():
     if request.method == 'POST':
@@ -564,15 +564,15 @@ def update_opinie():
 
     # Gdy metoda jest GET
     opinie_data = load_opinie()
-    return render_template('profile/pages/opinie.html', user=current_user, data=opinie_data)
+    return render_template('admin/dashboard/opinie.html', user=current_user, data=opinie_data)
 
-@user_bp.route('/profile/pages/users')
+@user_bp.route('/admin/dashboard/users')
 @login_required
 def user_list():
     users = User.load_all_users()
-    return render_template('profile/pages/users.html', users=users.values(), registration_enabled=current_app.config['REGISTRATION_ENABLED'])
+    return render_template('admin/dashboard/users.html', users=users.values(), registration_enabled=current_app.config['REGISTRATION_ENABLED'])
 
-@user_bp.route('/profile/pages/delete_user/<uuid>', methods=['POST'])
+@user_bp.route('/admin/dashboard/delete_user/<uuid>', methods=['POST'])
 @login_required
 def delete_user(uuid):
     print("delete")
@@ -590,7 +590,7 @@ def delete_user(uuid):
         return jsonify(success=False, message='User deletion failed'), 500
 
 
-@user_bp.route('/profile/pages/edit_user/<uuid>', methods=['POST'])
+@user_bp.route('/admin/dashboard/edit_user/<uuid>', methods=['POST'])
 @login_required
 def edit_user(uuid):
     user = User.get_by_uuid(uuid)
@@ -609,7 +609,7 @@ def edit_user(uuid):
     except Exception as e:
         return jsonify(success=False, message=str(e)), 500
 
-@user_bp.route('/profile/pages//toggle_registration', methods=['POST'])
+@user_bp.route('/admin/dashboard//toggle_registration', methods=['POST'])
 @login_required
 def toggle_registration():
     current_status = current_app.config['REGISTRATION_ENABLED']
@@ -715,7 +715,7 @@ def update_services_section(oferta_data, form_data):
 
     oferta_data['services'] = services
 
-@user_bp.route('/profile/pages/oferta', methods=['GET', 'POST'])
+@user_bp.route('/admin/dashboard/oferta', methods=['GET', 'POST'])
 @login_required
 def update_oferta():
     if request.method == 'POST':
@@ -764,4 +764,65 @@ def update_oferta():
             return redirect(url_for('user.update_oferta'))
 
     current_offer = load_offer_data()
-    return render_template('profile/pages/oferta.html', data=current_offer)
+    return render_template('admin/dashboard/oferta.html', data=current_offer)
+
+@user_bp.route('/upload_file', methods=['POST'])
+@login_required
+def upload_file():
+    """
+    Endpoint przyjmujący plik i zapisujący go w katalogu wybranym przez użytkownika.
+    Oczekuje parametrów:
+      - target: klucz określający docelowy katalog (np. 'member_image', 'partners', itd.)
+      - file: przesłany plik (pole w formularzu)
+    """
+    # Pobranie parametru target z formularza (przekazywany przez FormData)
+    target = request.form.get('target')
+    if not target:
+        return jsonify(success=False, error="Target directory not provided"), 400
+
+    # Sprawdzenie czy target jest obsługiwany
+    if target not in VIDEO_DIR:
+        return jsonify(success=False, error="Invalid target directory"), 400
+
+    # Sprawdzenie czy plik został przesłany
+    if 'file' not in request.files:
+        return jsonify(success=False, error="No file provided"), 400
+
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify(success=False, error="No selected file"), 400
+
+    # Ustal katalog docelowy na podstawie klucza target
+    file_dir = VIDEO_DIR[target]
+    full_dir = os.path.join(current_app.root_path, file_dir)
+
+    # Upewnij się, że katalog istnieje – jeśli nie, utwórz go
+    if not os.path.exists(full_dir):
+        try:
+            os.makedirs(full_dir)
+        except Exception as e:
+            current_app.logger.error(f"Error creating directory {full_dir}: {e}")
+            return jsonify(success=False, error="Error creating directory"), 500
+
+    # Stwórz pełną ścieżkę do zapisu pliku
+    file_path = os.path.join(full_dir, file.filename)
+    try:
+        file.save(file_path)
+        # Jeśli chcesz zwrócić URL, który będzie odpowiadał wpisom w Twoim frontendowym słowniku FILES,
+        # możesz stworzyć mapowanie – poniżej przykład:
+        FILES = {
+            'komputer': '/static/efekty/adds/galeria/video/komputer/',
+            'mobile': '/static/efekty/adds/galeria/video/mobile/',
+            'member_image': '/static/efekty/adds/hero/assets/',
+            'galeria': '/static/efekty/adds/galeria/assets/',
+            'main_background': '/static/efekty/adds/hero/assets/',
+            'jumbotron': '/static/efekty/adds/hero/assets/',
+            'partners': '/static/efekty/adds/hero/assets/loga/',
+            'video': '/static/efekty/adds/hero/assets/video/'
+        }
+        # Ustal URL pliku – zakładając, że pliki dostępne są przez statyczną ścieżkę
+        file_url = os.path.join(FILES[target], file.filename)
+        return jsonify(success=True, filePath=file_url)
+    except Exception as e:
+        current_app.logger.error(f"Error saving file: {e}")
+        return jsonify(success=False, error=str(e)), 500

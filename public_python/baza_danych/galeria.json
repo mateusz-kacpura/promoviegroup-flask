@@ -1,7 +1,7 @@
 { 
     "carouselItems": [
     {
-        "videoSrc": "efekty/adds/galeria/video/DJI_0078.MP4",
+        "videoSrc": "adds/galeria/video/DJI_0078.MP4",
         "maskColor": "rgba(0, 0, 0, 0.6)",
         "heading": "Imprezy sportowe",
         "subheading": "Najlepsi z najlepszych",
@@ -14,7 +14,7 @@
         ]
     },
     {
-        "videoSrc": "efekty/adds/galeria/video/DJI_0086.MP4",
+        "videoSrc": "adds/galeria/video/DJI_0086.MP4",
         "maskColor": "rgba(0, 0, 0, 0.3)",
         "heading": "Filmy promocyjne",
         "subheading": "Wykonywane z rozmachem",
@@ -27,7 +27,7 @@
         ]
     },
     {
-        "videoSrc": "efekty/adds/galeria/video/DJI_0079.MP4",
+        "videoSrc": "adds/galeria/video/DJI_0079.MP4",
         "maskColor": "linear-gradient(45deg, rgba(29, 236, 197, 0.7), rgba(91, 14, 214, 0.7) 100%)",
         "heading": "Reklamy",
         "subheading": "Dzielimy się swoją pasją",
@@ -41,7 +41,7 @@
     }
 ],
 "mainSection": {
-    "backgroundURL": "efekty/adds/hero/assets/pexels-caleboquendo-4889279.jpg",
+    "backgroundURL": "adds/hero/assets/pexels-caleboquendo-4889279.jpg",
     "title1": "Profesionalny zespół, któremu można",
     "title2": "zaufać",
     "button1Text": "Zadzwoń teraz",
@@ -50,47 +50,47 @@
 },
 "sectionImage": [
     {
-      "src": "/efekty/adds/galeria/assets/48921969_1960271264052333_3732463173068914688_n.jpg",
+      "src": "/adds/galeria/assets/48921969_1960271264052333_3732463173068914688_n.jpg",
       "animationDelay": ""
     },
     {
-      "src": "/efekty/adds/galeria/assets/118083887_3162074360567251_317893365180175413_n.jpg",
+      "src": "/adds/galeria/assets/118083887_3162074360567251_317893365180175413_n.jpg",
       "animationDelay": "300"
     },
     {
-      "src": "/efekty/adds/galeria/assets/184285412_3911701732271173_664944797408423679_n.jpg",
+      "src": "/adds/galeria/assets/184285412_3911701732271173_664944797408423679_n.jpg",
       "animationDelay": "500"
     },
     {
-      "src": "/efekty/adds/galeria/assets/195688778_3986667734774572_6652058005580401895_n.jpg",
+      "src": "/adds/galeria/assets/195688778_3986667734774572_6652058005580401895_n.jpg",
       "animationDelay": ""
     },
     {
-      "src": "/efekty/adds/galeria/assets/209158276_4064455230329155_4712343838012056478_n.jpg",
+      "src": "/adds/galeria/assets/209158276_4064455230329155_4712343838012056478_n.jpg",
       "animationDelay": "300"
     },
     {
-      "src": "/efekty/adds/galeria/assets/322679947_831537901271177_2854626816657091469_n.jpg",
+      "src": "/adds/galeria/assets/322679947_831537901271177_2854626816657091469_n.jpg",
       "animationDelay": "500"
     },
     {
-      "src": "/efekty/adds/galeria/assets/331483299_713620376899847_51941713472726588_n.jpg",
+      "src": "/adds/galeria/assets/331483299_713620376899847_51941713472726588_n.jpg",
       "animationDelay": ""
     },
     {
-      "src": "/efekty/adds/galeria/assets/336767407_6131000973587482_5005028003242857146_n.jpg",
+      "src": "/adds/galeria/assets/336767407_6131000973587482_5005028003242857146_n.jpg",
       "animationDelay": "300"
     },
     {
-      "src": "/efekty/adds/galeria/assets/355120523_6245759822198674_7575173158746098612_n.jpg",
+      "src": "/adds/galeria/assets/355120523_6245759822198674_7575173158746098612_n.jpg",
       "animationDelay": "500"
     },
     {
-      "src": "/efekty/adds/galeria/assets/387859034_122113918622064369_8563166061592335975_n.jpg",
+      "src": "/adds/galeria/assets/387859034_122113918622064369_8563166061592335975_n.jpg",
       "animationDelay": "500"
     },
     {
-      "src": "/efekty/adds/galeria/assets/393015856_6635869109854408_5074807102227126407_n.jpg",
+      "src": "/adds/galeria/assets/393015856_6635869109854408_5074807102227126407_n.jpg",
       "animationDelay": "500"
     }
   ]

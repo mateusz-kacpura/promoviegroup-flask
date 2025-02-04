@@ -4,7 +4,7 @@
         "subtitle": "Zapraszamy do skorzystania z oferty filmowo-fotograficznej. Oferowanej przez freelancerów. Obejmuje ona wysokiej jakości produkty fotograficzne, filmowe, filmowanie z drona oraz transmisje online. Bez względu na Twoje potrzeby - od portretów po filmy instruktażowe - jesteśmy gotowi spełnić Twoje oczekiwania. Skontaktuj się z jednym z freelancerów, aby dowiedzieć się więcej.",
         "buttonText": "Wyślij nam wiadomość",
         "buttonLink": "/kontakt",
-        "backgroundImage": "efekty/adds/oferta/images/hero/DSC05488-1.jpg"
+        "backgroundImage": "adds/oferta/images/hero/DSC05488-1.jpg"
     },
     "services": [
         {
@@ -160,22 +160,22 @@
         "map": "https://maps.example.com",
         "buttonText": "Wyślij nam wiadomość",
         "buttonLink": "/kontakt",
-        "backgroundImage": "efekty/adds/oferta/images/contactSection/433163442_387962530669773_8449593097552828940_n.jpg"
+        "backgroundImage": "adds/oferta/images/contactSection/433163442_387962530669773_8449593097552828940_n.jpg"
     },
     "feature1": {
         "title": "W krainie filmów",
         "description": "Przenieś się w magiczny świat filmu, gdzie każdy kadr skrywa niezapomniane historie. Odkryj emocje i tajemnice za każdym ujęciem.",
         "buttonText": "Rozpocznij",
         "buttonLink": "galeria",
-        "imageTop": "efekty/adds/oferta/images/features/432874290_8145193208842536_8364352731160822799_n.jpg",
-        "imageBottom": "efekty/adds/oferta/images/features/433061865_326664746718943_2621959967398606980_n.jpg"
+        "imageTop": "adds/oferta/images/features/432874290_8145193208842536_8364352731160822799_n.jpg",
+        "imageBottom": "adds/oferta/images/features/433061865_326664746718943_2621959967398606980_n.jpg"
     },
     "feature2": {
         "title": "Świat fotografii",
         "description": "Odkryj piękno i moc chwili utrwalonej w fotografii. Każde zdjęcie kryje w sobie historię, która czeka, aby zostać opowiedziana.",
         "buttonText": "Rozpocznij",
         "buttonLink": "galeria",
-        "image": "efekty/adds/oferta/images/features/434837332_945900393605933_9179364738778311099_n.jpg"
+        "image": "adds/oferta/images/features/434837332_945900393605933_9179364738778311099_n.jpg"
     },
     "blog": {
         "title": "Nasze wpisy na blogu",
@@ -213,7 +213,7 @@
         "title": "Napisz do nas",
         "buttonText": "Wyślij nam wiadomość",
         "buttonLink": "/kontakt",
-        "backgroundImage": "efekty/adds/oferta/images/432794530_442787621460543_1651162425388667630_n.jpg"
+        "backgroundImage": "adds/oferta/images/432794530_442787621460543_1651162425388667630_n.jpg"
     },
     "aboutUs": {
         "imageSrc": "logo_1080p.mp4",

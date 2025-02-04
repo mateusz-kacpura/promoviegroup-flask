@@ -29,13 +29,13 @@
 </style>
 </head>
 <body>
-    {% include 'profile/navbar.html' %}
+    {% include 'admin/navbar.html' %}
 
     <div class="container mt-5">
         <h1>Panel Administracyjny</h1>
         <form action="{{ url_for('user.update_hero') }}" method="POST" enctype="multipart/form-data">
             <!-- Zakładki (Tabs) -->
-            {% include 'profile/pages/hero/navbar.html' %}
+            {% include 'admin/dashboard/hero/navbar.html' %}
 
             <div class="tab-content" id="adminTabContent">
                 <!-- Carousel Section -->
@@ -454,15 +454,15 @@
     </div>
 
     <!-- Modalny do edycji elementu -->
-    {% include 'profile/modals/edit_elements.html' %}
+    {% include 'admin/modals/edit_elements.html' %}
 
 
     <!-- Modal -->
-    {% include 'profile/modals/statusModalLabel.html' %}
+    {% include 'admin/modals/statusModalLabel.html' %}
 
 
     <!-- Modal browser HTML -->
-    {% include 'profile/modals/browser_modal.html' %}
+    {% include 'admin/modals/browser_modal.html' %}
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>

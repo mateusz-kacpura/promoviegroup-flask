@@ -58,28 +58,21 @@ function renderContent(date) {
     // document.getElementById("clients-section").innerHTML = clientsHTML;    
 }
 
-// Funkcja renderująca nagłówek wideo
-function renderHeaderVideo(date) {
-    if (typeof date === 'undefined') {
-        console.error('date is not defined');
-        return;
-    }
-    
-    console.log('Rendering header video with date:', date);
-    // Kod renderujący nagłówek wideo
-}
 
-function renderHeaderVideo(date) {
-    if (typeof date === 'undefined' || !date.carouselItems) {
-        console.error('Invalid data:', date);
+function renderHeaderVideo(data) {
+    if (typeof data === 'undefined' || !data.carouselItems) {
+        console.error('Invalid data:', data);
         return '';
     }
     
-    const carouselIndicators = date.carouselItems.map((item, index) => {
+    // Ustalamy, która wersja wideo ma zostać użyta w oparciu o szerokość okna
+    const isDesktop = window.innerWidth >= 768; // próg można dostosować
+
+    const carouselIndicators = data.carouselItems.map((item, index) => {
         return `<li data-mdb-target="#introCarousel" data-mdb-slide-to="${index}" ${index === 0 ? 'class="active"' : ''}></li>`;
     }).join('');
 
-    const carouselItems = date.carouselItems.map((item, index) => {
+    const carouselItems = data.carouselItems.map((item, index) => {
         const buttons = item.buttons ? item.buttons.map(button => {
             return `<a class="btn ${button.class} btn-lg m-2" href="${button.url}" target="_blank" role="button">${button.text}</a>`;
         }).join('') : '';
@@ -89,23 +82,52 @@ function renderHeaderVideo(date) {
         const headingMobile = item.heading ? `<h1 class="heading-mobile d-md-none">${item.heading}</h1>` : '';
         const subheadingMobile = item.subheading ? `<h5 class="subheading-mobile d-md-none">${item.subheading}</h5>` : '';
 
+        // Dla pierwszego slajdu ustawiamy preload "auto", dla kolejnych "none"
+        const preloadAttr = index === 0 ? 'auto' : 'none';
+
+        // Generujemy tylko ten element <video>, który jest potrzebny na danym urządzeniu
+        let videoMarkup = '';
+        if (isDesktop) {
+            videoMarkup = `
+                <video class="video-desktop" preload="${preloadAttr}" style="min-width: 100%; min-height: 100%;" playsinline autoplay muted loop>
+                    <source src="${item.videoSrc}" type="video/mp4" />
+                </video>
+            `;
+        } else {
+            videoMarkup = `
+                <video class="video-mobile" preload="${preloadAttr}" style="min-width: 100%; min-height: 100%;" playsinline autoplay muted loop>
+                    <source src="${item.videoMobileSrc}" type="video/mp4" />
+                </video>
+            `;
+        }
+
         return `
             <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                <div class="video-container mt-5 mt-md-3">
-                    <video class="video-desktop d-md-block d-none" style="min-width: 100%; min-height: 100%;" playsinline autoplay muted loop>
-                        <source src="${item.videoSrc}" type="video/mp4" />
-                    </video>
-                    <video class="video-mobile d-md-none" style="min-width: 100%; min-height: 100%;" playsinline autoplay muted loop>
-                        <source src="${item.videoMobileSrc}" type="video/mp4" />
-                    </video>
+                <div class="video-container mt-5 mt-md-3 position-relative">
+                    ${videoMarkup}
+                    <!-- Dodatkowa warstwa z kropkowaniem i licznikami -->
+                    <div class="additional-overlay position-absolute top-0 start-0 w-100 h-100" style="pointer-events: none;">
+                        <!-- Kropkowanie -->
+                        <div class="dots-overlay" style="
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background-image: radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px);
+                            background-size: 10px 10px;
+                        "></div>
+                        
+                    </div>
                 </div>
                 <div class="mask d-flex justify-content-center align-items-center">
-                    <div class="text-white text-center p-4 mobile-overlay d-md-none" style="background: rgba(255, 255, 255, 0.5); max-width: 90%; margin: auto;">
+                    <!-- Warstwy tekstowe dostosowane do urządzeń mobilnych i desktop -->
+                    <div class="text-white text-center p-4 mobile-overlay d-md-none" style="background: rgba(255, 255, 255, 0.7); max-width: 90%; margin: auto;">
                         ${headingMobile}
                         ${subheadingMobile}
                         ${buttons}
                     </div>
-                    <div class="text-white text-center p-4 desktop-overlay d-none d-md-block" style="background: rgba(255, 255, 255, 0.5); max-width: 60%; margin: auto;">
+                    <div class="text-white text-center p-4 desktop-overlay d-none d-md-block" style="background: rgba(255, 255, 255, 0.7); max-width: 60%; margin: auto;">
                         ${heading}
                         ${subheading}
                         ${buttons}
@@ -134,6 +156,7 @@ function renderHeaderVideo(date) {
         </div>
     `;
 }
+
 
 // document.addEventListener('DOMContentLoaded', function() {
 //     // Pobierz przycisk
@@ -207,6 +230,7 @@ function generateMembersTeamSectionHTML(date) {
     
     return membersTeamSectionHTML;
 }
+
 function generateMemberCardHTML(member, index, date) {
     let memberCardHTML = `
         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
