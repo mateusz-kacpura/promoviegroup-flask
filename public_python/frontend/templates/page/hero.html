@@ -5,6 +5,7 @@
     <!-- Carousel will be rendered here -->
 </header>
 <div id="mainSection"></div>
+<div id="damiangrabarski"></div>
 <div id="teamSection"></div>
 <div id="jumbotronSection"></div>
 <div id="latestArticles"></div>
@@ -18,3 +19,70 @@
 
 </div>
 
+<style>
+
+/* Stylizacja kontenera karuzeli */
+#videoCarouselContainer {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Stylizacja wrappera karuzeli */
+#videoCarouselWrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+/* Stylizacja pojedynczego elementu */
+.video-item {
+    flex-shrink: 0;
+    /* Szerokość jest ustawiana dynamicznie w JavaScript */
+}
+
+
+@media (max-width: 767px) {
+  .carousel-indicators {
+    display: none;
+  }
+
+  /* Ustawiamy wysokość kontenera karuzeli odpowiednio mniejszą */
+  #carouselContainer {
+    height: 800px; /* dopasuj wartość do swoich potrzeb */
+    overflow: hidden; /* ukrywa wszystko, co wykracza poza ustaloną wysokość */
+  }
+
+  /* Jeśli wideo jest wewnątrz .video-container, zadbaj o odpowiednią skalę */
+  #carouselContainer .video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* wypełnia cały kontener, przycinając ewentualnie krawędzie */
+  }
+
+  /* Opcjonalnie: przesunięcie położenia wskaźników karuzeli */
+  #carouselContainer .carousel-indicators {
+    bottom: 10px; /* lub inna wartość, żeby dobrze się komponowały */
+  }
+}
+
+
+</style>
+
+<!-- Modal z detalami filmu -->
+<div class="modal fade" id="filmModal" tabindex="-1" aria-labelledby="filmModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="filmModalLabel">Szczegóły filmu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Zamknij"></button>
+        </div>
+        <div class="modal-body" id="filmModalBody">
+          <!-- Treść modala zostanie dynamicznie uzupełniona -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

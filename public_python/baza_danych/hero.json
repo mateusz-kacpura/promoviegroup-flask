@@ -66,6 +66,156 @@
         "phoneNumber": "720 760 461",
         "email": ""
     },
+
+    "name": "Damian Grabarski",
+    "filmography": {
+        "cinematography": [
+        {
+            "year": 2022,
+            "title": "SŁYSZYSZ?",
+            "type": "Film fabularny - krótkometrażowy",
+            "filmPage": "https://www.filmweb.pl/film/S%C5%82yszysz-2018-830701",
+            "poster": "https://nietrzanowo.parafialnycmentarz.pl/empty-image.jpg",
+            "description": "Wynajęta do sprzątania starej kamienicy imigrantka łamie zakaz właścicielki. Sprowadza na siebie śmiertelne zagrożenie."
+        },
+        {
+            "year": 2013,
+            "title": "SOLANGE",
+            "type": "Film fabularny - krótkometrażowy",
+            "filmPage": "https://www.filmweb.pl/film/Solange-2013-689725",
+            "poster": "https://nietrzanowo.parafialnycmentarz.pl/empty-image.jpg",
+            "description": "Zmagający się z twórczą niemocą pisarz zostaje wywieziony przez swoją agentkę w odludne miejsce, aby dopełnić kontraktowych zobowiązań wobec wydawnictwa. Jednak pozostawiony sam sobie w obcym domu, coraz bardziej pogrąża się w depresji. Wszystko się zmienia, gdy którejś nocy pojawia się tajemnicza lokatorka – piękna, młoda Francuzka, Solange. Za jej sprawą pisarz wkroczy w świat rodem ze snu, gdzie nic nie jest tym, czym się wydaje..."
+        },
+        {
+            "year": 2011,
+            "title": "CIAŁO CHRYSTUSA",
+            "type": "Film fabularny - krótkometrażowy",
+            "filmPage": "https://www.filmweb.pl/film/Cia%C5%82o+Chrystusa-2011-666342",
+            "poster": "https://nietrzanowo.parafialnycmentarz.pl/empty-image.jpg",
+            "description": "Na motywach opowiadania Rafała Dębskiego 'Różaniec z bursztynu'. Pewnego dnia nad ciałem miejscowego księdza policja ujmuje poszukiwanego przez Interpol seryjnego mordercę. Kiedy funkcjonariusze Interpolu przybywają na miejsce, komenda policji staje się areną niezwykłych wydarzeń. Wszystko wskazuje na to, iż osadzony nie jest tym, za kogo wszyscy go uważają."
+        },
+        {
+            "year": 2011,
+            "title": "CZARNA SKRZYNKA",
+            "type": "Film fabularny - krótkometrażowy",
+            "filmPage": "https://www.filmweb.pl/film/Czarna+skrzynka-2011-638308",
+            "poster": "https://nietrzanowo.parafialnycmentarz.pl/empty-image.jpg",
+            "description": null
+        },
+        {
+            "year": 2010,
+            "title": "[CARGO]",
+            "type": "Etiuda szkolna",
+            "filmPage": null,
+            "poster": "https://nietrzanowo.parafialnycmentarz.pl/empty-image.jpg",
+            "description": null
+        },
+        {
+            "year": 2009,
+            "title": "BLISKOŚĆ",
+            "type": "Film fabularny - krótkometrażowy",
+            "filmPage": "https://www.filmweb.pl/film/Blisko%C5%9B%C4%87-2009-605969",
+            "poster": "https://fwcdn.pl/fpo/59/69/605969/7348812_1.8.webp",
+            "description": "Pogrążony w psychicznym stuporze mężczyzna krąży samochodem po mieście. Jego umysł spowija mgła wspomnień. Zapada noc. Na obrzeżach miasta mężczyzna natyka się na dwie prostytutki. Jedna z nich w szczególny sposób przykuwa jego uwagę. Po krótkiej rozmowie lądują w pokoju hotelowym, gdzie rozpoczyna się między nimi dziwna gra. Nietypowy przebieg tej pozornie stereotypowej sytuacji ujawnia skrywane traumy obojga bohaterów i ukazuje ich prawdziwe oblicza."
+        },
+        {
+            "year": 2009,
+            "title": "KADISZ ZNACZY MODLITWA",
+            "type": "Film dokumentalny",
+            "filmPage": "https://www.filmweb.pl/film/Kadisz+znaczy+modlitwa-2009-595760",
+            "poster": "https://nietrzanowo.parafialnycmentarz.pl/empty-image.jpg",
+            "description": "Międzyrzec Podlaski jest niewielkim miasteczkiem liczącym niespełna 20 tys. mieszkańców, z historią sięgającą XII w. W 1940 r. okupanci niemieccy utworzyli w mieście getto, w którym umieszczono około 17 tys. Żydów. Getto zostało zlikwidowane w 1943 r. po wywiezieniu mieszkańców do obozów śmierci, a film stanowi relację z odsłonięcia pomnika upamiętniającego tamte wydarzenia."
+        }
+        ],
+        "camera_operator": [
+        {
+            "year": "2021-2024",
+            "title": "DZIELNICA STRACHU",
+            "type": "Serial fabularny",
+            "filmPage": "https://www.filmweb.pl/serial/Dzielnica+strachu-2021-10000435",
+            "poster": "https://nietrzanowo.parafialnycmentarz.pl/empty-image.jpg",
+            "description": "„Dzielnica strachu” to pierwsza polska produkcja, której głównymi bohaterami są dzielnicowi oraz tzw. 'trudna' dzielnica. W każdym z 40 odcinków widzowie zobaczą mocne, emocjonujące historie kryminalne, rozgrywające się na fikcyjnym Gorczaku."
+        },
+        {
+            "year": 2018,
+            "title": "OKO ZA OKO",
+            "type": "Serial fabularny",
+            "filmPage": "https://www.filmweb.pl/serial/Oko+za+oko-2018-809199",
+            "poster": "https://fwcdn.pl/fpo/91/99/809199/7858766_2.8.webp",
+            "description": "Serial obyczajowy rozgrywający się w środowisku warszawskich prawników. Opowiada historię małżeństwa Anny i Macieja Wysockich, których życie prywatne i zawodowe splata się od momentu ich rozwodu."
+        }
+        ],
+        "making_of": [
+        {
+            "year": 2016,
+            "title": "KOCHAJ",
+            "type": "Film fabularny",
+            "notes": "Zdjęcia dodatkowe (GoPro), Making of",
+            "filmPage": "https://www.filmweb.pl/film/Kochaj-2016-749727",
+            "poster": "https://static.cinemagia.ro/img/resize/db/movie/11/31/587/kochaj-147370l-600x0-w-193bb452.jpg",
+            "description": "Sawa (Olga Bołądź) wkrótce wychodzi za mąż za Jurka (Mikołaj Roznerski). Mimo bliskości ceremonii, pojawiają się wątpliwości czy Jurek jest tym jedynym, co dodatkowo komplikuje sytuację."
+        },
+        {
+            "year": 2012,
+            "title": "VOCUUS",
+            "type": "Film fabularny - krótkometrażowy",
+            "notes": "Making of",
+            "filmPage": "https://www.filmweb.pl/film/Vocuus-2012-657860",
+            "poster": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.79GE80ukJywdBCFPn3Tf-QAAAA%26pid%3DApi&f=1&ipt=aa9152eaa23d9d28325e9b40004cef93e4c3f55148d2f69a080b956271cde1c9&ipo=images",
+            "description": "Po śmierci żony Paweł zostaje sam z córką Martą, z którą nigdy nie nawiązał więzi emocjonalnej. Zagubiona dziewczynka i załamany mężczyzna muszą odnaleźć siebie nawzajem w pustym domu."
+        }
+        ],
+        "additional_photography": [
+        {
+            "year": 2016,
+            "title": "KOCHAJ",
+            "type": "Film fabularny",
+            "notes": "Zdjęcia dodatkowe (GoPro)",
+            "filmPage": "https://www.filmweb.pl/film/Kochaj-2016-749727",
+            "poster": "https://static.cinemagia.ro/img/resize/db/movie/11/31/587/kochaj-147370l-600x0-w-193bb452.jpg",
+            "description": "Sawa (Olga Bołądź) wkrótce wychodzi za mąż za Jurka (Mikołaj Roznerski). Mimo nadchodzącej ceremonii, wątpliwości dotyczące Jurka komplikują jej sytuację."
+        },
+        {
+            "year": 2011,
+            "title": "PAMIĘTAJ O MNIE",
+            "type": "Film fabularny - krótkometrażowy",
+            "notes": "Zdjęcia dodatkowe",
+            "filmPage": "https://www.filmweb.pl/film/Pami%C4%99taj+o+mnie-2011-639948",
+            "poster": "https://fwcdn.pl/fpo/99/48/639948/7410358_1.8.webp",
+            "description": "Trójmiasto, współcześnie. 16-letnia Agata przeżywa trudne chwile – skłócona z rodzicami, zdradzona przez chłopaka i oszukana przez najlepszą przyjaciółkę, spędza samotnie czas w pustym mieszkaniu. Spotkanie z bezdomnym mężczyzną zapoczątkowuje niezwykłą relację między dwojgiem ludzi z różnych światów."
+        }
+        ],
+        "acting": [
+        {
+            "year": 2015,
+            "title": "WESOŁOWSKA I MEDIATORZY",
+            "type": "Serial fabularny",
+            "role": "paparazzo",
+            "episodes": 8,
+            "filmPage": "https://www.filmweb.pl/serial/Weso%C5%82owska+i+mediatorzy-2015-750197",
+            "poster": "https://nietrzanowo.parafialnycmentarz.pl/empty-image.jpg",
+            "description": "Anna Maria Wesołowska powraca do TVN! Serial oparty na prawdziwych wydarzeniach, opowiadający o jej roli mediatorki w rozwiązywaniu trudnych konfliktów."
+        },
+        {
+            "year": 2009,
+            "title": "GENERAŁ NIL",
+            "type": "Film fabularny",
+            "role": "pomocnik egzekutora",
+            "filmPage": "https://www.filmweb.pl/film/Genera%C5%82+Nil-2009-470442",
+            "poster": "https://image.ceneostatic.pl/data/products/50085874/i-general-nil-booklet-dvd.jpg",
+            "description": "Historia generała Augusta Emila Fieldorfa (pseudonim 'Nil'), dowódcy Dywersji AK, ukazująca brawurowe akcje AK oraz realistyczne metody przesłuchań przez Urząd Bezpieczeństwa."
+        },
+        {
+            "year": 2006,
+            "title": "ULOTKA",
+            "type": "Etiuda szkolna",
+            "role": "Grabarz",
+            "filmPage": "https://www.filmweb.pl/film/Ulotka-2006-472631",
+            "poster": "https://fwcdn.pl/fpo/26/31/472631/7186758_1.10.webp",
+            "description": "Film przedstawia losy kilku osób splecionych ze sobą za sprawą ulotki domu publicznego. W rolach wystąpili studenci Akademii Filmu i Telewizji w Warszawie."
+        }
+        ]
+    },
     "membersTeamSection": {
         "teamTitle": "Nasz zespół",
         "teamSubtitle": "",
@@ -132,6 +282,27 @@
                     "https://twitter.com/grzegorzwac",
                     "https://www.linkedin.com/in/grzegorzwac"
                 ]
+            },
+            {
+                "name": "Damian Grabarski",
+                "role": "Operator kamery, fotograf",
+                "imageURL": "adds/hero/assets/b3e6d48.jpg",
+                "details": {
+                    "biography": "Absolwent Wrocławskiej szkoły  fotograficznej 'PHOBOS' oraz Warszawskiej szkoły filmowej 'AFiT' - sztuka operatorska. Pracuje przy produkcji seriali i programów rozrywkowych, 'Barwy Szczęścia', 'Na ratunek', 'Voice of Poland', 'Taniec z Gwiazdami', 'Nasz Nowy Dom'. Dzięki doświadczeniu w pracy z ludzmi przed kamerą, z łatwością pomaga im odnaleźć się na planie filmowym nawet jeśli stają przed obiektywem po raz pierwszy. Znajomość specyfiki pracy z kamerą pozwalają na efektywne przekazywanie wskazówek, co sprawia, że osoby na planie czują się pewnie i swobodnie.",
+                    "expirience": "Operator wielu znanych filmów pełnometrażowych, aktor w trzech filmach fabularnych.",
+                    "projects": "Oko za oko, Dzielnica Strachu i wiele innych",
+                    "techniques": "Profesionalny sprzęt z najwyższej półki światowego kina"
+                },
+                "socialIcons": [
+                    "",
+                    "",
+                    ""
+                ],
+                "socialLinks": [
+                    "",
+                    "",
+                    ""
+                ]
             }
         ]
     },
@@ -186,14 +357,24 @@
     },
     "video": {
         "videos": [
+            "https://www.youtube.com/embed/IHs_jsaM05I?si=ihI92uVd076nb_5-",
+            "https://www.youtube.com/embed/cHgtwI0RaRI?si=5PhJMcEOP8P-vSgN",
+            "https://www.youtube.com/embed/hSkH5Lpw2wI?si=Z2ewR4dCoPXukrdB",
+            "https://www.youtube.com/embed/O-dy-N3_hu8?si=tFiYD7rD44JjeQys",
             "https://www.youtube.com/embed/HJ_SUBLP9jg?si=846R-CQXw8MjiOR9",
             "https://www.youtube.com/embed/CQBqbGteOlc?si=Jin4ekHMWnBp5HTb",
-            "https://www.youtube.com/embed/6xjatizz5wY?si=kw0duPm-Pd2QXm9Q"
+            "https://www.youtube.com/embed/6xjatizz5wY?si=kw0duPm-Pd2QXm9Q",
+            "https://www.youtube.com/embed/3rNAP0qwKVg"
         ],
         "images": [
+            "https://i9.ytimg.com/vi_webp/IHs_jsaM05I/mq3.webp?sqp=COTSk70G-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGFcgXShlMA8=&rs=AOn4CLCT4V9bGmRiOwTBoQlvJMOoZWuANg",
+            "https://i9.ytimg.com/vi_webp/cHgtwI0RaRI/mq1.webp?sqp=COTSk70G-oaymwEmCMACELQB8quKqQMa8AEB-AH-BIAC6AKKAgwIABABGGUgVihJMA8=&rs=AOn4CLC0ER7ugMfED5KGx1_sJyR2vCFMDQ",
+            "https://i9.ytimg.com/vi_webp/hSkH5Lpw2wI/mq2.webp?sqp=COTSk70G-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGFEgTyhlMA8=&rs=AOn4CLCJQqfcWvteS03D0gcwVYE9dDjglQ",
+            "https://i9.ytimg.com/vi_webp/O-dy-N3_hu8/mq2.webp?sqp=COTSk70G-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgZShlMA8=&rs=AOn4CLDclkYheeM2FMzakJEEY2kyPnWk6A",
             "adds/hero/assets/video/11.png",
             "adds/hero/assets/video/22.png",
-            "adds/hero/assets/video/33.png"
+            "adds/hero/assets/video/33.png",
+            "https://i9.ytimg.com/vi_webp/3rNAP0qwKVg/mq2.webp?sqp=CLjQk70G-oaymwEmCMACELQB8quKqQMa8AEB-AH-BIAC6AKKAgwIABABGCYgIyh_MA8=&rs=AOn4CLAG3OJnPR8iSnY4qLS6R_XpRbdhLA"
         ],
         "titles": [
             "",

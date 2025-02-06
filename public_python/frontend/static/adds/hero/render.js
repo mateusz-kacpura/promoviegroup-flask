@@ -30,6 +30,8 @@ function renderContent(date) {
     // const mainSectionHTML = generateMainSectionHTML(date);
     // document.getElementById("mainSection").innerHTML = mainSectionHTML;
     
+    document.getElementById('damiangrabarski').innerHTML = generateDamianGrabarskiSectionHTML(date);
+
     // Wstawienie wygenerowanego HTML do diva o id "membersTeamSection"
     document.getElementById('teamSection').innerHTML = generateMembersTeamSectionHTML(date);
     
@@ -59,20 +61,20 @@ function renderContent(date) {
 }
 
 
-function renderHeaderVideo(data) {
-    if (typeof data === 'undefined' || !data.carouselItems) {
-        console.error('Invalid data:', data);
+function renderHeaderVideo(date) {
+    if (typeof date === 'undefined' || !date.carouselItems) {
+        console.error('Invalid data:', date);
         return '';
     }
     
     // Ustalamy, która wersja wideo ma zostać użyta w oparciu o szerokość okna
     const isDesktop = window.innerWidth >= 768; // próg można dostosować
 
-    const carouselIndicators = data.carouselItems.map((item, index) => {
+    const carouselIndicators = date.carouselItems.map((item, index) => {
         return `<li data-mdb-target="#introCarousel" data-mdb-slide-to="${index}" ${index === 0 ? 'class="active"' : ''}></li>`;
     }).join('');
 
-    const carouselItems = data.carouselItems.map((item, index) => {
+    const carouselItems = date.carouselItems.map((item, index) => {
         const buttons = item.buttons ? item.buttons.map(button => {
             return `<a class="btn ${button.class} btn-lg m-2" href="${button.url}" target="_blank" role="button">${button.text}</a>`;
         }).join('') : '';
@@ -202,69 +204,270 @@ function generateMainSectionHTML(date) {
     `;
 }
 
+// Funkcja generująca sekcję z filmografią Damiana Grabarskiego
+function generateDamianGrabarskiSectionHTML(date) {
+    // Używamy właściwości "photo" lub domyślnego obrazka
+    const photoURL = date.membersTeamSection.members[3].imageURL;
+    
+    let html = `
+      <section class="py-5 bg-light">
+        <div class="container">
+          <!-- Nagłówek z kartą prezentującą Damiana -->
+          <div class="text-center mb-5">
+            <div class="card shadow-sm" style="max-width: 300px; margin: 0 auto;">
+              <div class="view overlay ripple" data-mdb-ripple-color="light">
+                <img src="${photoURL}" class="card-img-top img-fluid" alt="${date.name} Photo"
+                     style="height: 300px; object-fit: cover;">
+                <a href="#!">
+                  <div class="mask" style="background-color: rgba(0, 0, 0, 0.2);"></div>
+                </a>
+              </div>
+              <div class="card-body">
+                <h2 class="card-title fw-bold">${date.name}</h2>
+              </div>
+            </div>
+            <p class="lead text-muted animated fadeInUp mt-3">Profesjonalna filmografia</p>
+          </div>
+    `;
+    
+    // Przechodzimy przez kategorie filmografii
+    const filmography = date.filmography;
+    const categoryNames = {
+      cinematography: 'Film fabularny / Krótkometrażowy',
+      camera_operator: 'Operator kamery w produkcji serialowej',
+      making_of: 'Making Of',
+      additional_photography: 'Dodatkowe zdjęcia',
+      acting: 'Aktorstwo'
+    };
+    
+    Object.keys(filmography).forEach(category => {
+      const items = filmography[category];
+      const sectionTitle = categoryNames[category] || category;
+    
+      html += `
+          <div class="mb-5">
+            <h3 class="mb-4 animated fadeIn">${sectionTitle}</h3>
+            <div class="row">
+      `;
+    
+      // Każdy film jako oddzielna pionowa karta
+      items.forEach(item => {
+        html += `
+            <div class="col-md-6 col-lg-4 mb-3">
+              <div class="card shadow-sm animated fadeInUp" style="cursor: pointer;"
+                   onclick="showFilmDetails(this)"
+                   data-film-title="${item.title}"
+                   data-film-year="${item.year}"
+                   data-film-type="${item.type}"
+                   data-film-description="${item.description ? item.description.replace(/"/g, '&quot;') : ''}"
+                   data-film-poster="${item.poster ? item.poster : ''}"
+                   data-film-page="${item.filmPage ? item.filmPage : ''}">
+        `;
+        if (item.poster) {
+          html += `
+                <div class="view overlay ripple" data-mdb-ripple-color="light">
+                  <img src="${item.poster}" class="card-img-top img-fluid img-thumbnail hover-zoom" alt="${item.title} Poster"
+                       style="height: 500px; object-fit: cover;">
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(0, 0, 0, 0.15);"></div>
+                  </a>
+                </div>
+          `;
+        }
+        html += `
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">
+                    ${item.title} <small class="text-muted">(${item.year})</small>
+                  </h5>
+                  <p class="card-text">${item.type}</p>
+                </div>
+              </div>
+            </div>
+        `;
+      });
+    
+      html += `
+            </div>
+          </div>
+      `;
+    });
+    
+    html += `
+        </div>
+      </section>
+    `;
+    
+    return html;
+  }
+    
+  // Funkcja otwierająca modal z detalami filmu w stylu korporacyjnym
+  function showFilmDetails(element) {
+    const title = element.dataset.filmTitle;
+    const year = element.dataset.filmYear;
+    const type = element.dataset.filmType;
+    const description = element.dataset.filmDescription;
+    const poster = element.dataset.filmPoster;
+    const filmPage = element.dataset.filmPage;
+    
+    // Ustawienie tytułu modalu z pogrubieniem
+    document.getElementById('filmModalLabel').innerHTML = `<span class="fw-bold">${title} (${year})</span>`;
+    const modalBody = document.getElementById('filmModalBody');
+    let modalContent = '';
+    
+    if (poster) {
+      modalContent += `
+        <div class="view overlay mb-3 ripple" data-mdb-ripple-color="light">
+          <img src="${poster}" alt="${title} Poster" class="img-fluid rounded"
+               style="max-height: 300px; object-fit: cover;">
+          <a href="#!">
+            <div class="mask" style="background-color: rgba(0,0,0,0.1);"></div>
+          </a>
+        </div>
+      `;
+    }
+    modalContent += `<p class="mb-2"><strong>Typ:</strong> ${type}</p>`;
+    if (description) {
+      modalContent += `<p class="mb-2">${description}</p>`;
+    }
+    if (filmPage) {
+      modalContent += `<a href="${filmPage}" target="_blank" class="btn btn-outline-primary">Zobacz stronę filmu</a>`;
+    }
+    modalBody.innerHTML = modalContent;
+    
+    // Dodanie animacji wejścia do modalu (przy użyciu Animate.css)
+    let filmModalEl = document.getElementById('filmModal');
+    filmModalEl.querySelector('.modal-dialog').classList.add('animate__animated', 'animate__fadeInDown');
+    
+    // Wyświetlenie modalu przy użyciu Bootstrap
+    let filmModal = new bootstrap.Modal(filmModalEl);
+    filmModal.show();
+  }
+  
+  
+// Przykładowa funkcja generująca sekcję z członkami zespołu
 function generateMembersTeamSectionHTML(date) {
-    let membersTeamSectionHTML = `
-    <div date-draggable="false" style="position: relative;">
+    // Przyjmujemy, że w obiekcie date mamy sekcję membersTeamSection z odpowiednimi danymi
+    let membersTeamSectionHTML = 
+    `<div date-draggable="false" style="position: relative;">
+        <section draggable="false" class="container pt-5" date-v-271253ee="">
+            <section class="mb-10 text-center">
+                <h2 class="fw-bold mb-5">
+                    <span date-builder-edit="text" date-builder-name="text1" contenteditable="false">
+                        ${date.membersTeamSection.teamTitle}
+                    </span>
+                    <u class="text-primary" date-builder-edit="text" date-builder-name="text2" contenteditable="false">
+                        ${date.membersTeamSection.teamSubtitle}
+                    </u>
+                </h2>
+                <!-- Opakowujemy karuzelę w kontenerze z overflow hidden -->
+                <div id="teamList" class="row gx-lg-5">
+                    <div id="carouselContainer" style="overflow: hidden; width: 100%;">
+                        <div id="carouselWrapper" style="display: flex; gap: 15px; transition: transform 0.5s ease;">`;
+    
+    // Iteracja po członkach zespołu
+    date.membersTeamSection.members.forEach((member, index) => {
+        membersTeamSectionHTML += generateMemberCardHTML(member, index, date);
+    });
+    
+    membersTeamSectionHTML += 
+                        `</div>
+                    </div>
+                </div>
+                <div id="memberDetails" class="member-details" style="display: none;">
+                    <!-- Dynamicznie ładowana zawartość szczegółów -->
+                </div>
+            </section>
+        </section>
+    </div>`;
+    
+    return membersTeamSectionHTML;
+}
+
+// Przykładowa funkcja generująca kartę członka zespołu – możesz dostosować zawartość i klasy
+function generateMemberCardHTML(member, index, date) {
+    return `
+      <div class="col-md-4 mb-3 animated fadeInUp">
+        <div class="card shadow-sm" style="cursor: pointer;" onclick="showMemberDetails(${index})">
+          <img src="${member.photo}" class="card-img-top" alt="${member.name} Photo">
+          <div class="card-body text-center">
+            <h5 class="card-title">${member.name}</h5>
+            <p class="card-text">${member.role}</p>
+          </div>
+        </div>
+      </div>
+    `;
+}
+
+function generateMembersTeamSectionHTML(date) {
+    // Zapamiętujemy przekazany obiekt date globalnie dla potrzeb karuzeli
+    window.carouselData = date;
+
+    let membersTeamSectionHTML = 
+    `<div date-draggable="false" style="position: relative;">
         <section draggable="false" class="container pt-5" date-v-271253ee="">
             <section class="mb-10 text-center">
                 <h2 class="fw-bold mb-5">
                     <span date-builder-edit="text" date-builder-name="text1" contenteditable="false">${date.membersTeamSection.teamTitle}</span>
                     <u class="text-primary" date-builder-edit="text" date-builder-name="text2" contenteditable="false">${date.membersTeamSection.teamSubtitle}</u>
                 </h2>
+                <!-- Opakowujemy karuzelę w kontenerze z overflow hidden -->
                 <div id="teamList" class="row gx-lg-5">
-    `;
+                    <div id="carouselContainer" style="overflow: hidden; width: 100%;">
+                        <div id="carouselWrapper" style="display: flex; gap: 15px; transition: transform 0.5s ease;">`;
     
     date.membersTeamSection.members.forEach((member, index) => {
         membersTeamSectionHTML += generateMemberCardHTML(member, index, date);
     });
     
-    membersTeamSectionHTML += `
+    membersTeamSectionHTML += 
+                        `</div>
+                    </div>
                 </div>
                 <div id="memberDetails" class="member-details" style="display: none;">
-                    <!-- Dynamic content for details will be injected here -->
+                    <!-- Dynamicznie ładowana zawartość szczegółów -->
                 </div>
             </section>
         </section>
-    </div>
-    `;
+    </div>`;
+    
+    // Po wyrenderowaniu HTML inicjujemy karuzelę – przyjmujemy, że elementy są już w DOM
+    setTimeout(() => {
+        initializeCarousel(date);
+    }, 0);
     
     return membersTeamSectionHTML;
 }
 
 function generateMemberCardHTML(member, index, date) {
-    let memberCardHTML = `
-        <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-            <div class="card">
-                <div class="bg-image hover-overlay ripple" date-ripple-color="light">
-                    <img src="${member.imageURL}" class="w-100" date-builder-edit="image" date-builder-name="image1" alt="${member.name}" aria-controls="#picker-editor" onclick="try { showMemberDetails(${index}, ${JSON.stringify(date).replace(/"/g, '&quot;')}) } catch(err) { console.error('Error:', err); }">
-                    <svg class="position-absolute" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="left: 0; bottom: 0">
-                        <path fill="#fff" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-                    </svg>
-                </div>
-                <div class="card-body">
-                    <h5 class="fw-bold" date-builder-edit="text" date-builder-name="text3" contenteditable="false" onclick="try { showMemberDetails(${index}, ${JSON.stringify(date).replace(/"/g, '&quot;')}) } catch(err) { console.error('Error:', err); }">${member.name}</h5>
-                    <p class="text-muted" date-builder-edit="text" date-builder-name="text4" contenteditable="false">${member.role}</p>
-                    <ul class="list-unstyled mb-0">
-    `;
+    let memberCardHTML = 
+    `<div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+        <div class="card">
+            <div class="bg-image hover-overlay ripple" date-ripple-color="light">
+                <img src="${member.imageURL}" class="w-100" date-builder-edit="image" date-builder-name="image1" alt="${member.name}" aria-controls="#picker-editor" onclick="try { showMemberDetails(${index}, ${JSON.stringify(date).replace(/"/g, '&quot;')}) } catch(err) { console.error('Error:', err); }">
+                <svg class="position-absolute" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="left: 0; bottom: 0">
+                    <path fill="#fff" d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                </svg>
+            </div>
+            <div class="card-body">
+                <h5 class="fw-bold" date-builder-edit="text" date-builder-name="text3" contenteditable="false" onclick="try { showMemberDetails(${index}, ${JSON.stringify(date).replace(/"/g, '&quot;')}) } catch(err) { console.error('Error:', err); }">${member.name}</h5>
+                <p class="text-muted" date-builder-edit="text" date-builder-name="text4" contenteditable="false">${member.role}</p>
+                <ul class="list-unstyled mb-0">`;
     
     member.socialIcons.forEach((icon, iconIndex) => {
-        memberCardHTML += `
-            <a href="${member.socialLinks[iconIndex]}" class="px-1">
+        memberCardHTML += 
+            `<a href="${member.socialLinks[iconIndex]}" class="px-1">
                 <i class="${icon}" date-builder-edit="icon" aria-controls="#picker-editor"></i>
-            </a>
-        `;
+            </a>`;
     });
     
-    memberCardHTML += `
-                    </ul>
-                </div>
+    memberCardHTML += 
+                `</ul>
             </div>
         </div>
-    `;
+    </div>`;
     
     return memberCardHTML;
 }
-
 
 function showMemberDetails(index, date) {
     const member = date.membersTeamSection.members[index];
@@ -281,8 +484,8 @@ function showMemberDetails(index, date) {
     let techniquesHTML = techniques ? `<ul>${techniques.split(',').map(technique => `<li>${technique.trim()}</li>`).join('')}</ul>` : '<p>Brak informacji</p>';
     let projectsHTML = projects ? `<ul>${projects.split(',').map(project => `<li>${project.trim()}</li>`).join('')}</ul>` : '<p>Brak informacji</p>';
 
-    let detailsHTML = `
-    <div class="row">
+    let detailsHTML = 
+    `<div class="row">
         <div class="col-md-4">
             <img src="${member.imageURL}" alt="${member.name}" class="img-fluid mb-3">
             <h3>${member.name}</h3>
@@ -316,11 +519,16 @@ function showMemberDetails(index, date) {
     }
     memberDetails.innerHTML = detailsHTML;
     memberDetails.style.display = 'block';
+
+    // Zatrzymujemy karuzelę, gdy otwarty jest panel szczegółów
+    stopCarousel();
 }
 
 function hideMemberDetails() {
     document.getElementById('teamList').style.display = 'flex';
     document.getElementById('memberDetails').style.display = 'none';
+    // Po zamknięciu panelu uruchamiamy karuzelę ponownie
+    startCarousel();
 }
 
 function showPreviousMember(currentIndex, date) {
@@ -332,6 +540,115 @@ function showNextMember(currentIndex, date) {
     const nextIndex = currentIndex < date.membersTeamSection.members.length - 1 ? currentIndex + 1 : currentIndex;
     showMemberDetails(nextIndex, date);
 }
+
+// -------------------------
+// FUNKCJONALNOŚĆ KARUZELI
+// -------------------------
+
+let carouselInterval = null;
+let touchStartX = 0;
+let touchEndX = 0;
+
+function startCarousel() {
+    if (!carouselInterval) {
+        carouselInterval = setInterval(() => {
+            // Przesuwamy karuzelę tylko, gdy panel szczegółów jest ukryty
+            if (document.getElementById('memberDetails').style.display === 'none') {
+                slideNext();
+            }
+        }, 2000);
+    }
+}
+
+function stopCarousel() {
+    if (carouselInterval) {
+        clearInterval(carouselInterval);
+        carouselInterval = null;
+    }
+}
+
+// Funkcja przesuwa karuzelę w lewo o szerokość jednego elementu + odstęp
+function slideNext() {
+    const wrapper = document.getElementById('carouselWrapper');
+    if (!wrapper) return;
+    const firstCard = wrapper.children[0];
+    if (!firstCard) return;
+    const cardWidth = firstCard.offsetWidth;
+    const cardGap = 15; // odstęp, musi być zgodny z wartością gap w stylu
+    wrapper.style.transform = `translateX(-${cardWidth + cardGap}px)`;
+    
+    wrapper.addEventListener('transitionend', function handler() {
+        // Po zakończeniu animacji przenosimy pierwszy element na koniec
+        wrapper.appendChild(firstCard);
+        wrapper.style.transition = 'none';
+        wrapper.style.transform = 'translateX(0)';
+        // Wymuszenie reflow
+        void wrapper.offsetWidth;
+        wrapper.style.transition = 'transform 0.5s ease';
+        wrapper.removeEventListener('transitionend', handler);
+    });
+}
+
+// Funkcja przesuwa karuzelę w prawo (używana przy swipe)
+function slidePrev() {
+    const wrapper = document.getElementById('carouselWrapper');
+    if (!wrapper) return;
+    const cards = wrapper.children;
+    if (cards.length === 0) return;
+    const lastCard = cards[cards.length - 1];
+    const cardWidth = lastCard.offsetWidth;
+    const cardGap = 15; // taki sam odstęp jak w slideNext
+    
+    // Przenosimy ostatni element na początek
+    wrapper.insertBefore(lastCard, wrapper.firstChild);
+    wrapper.style.transition = 'none';
+    wrapper.style.transform = `translateX(-${cardWidth + cardGap}px)`;
+    // Wymuszenie reflow
+    void wrapper.offsetWidth;
+    wrapper.style.transition = 'transform 0.5s ease';
+    wrapper.style.transform = 'translateX(0)';
+}
+
+// Inicjalizacja karuzeli: ustawienie automatycznego przesuwania oraz obsługi dotyku
+function initializeCarousel(date) {
+    const carouselContainer = document.getElementById('carouselContainer');
+    if (!carouselContainer) return;
+    
+    carouselContainer.addEventListener('touchstart', handleTouchStart, false);
+    carouselContainer.addEventListener('touchmove', handleTouchMove, false);
+    carouselContainer.addEventListener('touchend', handleTouchEnd, false);
+    
+    startCarousel();
+}
+
+function handleTouchStart(e) {
+    touchStartX = e.touches[0].clientX;
+}
+
+function handleTouchMove(e) {
+    touchEndX = e.touches[0].clientX;
+}
+
+function handleTouchEnd(e) {
+    const threshold = 50; // Minimalna odległość przesunięcia w px
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > threshold) {
+        // Zatrzymujemy automatyczne przesuwanie podczas obsługi gestu
+        stopCarousel();
+        if (diff > 0) {
+            // Swipe w lewo – przesuwamy do następnego
+            slideNext();
+        } else {
+            // Swipe w prawo – przesuwamy do poprzedniego
+            slidePrev();
+        }
+        // Po krótkim czasie restartujemy automatyczną karuzelę
+        setTimeout(() => {
+            startCarousel();
+        }, 2000);
+    }
+}
+
 
 function generateJumbotronSectionHTML(date) {
     return `
@@ -441,62 +758,132 @@ function generatePartnersHTML(date) {
     `;
 }
 
+
 function generateVideoHTML(date) {
     if (!date || !date.video || !date.video.images || !date.video.videos) {
         console.error('Invalid data for video rendering:', date);
         return '';
     }
 
-    return `
-    <!-- Start your project here-->
-    <div class="container d-flex justify-content-center mt-5">
-        <!-- Modal gallery -->
-        <section class="">
-            <!-- Section: Images -->
-            <section class="">
-                <h2 class="fw-bold mb-5 text-center" data-builder-edit="text" data-builder-name="text1" contenteditable="false">Nasze filmy</h2>
-                <div class="row">
-                    ${date.video.images.map((imageUrl, index) => `
-                        <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                            <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-                                <img src="${imageUrl}" class="w-100"/>
-                                <a href="#!" data-mdb-toggle="modal" data-mdb-target="#exampleModal${index + 1}">
-                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
-                                </a>
-                            </div>
-                        </div>
-                    `).join('')}
-                </div>
-            </section>
-            <!-- Section: Images -->
+    // Zapamiętujemy przekazany obiekt date globalnie dla potrzeb karuzeli
+    window.videoCarouselData = date;
 
-            <!-- Section: Modals -->
-            <section class="">
-                ${date.video.videos.map((videoUrl, index) => `
-                    <!-- Modal ${index + 1} -->
-                    <div class="modal fade" id="exampleModal${index + 1}" tabindex="-1" aria-labelledby="exampleModal${index + 1}Label" aria-hidden="false">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <div class="ratio ratio-16x9">
-                                    <iframe src="${videoUrl}" title="YouTube video" allowfullscreen></iframe>
-                                </div>
-                                <div class="text-center py-3">
-                                    <button type="button" class="btn btn-primary" data-mdb-dismiss="modal">Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `).join('')}
-            </section>
-            <!-- Section: Modals -->
+    let videoHTML = `
+    <!-- Start your project here-->
+    <div class="container mt-5">
+        <!-- Video Carousel -->
+        <section>
+            <!-- Section: Videos -->
+            <h2 class="fw-bold mb-5 text-center" data-builder-edit="text" data-builder-name="text1" contenteditable="false">Nasze filmy</h2>
+            
+            <!-- Carousel Container -->
+            <div id="videoCarouselContainer" style="overflow: hidden; width: 100%;">
+                <div id="videoCarouselWrapper" style="display: flex; transition: transform 0.5s ease;">
+                    ${date.video.images.map((imageUrl, index) =>
+                        generateVideoItemHTML(imageUrl, index)
+                    ).join('')}
+                </div>
+            </div>
         </section>
-        <!-- Modal gallery -->
+        <!-- Video Carousel -->
+
+        <!-- Section: Modals -->
+        ${date.video.videos.map((videoUrl, index) =>
+            generateVideoModalHTML(videoUrl, index)
+        ).join('')}
+        <!-- Section: Modals -->
     </div>
-    <!-- End your project here-->
+    <!-- End your project here-->`;
+
+    // Inicjalizujemy karuzelę po wyrenderowaniu HTML
+    setTimeout(() => {
+        initializeVideoCarousel(date);
+    }, 0);
+
+    return videoHTML;
+}
+
+function generateVideoItemHTML(imageUrl, index) {
+    return `
+        <div class="video-item" style="flex-shrink: 0;">
+            <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                <img src="${imageUrl}" class="w-100"/>
+                <a href="#!" data-mdb-toggle="modal" data-mdb-target="#exampleModal${index + 1}">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                </a>
+            </div>
+        </div>
     `;
 }
 
+function generateVideoModalHTML(videoUrl, index) {
+    return `
+        <!-- Modal ${index + 1} -->
+        <div class="modal fade" id="exampleModal${index + 1}" tabindex="-1" aria-labelledby="exampleModal${index + 1}Label" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="${videoUrl}" title="YouTube video" allowfullscreen></iframe>
+                    </div>
+                    <div class="text-center py-3">
+                        <button type="button" class="btn btn-primary" data-mdb-dismiss="modal">Zamknij</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+}
 
+function initializeVideoCarousel(date) {
+    const carouselContainer = document.getElementById('videoCarouselContainer');
+    const carouselWrapper = document.getElementById('videoCarouselWrapper');
+    const videoItems = document.getElementsByClassName('video-item');
+    let currentIndex = 0;
+    let itemWidth;
+
+    function updateItemWidth() {
+        const containerWidth = carouselContainer.offsetWidth;
+        if (window.innerWidth >= 992) {
+            // Widok desktopowy
+            itemWidth = containerWidth / 3;
+        } else {
+            // Widok mobilny
+            itemWidth = containerWidth;
+        }
+        // Ustawiamy szerokość każdego elementu
+        for (let i = 0; i < videoItems.length; i++) {
+            videoItems[i].style.width = itemWidth + 'px';
+        }
+        // Aktualizujemy pozycję karuzeli
+        carouselWrapper.style.transform = 'translateX(-' + (itemWidth * currentIndex) + 'px)';
+    }
+
+    // Inicjalizujemy szerokość elementów
+    updateItemWidth();
+
+    // Obsługa zmiany rozmiaru okna
+    window.addEventListener('resize', updateItemWidth);
+
+    function shiftCarousel() {
+        currentIndex++;
+        if (currentIndex > videoItems.length - (window.innerWidth >= 992 ? 3 : 1)) {
+            currentIndex = 0;
+        }
+        carouselWrapper.style.transform = 'translateX(-' + (itemWidth * currentIndex) + 'px)';
+    }
+
+    // Uruchamiamy automatyczne przesuwanie
+    let shiftInterval = setInterval(shiftCarousel, 2000);
+
+    // Opcjonalnie: zatrzymanie karuzeli po najechaniu myszą
+    carouselContainer.addEventListener('mouseenter', function() {
+        clearInterval(shiftInterval);
+    });
+
+    carouselContainer.addEventListener('mouseleave', function() {
+        shiftInterval = setInterval(shiftCarousel, 2000);
+    });
+}
 
 function renderClientsSection(date) {
     var clientsSection = document.getElementById('clients-section');
