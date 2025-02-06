@@ -31,6 +31,7 @@ function renderContent(date) {
     // document.getElementById("mainSection").innerHTML = mainSectionHTML;
     
     document.getElementById('damiangrabarski').innerHTML = generateDamianGrabarskiSectionHTML(date);
+    // Po wstawieniu elementów do DOM dodajemy efekt 3D do kafelek
 
     // Wstawienie wygenerowanego HTML do diva o id "membersTeamSection"
     document.getElementById('teamSection').innerHTML = generateMembersTeamSectionHTML(date);
@@ -55,11 +56,55 @@ function renderContent(date) {
     const videoHTML = generateVideoHTML(date);
     document.getElementById("video").innerHTML = videoHTML; 
     
+    add3DEffectToCards();
+
     // const clientsHTML = renderClientsSection(date)
     // renderClientsSection(date); // <div id="clients-section"></div> // brakuje prawdopodobnie jakiegoś skryptu bootrap
     // document.getElementById("clients-section").innerHTML = clientsHTML;    
 }
 
+// Funkcja dodająca efekt 3D do wszystkich kafelek z klasą "card"
+function add3DEffectToCards() {
+    // Pobranie wszystkich elementów z klasą "card"
+    const cards = document.querySelectorAll('.card');
+    
+    cards.forEach(card => {
+      // Po wejściu myszką – ustawienie płynnego przejścia
+      card.addEventListener('mouseenter', function() {
+        card.style.transition = 'transform 0.2s ease-out';
+      });
+  
+      // Obsługa ruchu myszy nad kartą
+      card.addEventListener('mousemove', function(e) {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left; // pozycja kursora wewnątrz kafelki (oś X)
+        const y = e.clientY - rect.top;  // pozycja kursora wewnątrz kafelki (oś Y)
+  
+        // Wyznaczenie środka elementu
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        
+        // Obliczenie odchylenia względem środka (w skali od -1 do 1)
+        const deltaX = (x - centerX) / centerX;
+        const deltaY = (y - centerY) / centerY;
+        
+        // Ustalanie maksymalnych kątów obrotu (np. 15 stopni) oraz powiększenia (np. 1.1)
+        const rotateX = deltaY * -15; // minus, aby efekt był bardziej naturalny
+        const rotateY = deltaX * 15;
+        const scale = 1.1;
+        
+        // Ustawienie transformacji – perspektywa, obrót oraz skalowanie
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(${scale})`;
+      });
+  
+      // Przy opuszczaniu kafelki reset transformacji
+      card.addEventListener('mouseleave', function() {
+        card.style.transition = 'transform 0.5s ease-out';
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
+      });
+    });
+  }
+  
 
 function renderHeaderVideo(date) {
     if (typeof date === 'undefined' || !date.carouselItems) {
@@ -214,18 +259,24 @@ function generateDamianGrabarskiSectionHTML(date) {
         <div class="container">
           <!-- Nagłówek z kartą prezentującą Damiana -->
           <div class="text-center mb-5">
-            <div class="card shadow-sm" style="max-width: 300px; margin: 0 auto;">
-              <div class="view overlay ripple" data-mdb-ripple-color="light">
-                <img src="${photoURL}" class="card-img-top img-fluid" alt="${date.name} Photo"
-                     style="height: 300px; object-fit: cover;">
-                <a href="#!">
-                  <div class="mask" style="background-color: rgba(0, 0, 0, 0.2);"></div>
-                </a>
-              </div>
-              <div class="card-body">
-                <h2 class="card-title fw-bold">${date.name}</h2>
-              </div>
-            </div>
+  <div class="card shadow-sm" style="max-width: 400px; margin: 30px auto; border-top: 1px solid #ccc; border-left: 1px solid #ccc; border-right: 1px solid #ccc; border-bottom: none; border-radius: 10px 10px 0 0; overflow: hidden;">
+    <div class="view overlay ripple" data-mdb-ripple-color="light">
+      <img src="${photoURL}" class="card-img-top img-fluid" alt="${date.name} Photo"
+           style="height: 400px; object-fit: cover; filter: brightness(1.1);">
+      <a href="#!">
+        <div class="mask" style="background-color: rgba(0, 0, 0, 0);"></div>
+      </a>
+    </div>
+    <div class="card-body" style="position: relative; padding: 40px 15px 0 15px; background-color: #d3d3d3;">
+      <h2 class="card-title fw-bold">${date.name}</h2>
+    </div>
+    <div style="line-height: 0;">
+<svg viewBox="0 0 500 100" preserveAspectRatio="none" style="display: block; width: 100%; transform: rotate(180deg);">
+  <path d="M0,30 C150,0 350,60 500,30 L500,100 L0,100 Z" style="fill: #d3d3d3;"></path>
+</svg>
+
+    </div>
+  </div>
             <p class="lead text-muted animated fadeInUp mt-3">Profesjonalna filmografia</p>
           </div>
     `;
@@ -349,7 +400,7 @@ function generateMembersTeamSectionHTML(date) {
     // Przyjmujemy, że w obiekcie date mamy sekcję membersTeamSection z odpowiednimi danymi
     let membersTeamSectionHTML = 
     `<div date-draggable="false" style="position: relative;">
-        <section draggable="false" class="container pt-5" date-v-271253ee="">
+        <section draggable="false" class="container card pt-5" date-v-271253ee="">
             <section class="mb-10 text-center">
                 <h2 class="fw-bold mb-5">
                     <span date-builder-edit="text" date-builder-name="text1" contenteditable="false">
@@ -737,24 +788,57 @@ function generateAdventuresHTML(date) {
 
 function generatePartnersHTML(date) {
     return `
+    <style>
+        /* Styl obrazu i transformacje */
+        .partner-image {
+            transition: transform 0.3s;
+            /* Ustawienie perspektywy, by efekt 3D był bardziej zauważalny */
+            transform: perspective(500px) var(--random-tilt, rotateX(0deg) rotateY(0deg));
+        }
+        /* Efekt falowania z uwzględnieniem losowego pochylania */
+        .partner-image:hover {
+            animation: wave 1.5s ease-in-out infinite;
+        }
+        @keyframes wave {
+            0% { transform: perspective(500px) var(--random-tilt, rotateX(0deg) rotateY(0deg)) translateY(0); }
+            50% { transform: perspective(500px) var(--random-tilt, rotateX(0deg) rotateY(0deg)) translateY(-10px); }
+            100% { transform: perspective(500px) var(--random-tilt, rotateX(0deg) rotateY(0deg)) translateY(0); }
+        }
+    </style>
     <div date-draggable="false" style="position: relative;">
-        <section draggable="false" class="container pt-5" date-v-271253ee="">
-            <section class="mb-10 text-center">
-                <h2 class="fw-bold mb-6">
-                    <span date-builder-edit="text" date-builder-name="text1" contenteditable="false">${date.partners.text1}</span>
-                    <u class="mx-2" date-builder-edit="text" date-builder-name="text2" contenteditable="false">${date.partners.text2}</u>
-                    <span date-builder-edit="text" date-builder-name="text3" contenteditable="false">${date.partners.text3}</span>
-                </h2>
-                <div class="row">
-                    ${date.partners.images.map((image, index) => `
-                        <div class="col-lg-3 col-6 mb-5 mb-lg-0">
-                            <img src="${image}" class="img-fluid px-4 px-md-5" alt="" date-builder-edit="image" date-builder-name="image${index + 1}" aria-controls="#picker-editor">
-                        </div>
-                    `).join('')}
-                </div>
-            </section>
+    <section draggable="false" class="container pt-5" date-v-271253ee="">
+        <section class="mb-10 text-center">
+            <h2 class="fw-bold mb-6">
+                <span date-builder-edit="text" date-builder-name="text1" contenteditable="false">${date.partners.text1}</span>
+                <u class="mx-2" date-builder-edit="text" date-builder-name="text2" contenteditable="false">${date.partners.text2}</u>
+                <span date-builder-edit="text" date-builder-name="text3" contenteditable="false">${date.partners.text3}</span>
+            </h2>
+            <div class="row justify-content-center gx-5 gy-5"> <!-- Dodane odstępy -->
+                ${date.partners.images.map((image, index) => `
+                    <div class="card col-lg-3 col-6">
+                        <img src="${image}" class="img-fluid p-3 partner-image" alt="" date-builder-edit="image" date-builder-name="image${index + 1}" aria-controls="#picker-editor">
+                    </div>
+                `).join('')}
+            </div>
         </section>
-    </div>
+    </section>
+</div>
+
+    <script>
+        // Po załadowaniu dokumentu dodajemy nasłuchiwanie na zdarzenia dla każdego obrazka
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = document.querySelectorAll('.partner-image');
+            images.forEach(img => {
+                img.addEventListener("mouseenter", () => {
+                    // Generujemy losowe kąty obrotu dla osi X i Y w zakresie od -15 do 15 stopni
+                    const rotateX = Math.floor(Math.random() * 31) - 15;
+                    const rotateY = Math.floor(Math.random() * 31) - 15;
+                    // Ustawiamy zmienną CSS --random-tilt, którą wykorzystujemy w transform
+                    img.style.setProperty("--random-tilt", \`rotateX(\${rotateX}deg) rotateY(\${rotateY}deg)\`);
+                });
+            });
+        });
+    </script>
     `;
 }
 
@@ -805,16 +889,17 @@ function generateVideoHTML(date) {
 
 function generateVideoItemHTML(imageUrl, index) {
     return `
-        <div class="video-item" style="flex-shrink: 0;">
-            <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
-                <img src="${imageUrl}" class="w-100"/>
+        <div class="video-item card rounded-4 m-3" style="flex-shrink: 0; border-radius: 20px; overflow: hidden;">
+            <div class="bg-image hover-overlay ripple shadow-1-strong rounded-4" data-ripple-color="light" style="border-radius: 20px;">
+                <img src="${imageUrl}" class="w-100" style="border-radius: 20px;"/>
                 <a href="#!" data-mdb-toggle="modal" data-mdb-target="#exampleModal${index + 1}">
-                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                    <div class="mask rounded-4" style="background-color: rgba(251, 251, 251, 0.2); border-radius: 20px;"></div>
                 </a>
             </div>
         </div>
     `;
 }
+
 
 function generateVideoModalHTML(videoUrl, index) {
     return `
